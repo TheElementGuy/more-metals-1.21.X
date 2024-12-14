@@ -1,0 +1,22 @@
+{
+  "item.moremetals.cubic_zirconia": "Cubic Zirconia",
+  "item.moremetals.raw_cubic_zirconia": "Raw Cubic Zirconia",
+  "item.moremetals.cubic_zirconia_block": "Block of Cubic Zirconia",
+  "item.moremetals.raw_cubic_zirconia_block": "Block of Raw Cubic Zirconia",
+  "item.moremetals.cubic_zirconia_ore": "Cubic Zirconia Ore",
+  "item.moremetals.deepslate_cubic_zirconia_ore": "Deepslate Cubic Zirconia Ore",
+  "item.moremetals.cubic_zirconia_sword": "Cubic Zirconia Sword",
+  "item.moremetals.cubic_zirconia_axe": "Cubic Zirconia Axe",
+  "item.moremetals.cubic_zirconia_pickaxe": "Cubic Zirconia Pickaxe",
+  "item.moremetals.cubic_zirconia_shovel": "Cubic Zirconia Shovel",
+  "item.moremetals.cubic_zirconia_hoe": "Cubic Zirconia Hoe",
+  "item.moremetals.cubic_zirconia_helmet": "Cubic Zirconia Helmet",
+  "item.moremetals.cubic_zirconia_chestplate": "Cubic Zirconia Chestplate",
+  "item.moremetals.cubic_zirconia_leggings": "Cubic Zirconia Leggings",
+  "item.moremetals.cubic_zirconia_boots": "Cubic Zirconia Boots",
+
+  "block.moremetals.cubic_zirconia_block": "Block of Cubic Zirconia",
+  "block.moremetals.raw_cubic_zirconia_block": "Block of Raw Cubic Zirconia",
+  "block.moremetals.cubic_zirconia_ore": "Cubic Zirconia Ore",
+  "block.moremetals.deepslate_cubic_zirconia_ore": "Deepslate Cubic Zirconia Ore"
+}
