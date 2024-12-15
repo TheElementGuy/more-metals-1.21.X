@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:blasting",
+  "category": "misc",
+  "cookingtime": 100,
+  "experience": 0.9,
+  "group": "cz",
+  "ingredient": {
+    "item": "moremetals:deepslate_cubic_zirconia_ore"
+  },
+  "result": {
+    "count": 1,
+    "id": "moremetals:cubic_zirconia"
+  }
+}

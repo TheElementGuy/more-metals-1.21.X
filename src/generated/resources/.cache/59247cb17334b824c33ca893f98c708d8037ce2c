@@ -1,0 +1,7 @@
+// 1.21.1	2024-12-14T10:53:26.6860917	Tags for minecraft:item mod id moremetals
+bdc397193684417d6e5f3c24c084dd5cffb00a1e data/minecraft/tags/item/axes.json
+ffb285048d7717ce25f89719522c4158180679fa data/minecraft/tags/item/hoes.json
+951f4c7992e4ea5432b51ddef85360ee6aef0c1b data/minecraft/tags/item/pickaxes.json
+b9ad9690b05fbda8e7537b4f2ee0ff45ba1fc5fe data/minecraft/tags/item/shovels.json
+a1d2bfa6dc93aefcf663393beb764a8d2946ef53 data/minecraft/tags/item/swords.json
+68243df777e4931a28affed5d910f2435816ecbb data/minecraft/tags/item/trimmable_armor.json

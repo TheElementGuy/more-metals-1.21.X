@@ -1,0 +1,37 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "moremetals:raw_cubic_zirconia"
+    },
+    {
+      "item": "moremetals:raw_cubic_zirconia"
+    },
+    {
+      "item": "moremetals:raw_cubic_zirconia"
+    },
+    {
+      "item": "moremetals:raw_cubic_zirconia"
+    },
+    {
+      "item": "moremetals:raw_cubic_zirconia"
+    },
+    {
+      "item": "moremetals:raw_cubic_zirconia"
+    },
+    {
+      "item": "moremetals:raw_cubic_zirconia"
+    },
+    {
+      "item": "moremetals:raw_cubic_zirconia"
+    },
+    {
+      "item": "moremetals:raw_cubic_zirconia"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "moremetals:raw_cubic_zirconia_block"
+  }
+}

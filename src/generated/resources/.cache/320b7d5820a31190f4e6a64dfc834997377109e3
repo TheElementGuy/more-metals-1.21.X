@@ -1,0 +1,5 @@
+// 1.21.1	2024-12-14T10:53:26.6860917	Tags for minecraft:block mod id moremetals
+5ff20e30c4b180741446e9c9af129c0daaa6a406 data/minecraft/tags/block/mineable/pickaxe.json
+5ff20e30c4b180741446e9c9af129c0daaa6a406 data/minecraft/tags/block/needs_iron_tool.json
+a6161700e7e6797266e5abad837b7494ee1270aa data/moremetals/tags/block/incorrect_for_cubic_zirconia_tool.json
+32b13946c4cd1f944b029659ccce5fcb2adad4ff data/moremetals/tags/block/needs_cubic_zirconia.json
