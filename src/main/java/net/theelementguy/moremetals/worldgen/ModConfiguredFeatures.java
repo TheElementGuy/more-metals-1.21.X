@@ -11,7 +11,6 @@ import net.minecraft.world.level.levelgen.feature.configurations.FeatureConfigur
 import net.minecraft.world.level.levelgen.feature.configurations.OreConfiguration;
 import net.minecraft.world.level.levelgen.structure.templatesystem.RuleTest;
 import net.minecraft.world.level.levelgen.structure.templatesystem.TagMatchTest;
-import net.neoforged.neoforge.common.Tags;
 import net.theelementguy.moremetals.MoreMetalsMod;
 import net.theelementguy.moremetals.block.ModBlocks;
 
@@ -19,7 +18,11 @@ import java.util.List;
 
 public class ModConfiguredFeatures {
 
-    public static final ResourceKey<ConfiguredFeature<?, ?>> OVERWORLD_CUBIC_ZIRCONIA_ORE_KEY = registerKey("overworld_cubic_zirconia");
+    public static final ResourceKey<ConfiguredFeature<?, ?>> CUBIC_ZIRCONIA_LARGE_ORE_KEY = registerKey("lagre_cubic_zirconia");
+
+    public static final ResourceKey<ConfiguredFeature<?, ?>> CUBIC_ZIRCONIA_MEDIUM_ORE_KEY = registerKey("medium_cubic_zirconia");
+
+    public static final ResourceKey<ConfiguredFeature<?, ?>> CUBIC_ZIRCONIA_SMALL_ORE_KEY = registerKey("small_cubic_zirconia");
 
     public static void bootstrap(BootstrapContext<ConfiguredFeature<?, ?>> context) {
 
@@ -28,7 +31,11 @@ public class ModConfiguredFeatures {
 
         List<OreConfiguration.TargetBlockState> cubicZirconiaOres = List.of(OreConfiguration.target(stoneReplaceabes, ModBlocks.CUBIC_ZIRCONIA_ORE.get().defaultBlockState()), OreConfiguration.target(deepslateReplaceabes, ModBlocks.DEEPSLATE_CUBIC_ZIRCONIA_ORE.get().defaultBlockState()));
 
-        register(context, OVERWORLD_CUBIC_ZIRCONIA_ORE_KEY, Feature.ORE, new OreConfiguration(cubicZirconiaOres, 2));
+        register(context, CUBIC_ZIRCONIA_LARGE_ORE_KEY, Feature.ORE, new OreConfiguration(cubicZirconiaOres, 16, 0.7f));
+
+        register(context, CUBIC_ZIRCONIA_MEDIUM_ORE_KEY, Feature.ORE, new OreConfiguration(cubicZirconiaOres, 9, 0.5f));
+
+        register(context, CUBIC_ZIRCONIA_SMALL_ORE_KEY, Feature.ORE, new OreConfiguration(cubicZirconiaOres, 2, 0.5f));
 
     }
 
