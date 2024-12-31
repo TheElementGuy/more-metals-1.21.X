@@ -3,6 +3,7 @@ package net.theelementguy.moremetals;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.CreativeModeTabs;
 import net.theelementguy.moremetals.block.ModBlocks;
+import net.theelementguy.moremetals.datagen.ModItemModelProvider;
 import net.theelementguy.moremetals.item.ModItems;
 import org.slf4j.Logger;
 
@@ -59,14 +60,28 @@ public class MoreMetalsMod  {
         if(event.getTabKey() == CreativeModeTabs.INGREDIENTS) {
             event.accept(ModItems.CUBIC_ZIRCONIA);
             event.accept(ModItems.RAW_CUBIC_ZIRCONIA);
+            event.accept(ModItems.TIN_SCRAPS);
+            event.accept(ModItems.CELESTIAL_BRONZE_INGOT);
+            event.accept(ModItems.RAW_CELESTIAL_BRONZE);
+            event.accept(ModItems.RUBIDIUM);
+            event.accept(ModItems.STARSHARD);
         }
         if(event.getTabKey() == CreativeModeTabs.BUILDING_BLOCKS) {
             event.accept(ModBlocks.CUBIC_ZIRCONIUM_BLOCK);
             event.accept(ModBlocks.RAW_CUBIC_ZIRCONIUM_BLOCK);
+            event.accept(ModBlocks.TIN_BLOCK);
+            event.accept(ModBlocks.CELESTIAL_BRONZE_BLOCK);
+            event.accept(ModBlocks.RAW_CELESTIAL_BRONZE_BLOCK);
+            event.accept(ModBlocks.RUBIDIUM_BLOCK);
+            event.accept(ModBlocks.STARSHARD_BLOCK);
         }
         if(event.getTabKey() == CreativeModeTabs.NATURAL_BLOCKS) {
             event.accept(ModBlocks.CUBIC_ZIRCONIA_ORE);
             event.accept(ModBlocks.DEEPSLATE_CUBIC_ZIRCONIA_ORE);
+            event.accept(ModBlocks.TIN_ORE);
+            event.accept(ModBlocks.DEEPSLATE_TIN_ORE);
+            event.accept(ModBlocks.NETHER_RUBIDIUM_ORE);
+            event.accept(ModBlocks.END_STARSHARD_ORE);
         }
         if (event.getTabKey() == CreativeModeTabs.COMBAT) {
             event.accept(ModItems.CUBIC_ZIRCONIA_SWORD);
@@ -75,12 +90,33 @@ public class MoreMetalsMod  {
             event.accept(ModItems.CUBIC_ZIRCONIA_CHESTPLATE);
             event.accept(ModItems.CUBIC_ZIRCONIA_LEGGINGS);
             event.accept(ModItems.CUBIC_ZIRCONIA_BOOTS);
+            event.accept(ModItems.CELESTIAL_BRRONZE_SWORD);
+            event.accept(ModItems.RUBIDIUM_SWORD);
+            event.accept(ModItems.RUBIDIUM_AXE);
+            event.accept(ModItems.RUBIDIUM_HELMET);
+            event.accept(ModItems.RUBIDIUM_CHESTPLATE);
+            event.accept(ModItems.RUBIDIUM_LEGGINGS);
+            event.accept(ModItems.RUBIDIUM_BOOTS);
+            event.accept(ModItems.STARSHARD_SWORD);
+            event.accept(ModItems.STARSHARD_AXE);
+            event.accept(ModItems.STARSHARD_HELMET);
+            event.accept(ModItems.STARSHARD_CHESTPLATE);
+            event.accept(ModItems.STARSHARD_LEGGINGS);
+            event.accept(ModItems.STARSHARD_BOOTS);
         }
         if (event.getTabKey() == CreativeModeTabs.TOOLS_AND_UTILITIES) {
             event.accept(ModItems.CUBIC_ZIRCONIA_AXE);
             event.accept(ModItems.CUBIC_ZIRCONIA_PICKAXE);
             event.accept(ModItems.CUBIC_ZIRCONIA_SHOVEL);
             event.accept(ModItems.CUBIC_ZIRCONIA_HOE);
+            event.accept(ModItems.RUBIDIUM_AXE);
+            event.accept(ModItems.RUBIDIUM_PICKAXE);
+            event.accept(ModItems.RUBIDIUM_SHOVEL);
+            event.accept(ModItems.RUBIDIUM_HOE);
+            event.accept(ModItems.STARSHARD_AXE);
+            event.accept(ModItems.STARSHARD_PICKAXE);
+            event.accept(ModItems.STARSHARD_SHOVEL);
+            event.accept(ModItems.STARSHARD_HOE);
         }
     }
 

@@ -27,6 +27,22 @@ public class ModArmorMaterials {
         attribute.put(ArmorItem.Type.BODY, 5);
     }), 14, 0.0f, 0.0f, () -> ModItems.CUBIC_ZIRCONIA.get(), SoundEvents.ARMOR_EQUIP_DIAMOND);
 
+    public static final Holder<ArmorMaterial> RUBIDIUM = register("rubidium", Util.make(new EnumMap<>(ArmorItem.Type.class), attribute -> {
+        attribute.put(ArmorItem.Type.HELMET, 3);
+        attribute.put(ArmorItem.Type.CHESTPLATE, 8);
+        attribute.put(ArmorItem.Type.LEGGINGS, 6);
+        attribute.put(ArmorItem.Type.BOOTS, 3);
+        attribute.put(ArmorItem.Type.BODY, 10);
+    }), 15, 1.0f, 0.0f, () -> ModItems.RUBIDIUM.get(), SoundEvents.ARMOR_EQUIP_NETHERITE);
+
+    public static final Holder<ArmorMaterial> STARSHARD = register("starshard", Util.make(new EnumMap<>(ArmorItem.Type.class), attribute -> {
+        attribute.put(ArmorItem.Type.HELMET, 4);
+        attribute.put(ArmorItem.Type.CHESTPLATE, 7);
+        attribute.put(ArmorItem.Type.LEGGINGS, 9);
+        attribute.put(ArmorItem.Type.BOOTS, 4);
+        attribute.put(ArmorItem.Type.BODY, 12);
+    }), 13, 4.0f, 0.5f, () -> ModItems.STARSHARD.get(), SoundEvents.ARMOR_EQUIP_DIAMOND);
+
     private static Holder<ArmorMaterial> register(String name, EnumMap<ArmorItem.Type, Integer> typeProtection, int enchantability, float toughness, float knockbackResistance, Supplier<Item> ingredientItem, Holder<SoundEvent> equipSound) {
         ResourceLocation location = ResourceLocation.fromNamespaceAndPath(MoreMetalsMod.MOD_ID, name);
         //Holder<SoundEvent> equipSound = SoundEvents.ARMOR_EQUIP_DIAMOND;

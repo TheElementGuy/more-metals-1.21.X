@@ -28,15 +28,39 @@ public class ModItemModelProvider  extends ItemModelProvider {
     protected void registerModels() {
         basicItem(ModItems.RAW_CUBIC_ZIRCONIA.get());
         basicItem(ModItems.CUBIC_ZIRCONIA.get());
+        basicItem(ModItems.TIN_SCRAPS.get());
+        basicItem(ModItems.RAW_CELESTIAL_BRONZE.get());
+        basicItem(ModItems.CELESTIAL_BRONZE_INGOT.get());
+        basicItem(ModItems.RUBIDIUM.get());
+        basicItem(ModItems.STARSHARD.get());
         handheldItem(ModItems.CUBIC_ZIRCONIA_SWORD.get());
         handheldItem(ModItems.CUBIC_ZIRCONIA_AXE.get());
         handheldItem(ModItems.CUBIC_ZIRCONIA_PICKAXE.get());
         handheldItem(ModItems.CUBIC_ZIRCONIA_SHOVEL.get());
         handheldItem(ModItems.CUBIC_ZIRCONIA_HOE.get());
+        handheldItem(ModItems.CELESTIAL_BRRONZE_SWORD.get());
+        handheldItem(ModItems.RUBIDIUM_SWORD.get());
+        handheldItem(ModItems.RUBIDIUM_AXE.get());
+        handheldItem(ModItems.RUBIDIUM_PICKAXE.get());
+        handheldItem(ModItems.RUBIDIUM_SHOVEL.get());
+        handheldItem(ModItems.RUBIDIUM_HOE.get());
+        handheldItem(ModItems.STARSHARD_SWORD.get());
+        handheldItem(ModItems.STARSHARD_AXE.get());
+        handheldItem(ModItems.STARSHARD_PICKAXE.get());
+        handheldItem(ModItems.STARSHARD_SHOVEL.get());
+        handheldItem(ModItems.STARSHARD_HOE.get());
         trimmedArmorItem(ModItems.CUBIC_ZIRCONIA_HELMET);
         trimmedArmorItem(ModItems.CUBIC_ZIRCONIA_CHESTPLATE);
         trimmedArmorItem(ModItems.CUBIC_ZIRCONIA_LEGGINGS);
         trimmedArmorItem(ModItems.CUBIC_ZIRCONIA_BOOTS);
+        trimmedArmorItem(ModItems.RUBIDIUM_HELMET);
+        trimmedArmorItem(ModItems.RUBIDIUM_CHESTPLATE);
+        trimmedArmorItem(ModItems.RUBIDIUM_LEGGINGS);
+        trimmedArmorItem(ModItems.RUBIDIUM_BOOTS);
+        trimmedArmorItem(ModItems.STARSHARD_HELMET);
+        trimmedArmorItem(ModItems.STARSHARD_CHESTPLATE);
+        trimmedArmorItem(ModItems.STARSHARD_LEGGINGS);
+        trimmedArmorItem(ModItems.STARSHARD_BOOTS);
     }
 
     private ItemModelBuilder handheldItem(DeferredItem<?> item) {

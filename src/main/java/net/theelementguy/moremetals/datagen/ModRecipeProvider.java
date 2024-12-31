@@ -10,6 +10,7 @@ import net.minecraft.world.item.armortrim.TrimMaterial;
 import net.minecraft.world.item.armortrim.TrimMaterials;
 import net.minecraft.world.item.crafting.*;
 import net.minecraft.world.level.ItemLike;
+import net.neoforged.fml.common.Mod;
 import net.neoforged.neoforge.common.conditions.IConditionBuilder;
 import net.theelementguy.moremetals.MoreMetalsMod;
 import net.theelementguy.moremetals.block.ModBlocks;
@@ -29,13 +30,27 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
     protected void buildRecipes(RecipeOutput recipeOutput) {
         List<ItemLike> CUBIC_ZIRCONIA_SMELTABLES = List.of(ModItems.RAW_CUBIC_ZIRCONIA, ModBlocks.CUBIC_ZIRCONIA_ORE, ModBlocks.DEEPSLATE_CUBIC_ZIRCONIA_ORE);
 
-        ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, ModBlocks.CUBIC_ZIRCONIUM_BLOCK).requires(ModItems.CUBIC_ZIRCONIA, 9).unlockedBy("has_cz", has(ModItems.CUBIC_ZIRCONIA)).save(recipeOutput);
+        List<ItemLike> CELESTIAL_BRONZE_SMELTABLES = List.of(ModItems.RAW_CELESTIAL_BRONZE);
 
-        ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, ModBlocks.RAW_CUBIC_ZIRCONIUM_BLOCK).requires(ModItems.RAW_CUBIC_ZIRCONIA, 9).unlockedBy("has_rcz", has(ModItems.RAW_CUBIC_ZIRCONIA)).save(recipeOutput);
+        List<ItemLike> TIN_SMELTABLES = List.of(ModBlocks.TIN_ORE, ModBlocks.DEEPSLATE_TIN_ORE);
 
-        ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, ModItems.CUBIC_ZIRCONIA, 9).requires(ModBlocks.CUBIC_ZIRCONIUM_BLOCK).unlockedBy("has_czb", has(ModBlocks.CUBIC_ZIRCONIUM_BLOCK)).save(recipeOutput);
+        List<ItemLike> RUBIDIUM_SMELTABLES = List.of(ModBlocks.NETHER_RUBIDIUM_ORE);
 
-        ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, ModItems.RAW_CUBIC_ZIRCONIA, 9).requires(ModBlocks.RAW_CUBIC_ZIRCONIUM_BLOCK).unlockedBy("has_rczb", has(ModBlocks.RAW_CUBIC_ZIRCONIUM_BLOCK)).save(recipeOutput);
+        List<ItemLike> STARSHARD_SMELTABLES = List.of(ModBlocks.END_STARSHARD_ORE);
+
+        blockRecipe(ModItems.CUBIC_ZIRCONIA.get(), ModBlocks.CUBIC_ZIRCONIUM_BLOCK.asItem(), "has_cz", recipeOutput);
+
+        blockRecipe(ModItems.RAW_CUBIC_ZIRCONIA.get(), ModBlocks.RAW_CUBIC_ZIRCONIUM_BLOCK.asItem(), "has_rcz", recipeOutput);
+
+        blockRecipe(ModItems.CELESTIAL_BRONZE_INGOT.get(), ModBlocks.CELESTIAL_BRONZE_BLOCK.asItem(), "has_cb", recipeOutput);
+
+        blockRecipe(ModItems.RAW_CELESTIAL_BRONZE.get(), ModBlocks.RAW_CELESTIAL_BRONZE_BLOCK.asItem(), "has_rcb", recipeOutput);
+
+        blockRecipe(ModItems.TIN_SCRAPS.get(), ModBlocks.TIN_BLOCK.asItem(), "has_t", recipeOutput);
+
+        blockRecipe(ModItems.RUBIDIUM.get(), ModBlocks.RUBIDIUM_BLOCK.asItem(), "has_r", recipeOutput);
+
+        blockRecipe(ModItems.STARSHARD.get(), ModBlocks.STARSHARD_BLOCK.asItem(), "has_s", recipeOutput);
 
         swordRecipe(ModItems.CUBIC_ZIRCONIA_SWORD.get(), ModItems.CUBIC_ZIRCONIA.get(), "has_cz", recipeOutput);
 
@@ -55,8 +70,55 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
 
         bootsRecipe(ModItems.CUBIC_ZIRCONIA_BOOTS.get(), ModItems.CUBIC_ZIRCONIA.get(), "has_cz", recipeOutput);
 
-        oreSmelting(recipeOutput, CUBIC_ZIRCONIA_SMELTABLES, RecipeCategory.MISC, ModItems.CUBIC_ZIRCONIA.get(), 0.9f, 200, "cz");
-        oreBlasting(recipeOutput, CUBIC_ZIRCONIA_SMELTABLES, RecipeCategory.MISC, ModItems.CUBIC_ZIRCONIA.get(), 0.9f, 100, "cz");
+        swordRecipe(ModItems.CELESTIAL_BRRONZE_SWORD.get(), ModItems.CELESTIAL_BRONZE_INGOT.get(), "has_cb", recipeOutput);
+
+        swordRecipe(ModItems.RUBIDIUM_SWORD.get(), ModItems.RUBIDIUM.get(), "has_r", recipeOutput);
+
+        axeRecipe(ModItems.RUBIDIUM_AXE.get(), ModItems.RUBIDIUM.get(), "has_r", recipeOutput);
+
+        pickaxeRecipe(ModItems.RUBIDIUM_PICKAXE.get(), ModItems.RUBIDIUM.get(), "has_r", recipeOutput);
+
+        shovelRecipe(ModItems.RUBIDIUM_SHOVEL.get(), ModItems.RUBIDIUM.get(), "has_r", recipeOutput);
+
+        hoeRecipe(ModItems.RUBIDIUM_HOE.get(), ModItems.RUBIDIUM.get(), "has_r", recipeOutput);
+
+        helmetRecipe(ModItems.RUBIDIUM_HELMET.get(), ModItems.RUBIDIUM.get(), "has_r", recipeOutput);
+
+        chestplateRecipe(ModItems.RUBIDIUM_CHESTPLATE.get(), ModItems.RUBIDIUM.get(), "has_r", recipeOutput);
+
+        leggingsRecipe(ModItems.RUBIDIUM_LEGGINGS.get(), ModItems.RUBIDIUM.get(), "has_r", recipeOutput);
+
+        bootsRecipe(ModItems.RUBIDIUM_BOOTS.get(), ModItems.RUBIDIUM.get(), "has_r", recipeOutput);
+
+        swordRecipe(ModItems.STARSHARD_SWORD.get(), ModItems.STARSHARD.get(), "has_s", recipeOutput);
+
+        axeRecipe(ModItems.STARSHARD_AXE.get(), ModItems.STARSHARD.get(), "has_s", recipeOutput);
+
+        pickaxeRecipe(ModItems.STARSHARD_PICKAXE.get(), ModItems.STARSHARD.get(), "has_s", recipeOutput);
+
+        shovelRecipe(ModItems.STARSHARD_SHOVEL.get(), ModItems.STARSHARD.get(), "has_s", recipeOutput);
+
+        hoeRecipe(ModItems.STARSHARD_HOE.get(), ModItems.STARSHARD.get(), "has_s", recipeOutput);
+
+        helmetRecipe(ModItems.STARSHARD_HELMET.get(), ModItems.STARSHARD.get(), "has_s", recipeOutput);
+
+        chestplateRecipe(ModItems.STARSHARD_CHESTPLATE.get(), ModItems.STARSHARD.get(), "has_s", recipeOutput);
+
+        leggingsRecipe(ModItems.STARSHARD_LEGGINGS.get(), ModItems.STARSHARD.get(), "has_s", recipeOutput);
+
+        bootsRecipe(ModItems.STARSHARD_BOOTS.get(), ModItems.STARSHARD.get(), "has_s", recipeOutput);
+
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, ModItems.CELESTIAL_BRONZE_INGOT).requires(Items.COPPER_INGOT, 4).requires(ModItems.TIN_SCRAPS).requires(Items.NETHER_STAR).unlockedBy("has_ns", has(Items.NETHER_STAR)).save(recipeOutput, "celestial_bronze_forging");
+
+        allOreSmelting(ModItems.CUBIC_ZIRCONIA.get(), CUBIC_ZIRCONIA_SMELTABLES, 1.0f, "cz", recipeOutput);
+
+        allOreSmelting(ModItems.CELESTIAL_BRONZE_INGOT.get(), CELESTIAL_BRONZE_SMELTABLES, 1.0f, "cb", recipeOutput);
+
+        allOreSmelting(ModItems.TIN_SCRAPS.get(), TIN_SMELTABLES, 0.7f, "t", recipeOutput);
+
+        allOreSmelting(ModItems.RUBIDIUM.get(), RUBIDIUM_SMELTABLES, 1.3f, "r", recipeOutput);
+
+        allOreSmelting(ModItems.STARSHARD.get(), STARSHARD_SMELTABLES, 1.5f, "s", recipeOutput);
     }
 
     protected static void oreSmelting(RecipeOutput recipeOutput, List<ItemLike> pIngredients, RecipeCategory pCategory, ItemLike pResult,
@@ -115,5 +177,16 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
 
     protected static void bootsRecipe(Item result, Item ingredient, String advancementName, RecipeOutput output) {
         ShapedRecipeBuilder.shaped(RecipeCategory.COMBAT, result).pattern("   ").pattern("I I").pattern("I I").define('I', ingredient).unlockedBy(advancementName, has(ingredient)).save(output);
+    }
+
+    protected static void blockRecipe(Item material, Item block, String advancementName, RecipeOutput output) {
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, material, 9).requires(block).unlockedBy(advancementName, has(block)).save(output);
+
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, block).requires(material, 9).unlockedBy(advancementName + "b", has(block)).save(output);
+    }
+
+    protected static void allOreSmelting(Item material, List<ItemLike> smeltables, float experience, String group, RecipeOutput output) {
+        oreSmelting(output, smeltables, RecipeCategory.MISC, material, experience, 200, group);
+        oreBlasting(output, smeltables, RecipeCategory.MISC, material, experience, 100, group);
     }
 }
