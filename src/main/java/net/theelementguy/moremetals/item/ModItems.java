@@ -106,6 +106,8 @@ public class ModItems {
 
     public static final DeferredItem<Item> BRONZE_BOOTS = ITEMS.register("bronze_boots", () -> new Item((new Item.Properties()).humanoidArmor(ModArmorMaterials.BRONZE, ArmorType.BOOTS).setId(ResourceKey.create(Registries.ITEM, ResourceLocation.fromNamespaceAndPath(MoreMetalsMod.MOD_ID, "bronze_boots")))));
 
+    public static final DeferredItem<Item> CELESTIAL_BRONZE_SMITHING_TEMPLATE = ITEMS.register("celestial_bronze_upgrade_smithing_template", () -> new Item(new Item.Properties().setId(ModUtil.createItemResourceKey("celestial_bronze_upgrade_smithing_template"))));
+
     public static void register(IEventBus bus) {
         ITEMS.register(bus);
     }
