@@ -51,6 +51,8 @@ public class ModBlocks {
 
     public static final DeferredBlock<Block> END_STARSHARD_ORE = registerBlockWithItem("end_starshard_ore", () -> new Block(BlockBehaviour.Properties.of().destroyTime(4.5f).explosionResistance(9f).mapColor(MapColor.SAND).sound(SoundType.STONE).requiresCorrectToolForDrops().setId(ResourceKey.create(Registries.BLOCK, ResourceLocation.fromNamespaceAndPath(MoreMetalsMod.MOD_ID, "end_starshard_ore")))), null);
 
+    public static final DeferredBlock<Block> BRONZE_BLOCK = registerBlockWithItem("bronze_block", () -> new Block(BlockBehaviour.Properties.of().destroyTime(4.5f).explosionResistance(6f).mapColor(MapColor.TERRACOTTA_ORANGE).sound(SoundType.METAL).requiresCorrectToolForDrops().setId(ResourceKey.create(Registries.BLOCK, ResourceLocation.fromNamespaceAndPath(MoreMetalsMod.MOD_ID, "bronze_block")))), null);
+
     public static <T extends Block> DeferredBlock<T> registerBlockWithItem(String name, Supplier<T> block, @Nullable Item.Properties properties) {
         if(properties ==  null) {
             properties = new Item.Properties().setId(ModUtil.createItemResourceKey(name));

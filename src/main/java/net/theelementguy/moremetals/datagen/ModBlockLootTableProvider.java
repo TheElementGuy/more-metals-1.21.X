@@ -51,6 +51,7 @@ public class ModBlockLootTableProvider extends BlockLootSubProvider {
         dropSelf(ModBlocks.TIN_BLOCK.get());
         dropSelf(ModBlocks.RUBIDIUM_BLOCK.get());
         dropSelf(ModBlocks.STARSHARD_BLOCK.get());
+        dropSelf(ModBlocks.BRONZE_BLOCK.get());
 
         add(ModBlocks.CUBIC_ZIRCONIA_ORE.get(), block -> createOreDrop(ModBlocks.CUBIC_ZIRCONIA_ORE.get(), ModItems.RAW_CUBIC_ZIRCONIA.get()));
         add(ModBlocks.DEEPSLATE_CUBIC_ZIRCONIA_ORE.get(), block -> createOreDrop(ModBlocks.DEEPSLATE_CUBIC_ZIRCONIA_ORE.get(), ModItems.RAW_CUBIC_ZIRCONIA.get()));

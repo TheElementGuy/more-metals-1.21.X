@@ -34,6 +34,10 @@ public class ModTags {
 
         public static final TagKey<Block> INCORRECT_FOR_STARSHARD_TOOL = createTag("incorrect_for_starshard_tool");
 
+        public static final TagKey<Block> NEEDS_BRONZE_TOOL = createTag("needs_bronze");
+
+        public static final TagKey<Block> INCORRECT_FOR_BRONZE_TOOL = createTag("incorrect_for_bronze_tool");
+
         private static TagKey<Block> createTag(String name) {
             return BlockTags.create(ResourceLocation.fromNamespaceAndPath(MoreMetalsMod.MOD_ID, name));
         }
@@ -47,6 +51,7 @@ public class ModTags {
         public static final TagKey<Item> CELESTIAL_BRONZE_REPAIRABLES = createTag("celestial_bronze_repairables");
         public static final TagKey<Item> RUBIDIUM_REPAIRABLES = createTag("rubidium_replaceables");
         public static final TagKey<Item> STARSHARD_REPAIRABLES = createTag("starshard_replceables");
+        public static final TagKey<Item> BRONZE_REPAIRABLES = createTag("bronze_repairables");
 
         private static TagKey<Item> createTag(String name) {
             return ItemTags.create(ResourceLocation.fromNamespaceAndPath(MoreMetalsMod.MOD_ID, name));

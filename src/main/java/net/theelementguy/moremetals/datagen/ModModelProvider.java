@@ -41,6 +41,7 @@ public class ModModelProvider extends ModelProvider {
         itemModels.generateFlatItem(ModItems.TIN_SCRAPS.get(), ModelTemplates.FLAT_ITEM);
         itemModels.generateFlatItem(ModItems.RUBIDIUM.get(), ModelTemplates.FLAT_ITEM);
         itemModels.generateFlatItem(ModItems.STARSHARD.get(), ModelTemplates.FLAT_ITEM);
+        itemModels.generateFlatItem(ModItems.BRONZE_INGOT.get(), ModelTemplates.FLAT_ITEM);
 
         itemModels.generateFlatItem(ModItems.CUBIC_ZIRCONIA_SWORD.get(), ModelTemplates.FLAT_HANDHELD_ITEM);
         itemModels.generateFlatItem(ModItems.CUBIC_ZIRCONIA_AXE.get(), ModelTemplates.FLAT_HANDHELD_ITEM);
@@ -58,6 +59,11 @@ public class ModModelProvider extends ModelProvider {
         itemModels.generateFlatItem(ModItems.STARSHARD_PICKAXE.get(), ModelTemplates.FLAT_HANDHELD_ITEM);
         itemModels.generateFlatItem(ModItems.STARSHARD_SHOVEL.get(), ModelTemplates.FLAT_HANDHELD_ITEM);
         itemModels.generateFlatItem(ModItems.STARSHARD_HOE.get(), ModelTemplates.FLAT_HANDHELD_ITEM);
+        itemModels.generateFlatItem(ModItems.BRONZE_SWORD.get(), ModelTemplates.FLAT_HANDHELD_ITEM);
+        itemModels.generateFlatItem(ModItems.BRONZE_AXE.get(), ModelTemplates.FLAT_HANDHELD_ITEM);
+        itemModels.generateFlatItem(ModItems.BRONZE_PICKAXE.get(), ModelTemplates.FLAT_HANDHELD_ITEM);
+        itemModels.generateFlatItem(ModItems.BRONZE_SHOVEL.get(), ModelTemplates.FLAT_HANDHELD_ITEM);
+        itemModels.generateFlatItem(ModItems.BRONZE_HOE.get(), ModelTemplates.FLAT_HANDHELD_ITEM);
 
         itemModels.generateTrimmableItem(ModItems.CUBIC_ZIRCONIA_HELMET.get(), ModUtil.createEquipmentAssetResourceKey("cubic_zirconia"), "helmet", false);
         itemModels.generateTrimmableItem(ModItems.CUBIC_ZIRCONIA_CHESTPLATE.get(), ModUtil.createEquipmentAssetResourceKey("cubic_zirconia"), "chestplate", false);
@@ -71,6 +77,10 @@ public class ModModelProvider extends ModelProvider {
         itemModels.generateTrimmableItem(ModItems.STARSHARD_CHESTPLATE.get(), ModUtil.createEquipmentAssetResourceKey("starshard"), "chestplate", false);
         itemModels.generateTrimmableItem(ModItems.STARSHARD_LEGGINGS.get(), ModUtil.createEquipmentAssetResourceKey("starshard"), "leggings", false);
         itemModels.generateTrimmableItem(ModItems.STARSHARD_BOOTS.get(), ModUtil.createEquipmentAssetResourceKey("starshard"), "boots", false);
+        itemModels.generateTrimmableItem(ModItems.BRONZE_HELMET.get(), ModUtil.createEquipmentAssetResourceKey("bronze"), "helmet", false);
+        itemModels.generateTrimmableItem(ModItems.BRONZE_CHESTPLATE.get(), ModUtil.createEquipmentAssetResourceKey("bronze"), "chestplate", false);
+        itemModels.generateTrimmableItem(ModItems.BRONZE_LEGGINGS.get(), ModUtil.createEquipmentAssetResourceKey("bronze"), "leggings", false);
+        itemModels.generateTrimmableItem(ModItems.BRONZE_BOOTS.get(), ModUtil.createEquipmentAssetResourceKey("bronze"), "boots", false);
 
         blockModels.createTrivialCube(ModBlocks.CUBIC_ZIRCONIA_BLOCK.get());
         blockModels.createTrivialCube(ModBlocks.RAW_CUBIC_ZIRCONIA_BLOCK.get());
@@ -85,6 +95,7 @@ public class ModModelProvider extends ModelProvider {
         blockModels.createTrivialCube(ModBlocks.NETHER_RUBIDIUM_ORE.get());
         blockModels.createColoredBlockWithStateRotations(TexturedModel.GLAZED_TERRACOTTA, ModBlocks.STARSHARD_BLOCK.get());
         blockModels.createTrivialCube(ModBlocks.END_STARSHARD_ORE.get());
+        blockModels.createTrivialCube(ModBlocks.BRONZE_BLOCK.get());
 
         /*this.standardBlock(blockModels, ModBlocks.CUBIC_ZIRCONIA_BLOCK.get());
         this.standardBlock(blockModels, ModBlocks.RAW_CUBIC_ZIRCONIA_BLOCK.get());

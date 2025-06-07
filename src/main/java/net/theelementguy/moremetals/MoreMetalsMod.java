@@ -83,6 +83,7 @@ public class MoreMetalsMod {
             event.accept(ModItems.RAW_CELESTIAL_BRONZE);
             event.accept(ModItems.RUBIDIUM);
             event.accept(ModItems.STARSHARD);
+            event.accept(ModItems.BRONZE_INGOT);
         }
         if(event.getTabKey() == CreativeModeTabs.BUILDING_BLOCKS) {
             event.accept(ModBlocks.CUBIC_ZIRCONIA_BLOCK);
@@ -92,6 +93,7 @@ public class MoreMetalsMod {
             event.accept(ModBlocks.RAW_CELESTIAL_BRONZE_BLOCK);
             event.accept(ModBlocks.RUBIDIUM_BLOCK);
             event.accept(ModBlocks.STARSHARD_BLOCK);
+            event.accept(ModBlocks.BRONZE_BLOCK);
         }
         if(event.getTabKey() == CreativeModeTabs.NATURAL_BLOCKS) {
             event.accept(ModBlocks.CUBIC_ZIRCONIA_ORE);
@@ -121,6 +123,12 @@ public class MoreMetalsMod {
             event.accept(ModItems.STARSHARD_CHESTPLATE);
             event.accept(ModItems.STARSHARD_LEGGINGS);
             event.accept(ModItems.STARSHARD_BOOTS);
+            event.accept(ModItems.BRONZE_SWORD);
+            event.accept(ModItems.BRONZE_AXE);
+            event.accept(ModItems.BRONZE_HELMET);
+            event.accept(ModItems.BRONZE_CHESTPLATE);
+            event.accept(ModItems.BRONZE_LEGGINGS);
+            event.accept(ModItems.BRONZE_BOOTS);
         }
         if (event.getTabKey() == CreativeModeTabs.TOOLS_AND_UTILITIES) {
             event.accept(ModItems.CUBIC_ZIRCONIA_AXE);
@@ -135,6 +143,10 @@ public class MoreMetalsMod {
             event.accept(ModItems.STARSHARD_PICKAXE);
             event.accept(ModItems.STARSHARD_SHOVEL);
             event.accept(ModItems.STARSHARD_HOE);
+            event.accept(ModItems.BRONZE_AXE);
+            event.accept(ModItems.BRONZE_PICKAXE);
+            event.accept(ModItems.BRONZE_SHOVEL);
+            event.accept(ModItems.BRONZE_HOE);
         }
     }
 

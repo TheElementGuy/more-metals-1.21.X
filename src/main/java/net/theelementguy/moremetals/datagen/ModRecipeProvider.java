@@ -10,6 +10,7 @@ import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.crafting.*;
 import net.minecraft.world.level.ItemLike;
+import net.neoforged.fml.common.Mod;
 import net.theelementguy.moremetals.MoreMetalsMod;
 import net.theelementguy.moremetals.block.ModBlocks;
 import net.theelementguy.moremetals.item.ModItems;
@@ -65,6 +66,8 @@ public class ModRecipeProvider extends RecipeProvider {
         blockRecipe(ModItems.RUBIDIUM.get(), ModBlocks.RUBIDIUM_BLOCK.asItem(), this.output);
 
         blockRecipe(ModItems.STARSHARD.get(), ModBlocks.STARSHARD_BLOCK.asItem(), this.output);
+
+        blockRecipe(ModItems.BRONZE_INGOT.get(), ModBlocks.BRONZE_BLOCK.asItem(), this.output);
 
         swordRecipe(ModItems.CUBIC_ZIRCONIA_SWORD.get(), ModItems.CUBIC_ZIRCONIA.get(), "has_cz", this.output);
 
@@ -122,7 +125,11 @@ public class ModRecipeProvider extends RecipeProvider {
 
         bootsRecipe(ModItems.STARSHARD_BOOTS.get(), ModItems.STARSHARD.get(), "has_s", this.output);
 
+        allEquipmentRecipes(ModItems.BRONZE_SWORD.get(), ModItems.BRONZE_AXE.get(), ModItems.BRONZE_PICKAXE.get(), ModItems.BRONZE_SHOVEL.get(), ModItems.BRONZE_HOE.get(), ModItems.BRONZE_HELMET.get(), ModItems.BRONZE_CHESTPLATE.get(), ModItems.BRONZE_LEGGINGS.get(), ModItems.BRONZE_BOOTS.get(), ModItems.BRONZE_INGOT.get(), "has_b", this.output);
+
         shapeless(RecipeCategory.MISC, ModItems.CELESTIAL_BRONZE_INGOT).requires(Items.COPPER_INGOT, 4).requires(ModItems.TIN_SCRAPS).requires(Items.NETHER_STAR).unlockedBy("has_ns", has(Items.NETHER_STAR)).save(this.output, "celestial_bronze_forging");
+
+        shapeless(RecipeCategory.MISC, ModItems.BRONZE_INGOT).requires(Items.COPPER_INGOT, 4).requires(ModItems.TIN_SCRAPS).unlockedBy("has_c", has(Items.COPPER_INGOT)).save(this.output, "bronze_forging");
 
         allOreSmelting(ModItems.CUBIC_ZIRCONIA.get(), CUBIC_ZIRCONIA_SMELTABLES, 1.0f, "cz", this.output);
 
@@ -197,5 +204,18 @@ public class ModRecipeProvider extends RecipeProvider {
     protected void allOreSmelting(Item material, List<ItemLike> smeltables, float experience, String group, RecipeOutput output) {
         oreSmelting(output, smeltables, RecipeCategory.MISC, material, experience, 200, group);
         oreBlasting(output, smeltables, RecipeCategory.MISC, material, experience, 100, group);
+    }
+
+    protected void allEquipmentRecipes(Item sword, Item axe, Item pickaxe, Item shovel, Item hoe, Item helmet, Item chestplate, Item leggings, Item boots, Item material, String advancementNames, RecipeOutput output) {
+        swordRecipe(sword, material, advancementNames, output);
+        axeRecipe(axe, material, advancementNames, output);
+        pickaxeRecipe(pickaxe, material, advancementNames, output);
+        shovelRecipe(shovel, material, advancementNames, output);
+        hoeRecipe(hoe, material, advancementNames, output);
+
+        helmetRecipe(helmet, material, advancementNames, output);
+        chestplateRecipe(chestplate, material, advancementNames, output);
+        leggingsRecipe(leggings, material, advancementNames, output);
+        bootsRecipe(boots, material, advancementNames, output);
     }
 }

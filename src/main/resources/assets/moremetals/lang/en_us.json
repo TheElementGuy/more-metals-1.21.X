@@ -40,6 +40,17 @@
   "item.moremetals.starshard_leggings": "Starshard Leggings",
   "item.moremetals.starshard_boots": "Starshard Boots",
 
+  "item.moremetals.bronze_ingot": "Bronze Ingot",
+  "item.moremetals.bronze_sword": "Bronze Sword",
+  "item.moremetals.bronze_axe": "Bronze Axe",
+  "item.moremetals.bronze_pickaxe": "Bronze Pickaxe",
+  "item.moremetals.bronze_shovel": "Bronze Shovel",
+  "item.moremetals.bronze_hoe": "Bronze Hoe",
+  "item.moremetals.bronze_helmet": "Bronze Helmet",
+  "item.moremetals.bronze_chestplate": "Bronze Chestplate",
+  "item.moremetals.bronze_leggings": "Bronze Leggings",
+  "item.moremetals.bronze_boots": "Bronze Boots",
+
   "block.moremetals.cubic_zirconia_block": "Block of Cubic Zirconia",
   "block.moremetals.raw_cubic_zirconia_block": "Block of Raw Cubic Zirconia",
   "block.moremetals.cubic_zirconia_ore": "Cubic Zirconia Ore",
@@ -52,5 +63,6 @@
   "block.moremetals.rubidium_block": "Block of Rubidium",
   "block.moremetals.nether_rubidium_ore": "Nether Rubidium Ore",
   "block.moremetals.starshard_block": "Block of Starshard",
-  "block.moremetals.end_starshard_ore": "End Starshard Ore"
+  "block.moremetals.end_starshard_ore": "End Starshard Ore",
+  "block.moremetals.bronze_block": "Block of Bronze"
 }
