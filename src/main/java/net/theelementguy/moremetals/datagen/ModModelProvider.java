@@ -11,7 +11,6 @@ import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.ItemTags;
 import net.minecraft.world.item.Item;
-import net.minecraft.world.item.SwordItem;
 import net.minecraft.world.level.block.Block;
 import net.neoforged.fml.common.Mod;
 import net.neoforged.neoforge.registries.DeferredHolder;
@@ -65,22 +64,22 @@ public class ModModelProvider extends ModelProvider {
         itemModels.generateFlatItem(ModItems.BRONZE_SHOVEL.get(), ModelTemplates.FLAT_HANDHELD_ITEM);
         itemModels.generateFlatItem(ModItems.BRONZE_HOE.get(), ModelTemplates.FLAT_HANDHELD_ITEM);
 
-        itemModels.generateTrimmableItem(ModItems.CUBIC_ZIRCONIA_HELMET.get(), ModUtil.createEquipmentAssetResourceKey("cubic_zirconia"), "helmet", false);
-        itemModels.generateTrimmableItem(ModItems.CUBIC_ZIRCONIA_CHESTPLATE.get(), ModUtil.createEquipmentAssetResourceKey("cubic_zirconia"), "chestplate", false);
-        itemModels.generateTrimmableItem(ModItems.CUBIC_ZIRCONIA_LEGGINGS.get(), ModUtil.createEquipmentAssetResourceKey("cubic_zirconia"), "leggings", false);
-        itemModels.generateTrimmableItem(ModItems.CUBIC_ZIRCONIA_BOOTS.get(), ModUtil.createEquipmentAssetResourceKey("cubic_zirconia"), "boots", false);
-        itemModels.generateTrimmableItem(ModItems.RUBIDIUM_HELMET.get(), ModUtil.createEquipmentAssetResourceKey("rubidium"), "helmet", false);
-        itemModels.generateTrimmableItem(ModItems.RUBIDIUM_CHESTPLATE.get(), ModUtil.createEquipmentAssetResourceKey("rubidium"), "chestplate", false);
-        itemModels.generateTrimmableItem(ModItems.RUBIDIUM_LEGGINGS.get(), ModUtil.createEquipmentAssetResourceKey("rubidium"), "leggings", false);
-        itemModels.generateTrimmableItem(ModItems.RUBIDIUM_BOOTS.get(), ModUtil.createEquipmentAssetResourceKey("rubidium"), "boots", false);
-        itemModels.generateTrimmableItem(ModItems.STARSHARD_HELMET.get(), ModUtil.createEquipmentAssetResourceKey("starshard"), "helmet", false);
-        itemModels.generateTrimmableItem(ModItems.STARSHARD_CHESTPLATE.get(), ModUtil.createEquipmentAssetResourceKey("starshard"), "chestplate", false);
-        itemModels.generateTrimmableItem(ModItems.STARSHARD_LEGGINGS.get(), ModUtil.createEquipmentAssetResourceKey("starshard"), "leggings", false);
-        itemModels.generateTrimmableItem(ModItems.STARSHARD_BOOTS.get(), ModUtil.createEquipmentAssetResourceKey("starshard"), "boots", false);
-        itemModels.generateTrimmableItem(ModItems.BRONZE_HELMET.get(), ModUtil.createEquipmentAssetResourceKey("bronze"), "helmet", false);
-        itemModels.generateTrimmableItem(ModItems.BRONZE_CHESTPLATE.get(), ModUtil.createEquipmentAssetResourceKey("bronze"), "chestplate", false);
-        itemModels.generateTrimmableItem(ModItems.BRONZE_LEGGINGS.get(), ModUtil.createEquipmentAssetResourceKey("bronze"), "leggings", false);
-        itemModels.generateTrimmableItem(ModItems.BRONZE_BOOTS.get(), ModUtil.createEquipmentAssetResourceKey("bronze"), "boots", false);
+        itemModels.generateTrimmableItem(ModItems.CUBIC_ZIRCONIA_HELMET.get(), ModUtil.createEquipmentAssetResourceKey("cubic_zirconia"), ResourceLocation.fromNamespaceAndPath(MoreMetalsMod.MOD_ID, "helmet"), false);
+        itemModels.generateTrimmableItem(ModItems.CUBIC_ZIRCONIA_CHESTPLATE.get(), ModUtil.createEquipmentAssetResourceKey("cubic_zirconia"), ResourceLocation.fromNamespaceAndPath(MoreMetalsMod.MOD_ID, "chestplate"), false);
+        itemModels.generateTrimmableItem(ModItems.CUBIC_ZIRCONIA_LEGGINGS.get(), ModUtil.createEquipmentAssetResourceKey("cubic_zirconia"), ResourceLocation.fromNamespaceAndPath(MoreMetalsMod.MOD_ID, "leggings"), false);
+        itemModels.generateTrimmableItem(ModItems.CUBIC_ZIRCONIA_BOOTS.get(), ModUtil.createEquipmentAssetResourceKey("cubic_zirconia"), ResourceLocation.fromNamespaceAndPath(MoreMetalsMod.MOD_ID, "boots"), false);
+        itemModels.generateTrimmableItem(ModItems.RUBIDIUM_HELMET.get(), ModUtil.createEquipmentAssetResourceKey("rubidium"), ResourceLocation.fromNamespaceAndPath(MoreMetalsMod.MOD_ID, "helmet"), false);
+        itemModels.generateTrimmableItem(ModItems.RUBIDIUM_CHESTPLATE.get(), ModUtil.createEquipmentAssetResourceKey("rubidium"), ResourceLocation.fromNamespaceAndPath(MoreMetalsMod.MOD_ID, "chestplate"), false);
+        itemModels.generateTrimmableItem(ModItems.RUBIDIUM_LEGGINGS.get(), ModUtil.createEquipmentAssetResourceKey("rubidium"), ResourceLocation.fromNamespaceAndPath(MoreMetalsMod.MOD_ID, "leggings"), false);
+        itemModels.generateTrimmableItem(ModItems.RUBIDIUM_BOOTS.get(), ModUtil.createEquipmentAssetResourceKey("rubidium"), ResourceLocation.fromNamespaceAndPath(MoreMetalsMod.MOD_ID, "boots"), false);
+        itemModels.generateTrimmableItem(ModItems.STARSHARD_HELMET.get(), ModUtil.createEquipmentAssetResourceKey("starshard"), ResourceLocation.fromNamespaceAndPath(MoreMetalsMod.MOD_ID, "helmet"), false);
+        itemModels.generateTrimmableItem(ModItems.STARSHARD_CHESTPLATE.get(), ModUtil.createEquipmentAssetResourceKey("starshard"), ResourceLocation.fromNamespaceAndPath(MoreMetalsMod.MOD_ID, "chestplate"), false);
+        itemModels.generateTrimmableItem(ModItems.STARSHARD_LEGGINGS.get(), ModUtil.createEquipmentAssetResourceKey("starshard"), ResourceLocation.fromNamespaceAndPath(MoreMetalsMod.MOD_ID, "leggings"), false);
+        itemModels.generateTrimmableItem(ModItems.STARSHARD_BOOTS.get(), ModUtil.createEquipmentAssetResourceKey("starshard"), ResourceLocation.fromNamespaceAndPath(MoreMetalsMod.MOD_ID, "boots"), false);
+        itemModels.generateTrimmableItem(ModItems.BRONZE_HELMET.get(), ModUtil.createEquipmentAssetResourceKey("bronze"), ResourceLocation.fromNamespaceAndPath(MoreMetalsMod.MOD_ID, "helmet"), false);
+        itemModels.generateTrimmableItem(ModItems.BRONZE_CHESTPLATE.get(), ModUtil.createEquipmentAssetResourceKey("bronze"), ResourceLocation.fromNamespaceAndPath(MoreMetalsMod.MOD_ID, "chestplate"), false);
+        itemModels.generateTrimmableItem(ModItems.BRONZE_LEGGINGS.get(), ModUtil.createEquipmentAssetResourceKey("bronze"), ResourceLocation.fromNamespaceAndPath(MoreMetalsMod.MOD_ID, "leggings"), false);
+        itemModels.generateTrimmableItem(ModItems.BRONZE_BOOTS.get(), ModUtil.createEquipmentAssetResourceKey("bronze"), ResourceLocation.fromNamespaceAndPath(MoreMetalsMod.MOD_ID, "boots"), false);
 
         blockModels.createTrivialCube(ModBlocks.CUBIC_ZIRCONIA_BLOCK.get());
         blockModels.createTrivialCube(ModBlocks.RAW_CUBIC_ZIRCONIA_BLOCK.get());
@@ -96,58 +95,5 @@ public class ModModelProvider extends ModelProvider {
         blockModels.createColoredBlockWithStateRotations(TexturedModel.GLAZED_TERRACOTTA, ModBlocks.STARSHARD_BLOCK.get());
         blockModels.createTrivialCube(ModBlocks.END_STARSHARD_ORE.get());
         blockModels.createTrivialCube(ModBlocks.BRONZE_BLOCK.get());
-
-        /*this.standardBlock(blockModels, ModBlocks.CUBIC_ZIRCONIA_BLOCK.get());
-        this.standardBlock(blockModels, ModBlocks.RAW_CUBIC_ZIRCONIA_BLOCK.get());
-        this.standardBlock(blockModels, ModBlocks.CUBIC_ZIRCONIA_ORE.get());
-        this.standardBlock(blockModels, ModBlocks.DEEPSLATE_CUBIC_ZIRCONIA_ORE.get());
-        this.standardBlock(blockModels, ModBlocks.CELESTIAL_BRONZE_BLOCK.get());
-        this.standardBlock(blockModels, ModBlocks.RAW_CELESTIAL_BRONZE_BLOCK.get());
-        this.standardBlock(blockModels, ModBlocks.TIN_BLOCK.get());
-        this.standardBlock(blockModels, ModBlocks.TIN_ORE.get());
-        this.standardBlock(blockModels, ModBlocks.RUBIDIUM_BLOCK.get());
-        this.standardBlock(blockModels, ModBlocks.NETHER_RUBIDIUM_ORE.get());
-        this.rotatableBlock(blockModels, ModBlocks.STARSHARD_BLOCK.get());
-        this.standardBlock(blockModels, ModBlocks.END_STARSHARD_ORE.get());*/
-
-
-    }
-
-    public void standardBlock(BlockModelGenerators blockModels, Block block) {
-        ResourceLocation id = Objects.requireNonNull(BuiltInRegistries.BLOCK.getKey(block));
-        String parent = id.getPath();
-        ResourceLocation parentTexture = ResourceLocation.fromNamespaceAndPath(MoreMetalsMod.MOD_ID ,"block/" + parent);
-
-        TextureMapping textureMapping = new TextureMapping().put(TextureSlot.ALL, parentTexture);
-        ResourceLocation basicModel = ModelTemplates.CUBE_ALL.create(block, textureMapping, blockModels.modelOutput);
-        /*ResourceLocation fenceGateModelClosed = ModelTemplates.FENCE_GATE_CLOSED.create(fenceGate, textureMapping, blockModels.modelOutput);
-        ResourceLocation fenceGateWallModelOpen = ModelTemplates.FENCE_GATE_WALL_OPEN.create(fenceGate, textureMapping, blockModels.modelOutput);
-        ResourceLocation fenceGateWallModelClosed = ModelTemplates.FENCE_GATE_WALL_CLOSED.create(fenceGate, textureMapping, blockModels.modelOutput);*/
-        blockModels.blockStateOutput.accept(BlockModelGenerators.createSimpleBlock(block, basicModel));
-
-        ResourceLocation inventoryModel = ModelTemplates.CUBE_ALL.create(block, textureMapping, blockModels.modelOutput);
-
-        //blockModels.itemModelOutput.accept(block.asItem(), new BlockModelWrapper.Unbaked(inventoryModel, Collections.emptyList()));
-    }
-
-    public void rotatableBlock(BlockModelGenerators blockModels, Block block) {
-
-        TextureMapping textureMapping = new TextureMapping().put(TextureSlot.PATTERN, ResourceLocation.fromNamespaceAndPath(MoreMetalsMod.MOD_ID, "block/" + Objects.requireNonNull(BuiltInRegistries.BLOCK.getKey(block)).getPath()));
-
-        blockModels.createColoredBlockWithStateRotations(TexturedModel.GLAZED_TERRACOTTA, block);
-
-        //blockModels.itemModelOutput.accept(block.asItem(), new BlockModelWrapper.Unbaked(ModelTemplates.GLAZED_TERRACOTTA.create(block, textureMapping, blockModels.modelOutput), Collections.emptyList()));
-    }
-
-    public void standardItem(ItemModelGenerators itemModels, Item item) {
-        ResourceLocation id = Objects.requireNonNull(BuiltInRegistries.ITEM.getKey(item));
-        String parent = id.getPath();
-        ResourceLocation parentTexture = ResourceLocation.fromNamespaceAndPath(MoreMetalsMod.MOD_ID, "item/" + parent);
-
-        itemModels.generateFlatItem(item, ModelTemplates.FLAT_ITEM);
-    }
-
-    private ResourceLocation blockStateLocation(ResourceLocation id) {
-        return ResourceLocation.fromNamespaceAndPath(id.getNamespace(), "block/" + id.getPath());
     }
 }
