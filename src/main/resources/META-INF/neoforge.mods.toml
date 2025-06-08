@@ -11,7 +11,7 @@ loaderVersion="${loader_version_range}" #mandatory
 
 # The license for you mod. This is mandatory metadata and allows for easier comprehension of your redistributive properties.
 # Review your options at https://choosealicense.com/. All rights reserved is the default copyright stance, and is thus the default here.
-license="MIT License"
+license="${version}"
 
 # A URL to refer people to when problems occur with this mod
 issueTrackerURL="https://github.com/TheElementGuy/more-metals-1.21.4/issues" #optional
@@ -23,7 +23,7 @@ issueTrackerURL="https://github.com/TheElementGuy/more-metals-1.21.4/issues" #op
 modId="moremetals" #mandatory
 
 # The version number of the mod
-version="3.0.0" #mandatory
+version="4.1.2" #mandatory
 
 # A display name for the mod
 displayName="More Metals" #mandatory
@@ -46,9 +46,9 @@ authors="Jude Rasmussen" #optional
 # The description text for the mod (multi line!) (#mandatory)
 description='''This is a mod dedicated to adding more materials to Minecraft in a vanilla way. Adding:
 Cubic Zirconia: A very durable material about iron tier found in the overworld.
-Celestial Bronze: By fusing tin, copper, and a nether star, create a mystical material to make into a sword dealing heavy damage to enemies while leaving friends intact.
 Rubidium: Found in the Nether, rubidium can be used to make tools that mine with quick speed and are about as good as netherite.
-Starshard: A material found in the End, a successor to netherite.'''
+Starshard: A material found in the End, a successor to netherite.
+Bronze: By fusing tin and copper, you can create bronze, which is a slightly inferior version of iron.'''
 
 # The [[mixins]] block allows you to declare your mixin config to FML so that it gets loaded.
 #[[mixins]]
@@ -65,7 +65,7 @@ Starshard: A material found in the End, a successor to netherite.'''
 [[dependencies.moremetals]] #optional
 # the modid of the dependency
 modId="neoforge" #mandatory
-# The type of the dependency. Can be one of "required", "optional", "incompatible" or "discouraged" (case insensitive).
+# The type of the dependency. Can be one of "required", "optional", "incompatible" or "discouraged" (case-insensitive).
 # 'required' requires the mod to exist, 'optional' does not
 # 'incompatible' will prevent the game from loading when the mod exists, and 'discouraged' will show a warning
 type="required" #mandatory

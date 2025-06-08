@@ -56,7 +56,7 @@ public class MoreMetalsMod {
         modEventBus.addListener(this::addCreative);
 
         // Register our mod's ModConfigSpec so that FML can create and load the config file for us
-        modContainer.registerConfig(ModConfig.Type.COMMON, Config.SPEC);
+        modContainer.registerConfig(ModConfig.Type.COMMON, MoreMetalsModConfig.SPEC);
     }
 
     private void commonSetup(final FMLCommonSetupEvent event)
@@ -64,12 +64,12 @@ public class MoreMetalsMod {
         // Some common setup code
         LOGGER.info("HELLO FROM COMMON SETUP");
 
-        if (Config.logDirtBlock)
+        if (MoreMetalsModConfig.logDirtBlock)
             LOGGER.info("DIRT BLOCK >> {}", BuiltInRegistries.BLOCK.getKey(Blocks.DIRT));
 
-        LOGGER.info(Config.magicNumberIntroduction + Config.magicNumber);
+        LOGGER.info(MoreMetalsModConfig.magicNumberIntroduction + MoreMetalsModConfig.magicNumber);
 
-        Config.items.forEach((item) -> LOGGER.info("ITEM >> {}", item.toString()));
+        MoreMetalsModConfig.items.forEach((item) -> LOGGER.info("ITEM >> {}", item.toString()));
     }
 
     // Add the example block item to the building blocks tab
