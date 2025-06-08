@@ -36,12 +36,13 @@ public class ModModelProvider extends ModelProvider {
 
         itemModels.generateFlatItem(ModItems.CUBIC_ZIRCONIA.get(), ModelTemplates.FLAT_ITEM);
         itemModels.generateFlatItem(ModItems.RAW_CUBIC_ZIRCONIA.get(), ModelTemplates.FLAT_ITEM);
-        itemModels.generateFlatItem(ModItems.CELESTIAL_BRONZE_INGOT.get(), ModelTemplates.FLAT_ITEM);
-        itemModels.generateFlatItem(ModItems.RAW_CELESTIAL_BRONZE.get(), ModelTemplates.FLAT_ITEM);
+        //itemModels.generateFlatItem(ModItems.CELESTIAL_BRONZE_INGOT.get(), ModelTemplates.FLAT_ITEM);
+        //itemModels.generateFlatItem(ModItems.RAW_CELESTIAL_BRONZE.get(), ModelTemplates.FLAT_ITEM);
         itemModels.generateFlatItem(ModItems.TIN_SCRAPS.get(), ModelTemplates.FLAT_ITEM);
         itemModels.generateFlatItem(ModItems.RUBIDIUM.get(), ModelTemplates.FLAT_ITEM);
         itemModels.generateFlatItem(ModItems.STARSHARD.get(), ModelTemplates.FLAT_ITEM);
         itemModels.generateFlatItem(ModItems.BRONZE_INGOT.get(), ModelTemplates.FLAT_ITEM);
+        itemModels.generateFlatItem(ModItems.CELESTIAL_BRONZE_UPGRADE_SMITHING_TEMPLATE.get(), ModelTemplates.FLAT_ITEM);
 
         itemModels.generateFlatItem(ModItems.CUBIC_ZIRCONIA_SWORD.get(), ModelTemplates.FLAT_HANDHELD_ITEM);
         itemModels.generateFlatItem(ModItems.CUBIC_ZIRCONIA_AXE.get(), ModelTemplates.FLAT_HANDHELD_ITEM);
@@ -86,8 +87,8 @@ public class ModModelProvider extends ModelProvider {
         blockModels.createTrivialCube(ModBlocks.RAW_CUBIC_ZIRCONIA_BLOCK.get());
         blockModels.createTrivialCube(ModBlocks.CUBIC_ZIRCONIA_ORE.get());
         blockModels.createTrivialCube(ModBlocks.DEEPSLATE_CUBIC_ZIRCONIA_ORE.get());
-        blockModels.createTrivialCube(ModBlocks.CELESTIAL_BRONZE_BLOCK.get());
-        blockModels.createTrivialCube(ModBlocks.RAW_CELESTIAL_BRONZE_BLOCK.get());
+        //blockModels.createTrivialCube(ModBlocks.CELESTIAL_BRONZE_BLOCK.get());
+        //blockModels.createTrivialCube(ModBlocks.RAW_CELESTIAL_BRONZE_BLOCK.get());
         blockModels.createTrivialCube(ModBlocks.TIN_BLOCK.get());
         blockModels.createTrivialCube(ModBlocks.TIN_ORE.get());
         blockModels.createTrivialCube(ModBlocks.DEEPSLATE_TIN_ORE.get());

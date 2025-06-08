@@ -14,6 +14,7 @@ import net.neoforged.fml.common.Mod;
 import net.theelementguy.moremetals.MoreMetalsMod;
 import net.theelementguy.moremetals.block.ModBlocks;
 import net.theelementguy.moremetals.item.ModItems;
+import net.theelementguy.moremetals.util.ModUtil;
 
 import java.util.List;
 import java.util.concurrent.CompletableFuture;
@@ -45,7 +46,7 @@ public class ModRecipeProvider extends RecipeProvider {
     protected void buildRecipes() {
         List<ItemLike> CUBIC_ZIRCONIA_SMELTABLES = List.of(ModItems.RAW_CUBIC_ZIRCONIA, ModBlocks.CUBIC_ZIRCONIA_ORE, ModBlocks.DEEPSLATE_CUBIC_ZIRCONIA_ORE);
 
-        List<ItemLike> CELESTIAL_BRONZE_SMELTABLES = List.of(ModItems.RAW_CELESTIAL_BRONZE);
+        List<ItemLike> CELESTIAL_BRONZE_SMELTABLES = List.of();
 
         List<ItemLike> TIN_SMELTABLES = List.of(ModBlocks.TIN_ORE, ModBlocks.DEEPSLATE_TIN_ORE);
 
@@ -57,9 +58,9 @@ public class ModRecipeProvider extends RecipeProvider {
 
         blockRecipe(ModItems.RAW_CUBIC_ZIRCONIA.get(), ModBlocks.RAW_CUBIC_ZIRCONIA_BLOCK.asItem(), this.output);
 
-        blockRecipe(ModItems.CELESTIAL_BRONZE_INGOT.get(), ModBlocks.CELESTIAL_BRONZE_BLOCK.asItem(), this.output);
+        //blockRecipe(ModItems.CELESTIAL_BRONZE_INGOT.get(), ModBlocks.CELESTIAL_BRONZE_BLOCK.asItem(), this.output);
 
-        blockRecipe(ModItems.RAW_CELESTIAL_BRONZE.get(), ModBlocks.RAW_CELESTIAL_BRONZE_BLOCK.asItem(), this.output);
+        //blockRecipe(ModItems.RAW_CELESTIAL_BRONZE.get(), ModBlocks.RAW_CELESTIAL_BRONZE_BLOCK.asItem(), this.output);
 
         blockRecipe(ModItems.TIN_SCRAPS.get(), ModBlocks.TIN_BLOCK.asItem(), this.output);
 
@@ -87,7 +88,7 @@ public class ModRecipeProvider extends RecipeProvider {
 
         bootsRecipe(ModItems.CUBIC_ZIRCONIA_BOOTS.get(), ModItems.CUBIC_ZIRCONIA.get(), "has_cz", this.output);
 
-        swordRecipe(ModItems.CELESTIAL_BRRONZE_SWORD.get(), ModItems.CELESTIAL_BRONZE_INGOT.get(), "has_cb", this.output);
+        //swordRecipe(ModItems.CELESTIAL_BRRONZE_SWORD.get(), ModItems.CELESTIAL_BRONZE_INGOT.get(), "has_cb", this.output);
 
         swordRecipe(ModItems.RUBIDIUM_SWORD.get(), ModItems.RUBIDIUM.get(), "has_r", this.output);
 
@@ -127,19 +128,21 @@ public class ModRecipeProvider extends RecipeProvider {
 
         allEquipmentRecipes(ModItems.BRONZE_SWORD.get(), ModItems.BRONZE_AXE.get(), ModItems.BRONZE_PICKAXE.get(), ModItems.BRONZE_SHOVEL.get(), ModItems.BRONZE_HOE.get(), ModItems.BRONZE_HELMET.get(), ModItems.BRONZE_CHESTPLATE.get(), ModItems.BRONZE_LEGGINGS.get(), ModItems.BRONZE_BOOTS.get(), ModItems.BRONZE_INGOT.get(), "has_b", this.output);
 
-        shapeless(RecipeCategory.MISC, ModItems.CELESTIAL_BRONZE_INGOT).requires(Items.COPPER_INGOT, 4).requires(ModItems.TIN_SCRAPS).requires(Items.NETHER_STAR).unlockedBy("has_ns", has(Items.NETHER_STAR)).save(this.output, "celestial_bronze_forging");
+        //shapeless(RecipeCategory.MISC, ModItems.CELESTIAL_BRONZE_INGOT).requires(Items.COPPER_INGOT, 4).requires(ModItems.TIN_SCRAPS).requires(Items.NETHER_STAR).unlockedBy("has_ns", has(Items.NETHER_STAR)).save(this.output, "celestial_bronze_forging");
 
         shapeless(RecipeCategory.MISC, ModItems.BRONZE_INGOT).requires(Items.COPPER_INGOT, 4).requires(ModItems.TIN_SCRAPS).unlockedBy("has_c", has(Items.COPPER_INGOT)).save(this.output, "bronze_forging");
 
         allOreSmelting(ModItems.CUBIC_ZIRCONIA.get(), CUBIC_ZIRCONIA_SMELTABLES, 1.0f, "cz", this.output);
 
-        allOreSmelting(ModItems.CELESTIAL_BRONZE_INGOT.get(), CELESTIAL_BRONZE_SMELTABLES, 1.0f, "cb", this.output);
+        //allOreSmelting(ModItems.CELESTIAL_BRONZE_INGOT.get(), CELESTIAL_BRONZE_SMELTABLES, 1.0f, "cb", this.output);
 
         allOreSmelting(ModItems.TIN_SCRAPS.get(), TIN_SMELTABLES, 0.7f, "t", this.output);
 
         allOreSmelting(ModItems.RUBIDIUM.get(), RUBIDIUM_SMELTABLES, 1.3f, "r", this.output);
 
         allOreSmelting(ModItems.STARSHARD.get(), STARSHARD_SMELTABLES, 1.5f, "s", this.output);
+
+        SmithingTransformRecipeBuilder.smithing(Ingredient.of(ModItems.CELESTIAL_BRONZE_UPGRADE_SMITHING_TEMPLATE), Ingredient.of(ModItems.BRONZE_SWORD), Ingredient.of(Items.NETHER_STAR), RecipeCategory.COMBAT, ModItems.CELESTIAL_BRRONZE_SWORD.get()).unlocks("has_ns", has(Items.NETHER_STAR)).save(this.output, ModUtil.createRecipeResourceKey("celestial_bronze_sword_smithing"));
 
     }
 

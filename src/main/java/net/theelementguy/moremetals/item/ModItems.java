@@ -1,6 +1,9 @@
 package net.theelementguy.moremetals.item;
 
+import net.minecraft.ChatFormatting;
+import net.minecraft.Util;
 import net.minecraft.core.registries.Registries;
+import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.*;
@@ -11,6 +14,8 @@ import net.neoforged.neoforge.registries.DeferredRegister;
 import net.theelementguy.moremetals.MoreMetalsMod;
 import net.theelementguy.moremetals.item.custom.CelestialBronzeSwordItem;
 import net.theelementguy.moremetals.util.ModUtil;
+
+import java.util.List;
 
 public class ModItems {
 
@@ -40,9 +45,9 @@ public class ModItems {
 
     public static final DeferredItem<Item> TIN_SCRAPS = ITEMS.register("tin_scraps", () -> new Item((new Item.Properties()).setId(ResourceKey.create(Registries.ITEM, ResourceLocation.fromNamespaceAndPath(MoreMetalsMod.MOD_ID, "tin_scraps")))));
 
-    public static final DeferredItem<Item> RAW_CELESTIAL_BRONZE = ITEMS.register("raw_celestial_bronze", () -> new Item((new Item.Properties()).rarity(Rarity.RARE).setId(ResourceKey.create(Registries.ITEM, ResourceLocation.fromNamespaceAndPath(MoreMetalsMod.MOD_ID, "raw_celestial_bronze")))));
+    //public static final DeferredItem<Item> RAW_CELESTIAL_BRONZE = ITEMS.register("raw_celestial_bronze", () -> new Item((new Item.Properties()).rarity(Rarity.RARE).setId(ResourceKey.create(Registries.ITEM, ResourceLocation.fromNamespaceAndPath(MoreMetalsMod.MOD_ID, "raw_celestial_bronze")))));
 
-    public static final DeferredItem<Item> CELESTIAL_BRONZE_INGOT = ITEMS.register("celestial_bronze_ingot", () -> new Item((new Item.Properties()).rarity(Rarity.RARE).setId(ResourceKey.create(Registries.ITEM, ResourceLocation.fromNamespaceAndPath(MoreMetalsMod.MOD_ID, "celestial_bronze_ingot")))));
+    //public static final DeferredItem<Item> CELESTIAL_BRONZE_INGOT = ITEMS.register("celestial_bronze_ingot", () -> new Item((new Item.Properties()).rarity(Rarity.RARE).setId(ResourceKey.create(Registries.ITEM, ResourceLocation.fromNamespaceAndPath(MoreMetalsMod.MOD_ID, "celestial_bronze_ingot")))));
 
     public static final DeferredItem<CelestialBronzeSwordItem> CELESTIAL_BRRONZE_SWORD = ITEMS.register("celestial_bronze_sword", () -> new CelestialBronzeSwordItem(ModToolMaterials.CELESTIAL_BRONZE, 3.0F, -2.4F, (new Item.Properties()).rarity(Rarity.RARE).setId(ResourceKey.create(Registries.ITEM, ResourceLocation.fromNamespaceAndPath(MoreMetalsMod.MOD_ID, "celestial_bronze_sword")))));
 
@@ -105,6 +110,20 @@ public class ModItems {
     public static final DeferredItem<ArmorItem> BRONZE_LEGGINGS = ITEMS.register("bronze_leggings", () -> new ArmorItem(ModArmorMaterials.BRONZE, ArmorType.LEGGINGS, (new Item.Properties()).setId(ResourceKey.create(Registries.ITEM, ResourceLocation.fromNamespaceAndPath(MoreMetalsMod.MOD_ID, "bronze_leggings")))));
 
     public static final DeferredItem<ArmorItem> BRONZE_BOOTS = ITEMS.register("bronze_boots", () -> new ArmorItem(ModArmorMaterials.BRONZE, ArmorType.BOOTS, (new Item.Properties()).setId(ResourceKey.create(Registries.ITEM, ResourceLocation.fromNamespaceAndPath(MoreMetalsMod.MOD_ID, "bronze_boots")))));
+
+    private static final Component CELESTIAL_BRONZE_UPGRADE_APPLIES_TO = Component.translatable(Util.makeDescriptionId("item", ResourceLocation.fromNamespaceAndPath(MoreMetalsMod.MOD_ID, "smithing_template.celestial_bronze_upgrade.applies_to"))).withStyle(ChatFormatting.BLUE);
+
+    private static final Component CELESTIAL_BRONZE_UPGRADE_INGREDIENTS = Component.translatable(Util.makeDescriptionId("item", ResourceLocation.fromNamespaceAndPath(MoreMetalsMod.MOD_ID, "smithing_template.celestial_bronze_upgrade.ingredients"))).withStyle(ChatFormatting.BLUE);
+
+    private static final Component CELESTIAL_BRONZE_UPGRADE_BASE_SLOT_DESCRIPTION = Component.translatable(Util.makeDescriptionId("item", ResourceLocation.fromNamespaceAndPath(MoreMetalsMod.MOD_ID, "smithing_template.celestial_bronze_upgrade.base_slot_description")));
+
+    private static final Component CELESTIAL_BRONZE_UPGRADE_ADDITIONS_SLOT_DESCRIPTION = Component.translatable(Util.makeDescriptionId("item", ResourceLocation.fromNamespaceAndPath(MoreMetalsMod.MOD_ID, "smithing_template.celestial_bronze_upgrade.additions_slot_description")));
+
+    private static final List<ResourceLocation> CELESTIAL_BRONZE_UPGRADE_ICON_LIST = List.of(ResourceLocation.withDefaultNamespace("container/slot/sword"));
+
+    private static final List<ResourceLocation> CELESTIAL_BRONZE_UPGRADE_MATERIAL_LIST = List.of(ResourceLocation.fromNamespaceAndPath(MoreMetalsMod.MOD_ID, "container/slot/nether_star"));
+
+    public static final DeferredItem<Item> CELESTIAL_BRONZE_UPGRADE_SMITHING_TEMPLATE = ITEMS.register("celestial_bronze_upgrade_smithing_template", () -> new SmithingTemplateItem(CELESTIAL_BRONZE_UPGRADE_APPLIES_TO, CELESTIAL_BRONZE_UPGRADE_INGREDIENTS, CELESTIAL_BRONZE_UPGRADE_BASE_SLOT_DESCRIPTION, CELESTIAL_BRONZE_UPGRADE_ADDITIONS_SLOT_DESCRIPTION, CELESTIAL_BRONZE_UPGRADE_ICON_LIST, CELESTIAL_BRONZE_UPGRADE_MATERIAL_LIST, new Item.Properties().rarity(Rarity.UNCOMMON).setId(ModUtil.createItemResourceKey("celestial_bronze_upgrade_smithing_template"))));
 
     public static void register(IEventBus bus) {
         ITEMS.register(bus);
