@@ -19,6 +19,6 @@ public class ModGlobalLootModifiers extends GlobalLootModifierProvider {
 
     @Override
     protected void start() {
-        this.add("celestial_bronze_upgrade_smithing_template_to_desert_pyramid", new AddItemRollModifier(new LootItemCondition[] {new LootTableIdCondition.Builder(ResourceLocation.withDefaultNamespace("archaeology/desert_pyramid")).build()}, ModItems.CELESTIAL_BRONZE_UPGRADE_SMITHING_TEMPLATE.get(), 0.125f));
+        this.add("celestial_bronze_upgrade_smithing_template_to_desert_pyramid", new AddItemRollModifier(new LootItemCondition[] {new LootTableIdCondition.Builder(ResourceLocation.withDefaultNamespace("archaeology/desert_pyramid")).build()}, ModItems.CELESTIAL_BRONZE_UPGRADE_SMITHING_TEMPLATE.get(), 0.111f));
     }
 }
