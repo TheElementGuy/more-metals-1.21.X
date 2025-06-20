@@ -19,7 +19,7 @@ import net.theelementguy.moremetals.util.ModTags;
 
 import java.util.function.Predicate;
 
-@EventBusSubscriber(modid = MoreMetalsMod.MOD_ID, bus = EventBusSubscriber.Bus.GAME)
+@EventBusSubscriber(modid = MoreMetalsMod.MOD_ID)
 public class ModEvents {
 
     //ModItems.CELESTIAL_BRONZE_SWORD.get();

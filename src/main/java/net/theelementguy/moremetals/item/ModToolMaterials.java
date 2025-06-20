@@ -2,7 +2,6 @@ package net.theelementguy.moremetals.item;
 
 import net.minecraft.world.item.ToolMaterial;
 import net.minecraft.world.item.crafting.Ingredient;
-import net.neoforged.neoforge.common.SimpleTier;
 import net.theelementguy.moremetals.util.ModTags;
 
 public class ModToolMaterials {
