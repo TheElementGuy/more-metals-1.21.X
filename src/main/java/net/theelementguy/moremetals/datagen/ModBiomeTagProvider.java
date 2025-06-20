@@ -12,7 +12,7 @@ import java.util.concurrent.CompletableFuture;
 
 public class ModBiomeTagProvider extends BiomeTagsProvider {
     public ModBiomeTagProvider(PackOutput output, CompletableFuture<HolderLookup.Provider> provider) {
-        super(output, provider, MoreMetalsMod.MOD_ID);
+        super(output, provider);
     }
 
     @Override
