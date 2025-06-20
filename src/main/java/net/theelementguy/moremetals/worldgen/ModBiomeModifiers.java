@@ -6,13 +6,11 @@ import net.minecraft.data.worldgen.BootstrapContext;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.BiomeTags;
-import net.minecraft.world.entity.animal.Panda;
 import net.minecraft.world.level.levelgen.GenerationStep;
 import net.neoforged.neoforge.common.world.BiomeModifier;
 import net.neoforged.neoforge.common.world.BiomeModifiers;
 import net.neoforged.neoforge.registries.NeoForgeRegistries;
 import net.theelementguy.moremetals.MoreMetalsMod;
-import net.theelementguy.moremetals.util.ModTags;
 
 public class ModBiomeModifiers {
 
@@ -52,7 +50,7 @@ public class ModBiomeModifiers {
 
         context.register(ADD_RUBIDIUIM_SMALL_ORE_KEY, new BiomeModifiers.AddFeaturesBiomeModifier(biomes.getOrThrow(BiomeTags.IS_NETHER), HolderSet.direct(placedFeatures.getOrThrow(ModPlacedFeatures.RUBIDIUM_SMALL_ORE_PLACED_KEY)), GenerationStep.Decoration.UNDERGROUND_ORES));
 
-        context.register(ADD_STARSHARD_LARGE_ORE_KEY, new BiomeModifiers.AddFeaturesBiomeModifier(biomes.getOrThrow(BiomeTags.IS_END), HolderSet.direct(placedFeatures.getOrThrow(ModPlacedFeatures.STARSHARD_LARGEE_ORE_PLACED_KEY)), GenerationStep.Decoration.UNDERGROUND_ORES));
+        context.register(ADD_STARSHARD_LARGE_ORE_KEY, new BiomeModifiers.AddFeaturesBiomeModifier(biomes.getOrThrow(BiomeTags.IS_END), HolderSet.direct(placedFeatures.getOrThrow(ModPlacedFeatures.STARSHARD_LARGE_ORE_PLACED_KEY)), GenerationStep.Decoration.UNDERGROUND_ORES));
 
         context.register(ADD_STARSHARD_SMALL_ORE_KEY, new BiomeModifiers.AddFeaturesBiomeModifier(biomes.getOrThrow(BiomeTags.IS_END), HolderSet.direct(placedFeatures.getOrThrow(ModPlacedFeatures.STARSHARD_SMALL_ORE_PLACED_KEY)), GenerationStep.Decoration.UNDERGROUND_ORES));
     }
