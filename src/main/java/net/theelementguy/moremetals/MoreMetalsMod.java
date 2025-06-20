@@ -2,6 +2,7 @@ package net.theelementguy.moremetals;
 
 import net.theelementguy.moremetals.block.ModBlocks;
 import net.theelementguy.moremetals.item.ModItems;
+import net.theelementguy.moremetals.loot.ModLootModifiers;
 import org.slf4j.Logger;
 
 import com.mojang.logging.LogUtils;
@@ -48,6 +49,8 @@ public class MoreMetalsMod {
         ModItems.register(modEventBus);
 
         ModBlocks.register(modEventBus);
+
+        ModLootModifiers.register(modEventBus);
 
         // Do not add this line if there are no @SubscribeEvent-annotated functions in this class, like onServerStarting() below.
         NeoForge.EVENT_BUS.register(this);

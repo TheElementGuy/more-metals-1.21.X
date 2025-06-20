@@ -45,6 +45,8 @@ public class DataGenerators {
         //generator.addProvider(true, new ModItemModelProvider(output, existingFileHelper));
 
         generator.addProvider(true, new ModDatapackProvider(output, provider));
+
+        generator.addProvider(true, new ModGlobalLootModifiers(output, provider));
     }
 
 }
