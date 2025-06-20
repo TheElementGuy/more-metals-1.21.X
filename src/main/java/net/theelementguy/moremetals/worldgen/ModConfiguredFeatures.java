@@ -59,9 +59,9 @@ public class ModConfiguredFeatures {
 
         register(context, CUBIC_ZIRCONIA_SMALL_ORE_KEY, Feature.ORE, new OreConfiguration(cubicZirconiaOres, 2, 0.5f));
 
-        register(context, TIN_SMALL_ORE_KEY, Feature.ORE, new OreConfiguration(tinOres, 10));
+        register(context, TIN_SMALL_ORE_KEY, Feature.ORE, new OreConfiguration(tinOres, 2));
 
-        register(context, TIN_LARGE_ORE_KEY, Feature.ORE, new OreConfiguration(tinOres, 20));
+        register(context, TIN_LARGE_ORE_KEY, Feature.ORE, new OreConfiguration(tinOres, 10));
 
         register(context, RUBIDIUM_LARGE_ORE_KEY, Feature.ORE, new OreConfiguration(rubidiumOres, 4));
 

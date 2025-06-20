@@ -117,7 +117,7 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
 
         //shapeless(RecipeCategory.MISC, ModItems.CELESTIAL_BRONZE_INGOT).requires(Items.COPPER_INGOT, 4).requires(ModItems.TIN_SCRAPS).requires(Items.NETHER_STAR).unlockedBy("has_ns", has(Items.NETHER_STAR)).save(output, "celestial_bronze_forging");
 
-        shapeless(RecipeCategory.MISC, ModItems.BRONZE_INGOT).requires(Items.COPPER_INGOT, 4).requires(ModItems.TIN_SCRAPS).unlockedBy("has_c", has(Items.COPPER_INGOT)).save(output, "bronze_forging");
+        shapeless(RecipeCategory.MISC, ModItems.BRONZE_INGOT, 4).requires(Items.COPPER_INGOT, 4).requires(ModItems.TIN_SCRAPS).unlockedBy("has_c", has(Items.COPPER_INGOT)).save(output, "bronze_forging");
 
         allOreSmelting(ModItems.CUBIC_ZIRCONIA.get(), CUBIC_ZIRCONIA_SMELTABLES, 1.0f, "cz", output);
 

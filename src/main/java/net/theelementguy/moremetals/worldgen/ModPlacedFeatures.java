@@ -44,9 +44,9 @@ public class ModPlacedFeatures {
 
         register(context, CUBIC_ZIRCONIA_LARGE_ORE_PLACED_KEY, configuredFeatures.getOrThrow(ModConfiguredFeatures.CUBIC_ZIRCONIA_LARGE_ORE_KEY), ModOrePlacement.rareOrePlacement(8, HeightRangePlacement.triangle(VerticalAnchor.absolute(-48), VerticalAnchor.absolute(0))));
 
-        register(context, TIN_SMALL_ORE_PLACED_KEY, configuredFeatures.getOrThrow(ModConfiguredFeatures.TIN_SMALL_ORE_KEY), ModOrePlacement.commonOrePlacement(8, HeightRangePlacement.triangle(VerticalAnchor.absolute(-56), VerticalAnchor.absolute(8))));
+        register(context, TIN_SMALL_ORE_PLACED_KEY, configuredFeatures.getOrThrow(ModConfiguredFeatures.TIN_SMALL_ORE_KEY), ModOrePlacement.commonOrePlacement(8, HeightRangePlacement.uniform(VerticalAnchor.absolute(4), VerticalAnchor.absolute(80))));
 
-        register(context, TIN_LARGE_ORE_PLACED_KEY, configuredFeatures.getOrThrow(ModConfiguredFeatures.TIN_LARGE_ORE_KEY), ModOrePlacement.commonOrePlacement(5, HeightRangePlacement.triangle(VerticalAnchor.absolute(0), VerticalAnchor.absolute(48))));
+        register(context, TIN_LARGE_ORE_PLACED_KEY, configuredFeatures.getOrThrow(ModConfiguredFeatures.TIN_LARGE_ORE_KEY), ModOrePlacement.commonOrePlacement(5, HeightRangePlacement.triangle(VerticalAnchor.absolute(-16), VerticalAnchor.absolute(48))));
 
         register(context, RUBIDIUM_LARGE_ORE_PLACED_KEY, configuredFeatures.getOrThrow(ModConfiguredFeatures.RUBIDIUM_LARGE_ORE_KEY), ModOrePlacement.rareOrePlacement(1, HeightRangePlacement.uniform(VerticalAnchor.absolute(30), VerticalAnchor.absolute(46))));
 
