@@ -11,7 +11,7 @@ loaderVersion="${loader_version_range}" #mandatory
 
 # The license for you mod. This is mandatory metadata and allows for easier comprehension of your redistributive properties.
 # Review your options at https://choosealicense.com/. All rights reserved is the default copyright stance, and is thus the default here.
-license="${version}"
+license="MIT License"
 
 # A URL to refer people to when problems occur with this mod
 issueTrackerURL="https://github.com/TheElementGuy/more-metals-1.21.4/issues" #optional
@@ -23,7 +23,7 @@ issueTrackerURL="https://github.com/TheElementGuy/more-metals-1.21.4/issues" #op
 modId="moremetals" #mandatory
 
 # The version number of the mod
-version="4.1.2" #mandatory
+version="4.2.0" #mandatory
 
 # A display name for the mod
 displayName="More Metals" #mandatory

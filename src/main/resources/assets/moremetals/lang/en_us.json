@@ -29,6 +29,7 @@
   "item.moremetals.celestial_bronze_ingot": "Celestial Bronze Ingot",
   "item.moremetals.raw_celestial_bronze": "Raw Celestial Bronze",
   "item.moremetals.celestial_bronze_sword": "Celestial Bronze Sword",
+  "item.moremetals.celestial_bronze_upgrade_smithing_template": "Celestial Bronze Upgrade",
 
   "item.moremetals.starshard_sword": "Starshard Sword",
   "item.moremetals.starshard_axe": "Starshard Axe",
@@ -64,5 +65,10 @@
   "block.moremetals.nether_rubidium_ore": "Nether Rubidium Ore",
   "block.moremetals.starshard_block": "Block of Starshard",
   "block.moremetals.end_starshard_ore": "End Starshard Ore",
-  "block.moremetals.bronze_block": "Block of Bronze"
+  "block.moremetals.bronze_block": "Block of Bronze",
+
+  "item.moremetals.smithing_template.celestial_bronze_upgrade.applies_to": "Bronze Sword",
+  "item.moremetals.smithing_template.celestial_bronze_upgrade.ingredients": "Nether Star",
+  "item.moremetals.smithing_template.celestial_bronze_upgrade.base_slot_description": "Add a Bronze Sword",
+  "item.moremetals.smithing_template.celestial_bronze_upgrade.additions_slot_description": "Add a Nether Star"
 }

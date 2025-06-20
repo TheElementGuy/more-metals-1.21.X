@@ -2,6 +2,7 @@ package net.theelementguy.moremetals;
 
 import net.theelementguy.moremetals.block.ModBlocks;
 import net.theelementguy.moremetals.item.ModItems;
+import net.theelementguy.moremetals.loot.ModLootModifiers;
 import org.slf4j.Logger;
 
 import com.mojang.logging.LogUtils;
@@ -49,6 +50,8 @@ public class MoreMetalsMod {
 
         ModBlocks.register(modEventBus);
 
+        ModLootModifiers.register(modEventBus);
+
         // Do not add this line if there are no @SubscribeEvent-annotated functions in this class, like onServerStarting() below.
         NeoForge.EVENT_BUS.register(this);
 
@@ -79,18 +82,19 @@ public class MoreMetalsMod {
             event.accept(ModItems.CUBIC_ZIRCONIA);
             event.accept(ModItems.RAW_CUBIC_ZIRCONIA);
             event.accept(ModItems.TIN_SCRAPS);
-            event.accept(ModItems.CELESTIAL_BRONZE_INGOT);
-            event.accept(ModItems.RAW_CELESTIAL_BRONZE);
+            //event.accept(ModItems.CELESTIAL_BRONZE_INGOT);
+            //event.accept(ModItems.RAW_CELESTIAL_BRONZE);
             event.accept(ModItems.RUBIDIUM);
             event.accept(ModItems.STARSHARD);
             event.accept(ModItems.BRONZE_INGOT);
+            event.accept(ModItems.CELESTIAL_BRONZE_UPGRADE_SMITHING_TEMPLATE);
         }
         if(event.getTabKey() == CreativeModeTabs.BUILDING_BLOCKS) {
             event.accept(ModBlocks.CUBIC_ZIRCONIA_BLOCK);
             event.accept(ModBlocks.RAW_CUBIC_ZIRCONIA_BLOCK);
             event.accept(ModBlocks.TIN_BLOCK);
-            event.accept(ModBlocks.CELESTIAL_BRONZE_BLOCK);
-            event.accept(ModBlocks.RAW_CELESTIAL_BRONZE_BLOCK);
+            //event.accept(ModBlocks.CELESTIAL_BRONZE_BLOCK);
+            //event.accept(ModBlocks.RAW_CELESTIAL_BRONZE_BLOCK);
             event.accept(ModBlocks.RUBIDIUM_BLOCK);
             event.accept(ModBlocks.STARSHARD_BLOCK);
             event.accept(ModBlocks.BRONZE_BLOCK);
