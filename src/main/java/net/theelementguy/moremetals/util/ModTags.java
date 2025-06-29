@@ -61,7 +61,7 @@ public class ModTags {
 
     public static class EntityTypes {
 
-        public static TagKey<EntityType<?>> CELESTIAL_BRONZE_SWORD_TARGETS = createTag("celestial_bronze_sword_targets");
+        public static final TagKey<EntityType<?>> CELESTIAL_BRONZE_SWORD_TARGETS = createTag("celestial_bronze_sword_targets");
 
         private static TagKey<EntityType<?>> createTag(String name) {
             return TagKey.create(Registries.ENTITY_TYPE, ResourceLocation.fromNamespaceAndPath(MoreMetalsMod.MOD_ID, name));
@@ -71,7 +71,7 @@ public class ModTags {
 
     public static class Biomes {
 
-        public static TagKey<Biome> IS_END_AND_NOT_MAIN_ISLAND = createTag("is_end_and_not_main_island");
+        public static final TagKey<Biome> IS_END_AND_NOT_MAIN_ISLAND = createTag("is_end_and_not_main_island");
 
         private static TagKey<Biome> createTag(String name) {
             return TagKey.create(Registries.BIOME, ResourceLocation.fromNamespaceAndPath(MoreMetalsMod.MOD_ID, name));

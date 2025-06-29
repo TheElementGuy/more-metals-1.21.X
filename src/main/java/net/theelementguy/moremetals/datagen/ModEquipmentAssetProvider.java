@@ -27,7 +27,7 @@ public class ModEquipmentAssetProvider extends EquipmentAssetProvider {
         Map<ResourceKey<EquipmentAsset>, EquipmentClientInfo> MAP = new HashMap<>();
         ModEquipmentAssets.bootstrap((key, model) -> {
             if (MAP.putIfAbsent(key, model) != null) {
-                throw new IllegalStateException("Duplicate equipment asset for:" + key.location().toString());
+                throw new IllegalStateException("Duplicate equipment asset for:" + key.location());
             }
         });
         return DataProvider.saveAll(p_387304_, EquipmentClientInfo.CODEC, this.pathProvider::json, MAP);

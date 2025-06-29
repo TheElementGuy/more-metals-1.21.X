@@ -30,7 +30,7 @@ public class ModPlacedFeatures {
 
     public static final ResourceKey<PlacedFeature> RUBIDIUM_SMALL_ORE_PLACED_KEY = registerKey("rubidium_small_ore_placed");
 
-    public static final ResourceKey<PlacedFeature> STARSHARD_LARGE_ORE_PLACED_KEY = registerKey("starshard_large_ore_placed");
+    public static final ResourceKey<PlacedFeature> STARSHARD_LARGEE_ORE_PLACED_KEY = registerKey("starshard_large_ore_placed");
 
     public static final ResourceKey<PlacedFeature> STARSHARD_SMALL_ORE_PLACED_KEY = registerKey("starshard_small_ore_placed");
 
@@ -43,7 +43,7 @@ public class ModPlacedFeatures {
 
         register(context, CUBIC_ZIRCONIA_LARGE_ORE_PLACED_KEY, configuredFeatures.getOrThrow(ModConfiguredFeatures.CUBIC_ZIRCONIA_LARGE_ORE_KEY), ModOrePlacement.rareOrePlacement(8, HeightRangePlacement.triangle(VerticalAnchor.absolute(-48), VerticalAnchor.absolute(0))));
 
-        register(context, TIN_SMALL_ORE_PLACED_KEY, configuredFeatures.getOrThrow(ModConfiguredFeatures.TIN_SMALL_ORE_KEY), ModOrePlacement.commonOrePlacement(8, HeightRangePlacement.triangle(VerticalAnchor.absolute(4), VerticalAnchor.absolute(80))));
+        register(context, TIN_SMALL_ORE_PLACED_KEY, configuredFeatures.getOrThrow(ModConfiguredFeatures.TIN_SMALL_ORE_KEY), ModOrePlacement.commonOrePlacement(8, HeightRangePlacement.uniform(VerticalAnchor.absolute(4), VerticalAnchor.absolute(80))));
 
         register(context, TIN_LARGE_ORE_PLACED_KEY, configuredFeatures.getOrThrow(ModConfiguredFeatures.TIN_LARGE_ORE_KEY), ModOrePlacement.commonOrePlacement(5, HeightRangePlacement.triangle(VerticalAnchor.absolute(-16), VerticalAnchor.absolute(48))));
 
@@ -51,7 +51,7 @@ public class ModPlacedFeatures {
 
         register(context, RUBIDIUM_SMALL_ORE_PLACED_KEY, configuredFeatures.getOrThrow(ModConfiguredFeatures.RUBIDIUM_SMALL_ORE_KEY), ModOrePlacement.commonOrePlacement(4, HeightRangePlacement.uniform(VerticalAnchor.absolute(20), VerticalAnchor.absolute(56))));
 
-        register(context, STARSHARD_LARGE_ORE_PLACED_KEY, configuredFeatures.getOrThrow(ModConfiguredFeatures.STARSHARD_LARGE_ORE_KEY), ModOrePlacement.commonOrePlacement(5, HeightRangePlacement.uniform(VerticalAnchor.absolute(-64), VerticalAnchor.absolute(80))));
+        register(context, STARSHARD_LARGEE_ORE_PLACED_KEY, configuredFeatures.getOrThrow(ModConfiguredFeatures.STARSHARD_LARGE_ORE_KEY), ModOrePlacement.commonOrePlacement(5, HeightRangePlacement.uniform(VerticalAnchor.absolute(-64), VerticalAnchor.absolute(80))));
 
         register(context, STARSHARD_SMALL_ORE_PLACED_KEY, configuredFeatures.getOrThrow(ModConfiguredFeatures.STARSHARD_SMALL_ORE_KEY), ModOrePlacement.commonOrePlacement(20, HeightRangePlacement.uniform(VerticalAnchor.absolute(-64), VerticalAnchor.absolute(80))));
     }

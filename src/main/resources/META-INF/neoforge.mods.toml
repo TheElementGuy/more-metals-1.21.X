@@ -23,7 +23,7 @@ issueTrackerURL="https://github.com/TheElementGuy/more-metals-1.21.4/issues" #op
 modId="moremetals" #mandatory
 
 # The version number of the mod
-version="5.0.1" #mandatory
+version="${file.jarVersion}" #mandatory
 
 # A display name for the mod
 displayName="More Metals" #mandatory
