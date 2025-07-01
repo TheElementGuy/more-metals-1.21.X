@@ -45,7 +45,7 @@ public class ModBiomeModifiers {
 
         context.register(ADD_TIN_SMALL_ORE_KEY, new BiomeModifiers.AddFeaturesBiomeModifier(biomes.getOrThrow(BiomeTags.IS_OVERWORLD), HolderSet.direct(placedFeatures.getOrThrow(ModPlacedFeatures.TIN_SMALL_ORE_PLACED_KEY)), GenerationStep.Decoration.UNDERGROUND_ORES));
 
-        context.register(ADD_TIN_LARGE_ORE_KEY, new BiomeModifiers.AddFeaturesBiomeModifier(biomes.getOrThrow(BiomeTags.IS_JUNGLE), HolderSet.direct(placedFeatures.getOrThrow(ModPlacedFeatures.TIN_LARGE_ORE_PLACED_KEY)), GenerationStep.Decoration.UNDERGROUND_ORES));
+        context.register(ADD_TIN_LARGE_ORE_KEY, new BiomeModifiers.AddFeaturesBiomeModifier(biomes.getOrThrow(BiomeTags.IS_OVERWORLD), HolderSet.direct(placedFeatures.getOrThrow(ModPlacedFeatures.TIN_LARGE_ORE_PLACED_KEY)), GenerationStep.Decoration.UNDERGROUND_ORES));
 
         context.register(ADD_RUBIDIUM_LARGE_ORE_KEY, new BiomeModifiers.AddFeaturesBiomeModifier(biomes.getOrThrow(BiomeTags.IS_NETHER), HolderSet.direct(placedFeatures.getOrThrow(ModPlacedFeatures.RUBIDIUM_LARGE_ORE_PLACED_KEY)), GenerationStep.Decoration.UNDERGROUND_ORES));
 
