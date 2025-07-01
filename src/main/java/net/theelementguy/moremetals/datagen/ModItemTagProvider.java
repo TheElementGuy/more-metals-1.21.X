@@ -33,6 +33,7 @@ public class ModItemTagProvider extends IntrinsicHolderTagsProvider<Item> {
         tag(ItemTags.SHOVELS).add(ModItems.CUBIC_ZIRCONIA_SHOVEL.get()).add(ModItems.RUBIDIUM_SHOVEL.get()).add(ModItems.STARSHARD_SHOVEL.get()).add(ModItems.BRONZE_SHOVEL.get());
         tag(ItemTags.HOES).add(ModItems.CUBIC_ZIRCONIA_HOE.get()).add(ModItems.RUBIDIUM_HOE.get()).add(ModItems.STARSHARD_HOE.get()).add(ModItems.BRONZE_HOE.get());
         tag(ItemTags.TRIMMABLE_ARMOR).add(ModItems.CUBIC_ZIRCONIA_HELMET.get()).add(ModItems.CUBIC_ZIRCONIA_CHESTPLATE.get()).add(ModItems.CUBIC_ZIRCONIA_LEGGINGS.get()).add(ModItems.CUBIC_ZIRCONIA_BOOTS.get()).add(ModItems.RUBIDIUM_HELMET.get()).add(ModItems.RUBIDIUM_CHESTPLATE.get()).add(ModItems.RUBIDIUM_LEGGINGS.get()).add(ModItems.RUBIDIUM_BOOTS.get()).add(ModItems.STARSHARD_HELMET.get()).add(ModItems.STARSHARD_CHESTPLATE.get()).add(ModItems.STARSHARD_LEGGINGS.get()).add(ModItems.STARSHARD_BOOTS.get()).add(ModItems.BRONZE_HELMET.get()).add(ModItems.BRONZE_CHESTPLATE.get()).add(ModItems.BRONZE_LEGGINGS.get()).add(ModItems.BRONZE_BOOTS.get());
+        tag(ItemTags.TRIM_MATERIALS).add(ModItems.CUBIC_ZIRCONIA.get()).add(ModItems.TIN_SCRAPS.get()).add(ModItems.RUBIDIUM.get()).add(ModItems.STARSHARD.get()).add(ModItems.BRONZE_INGOT.get());
         tag(ModTags.Items.CELESTIAL_BRONZE_TYPE_SWORDS).add(ModItems.CELESTIAL_BRRONZE_SWORD.get());
         tag(ModTags.Items.CUBIC_ZIRCONIA_REPAIRABLES).add(ModItems.CUBIC_ZIRCONIA.get());
         tag(ModTags.Items.CELESTIAL_BRONZE_REPAIRABLES).add(Items.NETHER_STAR);
