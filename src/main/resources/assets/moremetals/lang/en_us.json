@@ -70,5 +70,11 @@
   "item.moremetals.smithing_template.celestial_bronze_upgrade.applies_to": "Bronze Sword",
   "item.moremetals.smithing_template.celestial_bronze_upgrade.ingredients": "Nether Star",
   "item.moremetals.smithing_template.celestial_bronze_upgrade.base_slot_description": "Add a Bronze Sword",
-  "item.moremetals.smithing_template.celestial_bronze_upgrade.additions_slot_description": "Add a Nether Star"
+  "item.moremetals.smithing_template.celestial_bronze_upgrade.additions_slot_description": "Add a Nether Star",
+
+  "trim_material.moremetals.cubic_zirconia": "Cubic Zirconia",
+  "trim_material.moremetals.starshard": "Starshard",
+  "trim_material.moremetals.rubidium": "Rubidium",
+  "trim_material.moremetals.bronze": "Bronze",
+  "trim_material.moremetals.tin": "Tin"
 }
