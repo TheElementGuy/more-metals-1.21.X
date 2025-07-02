@@ -41,8 +41,6 @@ public class DataGenerators {
         generator.addProvider(true, new ModEquipmentAssetProvider(output));
 
         generator.addProvider(true, new ModDatapackProvider(output, provider));
-
-        generator.addProvider(true, new ModGlobalLootModifiers(output, provider));
     }
 
 }
