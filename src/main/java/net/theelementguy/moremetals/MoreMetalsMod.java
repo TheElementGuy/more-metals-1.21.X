@@ -82,22 +82,17 @@ public class MoreMetalsMod {
             event.accept(ModItems.CUBIC_ZIRCONIA);
             event.accept(ModItems.RAW_CUBIC_ZIRCONIA);
             event.accept(ModItems.TIN_SCRAPS);
-            //event.accept(ModItems.CELESTIAL_BRONZE_INGOT);
-            //event.accept(ModItems.RAW_CELESTIAL_BRONZE);
+            event.accept(ModItems.BRONZE_INGOT);
             event.accept(ModItems.RUBIDIUM);
             event.accept(ModItems.STARSHARD);
-            event.accept(ModItems.BRONZE_INGOT);
-            event.accept(ModItems.CELESTIAL_BRONZE_UPGRADE_SMITHING_TEMPLATE);
         }
         if(event.getTabKey() == CreativeModeTabs.BUILDING_BLOCKS) {
             event.accept(ModBlocks.CUBIC_ZIRCONIA_BLOCK);
             event.accept(ModBlocks.RAW_CUBIC_ZIRCONIA_BLOCK);
             event.accept(ModBlocks.TIN_BLOCK);
-            //event.accept(ModBlocks.CELESTIAL_BRONZE_BLOCK);
-            //event.accept(ModBlocks.RAW_CELESTIAL_BRONZE_BLOCK);
+            event.accept(ModBlocks.BRONZE_BLOCK);
             event.accept(ModBlocks.RUBIDIUM_BLOCK);
             event.accept(ModBlocks.STARSHARD_BLOCK);
-            event.accept(ModBlocks.BRONZE_BLOCK);
         }
         if(event.getTabKey() == CreativeModeTabs.NATURAL_BLOCKS) {
             event.accept(ModBlocks.CUBIC_ZIRCONIA_ORE);
@@ -114,7 +109,12 @@ public class MoreMetalsMod {
             event.accept(ModItems.CUBIC_ZIRCONIA_CHESTPLATE);
             event.accept(ModItems.CUBIC_ZIRCONIA_LEGGINGS);
             event.accept(ModItems.CUBIC_ZIRCONIA_BOOTS);
-            event.accept(ModItems.CELESTIAL_BRRONZE_SWORD);
+            event.accept(ModItems.BRONZE_SWORD);
+            event.accept(ModItems.BRONZE_AXE);
+            event.accept(ModItems.BRONZE_HELMET);
+            event.accept(ModItems.BRONZE_CHESTPLATE);
+            event.accept(ModItems.BRONZE_LEGGINGS);
+            event.accept(ModItems.BRONZE_BOOTS);
             event.accept(ModItems.RUBIDIUM_SWORD);
             event.accept(ModItems.RUBIDIUM_AXE);
             event.accept(ModItems.RUBIDIUM_HELMET);
@@ -127,18 +127,16 @@ public class MoreMetalsMod {
             event.accept(ModItems.STARSHARD_CHESTPLATE);
             event.accept(ModItems.STARSHARD_LEGGINGS);
             event.accept(ModItems.STARSHARD_BOOTS);
-            event.accept(ModItems.BRONZE_SWORD);
-            event.accept(ModItems.BRONZE_AXE);
-            event.accept(ModItems.BRONZE_HELMET);
-            event.accept(ModItems.BRONZE_CHESTPLATE);
-            event.accept(ModItems.BRONZE_LEGGINGS);
-            event.accept(ModItems.BRONZE_BOOTS);
         }
         if (event.getTabKey() == CreativeModeTabs.TOOLS_AND_UTILITIES) {
             event.accept(ModItems.CUBIC_ZIRCONIA_AXE);
             event.accept(ModItems.CUBIC_ZIRCONIA_PICKAXE);
             event.accept(ModItems.CUBIC_ZIRCONIA_SHOVEL);
             event.accept(ModItems.CUBIC_ZIRCONIA_HOE);
+            event.accept(ModItems.BRONZE_AXE);
+            event.accept(ModItems.BRONZE_PICKAXE);
+            event.accept(ModItems.BRONZE_SHOVEL);
+            event.accept(ModItems.BRONZE_HOE);
             event.accept(ModItems.RUBIDIUM_AXE);
             event.accept(ModItems.RUBIDIUM_PICKAXE);
             event.accept(ModItems.RUBIDIUM_SHOVEL);
@@ -147,10 +145,6 @@ public class MoreMetalsMod {
             event.accept(ModItems.STARSHARD_PICKAXE);
             event.accept(ModItems.STARSHARD_SHOVEL);
             event.accept(ModItems.STARSHARD_HOE);
-            event.accept(ModItems.BRONZE_AXE);
-            event.accept(ModItems.BRONZE_PICKAXE);
-            event.accept(ModItems.BRONZE_SHOVEL);
-            event.accept(ModItems.BRONZE_HOE);
         }
     }
 

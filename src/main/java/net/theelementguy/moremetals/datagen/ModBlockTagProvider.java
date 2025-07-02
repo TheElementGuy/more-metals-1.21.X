@@ -35,10 +35,6 @@ public class ModBlockTagProvider extends BlockTagsProvider {
 
         tag(ModTags.Blocks.INCORRECT_FOR_CUBIC_ZIRCONIA_TOOL).addTag(BlockTags.INCORRECT_FOR_IRON_TOOL).remove(ModTags.Blocks.NEEDS_CUBIC_ZIRCONIA_TOOL);
 
-        tag(ModTags.Blocks.NEEDS_CELESTIAL_BRONZE_TOOL).addTag(BlockTags.NEEDS_DIAMOND_TOOL);
-
-        tag(ModTags.Blocks.INCORRECT_FOR_CELESTIAL_BRONZE_TOOL).addTag(BlockTags.INCORRECT_FOR_DIAMOND_TOOL).remove(ModTags.Blocks.NEEDS_CELESTIAL_BRONZE_TOOL);
-
         tag(ModTags.Blocks.NEEDS_RUBIDIUM_TOOL).addTag(BlockTags.NEEDS_DIAMOND_TOOL);
 
         tag(ModTags.Blocks.INCORRECT_FOR_RUBIDIUM_TOOL).addTag(BlockTags.INCORRECT_FOR_DIAMOND_TOOL).remove(ModTags.Blocks.NEEDS_RUBIDIUM_TOOL);
