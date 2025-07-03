@@ -61,10 +61,6 @@ public class ModRecipeProvider extends RecipeProvider {
 
         blockRecipe(ModItems.RAW_CUBIC_ZIRCONIA.get(), ModBlocks.RAW_CUBIC_ZIRCONIA_BLOCK.asItem(), this.output);
 
-        //blockRecipe(ModItems.CELESTIAL_BRONZE_INGOT.get(), ModBlocks.CELESTIAL_BRONZE_BLOCK.asItem(), this.output);
-
-        //blockRecipe(ModItems.RAW_CELESTIAL_BRONZE.get(), ModBlocks.RAW_CELESTIAL_BRONZE_BLOCK.asItem(), this.output);
-
         blockRecipe(ModItems.TIN_SCRAPS.get(), ModBlocks.TIN_BLOCK.asItem(), this.output);
 
         blockRecipe(ModItems.RUBIDIUM.get(), ModBlocks.RUBIDIUM_BLOCK.asItem(), this.output);
@@ -93,8 +89,6 @@ public class ModRecipeProvider extends RecipeProvider {
 
         //Not doing this anymore:
         //swordRecipe(ModItems.CELESTIAL_BRRONZE_SWORD.get(), ModItems.CELESTIAL_BRONZE_INGOT.get(), "has_cb", this.output);
-
-        SmithingTransformRecipeBuilder.smithing(Ingredient.of(ModItems.CELESTIAL_BRONZE_UPGRADE_SMITHING_TEMPLATE), Ingredient.of(ModItems.BRONZE_SWORD), Ingredient.of(Items.NETHER_STAR), RecipeCategory.COMBAT, ModItems.CELESTIAL_BRRONZE_SWORD.get()).unlocks("has_ns", has(Items.NETHER_STAR)).save(this.output, ModUtil.createRecipeResourceKey("celestial_bronze_sword_smithing"));
 
         swordRecipe(ModItems.RUBIDIUM_SWORD.get(), ModItems.RUBIDIUM.get(), "has_r", this.output);
 

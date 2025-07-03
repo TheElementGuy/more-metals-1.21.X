@@ -12,7 +12,6 @@ import net.neoforged.bus.api.IEventBus;
 import net.neoforged.neoforge.registries.DeferredItem;
 import net.neoforged.neoforge.registries.DeferredRegister;
 import net.theelementguy.moremetals.MoreMetalsMod;
-import net.theelementguy.moremetals.item.custom.CelestialBronzeSwordItem;
 import net.theelementguy.moremetals.trim.ModTrimMaterials;
 import net.theelementguy.moremetals.util.ModUtil;
 
@@ -45,8 +44,6 @@ public class ModItems {
     public static final DeferredItem<Item> CUBIC_ZIRCONIA_BOOTS = ITEMS.register("cubic_zirconia_boots", () -> new Item((new Item.Properties()).fireResistant().humanoidArmor(ModArmorMaterials.CUBIC_ZIRCONIA, ArmorType.BOOTS).setId(ResourceKey.create(Registries.ITEM, ResourceLocation.fromNamespaceAndPath(MoreMetalsMod.MOD_ID, "cubic_zirconia_boots")))));
 
     public static final DeferredItem<Item> TIN_SCRAPS = ITEMS.register("tin_scraps", () -> new Item((new Item.Properties().trimMaterial(ModTrimMaterials.TIN)).setId(ResourceKey.create(Registries.ITEM, ResourceLocation.fromNamespaceAndPath(MoreMetalsMod.MOD_ID, "tin_scraps")))));
-
-    public static final DeferredItem<CelestialBronzeSwordItem> CELESTIAL_BRRONZE_SWORD = ITEMS.register("celestial_bronze_sword", () -> new CelestialBronzeSwordItem(ModToolMaterials.CELESTIAL_BRONZE, 3.0F, -2.4F, (new Item.Properties()).rarity(Rarity.RARE).setId(ResourceKey.create(Registries.ITEM, ResourceLocation.fromNamespaceAndPath(MoreMetalsMod.MOD_ID, "celestial_bronze_sword")))));
 
     public static final DeferredItem<Item> RUBIDIUM = ITEMS.register("rubidium", () -> new Item((new Item.Properties()).trimMaterial(ModTrimMaterials.RUBIDIUM).setId(ResourceKey.create(Registries.ITEM, ResourceLocation.fromNamespaceAndPath(MoreMetalsMod.MOD_ID, "rubidium")))));
 
@@ -107,8 +104,6 @@ public class ModItems {
     public static final DeferredItem<Item> BRONZE_LEGGINGS = ITEMS.register("bronze_leggings", () -> new Item((new Item.Properties()).humanoidArmor(ModArmorMaterials.BRONZE, ArmorType.LEGGINGS).setId(ResourceKey.create(Registries.ITEM, ResourceLocation.fromNamespaceAndPath(MoreMetalsMod.MOD_ID, "bronze_leggings")))));
 
     public static final DeferredItem<Item> BRONZE_BOOTS = ITEMS.register("bronze_boots", () -> new Item((new Item.Properties()).humanoidArmor(ModArmorMaterials.BRONZE, ArmorType.BOOTS).setId(ResourceKey.create(Registries.ITEM, ResourceLocation.fromNamespaceAndPath(MoreMetalsMod.MOD_ID, "bronze_boots")))));
-
-    public static final DeferredItem<Item> CELESTIAL_BRONZE_UPGRADE_SMITHING_TEMPLATE = ITEMS.register("celestial_bronze_upgrade_smithing_template", () -> new SmithingTemplateItem(Component.translatable(Util.makeDescriptionId("item", ResourceLocation.fromNamespaceAndPath(MoreMetalsMod.MOD_ID, "smithing_template.celestial_bronze_upgrade.applies_to"))).withStyle(ChatFormatting.BLUE), Component.translatable(Util.makeDescriptionId("item", ResourceLocation.fromNamespaceAndPath(MoreMetalsMod.MOD_ID, "smithing_template.celestial_bronze_upgrade.ingredients"))).withStyle(ChatFormatting.BLUE), Component.translatable(Util.makeDescriptionId("item", ResourceLocation.fromNamespaceAndPath(MoreMetalsMod.MOD_ID, "smithing_template.celestial_bronze_upgrade.base_slot_description"))), Component.translatable(Util.makeDescriptionId("item", ResourceLocation.fromNamespaceAndPath(MoreMetalsMod.MOD_ID, "smithing_template.celestial_bronze_upgrade.additions_slot_description"))), List.of(ResourceLocation.withDefaultNamespace("container/slot/sword")), List.of(ResourceLocation.fromNamespaceAndPath(MoreMetalsMod.MOD_ID, "container/slot/nether_star")), new Item.Properties().rarity(Rarity.UNCOMMON).setId(ModUtil.createItemResourceKey("celestial_bronze_upgrade_smithing_template"))));
 
     public static void register(IEventBus bus) {
         ITEMS.register(bus);
