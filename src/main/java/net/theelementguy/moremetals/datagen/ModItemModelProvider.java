@@ -32,13 +32,11 @@ public class ModItemModelProvider  extends ItemModelProvider {
         basicItem(ModItems.RUBIDIUM.get());
         basicItem(ModItems.STARSHARD.get());
         basicItem(ModItems.BRONZE_INGOT.get());
-        basicItem(ModItems.CELESTIAL_BRONZE_UPGRADE_SMITHING_TEMPLATE.get());
         handheldItem(ModItems.CUBIC_ZIRCONIA_SWORD.get());
         handheldItem(ModItems.CUBIC_ZIRCONIA_AXE.get());
         handheldItem(ModItems.CUBIC_ZIRCONIA_PICKAXE.get());
         handheldItem(ModItems.CUBIC_ZIRCONIA_SHOVEL.get());
         handheldItem(ModItems.CUBIC_ZIRCONIA_HOE.get());
-        handheldItem(ModItems.CELESTIAL_BRRONZE_SWORD.get());
         handheldItem(ModItems.RUBIDIUM_SWORD.get());
         handheldItem(ModItems.RUBIDIUM_AXE.get());
         handheldItem(ModItems.RUBIDIUM_PICKAXE.get());

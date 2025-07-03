@@ -22,10 +22,6 @@ public class ModTags {
 
         public static final TagKey<Block> INCORRECT_FOR_CUBIC_ZIRCONIA_TOOL = createTag("incorrect_for_cubic_zirconia_tool");
 
-        public static final TagKey<Block> NEEDS_CELESTIAL_BRONZE_TOOL = createTag("needs_celestial_bronze");
-
-        public static final TagKey<Block> INCORRECT_FOR_CELESTIAL_BRONZE_TOOL = createTag("incorrect_for_celestial_bronze_tool");
-
         public static final TagKey<Block> NEEDS_RUBIDIUM_TOOL = createTag("needs_rubidium");
 
         public static final TagKey<Block> INCORRECT_FOR_RUBIDIUM_TOOL = createTag("incorrect_for_rubidium_tool");
@@ -45,10 +41,7 @@ public class ModTags {
     }
 
     public static class Items {
-
-        public static final TagKey<Item> CELESTIAL_BRONZE_TYPE_SWORDS = createTag("celestial_bronze_type_swords");
         public static final TagKey<Item> CUBIC_ZIRCONIA_REPAIRABLES = createTag("cubic_zirconia_replaceables");
-        public static final TagKey<Item> CELESTIAL_BRONZE_REPAIRABLES = createTag("celestial_bronze_repairables");
         public static final TagKey<Item> RUBIDIUM_REPAIRABLES = createTag("rubidium_replaceables");
         public static final TagKey<Item> STARSHARD_REPAIRABLES = createTag("starshard_replceables");
         public static final TagKey<Item> BRONZE_REPAIRABLES = createTag("bronze_repairables");
