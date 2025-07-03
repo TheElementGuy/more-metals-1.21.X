@@ -35,10 +35,6 @@ public class ModBlockTagProvider extends BlockTagsProvider {
 
         tag(ModTags.Blocks.INCORRECT_FOR_CUBIC_ZIRCONIA_TOOL).addTag(BlockTags.INCORRECT_FOR_IRON_TOOL).remove(ModTags.Blocks.NEEDS_CUBIC_ZIRCONIA_TOOL);
 
-        tag(ModTags.Blocks.NEEDS_CELESTIAL_BRONZE_TOOL).addTag(BlockTags.NEEDS_DIAMOND_TOOL);
-
-        tag(ModTags.Blocks.INCORRECT_FOR_CELESTIAL_BRONZE_TOOL).addTag(BlockTags.INCORRECT_FOR_DIAMOND_TOOL).remove(ModTags.Blocks.NEEDS_CELESTIAL_BRONZE_TOOL);
-
         tag(ModTags.Blocks.NEEDS_RUBIDIUM_TOOL).addTag(BlockTags.NEEDS_DIAMOND_TOOL);
 
         tag(ModTags.Blocks.INCORRECT_FOR_RUBIDIUM_TOOL).addTag(BlockTags.INCORRECT_FOR_DIAMOND_TOOL).remove(ModTags.Blocks.NEEDS_RUBIDIUM_TOOL);
@@ -46,6 +42,10 @@ public class ModBlockTagProvider extends BlockTagsProvider {
         tag(ModTags.Blocks.NEEDS_STARSHARD_TOOL).addTag(Tags.Blocks.NEEDS_NETHERITE_TOOL);
 
         tag(ModTags.Blocks.INCORRECT_FOR_STARSHARD_TOOL).addTag(BlockTags.INCORRECT_FOR_NETHERITE_TOOL).remove(ModTags.Blocks.NEEDS_STARSHARD_TOOL);
+
+        tag(ModTags.Blocks.NEEDS_BRONZE_TOOL).addTag(BlockTags.NEEDS_IRON_TOOL);
+
+        tag(ModTags.Blocks.INCORRECT_FOR_BRONZE_TOOL).addTag(BlockTags.INCORRECT_FOR_IRON_TOOL).remove(ModTags.Blocks.NEEDS_BRONZE_TOOL);
 
     }
 }

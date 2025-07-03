@@ -2,7 +2,6 @@ package net.theelementguy.moremetals;
 
 import net.theelementguy.moremetals.block.ModBlocks;
 import net.theelementguy.moremetals.item.ModItems;
-import net.theelementguy.moremetals.loot.ModLootModifiers;
 import org.slf4j.Logger;
 
 import com.mojang.logging.LogUtils;
@@ -50,8 +49,6 @@ public class MoreMetalsMod {
 
         ModBlocks.register(modEventBus);
 
-        ModLootModifiers.register(modEventBus);
-
         // Do not add this line if there are no @SubscribeEvent-annotated functions in this class, like onServerStarting() below.
         NeoForge.EVENT_BUS.register(this);
 
@@ -87,7 +84,6 @@ public class MoreMetalsMod {
             event.accept(ModItems.RUBIDIUM);
             event.accept(ModItems.STARSHARD);
             event.accept(ModItems.BRONZE_INGOT);
-            event.accept(ModItems.CELESTIAL_BRONZE_UPGRADE_SMITHING_TEMPLATE);
         }
         if(event.getTabKey() == CreativeModeTabs.BUILDING_BLOCKS) {
             event.accept(ModBlocks.CUBIC_ZIRCONIA_BLOCK);
@@ -114,7 +110,6 @@ public class MoreMetalsMod {
             event.accept(ModItems.CUBIC_ZIRCONIA_CHESTPLATE);
             event.accept(ModItems.CUBIC_ZIRCONIA_LEGGINGS);
             event.accept(ModItems.CUBIC_ZIRCONIA_BOOTS);
-            event.accept(ModItems.CELESTIAL_BRRONZE_SWORD);
             event.accept(ModItems.RUBIDIUM_SWORD);
             event.accept(ModItems.RUBIDIUM_AXE);
             event.accept(ModItems.RUBIDIUM_HELMET);
