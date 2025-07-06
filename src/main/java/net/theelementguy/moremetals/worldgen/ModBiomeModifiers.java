@@ -24,6 +24,8 @@ public class ModBiomeModifiers {
 
     public static final ResourceKey<BiomeModifier> ADD_TIN_LARGE_ORE_KEY = registerKey("add_tin_large_ore");
 
+    public static final ResourceKey<BiomeModifier> ADD_TIN_LARGE_EXTRA_ORE_KEY = registerKey("add_tin_large_extra_ore");
+
     public static final ResourceKey<BiomeModifier> ADD_RUBIDIUM_LARGE_ORE_KEY = registerKey("add_rubidium_large_ore");
 
     public static final ResourceKey<BiomeModifier> ADD_RUBIDIUIM_SMALL_ORE_KEY = registerKey("add_rubidium_small_ore");
@@ -54,6 +56,8 @@ public class ModBiomeModifiers {
         context.register(ADD_STARSHARD_LARGE_ORE_KEY, new BiomeModifiers.AddFeaturesBiomeModifier(biomes.getOrThrow(BiomeTags.IS_END), HolderSet.direct(placedFeatures.getOrThrow(ModPlacedFeatures.STARSHARD_LARGEE_ORE_PLACED_KEY)), GenerationStep.Decoration.UNDERGROUND_ORES));
 
         context.register(ADD_STARSHARD_SMALL_ORE_KEY, new BiomeModifiers.AddFeaturesBiomeModifier(biomes.getOrThrow(BiomeTags.IS_END), HolderSet.direct(placedFeatures.getOrThrow(ModPlacedFeatures.STARSHARD_SMALL_ORE_PLACED_KEY)), GenerationStep.Decoration.UNDERGROUND_ORES));
+
+        context.register(ADD_TIN_LARGE_EXTRA_ORE_KEY, new BiomeModifiers.AddFeaturesBiomeModifier(biomes.getOrThrow(BiomeTags.IS_OVERWORLD), HolderSet.direct(placedFeatures.getOrThrow(ModPlacedFeatures.TIN_LARGE_EXTRA_ORE_PLACED_KEY)), GenerationStep.Decoration.UNDERGROUND_ORES));
 
     }
 
