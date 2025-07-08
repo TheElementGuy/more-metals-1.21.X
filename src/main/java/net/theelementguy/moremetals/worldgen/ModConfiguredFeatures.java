@@ -30,8 +30,6 @@ public class ModConfiguredFeatures {
 
     public static final ResourceKey<ConfiguredFeature<?, ?>> TIN_LARGE_ORE_KEY = registerKey("large_tin");
 
-    public static final ResourceKey<ConfiguredFeature<?, ?>> TIN_LARGE_EXTRA_ORE_KEY = registerKey("large_tin_extra");
-
     public static final ResourceKey<ConfiguredFeature<?, ?>> RUBIDIUM_LARGE_ORE_KEY = registerKey("large_rubidium");
 
     public static final ResourceKey<ConfiguredFeature<?, ?>> RUBIDIUM_SMALL_ORE_KEY = registerKey("small_rubidium");
@@ -64,8 +62,6 @@ public class ModConfiguredFeatures {
         register(context, TIN_SMALL_ORE_KEY, Feature.ORE, new OreConfiguration(tinOres, 2));
 
         register(context, TIN_LARGE_ORE_KEY, Feature.ORE, new OreConfiguration(tinOres, 10));
-
-        register(context, TIN_LARGE_EXTRA_ORE_KEY, Feature.ORE, new OreConfiguration(tinOres, 12));
 
         register(context, RUBIDIUM_LARGE_ORE_KEY, Feature.ORE, new OreConfiguration(rubidiumOres, 4));
 
