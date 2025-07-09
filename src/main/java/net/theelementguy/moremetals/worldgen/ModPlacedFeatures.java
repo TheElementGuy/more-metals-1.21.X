@@ -46,11 +46,11 @@ public class ModPlacedFeatures {
 
         register(context, CUBIC_ZIRCONIA_LARGE_ORE_PLACED_KEY, configuredFeatures.getOrThrow(ModConfiguredFeatures.CUBIC_ZIRCONIA_LARGE_ORE_KEY), ModOrePlacement.rareOrePlacement(8, HeightRangePlacement.triangle(VerticalAnchor.absolute(-48), VerticalAnchor.absolute(0))));
 
-        register(context, TIN_SMALL_ORE_PLACED_KEY, configuredFeatures.getOrThrow(ModConfiguredFeatures.TIN_SMALL_ORE_KEY), ModOrePlacement.commonOrePlacement(8, HeightRangePlacement.uniform(VerticalAnchor.absolute(-16), VerticalAnchor.absolute(140))));
+        register(context, TIN_SMALL_ORE_PLACED_KEY, configuredFeatures.getOrThrow(ModConfiguredFeatures.TIN_SMALL_ORE_KEY), ModOrePlacement.commonOrePlacement(60, HeightRangePlacement.uniform(VerticalAnchor.absolute(-16), VerticalAnchor.absolute(140))));
 
-        register(context, TIN_LARGE_ORE_PLACED_KEY, configuredFeatures.getOrThrow(ModConfiguredFeatures.TIN_LARGE_ORE_KEY), ModOrePlacement.commonOrePlacement(4, HeightRangePlacement.triangle(VerticalAnchor.absolute(-16), VerticalAnchor.absolute(48))));
+        register(context, TIN_LARGE_ORE_PLACED_KEY, configuredFeatures.getOrThrow(ModConfiguredFeatures.TIN_LARGE_ORE_KEY), ModOrePlacement.commonOrePlacement(16, HeightRangePlacement.triangle(VerticalAnchor.absolute(-16), VerticalAnchor.absolute(48))));
 
-        register(context, TIN_LARGE_EXTRA_ORE_PLACED_KEY, configuredFeatures.getOrThrow(ModConfiguredFeatures.TIN_LARGE_EXTRA_ORE_KEY), ModOrePlacement.commonOrePlacement(4, HeightRangePlacement.uniform(VerticalAnchor.absolute(80), VerticalAnchor.absolute(132))));
+        register(context, TIN_LARGE_EXTRA_ORE_PLACED_KEY, configuredFeatures.getOrThrow(ModConfiguredFeatures.TIN_LARGE_ORE_KEY), ModOrePlacement.commonOrePlacement(12, HeightRangePlacement.uniform(VerticalAnchor.absolute(80), VerticalAnchor.absolute(132))));
 
         register(context, RUBIDIUM_LARGE_ORE_PLACED_KEY, configuredFeatures.getOrThrow(ModConfiguredFeatures.RUBIDIUM_LARGE_ORE_KEY), ModOrePlacement.rareOrePlacement(1, HeightRangePlacement.uniform(VerticalAnchor.absolute(30), VerticalAnchor.absolute(46))));
 
