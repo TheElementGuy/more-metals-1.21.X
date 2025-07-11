@@ -28,15 +28,15 @@ public class ModArmorMaterials {
     }), 15, SoundEvents.ARMOR_EQUIP_DIAMOND, 1.0F, 0.0F, ModTags.Items.RUBIDIUM_REPAIRABLES, ModUtil.createEquipmentAssetResourceKey("rubidium"));
     public static final ArmorMaterial STARSHARD = new ArmorMaterial(41, (Map)Util.make(new EnumMap(ArmorType.class), (attribute) -> {
         attribute.put(ArmorType.HELMET, 4);
-        attribute.put(ArmorType.CHESTPLATE, 7);
-        attribute.put(ArmorType.LEGGINGS, 9);
+        attribute.put(ArmorType.CHESTPLATE, 9);
+        attribute.put(ArmorType.LEGGINGS, 7);
         attribute.put(ArmorType.BOOTS, 4);
         attribute.put(ArmorType.BODY, 12);
     }), 13, SoundEvents.ARMOR_EQUIP_DIAMOND, 4.0F, 0.5F, ModTags.Items.STARSHARD_REPAIRABLES, ModUtil.createEquipmentAssetResourceKey("starshard"));
-    public static final ArmorMaterial BRONZE = new ArmorMaterial(41, (Map)Util.make(new EnumMap(ArmorType.class), (attribute) -> {
+    public static final ArmorMaterial BRONZE = new ArmorMaterial(7, (Map)Util.make(new EnumMap(ArmorType.class), (attribute) -> {
         attribute.put(ArmorType.HELMET, 1);
-        attribute.put(ArmorType.CHESTPLATE, 4);
-        attribute.put(ArmorType.LEGGINGS, 5);
+        attribute.put(ArmorType.CHESTPLATE, 5);
+        attribute.put(ArmorType.LEGGINGS, 4);
         attribute.put(ArmorType.BOOTS, 2);
         attribute.put(ArmorType.BODY, 4);
     }), 13, SoundEvents.ARMOR_EQUIP_IRON, 0.0F, 0.0F, ModTags.Items.BRONZE_REPAIRABLES, ModEquipmentAssets.BRONZE);
