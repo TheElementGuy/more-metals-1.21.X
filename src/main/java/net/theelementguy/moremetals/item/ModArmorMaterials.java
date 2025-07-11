@@ -37,16 +37,16 @@ public class ModArmorMaterials {
 
     public static final Holder<ArmorMaterial> STARSHARD = register("starshard", Util.make(new EnumMap<>(ArmorItem.Type.class), attribute -> {
         attribute.put(ArmorItem.Type.HELMET, 4);
-        attribute.put(ArmorItem.Type.CHESTPLATE, 7);
-        attribute.put(ArmorItem.Type.LEGGINGS, 9);
+        attribute.put(ArmorItem.Type.CHESTPLATE, 9);
+        attribute.put(ArmorItem.Type.LEGGINGS, 7);
         attribute.put(ArmorItem.Type.BOOTS, 4);
         attribute.put(ArmorItem.Type.BODY, 12);
     }), 13, 4.0f, 0.5f, () -> ModItems.STARSHARD.get(), SoundEvents.ARMOR_EQUIP_DIAMOND);
 
     public static final Holder<ArmorMaterial> BRONZE = register("bronze", Util.make(new EnumMap<>(ArmorItem.Type.class), attribute -> {
         attribute.put(ArmorItem.Type.HELMET, 1);
-        attribute.put(ArmorItem.Type.CHESTPLATE, 4);
-        attribute.put(ArmorItem.Type.LEGGINGS, 5);
+        attribute.put(ArmorItem.Type.CHESTPLATE, 5);
+        attribute.put(ArmorItem.Type.LEGGINGS, 4);
         attribute.put(ArmorItem.Type.BOOTS, 2);
         attribute.put(ArmorItem.Type.BODY, 4);
     }), 13, 0.0f, 0.0f, () -> ModItems.BRONZE_INGOT.get(), SoundEvents.ARMOR_EQUIP_IRON);
