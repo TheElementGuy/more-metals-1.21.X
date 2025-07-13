@@ -90,7 +90,7 @@ public class MoreMetalsMod {
         if(event.getTabKey() == CreativeModeTabs.NATURAL_BLOCKS) {
             ModUtil.inventoryAddAfter(ModBlocks.CUBIC_ZIRCONIA_ORE, Blocks.LAPIS_ORE, event);
             ModUtil.inventoryAddAfter(ModBlocks.DEEPSLATE_CUBIC_ZIRCONIA_ORE, ModBlocks.CUBIC_ZIRCONIA_ORE, event);
-            ModUtil.inventoryAddAfter(ModBlocks.TIN_ORE, Blocks.COPPER_ORE, event);
+            ModUtil.inventoryAddAfter(ModBlocks.TIN_ORE, Blocks.DEEPSLATE_COPPER_ORE, event);
             ModUtil.inventoryAddAfter(ModBlocks.DEEPSLATE_TIN_ORE, ModBlocks.TIN_ORE, event);
             ModUtil.inventoryAddAfter(ModBlocks.NETHER_RUBIDIUM_ORE, Blocks.NETHER_QUARTZ_ORE, event);
             ModUtil.inventoryAddAfter(ModBlocks.END_STARSHARD_ORE, Blocks.ANCIENT_DEBRIS, event);
