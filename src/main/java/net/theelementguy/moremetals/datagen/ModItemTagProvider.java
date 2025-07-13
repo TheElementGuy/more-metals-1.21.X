@@ -13,6 +13,7 @@ import net.neoforged.neoforge.common.Tags;
 import net.theelementguy.moremetals.MoreMetalsMod;
 import net.theelementguy.moremetals.item.ModItems;
 import net.theelementguy.moremetals.util.ModTags;
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.Comparator;
@@ -26,7 +27,7 @@ public class ModItemTagProvider extends IntrinsicHolderTagsProvider<Item> {
     }
 
     @Override
-    protected void addTags(HolderLookup.Provider provider) {
+    protected void addTags(HolderLookup.@NotNull Provider provider) {
 
         tag(ItemTags.SWORDS).add(ModItems.CUBIC_ZIRCONIA_SWORD.get()).add(ModItems.RUBIDIUM_SWORD.get()).add(ModItems.STARSHARD_SWORD.get()).add(ModItems.BRONZE_SWORD.get()).replace(false);
         tag(ItemTags.AXES).add(ModItems.CUBIC_ZIRCONIA_AXE.get()).add(ModItems.RUBIDIUM_AXE.get()).add(ModItems.STARSHARD_AXE.get()).add(ModItems.BRONZE_AXE.get()).replace(false);

@@ -1,5 +1,6 @@
 package net.theelementguy.moremetals;
 
+import net.minecraft.world.item.Items;
 import net.theelementguy.moremetals.block.ModBlocks;
 import net.theelementguy.moremetals.item.ModItems;
 import org.slf4j.Logger;
@@ -22,6 +23,7 @@ import net.neoforged.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.neoforged.neoforge.common.NeoForge;
 import net.neoforged.neoforge.event.BuildCreativeModeTabContentsEvent;
 import net.neoforged.neoforge.event.server.ServerStartingEvent;
+import net.theelementguy.moremetals.util.ModUtil;
 
 // The value here should match an entry in the META-INF/neoforge.mods.toml file
 @Mod(MoreMetalsMod.MOD_ID)
@@ -61,87 +63,78 @@ public class MoreMetalsMod {
 
     private void commonSetup(final FMLCommonSetupEvent event)
     {
-        // Some common setup code
-        LOGGER.info("HELLO FROM COMMON SETUP");
-
-        if (MoreMetalsModConfig.logDirtBlock)
-            LOGGER.info("DIRT BLOCK >> {}", BuiltInRegistries.BLOCK.getKey(Blocks.DIRT));
-
-        LOGGER.info(MoreMetalsModConfig.magicNumberIntroduction + MoreMetalsModConfig.magicNumber);
-
-        MoreMetalsModConfig.items.forEach((item) -> LOGGER.info("ITEM >> {}", item.toString()));
     }
 
     // Add the example block item to the building blocks tab
     private void addCreative(BuildCreativeModeTabContentsEvent event)
     {
         if(event.getTabKey() == CreativeModeTabs.INGREDIENTS) {
-            event.accept(ModItems.CUBIC_ZIRCONIA);
-            event.accept(ModItems.RAW_CUBIC_ZIRCONIA);
-            event.accept(ModItems.TIN_SCRAPS);
-            event.accept(ModItems.BRONZE_INGOT);
-            event.accept(ModItems.RUBIDIUM);
-            event.accept(ModItems.STARSHARD);
+            ModUtil.inventoryAddAfter(ModItems.CUBIC_ZIRCONIA.get(), Items.GOLD_INGOT, event);
+            ModUtil.inventoryAddAfter(ModItems.RAW_CUBIC_ZIRCONIA.get(), Items.LAPIS_LAZULI, event);
+            ModUtil.inventoryAddAfter(ModItems.TIN_SCRAPS.get(), Items.RAW_COPPER, event);
+            ModUtil.inventoryAddAfter(ModItems.RUBIDIUM.get(), Items.DIAMOND, event);
+            ModUtil.inventoryAddAfter(ModItems.STARSHARD.get(), ModItems.RUBIDIUM.get(), event);
+            ModUtil.inventoryAddAfter(ModItems.BRONZE_INGOT.get(), Items.COPPER_INGOT, event);
         }
         if(event.getTabKey() == CreativeModeTabs.BUILDING_BLOCKS) {
-            event.accept(ModBlocks.CUBIC_ZIRCONIA_BLOCK);
-            event.accept(ModBlocks.RAW_CUBIC_ZIRCONIA_BLOCK);
-            event.accept(ModBlocks.TIN_BLOCK);
-            event.accept(ModBlocks.BRONZE_BLOCK);
-            event.accept(ModBlocks.RUBIDIUM_BLOCK);
-            event.accept(ModBlocks.STARSHARD_BLOCK);
+            ModUtil.inventoryAddAfter(ModBlocks.CUBIC_ZIRCONIA_BLOCK.get(), Blocks.LAPIS_BLOCK, event);
+            ModUtil.inventoryAddAfter(ModBlocks.RUBIDIUM_BLOCK, Blocks.DIAMOND_BLOCK, event);
+            ModUtil.inventoryAddAfter(ModBlocks.STARSHARD_BLOCK, Blocks.NETHERITE_BLOCK, event);
+            ModUtil.inventoryAddAfter(ModBlocks.BRONZE_BLOCK, Blocks.OXIDIZED_COPPER, event);
         }
         if(event.getTabKey() == CreativeModeTabs.NATURAL_BLOCKS) {
-            event.accept(ModBlocks.CUBIC_ZIRCONIA_ORE);
-            event.accept(ModBlocks.DEEPSLATE_CUBIC_ZIRCONIA_ORE);
-            event.accept(ModBlocks.TIN_ORE);
-            event.accept(ModBlocks.DEEPSLATE_TIN_ORE);
-            event.accept(ModBlocks.NETHER_RUBIDIUM_ORE);
-            event.accept(ModBlocks.END_STARSHARD_ORE);
+            ModUtil.inventoryAddAfter(ModBlocks.CUBIC_ZIRCONIA_ORE, Blocks.LAPIS_ORE, event);
+            ModUtil.inventoryAddAfter(ModBlocks.DEEPSLATE_CUBIC_ZIRCONIA_ORE, ModBlocks.CUBIC_ZIRCONIA_ORE, event);
+            ModUtil.inventoryAddAfter(ModBlocks.TIN_ORE, Blocks.DEEPSLATE_COPPER_ORE, event);
+            ModUtil.inventoryAddAfter(ModBlocks.DEEPSLATE_TIN_ORE, ModBlocks.TIN_ORE, event);
+            ModUtil.inventoryAddAfter(ModBlocks.NETHER_RUBIDIUM_ORE, Blocks.NETHER_QUARTZ_ORE, event);
+            ModUtil.inventoryAddAfter(ModBlocks.END_STARSHARD_ORE, Blocks.ANCIENT_DEBRIS, event);
+            ModUtil.inventoryAddAfter(ModBlocks.TIN_BLOCK, Blocks.RAW_COPPER_BLOCK, event);
+            ModUtil.inventoryAddAfter(ModBlocks.RAW_CUBIC_ZIRCONIA_BLOCK, Blocks.RAW_IRON_BLOCK, event);
         }
         if (event.getTabKey() == CreativeModeTabs.COMBAT) {
-            event.accept(ModItems.CUBIC_ZIRCONIA_SWORD);
-            event.accept(ModItems.CUBIC_ZIRCONIA_AXE);
-            event.accept(ModItems.CUBIC_ZIRCONIA_HELMET);
-            event.accept(ModItems.CUBIC_ZIRCONIA_CHESTPLATE);
-            event.accept(ModItems.CUBIC_ZIRCONIA_LEGGINGS);
-            event.accept(ModItems.CUBIC_ZIRCONIA_BOOTS);
-            event.accept(ModItems.BRONZE_SWORD);
-            event.accept(ModItems.BRONZE_AXE);
-            event.accept(ModItems.BRONZE_HELMET);
-            event.accept(ModItems.BRONZE_CHESTPLATE);
-            event.accept(ModItems.BRONZE_LEGGINGS);
-            event.accept(ModItems.BRONZE_BOOTS);
-            event.accept(ModItems.RUBIDIUM_SWORD);
-            event.accept(ModItems.RUBIDIUM_AXE);
-            event.accept(ModItems.RUBIDIUM_HELMET);
-            event.accept(ModItems.RUBIDIUM_CHESTPLATE);
-            event.accept(ModItems.RUBIDIUM_LEGGINGS);
-            event.accept(ModItems.RUBIDIUM_BOOTS);
-            event.accept(ModItems.STARSHARD_SWORD);
-            event.accept(ModItems.STARSHARD_AXE);
-            event.accept(ModItems.STARSHARD_HELMET);
-            event.accept(ModItems.STARSHARD_CHESTPLATE);
-            event.accept(ModItems.STARSHARD_LEGGINGS);
-            event.accept(ModItems.STARSHARD_BOOTS);
+            ModUtil.inventoryAddAfter(ModItems.CUBIC_ZIRCONIA_SWORD, Items.IRON_SWORD, event);
+            ModUtil.inventoryAddAfter(ModItems.CUBIC_ZIRCONIA_AXE, Items.IRON_AXE, event);
+            ModUtil.inventoryAddAfter(ModItems.CUBIC_ZIRCONIA_HELMET, Items.IRON_BOOTS, event);
+            ModUtil.inventoryAddAfter(ModItems.CUBIC_ZIRCONIA_CHESTPLATE, ModItems.CUBIC_ZIRCONIA_HELMET, event);
+            ModUtil.inventoryAddAfter(ModItems.CUBIC_ZIRCONIA_LEGGINGS, ModItems.CUBIC_ZIRCONIA_CHESTPLATE, event);
+            ModUtil.inventoryAddAfter(ModItems.CUBIC_ZIRCONIA_BOOTS, ModItems.CUBIC_ZIRCONIA_LEGGINGS, event);
+            ModUtil.inventoryAddAfter(ModItems.RUBIDIUM_SWORD, Items.DIAMOND_SWORD, event);
+            ModUtil.inventoryAddAfter(ModItems.RUBIDIUM_AXE, Items.DIAMOND_AXE, event);
+            ModUtil.inventoryAddAfter(ModItems.RUBIDIUM_HELMET, Items.DIAMOND_BOOTS, event);
+            ModUtil.inventoryAddAfter(ModItems.RUBIDIUM_CHESTPLATE, ModItems.RUBIDIUM_HELMET, event);
+            ModUtil.inventoryAddAfter(ModItems.RUBIDIUM_LEGGINGS, ModItems.RUBIDIUM_CHESTPLATE, event);
+            ModUtil.inventoryAddAfter(ModItems.RUBIDIUM_BOOTS, ModItems.RUBIDIUM_LEGGINGS, event);
+            ModUtil.inventoryAddAfter(ModItems.STARSHARD_SWORD, Items.NETHERITE_SWORD, event);
+            ModUtil.inventoryAddAfter(ModItems.STARSHARD_AXE, Items.NETHERITE_AXE, event);
+            ModUtil.inventoryAddAfter(ModItems.STARSHARD_HELMET, Items.NETHERITE_BOOTS, event);
+            ModUtil.inventoryAddAfter(ModItems.STARSHARD_CHESTPLATE, ModItems.STARSHARD_HELMET, event);
+            ModUtil.inventoryAddAfter(ModItems.STARSHARD_LEGGINGS, ModItems.STARSHARD_CHESTPLATE, event);
+            ModUtil.inventoryAddAfter(ModItems.STARSHARD_BOOTS, ModItems.STARSHARD_LEGGINGS, event);
+            ModUtil.inventoryAddAfter(ModItems.BRONZE_SWORD, Items.STONE_SWORD, event);
+            ModUtil.inventoryAddAfter(ModItems.BRONZE_AXE, Items.STONE_AXE, event);
+            ModUtil.inventoryAddAfter(ModItems.BRONZE_HELMET, Items.CHAINMAIL_BOOTS, event);
+            ModUtil.inventoryAddAfter(ModItems.BRONZE_CHESTPLATE, ModItems.BRONZE_HELMET, event);
+            ModUtil.inventoryAddAfter(ModItems.BRONZE_LEGGINGS, ModItems.BRONZE_CHESTPLATE, event);
+            ModUtil.inventoryAddAfter(ModItems.BRONZE_BOOTS, ModItems.BRONZE_LEGGINGS, event);
         }
         if (event.getTabKey() == CreativeModeTabs.TOOLS_AND_UTILITIES) {
-            event.accept(ModItems.CUBIC_ZIRCONIA_AXE);
-            event.accept(ModItems.CUBIC_ZIRCONIA_PICKAXE);
-            event.accept(ModItems.CUBIC_ZIRCONIA_SHOVEL);
-            event.accept(ModItems.CUBIC_ZIRCONIA_HOE);
-            event.accept(ModItems.BRONZE_AXE);
-            event.accept(ModItems.BRONZE_PICKAXE);
-            event.accept(ModItems.BRONZE_SHOVEL);
-            event.accept(ModItems.BRONZE_HOE);
-            event.accept(ModItems.RUBIDIUM_AXE);
-            event.accept(ModItems.RUBIDIUM_PICKAXE);
-            event.accept(ModItems.RUBIDIUM_SHOVEL);
-            event.accept(ModItems.RUBIDIUM_HOE);
-            event.accept(ModItems.STARSHARD_AXE);
-            event.accept(ModItems.STARSHARD_PICKAXE);
-            event.accept(ModItems.STARSHARD_SHOVEL);
-            event.accept(ModItems.STARSHARD_HOE);
+            ModUtil.inventoryAddAfter(ModItems.CUBIC_ZIRCONIA_AXE, Items.IRON_HOE, event);
+            ModUtil.inventoryAddAfter(ModItems.CUBIC_ZIRCONIA_PICKAXE, ModItems.CUBIC_ZIRCONIA_AXE, event);
+            ModUtil.inventoryAddAfter(ModItems.CUBIC_ZIRCONIA_SHOVEL, ModItems.CUBIC_ZIRCONIA_PICKAXE, event);
+            ModUtil.inventoryAddAfter(ModItems.CUBIC_ZIRCONIA_HOE, ModItems.CUBIC_ZIRCONIA_SHOVEL, event);
+            ModUtil.inventoryAddAfter(ModItems.RUBIDIUM_AXE, Items.DIAMOND_HOE, event);
+            ModUtil.inventoryAddAfter(ModItems.RUBIDIUM_PICKAXE, ModItems.RUBIDIUM_AXE, event);
+            ModUtil.inventoryAddAfter(ModItems.RUBIDIUM_SHOVEL, ModItems.RUBIDIUM_PICKAXE, event);
+            ModUtil.inventoryAddAfter(ModItems.RUBIDIUM_HOE, ModItems.RUBIDIUM_SHOVEL, event);
+            ModUtil.inventoryAddAfter(ModItems.STARSHARD_AXE, Items.NETHERITE_HOE, event);
+            ModUtil.inventoryAddAfter(ModItems.STARSHARD_PICKAXE, ModItems.STARSHARD_AXE, event);
+            ModUtil.inventoryAddAfter(ModItems.STARSHARD_SHOVEL, ModItems.STARSHARD_PICKAXE, event);
+            ModUtil.inventoryAddAfter(ModItems.STARSHARD_HOE, ModItems.STARSHARD_SHOVEL, event);
+            ModUtil.inventoryAddAfter(ModItems.BRONZE_AXE, Items.STONE_PICKAXE, event);
+            ModUtil.inventoryAddAfter(ModItems.BRONZE_PICKAXE, ModItems.BRONZE_AXE, event);
+            ModUtil.inventoryAddAfter(ModItems.BRONZE_SHOVEL, ModItems.BRONZE_PICKAXE, event);
+            ModUtil.inventoryAddAfter(ModItems.BRONZE_HOE, ModItems.BRONZE_SHOVEL, event);
         }
     }
 
