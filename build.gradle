@@ -154,7 +154,8 @@ var generateModMetadata = tasks.register("generateModMetadata", ProcessResources
             mod_license            : mod_license,
             mod_version            : mod_version,
             mod_authors            : mod_authors,
-            mod_description        : mod_description
+            mod_description        : mod_description,
+            jarVersion             : mod_version
     ]
     inputs.properties replaceProperties
     expand replaceProperties
@@ -194,5 +195,5 @@ idea {
 }
 
 tasks.named("jar") {
-    archiveFileName = "[NeoForge] ${mod_name} ${mod_version} for Minecraft ${minecraft_version}.jar"
+    archiveFileName = "[NeoForge ${minecraft_version}] ${mod_name_short} ${mod_version}.jar"
 }
