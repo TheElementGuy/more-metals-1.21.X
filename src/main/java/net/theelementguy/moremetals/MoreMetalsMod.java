@@ -29,7 +29,7 @@ import net.theelementguy.moremetals.util.ModUtil;
 @Mod(MoreMetalsMod.MOD_ID)
 public class MoreMetalsMod {
     // Define mod id in a common place for everything to reference
-    public static final String MOD_ID = "moremetals";
+    public static final String MOD_ID = "tegmoremetals";
     // Directly reference a slf4j logger
     private static final Logger LOGGER = LogUtils.getLogger();
 

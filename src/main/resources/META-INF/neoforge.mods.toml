@@ -20,7 +20,7 @@ issueTrackerURL="https://github.com/TheElementGuy/more-metals-1.21.4/issues" #op
 [[mods]] #mandatory
 
 # The modid of the mod
-modId="moremetals" #mandatory
+modId="tegmoremetals" #mandatory
 
 # The version number of the mod
 version="${file.jarVersion}" #mandatory
@@ -62,7 +62,7 @@ Bronze: By fusing tin and copper, you can create bronze, which is a slightly inf
 # The coremods config file path is not configurable and is always loaded from META-INF/coremods.json
 
 # A dependency - use the . to indicate dependency for a specific modid. Dependencies are optional.
-[[dependencies.moremetals]] #optional
+[[dependencies.tegmoremetals]] #optional
 # the modid of the dependency
 modId="neoforge" #mandatory
 # The type of the dependency. Can be one of "required", "optional", "incompatible" or "discouraged" (case-insensitive).
@@ -81,7 +81,7 @@ ordering="NONE"
 side="BOTH"
 
 # Here's another dependency
-[[dependencies.moremetals]]
+[[dependencies.tegmoremetals]]
 modId="minecraft"
 type="required"
 # This version range declares a minimum of the current minecraft version up to but not including the next major version

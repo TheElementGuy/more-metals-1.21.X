@@ -39,6 +39,7 @@ public class ModItemTagProvider extends IntrinsicHolderTagsProvider<Item> {
         tag(ModTags.Items.RUBIDIUM_REPAIRABLES).add(ModItems.RUBIDIUM.get()).replace(false);
         tag(ModTags.Items.STARSHARD_REPAIRABLES).add(ModItems.STARSHARD.get()).replace(false);
         tag(ModTags.Items.BRONZE_REPAIRABLES).add(ModItems.BRONZE_INGOT.get()).replace(false);
+        tag(ItemTags.TRIM_MATERIALS).add(ModItems.BRONZE_INGOT.get()).add(ModItems.CUBIC_ZIRCONIA.get()).add(ModItems.TIN_SCRAPS.get()).add(ModItems.RUBIDIUM.get()).add(ModItems.STARSHARD.get());
 
         //Neoforge tags
         tag(Tags.Items.GEMS).add(ModItems.CUBIC_ZIRCONIA.get()).add(ModItems.RUBIDIUM.get()).add(ModItems.STARSHARD.get()).replace(false);
