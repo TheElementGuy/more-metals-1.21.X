@@ -46,11 +46,11 @@
         "quartz": "minecraft:trims/color_palettes/quartz",
         "redstone": "minecraft:trims/color_palettes/redstone",
         "resin": "minecraft:trims/color_palettes/resin",
-        "cubic_zirconia": "moremetals:trims/color_palettes/cubic_zirconia",
-        "rubidium": "moremetals:trims/color_palettes/rubidium",
-        "starshard": "moremetals:trims/color_palettes/starshard",
-        "bronze": "moremetals:trims/color_palettes/bronze",
-        "tin": "moremetals:trims/color_palettes/tin"
+        "cubic_zirconia": "tegmoremetals:trims/color_palettes/cubic_zirconia",
+        "rubidium": "tegmoremetals:trims/color_palettes/rubidium",
+        "starshard": "tegmoremetals:trims/color_palettes/starshard",
+        "bronze": "tegmoremetals:trims/color_palettes/bronze",
+        "tin": "tegmoremetals:trims/color_palettes/tin"
       },
       "textures": [
         "minecraft:trims/items/helmet_trim",

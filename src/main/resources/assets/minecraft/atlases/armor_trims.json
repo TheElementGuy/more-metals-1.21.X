@@ -57,11 +57,11 @@
         "diamond_darker": "trims/color_palettes/diamond_darker",
         "netherite_darker": "trims/color_palettes/netherite_darker",
         "resin": "trims/color_palettes/resin",
-        "cubic_zirconia": "moremetals:trims/color_palettes/cubic_zirconia",
-        "tin": "moremetals:trims/color_palettes/tin",
-        "rubidium": "moremetals:trims/color_palettes/rubidium",
-        "starshard": "moremetals:trims/color_palettes/starshard",
-        "bronze": "moremetals:trims/color_palettes/bronze"
+        "cubic_zirconia": "tegmoremetals:trims/color_palettes/cubic_zirconia",
+        "tin": "tegmoremetals:trims/color_palettes/tin",
+        "rubidium": "tegmoremetals:trims/color_palettes/rubidium",
+        "starshard": "tegmoremetals:trims/color_palettes/starshard",
+        "bronze": "tegmoremetals:trims/color_palettes/bronze"
       }
     }
   ]
