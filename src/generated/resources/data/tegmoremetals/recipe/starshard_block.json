@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    "tegmoremetals:starshard",
+    "tegmoremetals:starshard",
+    "tegmoremetals:starshard",
+    "tegmoremetals:starshard",
+    "tegmoremetals:starshard",
+    "tegmoremetals:starshard",
+    "tegmoremetals:starshard",
+    "tegmoremetals:starshard",
+    "tegmoremetals:starshard"
+  ],
+  "result": {
+    "count": 1,
+    "id": "tegmoremetals:starshard_block"
+  }
+}

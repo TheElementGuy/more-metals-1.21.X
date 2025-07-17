@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    "minecraft:copper_ingot",
+    "minecraft:copper_ingot",
+    "minecraft:copper_ingot",
+    "minecraft:copper_ingot",
+    "tegmoremetals:tin_scraps"
+  ],
+  "result": {
+    "count": 1,
+    "id": "tegmoremetals:bronze_ingot"
+  }
+}

@@ -1,0 +1,21 @@
+// 1.21.7	2025-07-16T10:08:51.7570457	Tags for minecraft:block mod id tegmoremetals
+04646014d43d554726b15cd333ed5268773eadcf data/c/tags/block/ores.json
+b5b23550b71edcd9fa2d8e3be652448709397bba data/c/tags/block/ores_in_ground/deepslate.json
+8365361313a9e4f737943544be137b8ca964a14f data/c/tags/block/ores_in_ground/netherrack.json
+d3fe73997b5b0e69bc82e422978a3c5a6f825e7c data/c/tags/block/ores_in_ground/stone.json
+cce14a43bbf389ff4c1c6a89c01f54a93d8e00e9 data/c/tags/block/ore_rates/dense.json
+3de754ca6c2b1f6d1cd125959a552732794809fa data/c/tags/block/ore_rates/singular.json
+391c1f9f11d6974f64f316bd6ac8b97a6a900f21 data/c/tags/block/storage_blocks.json
+3eeeb88ba6582c0f082406810f5f53d48bea7db7 data/minecraft/tags/block/mineable/pickaxe.json
+4334d432fe8fd7e27b4f3cc59ac067f7805da617 data/minecraft/tags/block/needs_diamond_tool.json
+b68d35dc58fcb9ad923aa6236a6403fc1a7ced1b data/minecraft/tags/block/needs_iron_tool.json
+cce14a43bbf389ff4c1c6a89c01f54a93d8e00e9 data/minecraft/tags/block/needs_stone_tool.json
+a607a1141f2e01a5a5f3952e03bc21540a1580d0 data/neoforge/tags/block/needs_netherite_tool.json
+950a086f855d118e00d3fc9697663c7721c42db1 data/tegmoremetals/tags/block/incorrect_for_bronze_tool.json
+e9c8e4da5e88c0c61d9825574f86590d390c5909 data/tegmoremetals/tags/block/incorrect_for_cubic_zirconia_tool.json
+2b9f0145900483c66da0fd01919b043af46c406f data/tegmoremetals/tags/block/incorrect_for_rubidium_tool.json
+6286495141c0666f8c09f1db9b6d689fcc536cb2 data/tegmoremetals/tags/block/incorrect_for_starshard_tool.json
+32b13946c4cd1f944b029659ccce5fcb2adad4ff data/tegmoremetals/tags/block/needs_bronze.json
+32b13946c4cd1f944b029659ccce5fcb2adad4ff data/tegmoremetals/tags/block/needs_cubic_zirconia.json
+a249c46329a41538f49a564e1f14338aaf1be5a0 data/tegmoremetals/tags/block/needs_rubidium.json
+28664f209d59643cd660ffecc4ec013d2b0ccf68 data/tegmoremetals/tags/block/needs_starshard.json

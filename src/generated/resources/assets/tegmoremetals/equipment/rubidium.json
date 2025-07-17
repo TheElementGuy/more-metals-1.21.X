@@ -1,0 +1,14 @@
+{
+  "layers": {
+    "humanoid": [
+      {
+        "texture": "tegmoremetals:rubidium"
+      }
+    ],
+    "humanoid_leggings": [
+      {
+        "texture": "tegmoremetals:rubidium"
+      }
+    ]
+  }
+}

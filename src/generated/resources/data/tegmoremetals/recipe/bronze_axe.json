@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "I": "tegmoremetals:bronze_ingot",
+    "S": "minecraft:stick"
+  },
+  "pattern": [
+    "II ",
+    "IS ",
+    " S "
+  ],
+  "result": {
+    "count": 1,
+    "id": "tegmoremetals:bronze_axe"
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "remove": [
+    "#tegmoremetals:needs_rubidium"
+  ],
+  "values": [
+    "#minecraft:incorrect_for_diamond_tool"
+  ]
+}

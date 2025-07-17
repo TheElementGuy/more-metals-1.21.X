@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:blasting",
+  "category": "misc",
+  "cookingtime": 100,
+  "experience": 1.0,
+  "group": "cz",
+  "ingredient": "tegmoremetals:deepslate_cubic_zirconia_ore",
+  "result": {
+    "count": 1,
+    "id": "tegmoremetals:cubic_zirconia"
+  }
+}

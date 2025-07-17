@@ -1,0 +1,19 @@
+// 1.21.7	2025-07-16T10:08:51.7743777	Tags for minecraft:item mod id vanilla
+bcf40f7f25043f351f7cfec10d69f9a493e12c07 data/c/tags/item/armors.json
+b039d6852044663acf3363d9e0a0d13e1a4ce94e data/c/tags/item/enchantables.json
+f4fb1bfd4f5db4017f58410d1f7b695cd8ec671b data/c/tags/item/gems.json
+4817cd36b1c81c47c33458f4ac7489c779d40944 data/c/tags/item/raw_materials.json
+a2a72fb8991a5f5c620dcc3d42305368d4740d62 data/c/tags/item/tools.json
+fb965d44286283ff853de4f9dad66f3830331ddd data/c/tags/item/tools/melee_weapon.json
+4a87695ea0a7a16c1534c846090b6add82b575dd data/c/tags/item/tools/mining_tool.json
+d166f1c9820be1f971f16bcea46f43273c5af3c3 data/minecraft/tags/item/axes.json
+7f322da25d9a8efabdce8661f5e8b598697e30ee data/minecraft/tags/item/hoes.json
+4a87695ea0a7a16c1534c846090b6add82b575dd data/minecraft/tags/item/pickaxes.json
+a387c43390c15f51f6a2059eea56284565d947d0 data/minecraft/tags/item/shovels.json
+04f43fd15b72d3f4fb454512e9ed6beed180c648 data/minecraft/tags/item/swords.json
+bcf40f7f25043f351f7cfec10d69f9a493e12c07 data/minecraft/tags/item/trimmable_armor.json
+aab3d15c185759fcdb0269b1a6daaaab39c498f9 data/minecraft/tags/item/trim_materials.json
+874f75743cd18eb83330b9b0f16c4ace1591589c data/tegmoremetals/tags/item/bronze_repairables.json
+d1818d2389619d21cff098d5c083cbfa18781d7d data/tegmoremetals/tags/item/cubic_zirconia_replaceables.json
+1a33cbabe22f923270474f80ff2cca8485ed00ec data/tegmoremetals/tags/item/rubidium_replaceables.json
+c5b0f34087a29bbfc272b9652895d7e2175d5ba0 data/tegmoremetals/tags/item/starshard_replceables.json

@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "tegmoremetals:item/cubic_zirconia_chestplate",
+    "layer1": "minecraft:trims/items/chestplate_trim_bronze"
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:smelting",
+  "category": "misc",
+  "cookingtime": 200,
+  "experience": 1.5,
+  "group": "s",
+  "ingredient": "tegmoremetals:end_starshard_ore",
+  "result": {
+    "count": 1,
+    "id": "tegmoremetals:starshard"
+  }
+}

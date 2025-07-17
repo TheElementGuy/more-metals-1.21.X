@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    "tegmoremetals:rubidium",
+    "tegmoremetals:rubidium",
+    "tegmoremetals:rubidium",
+    "tegmoremetals:rubidium",
+    "tegmoremetals:rubidium",
+    "tegmoremetals:rubidium",
+    "tegmoremetals:rubidium",
+    "tegmoremetals:rubidium",
+    "tegmoremetals:rubidium"
+  ],
+  "result": {
+    "count": 1,
+    "id": "tegmoremetals:rubidium_block"
+  }
+}

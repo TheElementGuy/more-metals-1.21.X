@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_cz": {
+      "conditions": {
+        "items": [
+          {
+            "items": "tegmoremetals:cubic_zirconia"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "tegmoremetals:cubic_zirconia_boots"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_cz"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "tegmoremetals:cubic_zirconia_boots"
+    ]
+  }
+}

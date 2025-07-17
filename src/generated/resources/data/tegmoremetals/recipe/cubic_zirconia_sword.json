@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "I": "tegmoremetals:cubic_zirconia",
+    "S": "minecraft:stick"
+  },
+  "pattern": [
+    " I ",
+    " I ",
+    " S "
+  ],
+  "result": {
+    "count": 1,
+    "id": "tegmoremetals:cubic_zirconia_sword"
+  }
+}

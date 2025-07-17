@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:smelting",
+  "category": "misc",
+  "cookingtime": 200,
+  "experience": 0.7,
+  "group": "t",
+  "ingredient": "tegmoremetals:tin_ore",
+  "result": {
+    "count": 1,
+    "id": "tegmoremetals:tin_scraps"
+  }
+}

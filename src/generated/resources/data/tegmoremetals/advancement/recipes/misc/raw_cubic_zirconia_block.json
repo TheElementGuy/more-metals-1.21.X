@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_raw_cubic_zirconia_block": {
+      "conditions": {
+        "items": [
+          {
+            "items": "tegmoremetals:raw_cubic_zirconia_block"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "tegmoremetals:raw_cubic_zirconia_block"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_raw_cubic_zirconia_block"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "tegmoremetals:raw_cubic_zirconia_block"
+    ]
+  }
+}

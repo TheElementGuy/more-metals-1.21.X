@@ -1,0 +1,14 @@
+{
+  "layers": {
+    "humanoid": [
+      {
+        "texture": "tegmoremetals:starshard"
+      }
+    ],
+    "humanoid_leggings": [
+      {
+        "texture": "tegmoremetals:starshard"
+      }
+    ]
+  }
+}

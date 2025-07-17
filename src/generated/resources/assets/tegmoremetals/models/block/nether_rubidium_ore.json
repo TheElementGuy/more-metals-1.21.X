@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/cube_all",
+  "textures": {
+    "all": "tegmoremetals:block/nether_rubidium_ore"
+  }
+}

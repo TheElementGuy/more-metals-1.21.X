@@ -1,0 +1,14 @@
+{
+  "layers": {
+    "humanoid": [
+      {
+        "texture": "tegmoremetals:cubic_zirconia"
+      }
+    ],
+    "humanoid_leggings": [
+      {
+        "texture": "tegmoremetals:cubic_zirconia"
+      }
+    ]
+  }
+}

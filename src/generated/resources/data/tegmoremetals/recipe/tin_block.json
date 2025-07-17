@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    "tegmoremetals:tin_scraps",
+    "tegmoremetals:tin_scraps",
+    "tegmoremetals:tin_scraps",
+    "tegmoremetals:tin_scraps",
+    "tegmoremetals:tin_scraps",
+    "tegmoremetals:tin_scraps",
+    "tegmoremetals:tin_scraps",
+    "tegmoremetals:tin_scraps",
+    "tegmoremetals:tin_scraps"
+  ],
+  "result": {
+    "count": 1,
+    "id": "tegmoremetals:tin_block"
+  }
+}

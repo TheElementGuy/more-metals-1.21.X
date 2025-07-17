@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:blasting",
+  "category": "misc",
+  "cookingtime": 100,
+  "experience": 1.3,
+  "group": "r",
+  "ingredient": "tegmoremetals:nether_rubidium_ore",
+  "result": {
+    "count": 1,
+    "id": "tegmoremetals:rubidium"
+  }
+}
