@@ -1,8 +1,0 @@
-{
-  "remove": [
-    "#tegmoremetals:needs_starshard"
-  ],
-  "values": [
-    "#minecraft:incorrect_for_netherite_tool"
-  ]
-}

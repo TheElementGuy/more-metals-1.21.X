@@ -1,6 +1,0 @@
-{
-  "parent": "minecraft:block/cube_all",
-  "textures": {
-    "all": "tegmoremetals:block/cubic_zirconia_block"
-  }
-}

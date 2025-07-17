@@ -24,6 +24,14 @@ public class DataGenerators {
         PackOutput output = generator.getPackOutput();
         CompletableFuture<HolderLookup.Provider> provider = event.getLookupProvider();
 
+        generator.addProvider(true, new ModModelProvider(output));
+
+        generator.addProvider(true, new ModEquipmentAssetProvider(output));
+
+        generator.addProvider(true, new ModLanguageProvider(output, "en_us"));
+
+        generator.addProvider(true, new ModLanguageProviderLol(output, "lol_us"));
+
         generator.addProvider(true, ModBlockLootTableProvider.create(output, provider));
         new LootTableProvider(output, Collections.emptySet(), List.of(new LootTableProvider.SubProviderEntry(ModBlockLootTableProvider::new, LootContextParamSets.BLOCK)), provider);
         generator.addProvider(true, new ModRecipeProvider.Runner(output, provider));
@@ -33,15 +41,11 @@ public class DataGenerators {
         generator.addProvider(true, new ModItemTagProvider(output, provider, blockTagsProvider.contentsGetter()));
         generator.addProvider(true, new ModBiomeTagProvider(output, provider));
 
-        generator.addProvider(true, new ModModelProvider(output));
-
-        generator.addProvider(true, new ModEquipmentAssetProvider(output));
-
         generator.addProvider(true, new ModDatapackProvider(output, provider));
+    }
 
-        generator.addProvider(true, new ModLanguageProvider(output, "en_us"));
-
-        generator.addProvider(true, new ModLanguageProviderLol(output, "lol_us"));
+    @SubscribeEvent
+    public static void gatherData(GatherDataEvent.Server event) {
     }
 
 }
