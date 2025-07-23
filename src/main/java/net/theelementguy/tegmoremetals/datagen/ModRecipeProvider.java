@@ -53,6 +53,8 @@ public class ModRecipeProvider extends RecipeProvider {
 
         List<ItemLike> STARSHARD_SMELTABLES = List.of(ModBlocks.END_STARSHARD_ORE);
 
+        List<ItemLike> BLOODSTONE_SMELTABLES = List.of(ModBlocks.BLOODSTONE_ORE, ModBlocks.DEEPSLATE_BLOODSTONE_ORE);
+
         blockRecipe(ModItems.CUBIC_ZIRCONIA.get(), ModBlocks.CUBIC_ZIRCONIA_BLOCK.asItem(), this.output);
 
         blockRecipe(ModItems.RAW_CUBIC_ZIRCONIA.get(), ModBlocks.RAW_CUBIC_ZIRCONIA_BLOCK.asItem(), this.output);
@@ -64,6 +66,8 @@ public class ModRecipeProvider extends RecipeProvider {
         blockRecipe(ModItems.STARSHARD.get(), ModBlocks.STARSHARD_BLOCK.asItem(), this.output);
 
         blockRecipe(ModItems.BRONZE_INGOT.get(), ModBlocks.BRONZE_BLOCK.asItem(), this.output);
+
+        blockRecipe(ModItems.BLOODSTONE.get(), ModBlocks.BLOODSTONE_BLOCK.asItem(), this.output);
 
         swordRecipe(ModItems.CUBIC_ZIRCONIA_SWORD.get(), ModItems.CUBIC_ZIRCONIA.get(), "has_cz", this.output);
 
@@ -126,6 +130,8 @@ public class ModRecipeProvider extends RecipeProvider {
 
         //this.shapeless(RecipeCategory.MISC, ModItems.CELESTIAL_BRONZE_INGOT).requires(Items.COPPER_INGOT, 4).requires(ModItems.TIN_SCRAPS).requires(Items.NETHER_STAR).unlockedBy("has_ns", has(Items.NETHER_STAR)).save(this.output, ResourceKey.create(Registries.RECIPE, ResourceLocation.fromNamespaceAndPath(MoreMetalsMod.MOD_ID, "celestial_bronze_forging")));
 
+        allEquipmentRecipes(ModItems.BLOODSTONE_SWORD.get(), ModItems.BLOODSTONE_AXE.get(), ModItems.BLOODSTONE_PICKAXE.get(), ModItems.BLOODSTONE_SHOVEL.get(), ModItems.BLOODSTONE_HOE.get(), ModItems.BLOODSTONE_HELMET.get(), ModItems.BLOODSTONE_CHESTPLATE.get(), ModItems.BLOODSTONE_LEGGINGS.get(), ModItems.BLOODSTONE_BOOTS.get(), ModItems.BLOODSTONE.get(), "has_bl", this.output);
+
         this.shapeless(RecipeCategory.MISC, ModItems.BRONZE_INGOT).requires(Items.COPPER_INGOT, 4).requires(ModItems.TIN_SCRAPS).unlockedBy("has_c", has(Items.COPPER_INGOT)).save(this.output, ModUtil.createRecipeResourceKey("bronze_forging"));
 
         allOreSmelting(ModItems.CUBIC_ZIRCONIA.get(), CUBIC_ZIRCONIA_SMELTABLES, 1.0f, "cz", this.output);
@@ -137,6 +143,8 @@ public class ModRecipeProvider extends RecipeProvider {
         allOreSmelting(ModItems.RUBIDIUM.get(), RUBIDIUM_SMELTABLES, 1.3f, "r", this.output);
 
         allOreSmelting(ModItems.STARSHARD.get(), STARSHARD_SMELTABLES, 1.5f, "s", this.output);
+
+        allOreSmelting(ModItems.BLOODSTONE.get(), BLOODSTONE_SMELTABLES, 0.9f, "bl", this.output);
 
     }
 

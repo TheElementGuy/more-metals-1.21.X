@@ -69,17 +69,23 @@ public class ModLanguageProvider extends LanguageProvider {
         add(ModItems.STARSHARD_LEGGINGS, "Starshard Leggings");
         add(ModItems.STARSHARD_BOOTS, "Starshard Boots");
 
+        add(ModItems.BLOODSTONE, "Bloodstone");
+        addToolSet(ModItems.BLOODSTONE_SWORD, ModItems.BLOODSTONE_AXE, ModItems.BLOODSTONE_PICKAXE, ModItems.BLOODSTONE_SHOVEL, ModItems.BLOODSTONE_HOE, ModItems.BLOODSTONE_HELMET, ModItems.BLOODSTONE_CHESTPLATE, ModItems.BLOODSTONE_LEGGINGS, ModItems.BLOODSTONE_BOOTS, "Bloodstone");
+
         add(ModBlocks.CUBIC_ZIRCONIA_BLOCK, "Block of Cubic Zirconia");
         add(ModBlocks.RAW_CUBIC_ZIRCONIA_BLOCK, "Block of Raw Cubic Zirconia");
         add(ModBlocks.TIN_BLOCK, "Block of Tin");
         add(ModBlocks.BRONZE_BLOCK, "Block of Bronze");
         add(ModBlocks.RUBIDIUM_BLOCK, "Block of Rubidium");
         add(ModBlocks.STARSHARD_BLOCK, "Block of Starshard");
+        add(ModBlocks.BLOODSTONE_BLOCK, "Block of Bloodstone");
 
         add(ModBlocks.CUBIC_ZIRCONIA_ORE, "Cubic Zirconia Ore");
         add(ModBlocks.DEEPSLATE_CUBIC_ZIRCONIA_ORE, "Deepslate Cubic Zirconia Ore");
         add(ModBlocks.TIN_ORE, "Tin Ore");
         add(ModBlocks.DEEPSLATE_TIN_ORE, "Deepslate Tin Ore");
+        add(ModBlocks.BLOODSTONE_ORE, "Bloodstone Ore");
+        add(ModBlocks.DEEPSLATE_BLOODSTONE_ORE, "Deepslate Bloodstone Ore");
         add(ModBlocks.NETHER_RUBIDIUM_ORE, "Nether Rubidium Ore");
         add(ModBlocks.END_STARSHARD_ORE, "End Starshard Ore");
 
@@ -88,7 +94,7 @@ public class ModLanguageProvider extends LanguageProvider {
         addTrimMaterial(ModTrimMaterials.BRONZE, "Bronze");
         addTrimMaterial(ModTrimMaterials.RUBIDIUM, "Rubidium");
         addTrimMaterial(ModTrimMaterials.STARSHARD, "Starshard");
-
+        addTrimMaterial(ModTrimMaterials.BLOODSTONE, "Bloodstone");
     }
     
     protected void add(DeferredItem<? extends Item> key, String name) {
@@ -101,5 +107,17 @@ public class ModLanguageProvider extends LanguageProvider {
 
     protected void addTrimMaterial(ResourceKey<TrimMaterial> key, String name) {
         add("trim_material." + MoreMetalsMod.MOD_ID + "." + key.location().getPath(), name);
+    }
+
+    protected void addToolSet(DeferredItem<? extends Item> sword, DeferredItem<? extends Item> axe, DeferredItem<? extends Item> pickaxe, DeferredItem<? extends Item> shovel, DeferredItem<? extends Item> hoe, DeferredItem<? extends Item> helmet, DeferredItem<? extends Item> chestplate, DeferredItem<? extends Item> leggings, DeferredItem<? extends Item> boots, String groupName) {
+        add(sword, groupName + " Sword");
+        add(axe, groupName + " Axe");
+        add(pickaxe, groupName + " Pickaxe");
+        add(shovel, groupName + " Shovel");
+        add(hoe, groupName + " Hoe");
+        add(helmet, groupName + " Helmet");
+        add(chestplate, groupName + " Chestplate");
+        add(leggings, groupName + " Leggings");
+        add(boots, groupName + " Boots");
     }
 }

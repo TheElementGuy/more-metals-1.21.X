@@ -69,17 +69,22 @@ public class ModLanguageProviderLol extends LanguageProvider {
         add(ModItems.STARSHARD_LEGGINGS, "oooh shiny pants");
         add(ModItems.STARSHARD_BOOTS, "ooooh shiny shooz (sparkel sparkel)");
 
+        add(ModItems.BLOODSTONE, "gory stony");
+
         add(ModBlocks.CUBIC_ZIRCONIA_BLOCK, "Blok of tuff stuff");
         add(ModBlocks.RAW_CUBIC_ZIRCONIA_BLOCK, "bLuk uv gross tuff stuff");
         add(ModBlocks.TIN_BLOCK, "blok of cans");
         add(ModBlocks.BRONZE_BLOCK, "Block of Brozne");
         add(ModBlocks.RUBIDIUM_BLOCK, "hot Blouk");
         add(ModBlocks.STARSHARD_BLOCK, "shiny shiny bluckc");
+        add(ModBlocks.BLOODSTONE_BLOCK, "blok ov uh oh");
 
         add(ModBlocks.CUBIC_ZIRCONIA_ORE, "rokz wiht sum tuff stuff");
         add(ModBlocks.DEEPSLATE_CUBIC_ZIRCONIA_ORE, "dark STONY roks withh sommmmmmmmmme tuf stuff");
         add(ModBlocks.TIN_ORE, "rokz with som cans");
         add(ModBlocks.DEEPSLATE_TIN_ORE, "dark stony roks with som cans");
+        add(ModBlocks.BLOODSTONE_ORE, "stony stony wiht...is that wut i thinks it izz???");
+        add(ModBlocks.DEEPSLATE_BLOODSTONE_ORE, "dark stony roks wihth gorre");
         add(ModBlocks.NETHER_RUBIDIUM_ORE, "HHHHOT Nether ORe");
         add(ModBlocks.END_STARSHARD_ORE, "shyni wite rockkz");
 

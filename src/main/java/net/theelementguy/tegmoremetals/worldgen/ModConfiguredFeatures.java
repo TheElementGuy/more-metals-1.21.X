@@ -38,6 +38,10 @@ public class ModConfiguredFeatures {
 
     public static final ResourceKey<ConfiguredFeature<?, ?>> STARSHARD_LARGE_ORE_KEY = registerKey("large_starshard");
 
+    public static final ResourceKey<ConfiguredFeature<?, ?>> BLOODSTONE_LARGE_ORE_KEY = registerKey("large_bloodstone");
+
+    public static final ResourceKey<ConfiguredFeature<?, ?>> BLOODSTONE_SMALL_ORE_KEY = registerKey("small_bloodstone");
+
     public static void bootstrap(BootstrapContext<ConfiguredFeature<?, ?>> context) {
 
         RuleTest stoneReplaceabes = new TagMatchTest(BlockTags.STONE_ORE_REPLACEABLES);
@@ -52,6 +56,8 @@ public class ModConfiguredFeatures {
         List<OreConfiguration.TargetBlockState> rubidiumOres = List.of(OreConfiguration.target(netherrackReplaceables, ModBlocks.NETHER_RUBIDIUM_ORE.get().defaultBlockState()));
 
         List<OreConfiguration.TargetBlockState> starshardOres = List.of(OreConfiguration.target(endStoneReplaceables, ModBlocks.END_STARSHARD_ORE.get().defaultBlockState()));
+
+        List<OreConfiguration.TargetBlockState> bloodstoneOres = List.of(OreConfiguration.target(stoneReplaceabes, ModBlocks.BLOODSTONE_ORE.get().defaultBlockState()), OreConfiguration.target(deepslateReplaceabes, ModBlocks.DEEPSLATE_BLOODSTONE_ORE.get().defaultBlockState()));
 
         register(context, CUBIC_ZIRCONIA_LARGE_ORE_KEY, Feature.ORE, new OreConfiguration(cubicZirconiaOres, 16, 0.7f));
 
@@ -70,6 +76,10 @@ public class ModConfiguredFeatures {
         register(context, STARSHARD_SMALL_ORE_KEY, Feature.ORE, new OreConfiguration(starshardOres, 1));
 
         register(context, STARSHARD_LARGE_ORE_KEY, Feature.ORE, new OreConfiguration(starshardOres, 3));
+
+        register(context, BLOODSTONE_LARGE_ORE_KEY, Feature.ORE, new OreConfiguration(bloodstoneOres, 6));
+
+        register(context, BLOODSTONE_SMALL_ORE_KEY, Feature.ORE, new OreConfiguration(bloodstoneOres, 2));
 
     }
 

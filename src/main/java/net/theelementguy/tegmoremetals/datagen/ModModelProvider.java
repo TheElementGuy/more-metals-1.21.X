@@ -51,16 +51,9 @@ public class ModModelProvider extends ModelProvider {
             new ItemModelGenerators.TrimMaterialData(ModTrimMaterials.BRONZE_ASSET_GROUP, ModTrimMaterials.BRONZE),
             new ItemModelGenerators.TrimMaterialData(ModTrimMaterials.TIN_ASSET_GROUP, ModTrimMaterials.TIN),
             new ItemModelGenerators.TrimMaterialData(ModTrimMaterials.STARSHARD_ASSET_GROUP, ModTrimMaterials.STARSHARD),
-            new ItemModelGenerators.TrimMaterialData(ModTrimMaterials.RUBIDIUM_ASSET_GROUP, ModTrimMaterials.RUBIDIUM)
+            new ItemModelGenerators.TrimMaterialData(ModTrimMaterials.RUBIDIUM_ASSET_GROUP, ModTrimMaterials.RUBIDIUM),
+            new ItemModelGenerators.TrimMaterialData(ModTrimMaterials.BLOODSTONE_ASSET_GROUP, ModTrimMaterials.BLOODSTONE)
     );
-
-    public static final ResourceLocation MODDED_TRIM_PREFIX_HELMET = prefixForSlotTrimModded("helmet");
-
-    public static final ResourceLocation MODDED_TRIM_PREFIX_CHESTPLATE = prefixForSlotTrimModded("chestplate");
-
-    public static final ResourceLocation MODDED_TRIM_PREFIX_LEGGINGS = prefixForSlotTrimModded("leggings");
-
-    public static final ResourceLocation MODDED_TRIM_PREFIX_BOOTS = prefixForSlotTrimModded("boots");
 
     @Override
     protected void registerModels(BlockModelGenerators blockModels, ItemModelGenerators itemModels) {
@@ -73,6 +66,7 @@ public class ModModelProvider extends ModelProvider {
         itemModels.generateFlatItem(ModItems.RUBIDIUM.get(), ModelTemplates.FLAT_ITEM);
         itemModels.generateFlatItem(ModItems.STARSHARD.get(), ModelTemplates.FLAT_ITEM);
         itemModels.generateFlatItem(ModItems.BRONZE_INGOT.get(), ModelTemplates.FLAT_ITEM);
+        normal(ModItems.BLOODSTONE.get(), itemModels);
 
         itemModels.generateFlatItem(ModItems.CUBIC_ZIRCONIA_SWORD.get(), ModelTemplates.FLAT_HANDHELD_ITEM);
         itemModels.generateFlatItem(ModItems.CUBIC_ZIRCONIA_AXE.get(), ModelTemplates.FLAT_HANDHELD_ITEM);
@@ -94,6 +88,11 @@ public class ModModelProvider extends ModelProvider {
         itemModels.generateFlatItem(ModItems.BRONZE_PICKAXE.get(), ModelTemplates.FLAT_HANDHELD_ITEM);
         itemModels.generateFlatItem(ModItems.BRONZE_SHOVEL.get(), ModelTemplates.FLAT_HANDHELD_ITEM);
         itemModels.generateFlatItem(ModItems.BRONZE_HOE.get(), ModelTemplates.FLAT_HANDHELD_ITEM);
+        itemModels.generateFlatItem(ModItems.BLOODSTONE_SWORD.get(), ModelTemplates.FLAT_HANDHELD_ITEM);
+        itemModels.generateFlatItem(ModItems.BLOODSTONE_AXE.get(), ModelTemplates.FLAT_HANDHELD_ITEM);
+        itemModels.generateFlatItem(ModItems.BLOODSTONE_PICKAXE.get(), ModelTemplates.FLAT_HANDHELD_ITEM);
+        itemModels.generateFlatItem(ModItems.BLOODSTONE_SHOVEL.get(), ModelTemplates.FLAT_HANDHELD_ITEM);
+        itemModels.generateFlatItem(ModItems.BLOODSTONE_HOE.get(), ModelTemplates.FLAT_HANDHELD_ITEM);
 
         generateTrimmableItemWithModdedMaterials(itemModels, ModItems.CUBIC_ZIRCONIA_HELMET.get(), ModEquipmentAssets.CUBIC_ZIRCONIA, false);
         generateTrimmableItemWithModdedMaterials(itemModels, ModItems.CUBIC_ZIRCONIA_CHESTPLATE.get(), ModEquipmentAssets.CUBIC_ZIRCONIA, false);
@@ -111,6 +110,10 @@ public class ModModelProvider extends ModelProvider {
         generateTrimmableItemWithModdedMaterials(itemModels, ModItems.BRONZE_CHESTPLATE.get(), ModEquipmentAssets.BRONZE, false);
         generateTrimmableItemWithModdedMaterials(itemModels, ModItems.BRONZE_LEGGINGS.get(), ModEquipmentAssets.BRONZE, false);
         generateTrimmableItemWithModdedMaterials(itemModels, ModItems.BRONZE_BOOTS.get(), ModEquipmentAssets.BRONZE, false);
+        generateTrimmableItemWithModdedMaterials(itemModels, ModItems.BLOODSTONE_HELMET.get(), ModEquipmentAssets.BLOODSTONE, false);
+        generateTrimmableItemWithModdedMaterials(itemModels, ModItems.BLOODSTONE_CHESTPLATE.get(), ModEquipmentAssets.BLOODSTONE, false);
+        generateTrimmableItemWithModdedMaterials(itemModels, ModItems.BLOODSTONE_LEGGINGS.get(), ModEquipmentAssets.BLOODSTONE, false);
+        generateTrimmableItemWithModdedMaterials(itemModels, ModItems.BLOODSTONE_BOOTS.get(), ModEquipmentAssets.BLOODSTONE, false);
 
         blockModels.createTrivialCube(ModBlocks.CUBIC_ZIRCONIA_BLOCK.get());
         blockModels.createTrivialCube(ModBlocks.RAW_CUBIC_ZIRCONIA_BLOCK.get());
@@ -124,7 +127,9 @@ public class ModModelProvider extends ModelProvider {
         blockModels.createColoredBlockWithStateRotations(TexturedModel.GLAZED_TERRACOTTA, ModBlocks.STARSHARD_BLOCK.get());
         blockModels.createTrivialCube(ModBlocks.END_STARSHARD_ORE.get());
         blockModels.createTrivialCube(ModBlocks.BRONZE_BLOCK.get());
-
+        blockModels.createTrivialCube(ModBlocks.BLOODSTONE_BLOCK.get());
+        blockModels.createTrivialCube(ModBlocks.BLOODSTONE_ORE.get());
+        blockModels.createTrivialCube(ModBlocks.DEEPSLATE_BLOODSTONE_ORE.get());
 
         generateTrimmableItemWithModdedMaterials(itemModels, Items.LEATHER_HELMET, EquipmentAssets.LEATHER, true);
         generateTrimmableItemWithModdedMaterials(itemModels, Items.LEATHER_CHESTPLATE, EquipmentAssets.LEATHER, true);
@@ -199,5 +204,9 @@ public class ModModelProvider extends ModelProvider {
 
     public static ResourceLocation prefixForSlotTrimModded(String name) {
         return ResourceLocation.fromNamespaceAndPath(MoreMetalsMod.MOD_ID, "trims/items/" + name + "_trim");
+    }
+
+    public void normal(Item item, ItemModelGenerators itemModelGenerators) {
+        itemModelGenerators.generateFlatItem(item, ModelTemplates.FLAT_ITEM);
     }
 }

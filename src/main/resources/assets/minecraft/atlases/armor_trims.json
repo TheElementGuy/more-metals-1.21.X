@@ -23,7 +23,8 @@
         "rubidium": "tegmoremetals:trims/color_palettes/rubidium",
         "starshard": "tegmoremetals:trims/color_palettes/starshard",
         "bronze": "tegmoremetals:trims/color_palettes/bronze",
-        "tin": "tegmoremetals:trims/color_palettes/tin"
+        "tin": "tegmoremetals:trims/color_palettes/tin",
+        "bloodstone": "tegmoremetals:trims/color_palettes/bloodstone"
       },
       "textures": [
         "minecraft:trims/entity/humanoid/sentry",

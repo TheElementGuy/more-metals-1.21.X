@@ -24,6 +24,8 @@ public class ModTrimMaterials {
 
     public static final ResourceKey<TrimMaterial> BRONZE = registerKey("bronze");
 
+    public static final ResourceKey<TrimMaterial> BLOODSTONE = registerKey("bloodstone");
+
     public static final MaterialAssetGroup CUBIC_ZIRCONIA_ASSET_GROUP = MaterialAssetGroup.create("cubic_zirconia");
 
     public static final MaterialAssetGroup TIN_ASSET_GROUP = MaterialAssetGroup.create("tin");
@@ -33,6 +35,8 @@ public class ModTrimMaterials {
     public static final MaterialAssetGroup RUBIDIUM_ASSET_GROUP = MaterialAssetGroup.create("rubidium");
 
     public static final MaterialAssetGroup BRONZE_ASSET_GROUP = MaterialAssetGroup.create("bronze");
+
+    public static final MaterialAssetGroup BLOODSTONE_ASSET_GROUP = MaterialAssetGroup.create("bloodstone");
 
     public static void bootstrap(BootstrapContext<TrimMaterial> context) {
         register(context, CUBIC_ZIRCONIA, Style.EMPTY.withColor(TextColor.parseColor("#ebcacb").getOrThrow()));
@@ -44,6 +48,8 @@ public class ModTrimMaterials {
         register(context, BRONZE, Style.EMPTY.withColor(TextColor.parseColor("#ffa896").getOrThrow()));
 
         register(context, RUBIDIUM, Style.EMPTY.withColor(TextColor.parseColor("#fa89a2").getOrThrow()));
+
+        register(context, BLOODSTONE, Style.EMPTY.withColor(TextColor.parseColor("#590a0a").getOrThrow()));
     }
 
     public static void register(BootstrapContext<TrimMaterial> context, ResourceKey<TrimMaterial> key, Style style) {
