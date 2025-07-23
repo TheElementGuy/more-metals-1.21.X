@@ -16,6 +16,7 @@ public class ModEquipmentAssets {
     public static final ResourceKey<EquipmentAsset> RUBIDIUM = ModUtil.createEquipmentAssetResourceKey("rubidium");
     public static final ResourceKey<EquipmentAsset> STARSHARD = ModUtil.createEquipmentAssetResourceKey("starshard");
     public static final ResourceKey<EquipmentAsset> BRONZE = ModUtil.createEquipmentAssetResourceKey("bronze");
+    public static final ResourceKey<EquipmentAsset> BLOODSTONE = ModUtil.createEquipmentAssetResourceKey("bloodstone");
     public static void bootstrap(BiConsumer<ResourceKey<EquipmentAsset>, EquipmentClientInfo> consumer) {
         //consumer.accept(ModEquipmentAssets.CUBIC_ZIRCONIA, onlyHumanoidAssets("cubic_zirconia"));
         //consumer.accept(ModEquipmentAssets.RUBIDIUM, onlyHumanoidAssets("rubidium"));
@@ -25,6 +26,7 @@ public class ModEquipmentAssets {
         acceptEquipmentAsset(consumer, RUBIDIUM);
         acceptEquipmentAsset(consumer, STARSHARD);
         acceptEquipmentAsset(consumer, BRONZE);
+        acceptEquipmentAsset(consumer, BLOODSTONE);
     }
 
     private static EquipmentClientInfo onlyHumanoidAssets(String name) {

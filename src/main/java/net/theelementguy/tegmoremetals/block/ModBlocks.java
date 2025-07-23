@@ -49,6 +49,12 @@ public class ModBlocks {
 
     public static final DeferredBlock<Block> BRONZE_BLOCK = registerBlockWithItem("bronze_block", () -> new Block(BlockBehaviour.Properties.of().destroyTime(4.5f).explosionResistance(6f).mapColor(MapColor.TERRACOTTA_ORANGE).sound(SoundType.METAL).requiresCorrectToolForDrops().setId(ResourceKey.create(Registries.BLOCK, ResourceLocation.fromNamespaceAndPath(MoreMetalsMod.MOD_ID, "bronze_block")))), null);
 
+    public static final DeferredBlock<Block> BLOODSTONE_BLOCK = registerBlockWithItem("bloodstone_block", () -> new Block(BlockBehaviour.Properties.of().destroyTime(5f).explosionResistance(6f).mapColor(MapColor.COLOR_RED).sound(SoundType.METAL).requiresCorrectToolForDrops().setId(ModUtil.createBlockResourceKey("bloodstone_block"))), null);
+
+    public static final DeferredBlock<Block> BLOODSTONE_ORE = registerBlockWithItem("bloodstone_ore", () -> new Block(BlockBehaviour.Properties.of().destroyTime(3f).explosionResistance(3f).mapColor(MapColor.STONE).sound(SoundType.STONE).requiresCorrectToolForDrops().setId(ModUtil.createBlockResourceKey("bloodstone_ore"))), null);
+
+    public static final DeferredBlock<Block> DEEPSLATE_BLOODSTONE_ORE = registerBlockWithItem("deepslate_bloodstone_ore", () -> new Block(BlockBehaviour.Properties.of().destroyTime(4.5f).explosionResistance(3f).mapColor(MapColor.DEEPSLATE).sound(SoundType.DEEPSLATE).requiresCorrectToolForDrops().setId(ModUtil.createBlockResourceKey("deepslate_bloodstone_ore"))), null);
+
     public static <T extends Block> DeferredBlock<T> registerBlockWithItem(String name, Supplier<T> block, @Nullable Item.Properties properties) {
         if(properties ==  null) {
             properties = new Item.Properties().setId(ModUtil.createItemResourceKey(name));

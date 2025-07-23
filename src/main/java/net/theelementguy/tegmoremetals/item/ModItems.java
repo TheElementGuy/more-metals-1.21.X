@@ -4,6 +4,7 @@ import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.*;
+import net.minecraft.world.item.equipment.ArmorMaterial;
 import net.minecraft.world.item.equipment.ArmorType;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.neoforge.registries.DeferredItem;
@@ -98,6 +99,62 @@ public class ModItems {
     public static final DeferredItem<ArmorItem> BRONZE_LEGGINGS = ITEMS.register("bronze_leggings", () -> new ArmorItem(ModArmorMaterials.BRONZE, ArmorType.LEGGINGS, (new Item.Properties()).setId(ResourceKey.create(Registries.ITEM, ResourceLocation.fromNamespaceAndPath(MoreMetalsMod.MOD_ID, "bronze_leggings")))));
 
     public static final DeferredItem<ArmorItem> BRONZE_BOOTS = ITEMS.register("bronze_boots", () -> new ArmorItem(ModArmorMaterials.BRONZE, ArmorType.BOOTS, (new Item.Properties()).setId(ResourceKey.create(Registries.ITEM, ResourceLocation.fromNamespaceAndPath(MoreMetalsMod.MOD_ID, "bronze_boots")))));
+
+    public static final DeferredItem<Item> BLOODSTONE = ITEMS.register("bloodstone", () -> new Item(new Item.Properties().setId(ModUtil.createItemResourceKey("bloodstone"))));
+
+    public static final DeferredItem<SwordItem> BLOODSTONE_SWORD = registerSword("bloodstone_sword", ModToolMaterials.BLOODSTONE);
+
+    public static final DeferredItem<AxeItem> BLOODSTONE_AXE = registerAxe("bloodstone_axe", ModToolMaterials.BLOODSTONE);
+
+    public static final DeferredItem<PickaxeItem> BLOODSTONE_PICKAXE = registerPickaxe("bloodstone_pickaxe", ModToolMaterials.BLOODSTONE);
+
+    public static final DeferredItem<ShovelItem> BLOODSTONE_SHOVEL = registerShovel("bloodstone_shovel", ModToolMaterials.BLOODSTONE);
+
+    public static final DeferredItem<HoeItem> BLOODSTONE_HOE = registerHoe("bloodstone_hoe", ModToolMaterials.BLOODSTONE);
+
+    public static final DeferredItem<ArmorItem> BLOODSTONE_HELMET = registerHelmet("bloodstone_helmet", ModArmorMaterials.BLOODSTONE);
+
+    public static final DeferredItem<ArmorItem> BLOODSTONE_CHESTPLATE = registerChestplate("bloodstone_chestplate", ModArmorMaterials.BLOODSTONE);
+
+    public static final DeferredItem<ArmorItem> BLOODSTONE_LEGGINGS = registerLeggings("bloodstone_leggings", ModArmorMaterials.BLOODSTONE);
+
+    public static final DeferredItem<ArmorItem> BLOODSTONE_BOOTS = registerBoots("bloodstone_boots", ModArmorMaterials.BLOODSTONE);
+
+    public static DeferredItem<SwordItem> registerSword(String name, ToolMaterial material) {
+        return ITEMS.register(name, () -> new SwordItem(material, 3.0f, -2.4f, new Item.Properties().setId(ModUtil.createItemResourceKey(name))));
+    }
+
+    public static DeferredItem<AxeItem> registerAxe(String name, ToolMaterial material) {
+        return ITEMS.register(name, () -> new AxeItem(material, 6.0f, -3.1f, new Item.Properties().setId(ModUtil.createItemResourceKey(name))));
+    }
+
+    public static DeferredItem<PickaxeItem> registerPickaxe(String name, ToolMaterial material) {
+        return ITEMS.register(name, () -> new PickaxeItem(material, 1.0f, -2.0f, new Item.Properties().setId(ModUtil.createItemResourceKey(name))));
+    }
+
+    public static DeferredItem<ShovelItem> registerShovel(String name, ToolMaterial material) {
+        return ITEMS.register(name, () -> new ShovelItem(material, 1.5f, -3f, new Item.Properties().setId(ModUtil.createItemResourceKey(name))));
+    }
+
+    public static DeferredItem<HoeItem> registerHoe(String name, ToolMaterial material) {
+        return ITEMS.register(name, () -> new HoeItem(material, -2.0f, -1.0f, new Item.Properties().setId(ModUtil.createItemResourceKey(name))));
+    }
+
+    public static DeferredItem<ArmorItem> registerHelmet(String name, ArmorMaterial material) {
+        return ITEMS.register(name, () -> new ArmorItem(material, ArmorType.HELMET, new Item.Properties().setId(ModUtil.createItemResourceKey(name))));
+    }
+
+    public static DeferredItem<ArmorItem> registerChestplate(String name, ArmorMaterial material) {
+        return ITEMS.register(name, () -> new ArmorItem(material, ArmorType.CHESTPLATE, new Item.Properties().setId(ModUtil.createItemResourceKey(name))));
+    }
+
+    public static DeferredItem<ArmorItem> registerLeggings(String name, ArmorMaterial material) {
+        return ITEMS.register(name, () -> new ArmorItem(material, ArmorType.LEGGINGS, new Item.Properties().setId(ModUtil.createItemResourceKey(name))));
+    }
+
+    public static DeferredItem<ArmorItem> registerBoots(String name, ArmorMaterial material) {
+        return ITEMS.register(name, () -> new ArmorItem(material, ArmorType.BOOTS, new Item.Properties().setId(ModUtil.createItemResourceKey(name))));
+    }
 
     public static void register(IEventBus bus) {
         ITEMS.register(bus);

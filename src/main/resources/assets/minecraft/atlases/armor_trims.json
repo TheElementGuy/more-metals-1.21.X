@@ -61,7 +61,8 @@
         "tin": "tegmoremetals:trims/color_palettes/tin",
         "rubidium": "tegmoremetals:trims/color_palettes/rubidium",
         "starshard": "tegmoremetals:trims/color_palettes/starshard",
-        "bronze": "tegmoremetals:trims/color_palettes/bronze"
+        "bronze": "tegmoremetals:trims/color_palettes/bronze",
+        "bloodstone": "tegmoremetals:trims/color_palettes/bloodstone"
       }
     }
   ]

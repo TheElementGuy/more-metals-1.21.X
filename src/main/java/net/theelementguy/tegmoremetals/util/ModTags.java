@@ -31,6 +31,10 @@ public class ModTags {
 
         public static final TagKey<Block> INCORRECT_FOR_BRONZE_TOOL = createTag("incorrect_for_bronze_tool");
 
+        public static final TagKey<Block> NEEDS_BLOODSTONE_TOOL = createTag("needs_bloodstone");
+
+        public static final TagKey<Block> INCORRECT_FOR_BLOODSTONE_TOOL = createTag("incorrect_for_bloodstone_tool");
+
         private static TagKey<Block> createTag(String name) {
             return BlockTags.create(ResourceLocation.fromNamespaceAndPath(MoreMetalsMod.MOD_ID, name));
         }
@@ -38,10 +42,13 @@ public class ModTags {
     }
 
     public static class Items {
+
         public static final TagKey<Item> CUBIC_ZIRCONIA_REPAIRABLES = createTag("cubic_zirconia_replaceables");
         public static final TagKey<Item> RUBIDIUM_REPAIRABLES = createTag("rubidium_replaceables");
         public static final TagKey<Item> STARSHARD_REPAIRABLES = createTag("starshard_replceables");
         public static final TagKey<Item> BRONZE_REPAIRABLES = createTag("bronze_repairables");
+
+        public static final TagKey<Item> BLOODSTONE_REPAIRABLES = createTag("bloodstone_repairables");
 
         private static TagKey<Item> createTag(String name) {
             return ItemTags.create(ResourceLocation.fromNamespaceAndPath(MoreMetalsMod.MOD_ID, name));
@@ -49,17 +56,9 @@ public class ModTags {
 
     }
 
-    public static class EntityTypes {
-
-        private static TagKey<EntityType<?>> createTag(String name) {
-            return TagKey.create(Registries.ENTITY_TYPE, ResourceLocation.fromNamespaceAndPath(MoreMetalsMod.MOD_ID, name));
-        }
-
-    }
-
     public static class Biomes {
 
-        public static TagKey<Biome> IS_END_AND_NOT_MAIN_ISLAND = createTag("is_end_and_not_main_island");
+        public static final TagKey<Biome> IS_END_AND_NOT_MAIN_ISLAND = createTag("is_end_and_not_main_island");
 
         private static TagKey<Biome> createTag(String name) {
             return TagKey.create(Registries.BIOME, ResourceLocation.fromNamespaceAndPath(MoreMetalsMod.MOD_ID, name));

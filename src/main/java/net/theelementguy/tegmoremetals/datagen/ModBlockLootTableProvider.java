@@ -42,12 +42,11 @@ public class ModBlockLootTableProvider extends BlockLootSubProvider {
 
         dropSelf(ModBlocks.CUBIC_ZIRCONIA_BLOCK.get());
         dropSelf(ModBlocks.RAW_CUBIC_ZIRCONIA_BLOCK.get());
-        //dropSelf(ModBlocks.CELESTIAL_BRONZE_BLOCK.get());
-        //dropSelf(ModBlocks.RAW_CELESTIAL_BRONZE_BLOCK.get());
         dropSelf(ModBlocks.TIN_BLOCK.get());
         dropSelf(ModBlocks.RUBIDIUM_BLOCK.get());
         dropSelf(ModBlocks.STARSHARD_BLOCK.get());
         dropSelf(ModBlocks.BRONZE_BLOCK.get());
+        dropSelf(ModBlocks.BLOODSTONE_BLOCK.get());
 
         add(ModBlocks.CUBIC_ZIRCONIA_ORE.get(), block -> createOreDrop(ModBlocks.CUBIC_ZIRCONIA_ORE.get(), ModItems.RAW_CUBIC_ZIRCONIA.get()));
         add(ModBlocks.DEEPSLATE_CUBIC_ZIRCONIA_ORE.get(), block -> createOreDrop(ModBlocks.DEEPSLATE_CUBIC_ZIRCONIA_ORE.get(), ModItems.RAW_CUBIC_ZIRCONIA.get()));
@@ -58,6 +57,9 @@ public class ModBlockLootTableProvider extends BlockLootSubProvider {
         add(ModBlocks.NETHER_RUBIDIUM_ORE.get(), block -> createOreDrop(ModBlocks.NETHER_RUBIDIUM_ORE.get(), ModItems.RUBIDIUM.get()));
 
         add(ModBlocks.END_STARSHARD_ORE.get(), block -> createOreDrop(ModBlocks.END_STARSHARD_ORE.get(), ModItems.STARSHARD.get()));
+
+        add(ModBlocks.BLOODSTONE_ORE.get(), block -> createOreDrop(ModBlocks.BLOODSTONE_ORE.get(), ModItems.BLOODSTONE.get()));
+        add(ModBlocks.DEEPSLATE_BLOODSTONE_ORE.get(), block -> createOreDrop(ModBlocks.DEEPSLATE_BLOODSTONE_ORE.get(), ModItems.BLOODSTONE.get()));
 
     }
 

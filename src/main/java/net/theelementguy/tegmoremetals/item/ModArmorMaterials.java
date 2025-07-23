@@ -39,5 +39,11 @@ public class ModArmorMaterials {
         attribute.put(ArmorType.BOOTS, 2);
         attribute.put(ArmorType.BODY, 4);
     }), 13, SoundEvents.ARMOR_EQUIP_IRON, 0.0F, 0.0F, ModTags.Items.BRONZE_REPAIRABLES, ModEquipmentAssets.BRONZE);
-
+    public static final ArmorMaterial BLOODSTONE = new ArmorMaterial(18, (Map)Util.make(new EnumMap(ArmorType.class), (attribute) -> {
+        attribute.put(ArmorType.HELMET, 1);
+        attribute.put(ArmorType.CHESTPLATE, 4);
+        attribute.put(ArmorType.LEGGINGS, 3);
+        attribute.put(ArmorType.BOOTS, 2);
+        attribute.put(ArmorType.BODY, 3);
+    }), 21, SoundEvents.ARMOR_EQUIP_GENERIC, 0.0F, 0.0F, ModTags.Items.BRONZE_REPAIRABLES, ModEquipmentAssets.BLOODSTONE);
 }
