@@ -4,6 +4,7 @@ import net.minecraft.Util;
 import net.minecraft.core.Holder;
 import net.minecraft.core.Registry;
 import net.minecraft.core.registries.BuiltInRegistries;
+import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundEvents;
@@ -11,6 +12,7 @@ import net.minecraft.world.item.ArmorItem;
 import net.minecraft.world.item.ArmorMaterial;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.crafting.Ingredient;
+import net.neoforged.neoforge.registries.DeferredRegister;
 import net.theelementguy.tegmoremetals.MoreMetalsMod;
 
 import java.util.EnumMap;
@@ -18,6 +20,8 @@ import java.util.List;
 import java.util.function.Supplier;
 
 public class ModArmorMaterials {
+
+    public static final DeferredRegister<ArmorMaterial> ARMOR_MATERIALS = DeferredRegister.create(Registries.ARMOR_MATERIAL, MoreMetalsMod.MOD_ID);
 
     public static final Holder<ArmorMaterial> CUBIC_ZIRCONIA = register("cubic_zirconia", Util.make(new EnumMap<>(ArmorItem.Type.class), attribute -> {
         attribute.put(ArmorItem.Type.HELMET, 2);
@@ -51,6 +55,14 @@ public class ModArmorMaterials {
         attribute.put(ArmorItem.Type.BODY, 4);
     }), 13, 0.0f, 0.0f, () -> ModItems.BRONZE_INGOT.get(), SoundEvents.ARMOR_EQUIP_IRON);
 
+    public static final Holder<ArmorMaterial> BLOODSTONE = register("bloodstone", Util.make(new EnumMap<>(ArmorItem.Type.class), attribute -> {
+        attribute.put(ArmorItem.Type.HELMET, 1);
+        attribute.put(ArmorItem.Type.CHESTPLATE, 5);
+        attribute.put(ArmorItem.Type.LEGGINGS, 4);
+        attribute.put(ArmorItem.Type.BOOTS, 2);
+        attribute.put(ArmorItem.Type.BODY, 4);
+    }), 13, 0.0f, 0.0f, () -> ModItems.BLOODSTONE.get(), SoundEvents.ARMOR_EQUIP_GENERIC);
+
     private static Holder<ArmorMaterial> register(String name, EnumMap<ArmorItem.Type, Integer> typeProtection, int enchantability, float toughness, float knockbackResistance, Supplier<Item> ingredientItem, Holder<SoundEvent> equipSound) {
         ResourceLocation location = ResourceLocation.fromNamespaceAndPath(MoreMetalsMod.MOD_ID, name);
         //Holder<SoundEvent> equipSound = SoundEvents.ARMOR_EQUIP_DIAMOND;
@@ -62,7 +74,7 @@ public class ModArmorMaterials {
             typeMap.put(type, typeProtection.get(type));
         }
 
-        return Registry.registerForHolder(BuiltInRegistries.ARMOR_MATERIAL, location, new ArmorMaterial(typeProtection, enchantability, equipSound, ingredient, layers, toughness, knockbackResistance));
+        return ARMOR_MATERIALS.register(name, () -> new ArmorMaterial(typeProtection, enchantability, equipSound, ingredient, layers, toughness, knockbackResistance));
     }
 
 }

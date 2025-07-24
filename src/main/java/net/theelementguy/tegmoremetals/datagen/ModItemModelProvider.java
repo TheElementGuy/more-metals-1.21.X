@@ -31,6 +31,7 @@ public class ModItemModelProvider  extends ItemModelProvider {
         basicItem(ModItems.RUBIDIUM.get());
         basicItem(ModItems.STARSHARD.get());
         basicItem(ModItems.BRONZE_INGOT.get());
+        basicItem(ModItems.BLOODSTONE.get());
         handheldItem(ModItems.CUBIC_ZIRCONIA_SWORD.get());
         handheldItem(ModItems.CUBIC_ZIRCONIA_AXE.get());
         handheldItem(ModItems.CUBIC_ZIRCONIA_PICKAXE.get());
@@ -51,6 +52,11 @@ public class ModItemModelProvider  extends ItemModelProvider {
         handheldItem(ModItems.BRONZE_PICKAXE.get());
         handheldItem(ModItems.BRONZE_SHOVEL.get());
         handheldItem(ModItems.BRONZE_HOE.get());
+        handheldItem(ModItems.BLOODSTONE_SWORD.get());
+        handheldItem(ModItems.BLOODSTONE_AXE.get());
+        handheldItem(ModItems.BLOODSTONE_PICKAXE.get());
+        handheldItem(ModItems.BLOODSTONE_SHOVEL.get());
+        handheldItem(ModItems.BLOODSTONE_HOE.get());
         trimmedArmorItem(ModItems.CUBIC_ZIRCONIA_HELMET);
         trimmedArmorItem(ModItems.CUBIC_ZIRCONIA_CHESTPLATE);
         trimmedArmorItem(ModItems.CUBIC_ZIRCONIA_LEGGINGS);
@@ -67,6 +73,10 @@ public class ModItemModelProvider  extends ItemModelProvider {
         trimmedArmorItem(ModItems.BRONZE_CHESTPLATE);
         trimmedArmorItem(ModItems.BRONZE_LEGGINGS);
         trimmedArmorItem(ModItems.BRONZE_BOOTS);
+        trimmedArmorItem(ModItems.BLOODSTONE_HELMET);
+        trimmedArmorItem(ModItems.BLOODSTONE_CHESTPLATE);
+        trimmedArmorItem(ModItems.BLOODSTONE_LEGGINGS);
+        trimmedArmorItem(ModItems.BLOODSTONE_BOOTS);
     }
 
     private ItemModelBuilder handheldItem(DeferredItem<?> item) {

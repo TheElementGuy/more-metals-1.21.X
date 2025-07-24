@@ -38,6 +38,10 @@ public class ModBlockStateProvider extends BlockStateProvider {
         blockWithItem(ModBlocks.END_STARSHARD_ORE);
 
         blockWithItem(ModBlocks.BRONZE_BLOCK);
+
+        blockWithItem(ModBlocks.BLOODSTONE_BLOCK);
+        blockWithItem(ModBlocks.BLOODSTONE_ORE);
+        blockWithItem(ModBlocks.DEEPSLATE_BLOODSTONE_ORE);
     }
 
     private void blockWithItem(DeferredBlock<?> deferredBlock) {
@@ -58,9 +62,9 @@ public class ModBlockStateProvider extends BlockStateProvider {
 
         //blockItem(deferredBlock);
 
-        this.models().withExistingParent(deferredBlock.getRegisteredName(), ResourceLocation.withDefaultNamespace("block/template_glazed_terracotta")).texture("pattern", ResourceLocation.fromNamespaceAndPath("tegmoremetals", "block/" + deferredBlock.getId().getPath()));
+        this.models().withExistingParent(deferredBlock.getRegisteredName(), ResourceLocation.withDefaultNamespace("block/template_glazed_terracotta")).texture("pattern", ResourceLocation.fromNamespaceAndPath(MoreMetalsMod.MOD_ID, "block/" + deferredBlock.getId().getPath()));
 
-        horizontalBlock(deferredBlock.get(), new ModelFile.UncheckedModelFile(ResourceLocation.fromNamespaceAndPath("tegmoremetals", "block/" + deferredBlock.getId().getPath())));
+        horizontalBlock(deferredBlock.get(), new ModelFile.UncheckedModelFile(ResourceLocation.fromNamespaceAndPath(MoreMetalsMod.MOD_ID, "block/" + deferredBlock.getId().getPath())));
 
         blockItem(deferredBlock);
     }

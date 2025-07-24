@@ -48,6 +48,12 @@ public class ModBlocks {
 
     public static final DeferredBlock<Block> BRONZE_BLOCK = registerBlock("bronze_block", () -> new Block(BlockBehaviour.Properties.of().destroyTime(4.5f).explosionResistance(6f).mapColor(MapColor.TERRACOTTA_ORANGE).sound(SoundType.METAL).requiresCorrectToolForDrops()));
 
+    public static final DeferredBlock<Block> BLOODSTONE_BLOCK = registerBlock("bloodstone_block", () -> new Block(BlockBehaviour.Properties.of().destroyTime(5f).explosionResistance(6f).mapColor(MapColor.COLOR_RED).sound(SoundType.METAL).requiresCorrectToolForDrops()));
+
+    public static final DeferredBlock<Block> BLOODSTONE_ORE = registerBlock("bloodstone_ore", () -> new Block(BlockBehaviour.Properties.of().destroyTime(3f).explosionResistance(3f).mapColor(MapColor.STONE).sound(SoundType.STONE).requiresCorrectToolForDrops()));
+
+    public static final DeferredBlock<Block> DEEPSLATE_BLOODSTONE_ORE = registerBlock("deepslate_bloodstone_ore", () -> new Block(BlockBehaviour.Properties.of().destroyTime(4.5f).explosionResistance(3f).mapColor(MapColor.DEEPSLATE).sound(SoundType.DEEPSLATE).requiresCorrectToolForDrops()));
+
     public static <T extends Block> DeferredBlock<T> registerBlock(String name, Supplier<T> block) {
         DeferredBlock<T> toReturn = BLOCKS.register(name, block);
         registerBlockItem(name, toReturn);

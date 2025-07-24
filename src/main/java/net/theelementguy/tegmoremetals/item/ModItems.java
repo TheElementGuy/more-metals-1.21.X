@@ -1,5 +1,6 @@
 package net.theelementguy.tegmoremetals.item;
 
+import net.minecraft.core.Holder;
 import net.minecraft.world.item.*;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.neoforge.registries.DeferredItem;
@@ -93,6 +94,62 @@ public class ModItems {
     public static final DeferredItem<ArmorItem> BRONZE_LEGGINGS = ITEMS.register("bronze_leggings", () -> new ArmorItem(ModArmorMaterials.BRONZE, ArmorItem.Type.LEGGINGS, (new Item.Properties().durability(ArmorItem.Type.LEGGINGS.getDurability(7)))));
 
     public static final DeferredItem<ArmorItem> BRONZE_BOOTS = ITEMS.register("bronze_boots", () -> new ArmorItem(ModArmorMaterials.BRONZE, ArmorItem.Type.BOOTS, (new Item.Properties().durability(ArmorItem.Type.BOOTS.getDurability(7)))));
+
+    public static final DeferredItem<Item> BLOODSTONE = ITEMS.register("bloodstone", () -> new Item(new Item.Properties()));
+
+    public static final DeferredItem<SwordItem> BLOODSTONE_SWORD = registerSword("bloodstone_sword", ModToolTiers.BLOODSTONE);
+
+    public static final DeferredItem<AxeItem> BLOODSTONE_AXE = registerAxe("bloodstone_axe", ModToolTiers.BLOODSTONE);
+
+    public static final DeferredItem<PickaxeItem> BLOODSTONE_PICKAXE = registerPickaxe("bloodstone_pickaxe", ModToolTiers.BLOODSTONE);
+
+    public static final DeferredItem<ShovelItem> BLOODSTONE_SHOVEL = registerShovel("bloodstone_shovel", ModToolTiers.BLOODSTONE);
+
+    public static final DeferredItem<HoeItem> BLOODSTONE_HOE = registerHoe("bloodstone_hoe", ModToolTiers.BLOODSTONE);
+
+    public static final DeferredItem<ArmorItem> BLOODSTONE_HELMET = registerHelmet("bloodstone_helmet", ModArmorMaterials.BLOODSTONE, 18);
+
+    public static final DeferredItem<ArmorItem> BLOODSTONE_CHESTPLATE = registerChestplate("bloodstone_chestplate", ModArmorMaterials.BLOODSTONE, 18);
+
+    public static final DeferredItem<ArmorItem> BLOODSTONE_LEGGINGS = registerLeggings("bloodstone_leggings", ModArmorMaterials.BLOODSTONE, 18);
+
+    public static final DeferredItem<ArmorItem> BLOODSTONE_BOOTS = registerBoots("bloodstone_boots", ModArmorMaterials.BLOODSTONE, 18);
+
+    public static DeferredItem<SwordItem> registerSword(String name, Tier material) {
+        return ITEMS.register(name, () -> new SwordItem(material, new Item.Properties().attributes(SwordItem.createAttributes(material, 3.0f, -2.4f))));
+    }
+
+    public static DeferredItem<AxeItem> registerAxe(String name, Tier material) {
+        return ITEMS.register(name, () -> new AxeItem(material, new Item.Properties().attributes(AxeItem.createAttributes(material, 6f, -3.1f))));
+    }
+
+    public static DeferredItem<PickaxeItem> registerPickaxe(String name, Tier material) {
+        return ITEMS.register(name, () -> new PickaxeItem(material, new Item.Properties().attributes(PickaxeItem.createAttributes(material, 1.0f, -2.0f))));
+    }
+
+    public static DeferredItem<ShovelItem> registerShovel(String name, Tier material) {
+        return ITEMS.register(name, () -> new ShovelItem(material, new Item.Properties().attributes(ShovelItem.createAttributes(material, 1.5f, -3f))));
+    }
+
+    public static DeferredItem<HoeItem> registerHoe(String name, Tier material) {
+        return ITEMS.register(name, () -> new HoeItem(material, new Item.Properties().attributes(HoeItem.createAttributes(material, -2.0f, -1.0f))));
+    }
+
+    public static DeferredItem<ArmorItem> registerHelmet(String name, Holder<ArmorMaterial> material, int durability) {
+        return ITEMS.register(name, () -> new ArmorItem(material, ArmorItem.Type.HELMET, new Item.Properties().durability(ArmorItem.Type.HELMET.getDurability(durability))));
+    }
+
+    public static DeferredItem<ArmorItem> registerChestplate(String name, Holder<ArmorMaterial> material, int durability) {
+        return ITEMS.register(name, () -> new ArmorItem(material, ArmorItem.Type.CHESTPLATE, new Item.Properties().durability(ArmorItem.Type.CHESTPLATE.getDurability(durability))));
+    }
+
+    public static DeferredItem<ArmorItem> registerLeggings(String name, Holder<ArmorMaterial> material, int durability) {
+        return ITEMS.register(name, () -> new ArmorItem(material, ArmorItem.Type.LEGGINGS, new Item.Properties().durability(ArmorItem.Type.LEGGINGS.getDurability(durability))));
+    }
+
+    public static DeferredItem<ArmorItem> registerBoots(String name, Holder<ArmorMaterial> material, int durability) {
+        return ITEMS.register(name, () -> new ArmorItem(material, ArmorItem.Type.BOOTS, new Item.Properties().durability(ArmorItem.Type.BOOTS.getDurability(durability))));
+    }
 
     public static void register(IEventBus bus) {
         ITEMS.register(bus);

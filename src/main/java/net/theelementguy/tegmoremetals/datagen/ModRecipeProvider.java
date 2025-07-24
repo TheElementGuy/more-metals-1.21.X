@@ -1,6 +1,8 @@
 package net.theelementguy.tegmoremetals.datagen;
 
 import net.minecraft.core.HolderLookup;
+import net.minecraft.core.registries.BuiltInRegistries;
+import net.minecraft.core.registries.Registries;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.recipes.RecipeCategory;
 import net.minecraft.data.recipes.RecipeOutput;
@@ -15,6 +17,7 @@ import net.neoforged.neoforge.common.conditions.IConditionBuilder;
 import net.theelementguy.tegmoremetals.MoreMetalsMod;
 import net.theelementguy.tegmoremetals.block.ModBlocks;
 import net.theelementguy.tegmoremetals.item.ModItems;
+import net.theelementguy.tegmoremetals.util.ModUtil;
 
 import java.util.List;
 import java.util.concurrent.CompletableFuture;
@@ -128,6 +131,8 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
 
         allOreSmelting(ModItems.STARSHARD.get(), STARSHARD_SMELTABLES, 1.5f, "s", output);
 
+        allRecipes("bloodstone", 0.9f, output);
+
     }
 
     protected static void oreSmelting(RecipeOutput recipeOutput, List<ItemLike> pIngredients, RecipeCategory pCategory, ItemLike pResult, float pExperience, int pCookingTIme, String pGroup) {
@@ -204,5 +209,16 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
         chestplateRecipe(chestplate, material, advancementNames, output);
         leggingsRecipe(leggings, material, advancementNames, output);
         bootsRecipe(boots, material, advancementNames, output);
+    }
+
+    protected void allEquipmentRecipes(String name, RecipeOutput output) {
+        allEquipmentRecipes(BuiltInRegistries.ITEM.get(ResourceLocation.fromNamespaceAndPath(MoreMetalsMod.MOD_ID, name + "_sword")), BuiltInRegistries.ITEM.get(ResourceLocation.fromNamespaceAndPath(MoreMetalsMod.MOD_ID, name + "_axe")), BuiltInRegistries.ITEM.get(ResourceLocation.fromNamespaceAndPath(MoreMetalsMod.MOD_ID, name + "_pickaxe")), BuiltInRegistries.ITEM.get(ResourceLocation.fromNamespaceAndPath(MoreMetalsMod.MOD_ID, name + "_shovel")), BuiltInRegistries.ITEM.get(ResourceLocation.fromNamespaceAndPath(MoreMetalsMod.MOD_ID, name + "_hoe")), BuiltInRegistries.ITEM.get(ResourceLocation.fromNamespaceAndPath(MoreMetalsMod.MOD_ID, name + "_helmet")), BuiltInRegistries.ITEM.get(ResourceLocation.fromNamespaceAndPath(MoreMetalsMod.MOD_ID, name + "_chestplate")), BuiltInRegistries.ITEM.get(ResourceLocation.fromNamespaceAndPath(MoreMetalsMod.MOD_ID, name + "_leggings")), BuiltInRegistries.ITEM.get(ResourceLocation.fromNamespaceAndPath(MoreMetalsMod.MOD_ID, name + "_boots")), BuiltInRegistries.ITEM.get(ResourceLocation.fromNamespaceAndPath(MoreMetalsMod.MOD_ID, name)), "has_" + name, output);
+    }
+
+    protected void allRecipes(String name, float experience, RecipeOutput output) {
+        System.out.println(BuiltInRegistries.ITEM.get(ResourceLocation.fromNamespaceAndPath(MoreMetalsMod.MOD_ID, name)));
+        blockRecipe(BuiltInRegistries.ITEM.get(ResourceLocation.fromNamespaceAndPath(MoreMetalsMod.MOD_ID, name)), BuiltInRegistries.BLOCK.get(ResourceLocation.fromNamespaceAndPath(MoreMetalsMod.MOD_ID, name + "_block")).asItem(), output);
+        allEquipmentRecipes(name, output);
+        allOreSmelting(BuiltInRegistries.ITEM.get(ResourceLocation.fromNamespaceAndPath(MoreMetalsMod.MOD_ID, name)), List.of(BuiltInRegistries.BLOCK.get(ResourceLocation.fromNamespaceAndPath(MoreMetalsMod.MOD_ID, name + "_ore")).asItem(), BuiltInRegistries.BLOCK.get(ResourceLocation.fromNamespaceAndPath(MoreMetalsMod.MOD_ID, "deepslate_" + name + "_ore")).asItem()), experience, name, output);
     }
 }

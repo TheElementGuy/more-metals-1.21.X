@@ -15,4 +15,6 @@ public class ModToolTiers {
 
     public static final Tier BRONZE = new SimpleTier(ModTags.Blocks.INCORRECT_FOR_BRONZE_TOOL, 180, 5.0f, 1.0f, 13, () -> Ingredient.of(ModItems.BRONZE_INGOT));
 
+    public static final Tier BLOODSTONE = new SimpleTier(ModTags.Blocks.INCORRECT_FOR_BLOODSTONE_TOOL, 1021, 7.0f, 4.0f, 19, () -> Ingredient.of(ModItems.BLOODSTONE));
+
 }
