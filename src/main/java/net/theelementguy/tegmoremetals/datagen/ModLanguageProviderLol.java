@@ -68,6 +68,15 @@ public class ModLanguageProviderLol extends LanguageProvider {
         add(ModItems.STARSHARD_BOOTS, "ooooh shiny shooz (sparkel sparkel)");
 
         add(ModItems.BLOODSTONE, "gory stony");
+        add(ModItems.BLOODSTONE_SWORD, "used(?) surd");
+        add(ModItems.BLOODSTONE_AXE, "HORRRORRR MUVY pRop");
+        add(ModItems.BLOODSTONE_PICKAXE, "wut dis pikakse uzed 4...");
+        add(ModItems.BLOODSTONE_SHOVEL, "y iz it red olredy");
+        add(ModItems.BLOODSTONE_HOE, "(c)reeeeper");
+        add(ModItems.BLOODSTONE_HELMET, "red hulmit");
+        add(ModItems.BLOODSTONE_CHESTPLATE, "read jursey");
+        add(ModItems.BLOODSTONE_LEGGINGS, "gory panzzt");
+        add(ModItems.BLOODSTONE_BOOTS, "bootz aund dey wer wallkinng thru teh pante but teh paaiint wuz red andn it got on teh boutz");
 
         add(ModBlocks.CUBIC_ZIRCONIA_BLOCK, "Blok of tuff stuff");
         add(ModBlocks.RAW_CUBIC_ZIRCONIA_BLOCK, "bLuk uv gross tuff stuff");
