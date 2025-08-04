@@ -15,8 +15,8 @@ import net.theelementguy.tegmoremetals.trim.ModTrimMaterials;
 
 public class ModLanguageProviderLol extends LanguageProvider {
 
-    public ModLanguageProviderLol(PackOutput output, String locale) {
-        super(output, MoreMetalsMod.MOD_ID, locale);
+    public ModLanguageProviderLol(PackOutput output) {
+        super(output, MoreMetalsMod.MOD_ID, "lol_us");
     }
 
     @Override
