@@ -42,6 +42,7 @@ public class DataGenerators {
 
         generator.addProvider(true, new ModLanguageProvider(output, "en_us"));
         generator.addProvider(true, new ModLanguageProviderLol(output, "lol_us"));
+        generator.addProvider(true, new ModLanguageProviderPirate(output));
     }
 
 }

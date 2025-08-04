@@ -1,5 +1,6 @@
 package net.theelementguy.tegmoremetals.util;
 
+import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
@@ -49,6 +50,14 @@ public class ModUtil {
 
     public static void inventoryAddAfter(DeferredBlock<? extends Block> item, DeferredBlock<? extends Block> referenceItem, BuildCreativeModeTabContentsEvent event) {
         event.insertAfter(new ItemStack(referenceItem, 1), new ItemStack(item, 1), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+    }
+
+    public static Item getItemFromKey(String key) {
+        return BuiltInRegistries.ITEM.get(ModUtil.createItemResourceKey(key));
+    }
+
+    public static Block getBlockFromKey(String key) {
+        return BuiltInRegistries.BLOCK.get(ModUtil.createBlockResourceKey(key));
     }
 
 }
