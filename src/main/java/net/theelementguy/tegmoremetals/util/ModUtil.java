@@ -1,7 +1,5 @@
 package net.theelementguy.tegmoremetals.util;
 
-import net.minecraft.core.Holder;
-import net.minecraft.core.HolderLookup;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.ResourceKey;
@@ -12,21 +10,18 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.crafting.Recipe;
 import net.minecraft.world.item.equipment.EquipmentAsset;
 import net.minecraft.world.level.block.Block;
-import net.neoforged.fml.ISystemReportExtender;
 import net.neoforged.neoforge.event.BuildCreativeModeTabContentsEvent;
 import net.neoforged.neoforge.registries.DeferredBlock;
 import net.neoforged.neoforge.registries.DeferredHolder;
 import net.neoforged.neoforge.registries.DeferredItem;
-import net.neoforged.neoforge.registries.DeferredRegister;
 import net.theelementguy.tegmoremetals.MoreMetalsMod;
 import net.theelementguy.tegmoremetals.item.ModItems;
-import org.checkerframework.checker.units.qual.A;
 
-import java.util.ArrayList;
-import java.util.NoSuchElementException;
-import java.util.Optional;
+import java.util.*;
 
 public class ModUtil {
+
+    private static HashMap<Character, Character> upsideDown = new HashMap<>(mapOf('a', 'ɐ', 'b', 'q', 'c', 'ɔ', 'd', 'p', 'e', 'ǝ', 'f', 'ɟ', 'g', 'ᵷ', 'h', 'ɥ', 'i', 'ᴉ', 'k', 'ʞ', 'C', 'Ɔ', 'u', 'n', 'n', 'u', ' ', ' ', 'z', 'z', 'Z', 'Z', 'q', 'b', 'p', 'd', 'r', 'ɹ', 'o', 'o', 'l', 'l', 's', 's', 'R', 'ᴚ', 'S', 'S', 'B', 'ᗺ', 'A', 'Ɐ', 'w', 'ʍ', 'W', 'M', 'x', 'x', 'P', 'Ԁ', 'T', '⟘', 'H', 'H', 'v', 'ʌ', 'D', 'ᗡ', 'N', 'N', 'E', 'Ǝ', 'O', 'O', 'm', 'ɯ', 't', 'ʇ', 'L', 'Ꞁ', 'I', 'I'));
 
     public static ResourceKey<Item> createItemResourceKey(String name) {
         return ResourceKey.create(Registries.ITEM, ResourceLocation.fromNamespaceAndPath(MoreMetalsMod.MOD_ID, name));
@@ -91,6 +86,57 @@ public class ModUtil {
 
     public static Block getBlockFromKey(String key) {
         return BuiltInRegistries.BLOCK.get(ModUtil.createBlockResourceKey(key)).get().value();
+    }
+
+    public static String toUpsideDown(String given) {
+
+        ArrayList<Character> charList = new ArrayList<>(given.length());
+
+        for (char c : given.toCharArray()) {
+            charList.add(c);
+        }
+
+        int i = 0;
+
+        for (Character c : charList) {
+            if (upsideDown.containsKey(c)) {
+                charList.set(i, upsideDown.get(c));
+            } else {
+                System.out.println(upsideDown);
+                throw new NoSuchElementException("No upside down equivalent for: " + c);
+            }
+            i++;
+        }
+
+        StringBuilder b = new StringBuilder();
+
+        Collections.reverse(charList);
+
+        charList.forEach(b::append);
+
+        return b.toString();
+    }
+
+    public static <K, V> Map<K, V> mapOf(Object... things) {
+
+        ArrayList<Object> temp = new ArrayList<>(2);
+        HashMap<K, V> toReturn = new HashMap<>(things.length / 2);
+
+        for (int i = 0; i < things.length; i++) {
+            System.out.println(i);
+            if (((i % 2) == 1)) {
+                temp.add(things[i]);
+                System.out.println(temp);
+                toReturn.put((K) temp.get(0), (V) temp.get(1));
+                temp.clear();
+            } else {
+                temp.add(things[i]);
+            }
+            System.out.println(temp);
+        }
+
+        return toReturn;
+
     }
 
 }

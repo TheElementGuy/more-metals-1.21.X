@@ -15,25 +15,25 @@ import net.theelementguy.tegmoremetals.item.ModItems;
 import net.theelementguy.tegmoremetals.trim.ModTrimMaterials;
 import net.theelementguy.tegmoremetals.util.ModUtil;
 
-public class ModLanguageProvider extends LanguageProvider {
-    
-    public ModLanguageProvider(PackOutput output) {
-        super(output, MoreMetalsMod.MOD_ID, "en_us");
+public class ModLanguageProviderAnglish extends LanguageProvider {
+
+    public ModLanguageProviderAnglish(PackOutput output) {
+        super(output, MoreMetalsMod.MOD_ID, "enp");
     }
 
     @Override
     protected void addTranslations() {
 
-        add(ModItems.CUBIC_ZIRCONIA, "Cubic Zirconia");
-        addMaterialSet("cubic_zirconia", "Cubic Zirconia");
+        add(ModItems.CUBIC_ZIRCONIA, "Sixfaced Gleamgem");
+        addMaterialSet("cubic_zirconia", "Sixfaced Gleamgem");
 
         add(ModItems.TIN_SCRAPS, "Tin Scraps");
 
-        add(ModItems.BRONZE_INGOT, "Bronze Ingot");
-        addMaterialSet("bronze", "Bronze");
+        add(ModItems.BRONZE_INGOT, "Brass Ingot");
+        addMaterialSet("bronze", "Brass");
 
-        add(ModItems.RUBIDIUM, "Rubidium");
-        addMaterialSet("rubidium", "Rubidium");
+        add(ModItems.RUBIDIUM, "Redsilver");
+        addMaterialSet("rubidium", "Redsilver");
 
         add(ModItems.STARSHARD, "Starshard");
         addMaterialSet("starshard", "Starshard");
@@ -41,20 +41,20 @@ public class ModLanguageProvider extends LanguageProvider {
         add(ModItems.BLOODSTONE, "Bloodstone");
         addMaterialSet("bloodstone", "Bloodstone");
 
-        add(ModBlocks.RAW_CUBIC_ZIRCONIA_BLOCK, "Block of Raw Cubic Zirconia");
-        add(ModBlocks.TIN_BLOCK, "Block of Tin");
+        add(ModBlocks.RAW_CUBIC_ZIRCONIA_BLOCK, "Clot of Raw Sixfaced Gleamgem");
+        add(ModBlocks.TIN_BLOCK, "Clot of Tin");
 
         add(ModBlocks.TIN_ORE, "Tin Ore");
         add(ModBlocks.DEEPSLATE_TIN_ORE, "Deepslate Tin Ore");
 
-        addTrimMaterial(ModTrimMaterials.CUBIC_ZIRCONIA, "Cubic Zirconia");
+        addTrimMaterial(ModTrimMaterials.CUBIC_ZIRCONIA, "Sixfaced Gleamgem");
         addTrimMaterial(ModTrimMaterials.TIN, "Tin");
-        addTrimMaterial(ModTrimMaterials.BRONZE, "Bronze");
-        addTrimMaterial(ModTrimMaterials.RUBIDIUM, "Rubidium");
+        addTrimMaterial(ModTrimMaterials.BRONZE, "Brass");
+        addTrimMaterial(ModTrimMaterials.RUBIDIUM, "Redsilver");
         addTrimMaterial(ModTrimMaterials.STARSHARD, "Starshard");
         addTrimMaterial(ModTrimMaterials.BLOODSTONE, "Bloodstone");
     }
-    
+
     protected void add(DeferredItem<? extends Item> key, String name) {
         add(key.get(), name);
     }
@@ -75,13 +75,13 @@ public class ModLanguageProvider extends LanguageProvider {
         System.out.println("Adding tool set");
         add(sword, groupName + " Sword");
         add(axe, groupName + " Axe");
-        add(pickaxe, groupName + " Pickaxe");
+        add(pickaxe, groupName + " Pike");
         add(shovel, groupName + " Shovel");
-        add(hoe, groupName + " Hoe");
-        add(helmet, groupName + " Helmet");
-        add(chestplate, groupName + " Chestplate");
-        add(leggings, groupName + " Leggings");
-        add(boots, groupName + " Boots");
+        add(hoe, groupName + " Tiller");
+        add(helmet, groupName + " Helm");
+        add(chestplate, groupName + " Breastbor");
+        add(leggings, groupName + " Hoses");
+        add(boots, groupName + " Shoes");
     }
 
     protected void addToolSet(String group, String groupName) {
@@ -91,7 +91,7 @@ public class ModLanguageProvider extends LanguageProvider {
 
     protected void addMaterialSet(String group, String groupName) {
         addToolSet(group, groupName);
-        add(BuiltInRegistries.BLOCK.get(ModUtil.createBlockResourceKey(group + "_block")).get().value(), "Block of " + groupName);
+        add(BuiltInRegistries.BLOCK.get(ModUtil.createBlockResourceKey(group + "_block")).get().value(), "Clot of " + groupName);
         addOptionalOre(group, groupName);
         addOptionalDeepslateOre(group, groupName);
         addOptionalNetherOre(group, groupName);
@@ -106,7 +106,7 @@ public class ModLanguageProvider extends LanguageProvider {
 
     protected void addOptionalDeepslateOre(String group, String groupName) {
         if (BuiltInRegistries.BLOCK.get(ModUtil.createBlockResourceKey("deepslate_" + group + "_ore")).isPresent()) {
-            add(ModUtil.getBlockFromKey("deepslate_" + group + "_ore"), "Deepslate " + groupName + " Ore");
+            add(ModUtil.getBlockFromKey("deepslate_" + group + "_ore"), "Deepstone " + groupName + " Ore");
         }
     }
 

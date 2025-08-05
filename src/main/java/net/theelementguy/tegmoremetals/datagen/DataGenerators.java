@@ -31,6 +31,9 @@ public class DataGenerators {
         generator.addProvider(true, new ModLanguageProvider(output));
         generator.addProvider(true, new ModLanguageProviderLol(output));
         generator.addProvider(true, new ModLanguageProviderPirate(output));
+        generator.addProvider(true, new ModLanguageProviderUpsideDown(output));
+        generator.addProvider(true, new ModLanguageProviderAnglish(output));
+        generator.addProvider(true, new ModLanguageProviderShakspeare(output));
 
         generator.addProvider(true, ModBlockLootTableProvider.create(output, provider));
         new LootTableProvider(output, Collections.emptySet(), List.of(new LootTableProvider.SubProviderEntry(ModBlockLootTableProvider::new, LootContextParamSets.BLOCK)), provider);

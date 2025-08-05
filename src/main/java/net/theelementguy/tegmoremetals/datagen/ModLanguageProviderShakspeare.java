@@ -15,10 +15,10 @@ import net.theelementguy.tegmoremetals.item.ModItems;
 import net.theelementguy.tegmoremetals.trim.ModTrimMaterials;
 import net.theelementguy.tegmoremetals.util.ModUtil;
 
-public class ModLanguageProvider extends LanguageProvider {
-    
-    public ModLanguageProvider(PackOutput output) {
-        super(output, MoreMetalsMod.MOD_ID, "en_us");
+public class ModLanguageProviderShakspeare extends LanguageProvider {
+
+    public ModLanguageProviderShakspeare(PackOutput output) {
+        super(output, MoreMetalsMod.MOD_ID, "enws");
     }
 
     @Override
@@ -27,7 +27,7 @@ public class ModLanguageProvider extends LanguageProvider {
         add(ModItems.CUBIC_ZIRCONIA, "Cubic Zirconia");
         addMaterialSet("cubic_zirconia", "Cubic Zirconia");
 
-        add(ModItems.TIN_SCRAPS, "Tin Scraps");
+        add(ModItems.TIN_SCRAPS, "Scrap of Tin");
 
         add(ModItems.BRONZE_INGOT, "Bronze Ingot");
         addMaterialSet("bronze", "Bronze");
@@ -49,12 +49,12 @@ public class ModLanguageProvider extends LanguageProvider {
 
         addTrimMaterial(ModTrimMaterials.CUBIC_ZIRCONIA, "Cubic Zirconia");
         addTrimMaterial(ModTrimMaterials.TIN, "Tin");
-        addTrimMaterial(ModTrimMaterials.BRONZE, "Bronze");
+        addTrimMaterial(ModTrimMaterials.BRONZE, "Brass");
         addTrimMaterial(ModTrimMaterials.RUBIDIUM, "Rubidium");
         addTrimMaterial(ModTrimMaterials.STARSHARD, "Starshard");
         addTrimMaterial(ModTrimMaterials.BLOODSTONE, "Bloodstone");
     }
-    
+
     protected void add(DeferredItem<? extends Item> key, String name) {
         add(key.get(), name);
     }
@@ -76,12 +76,12 @@ public class ModLanguageProvider extends LanguageProvider {
         add(sword, groupName + " Sword");
         add(axe, groupName + " Axe");
         add(pickaxe, groupName + " Pickaxe");
-        add(shovel, groupName + " Shovel");
+        add(shovel, groupName + " Spade");
         add(hoe, groupName + " Hoe");
-        add(helmet, groupName + " Helmet");
-        add(chestplate, groupName + " Chestplate");
-        add(leggings, groupName + " Leggings");
-        add(boots, groupName + " Boots");
+        add(helmet, groupName + " Casque");
+        add(chestplate, groupName + " Breast Plate");
+        add(leggings, groupName + " Greaves");
+        add(boots, groupName + " Sabatons");
     }
 
     protected void addToolSet(String group, String groupName) {
@@ -91,7 +91,7 @@ public class ModLanguageProvider extends LanguageProvider {
 
     protected void addMaterialSet(String group, String groupName) {
         addToolSet(group, groupName);
-        add(BuiltInRegistries.BLOCK.get(ModUtil.createBlockResourceKey(group + "_block")).get().value(), "Block of " + groupName);
+        add(BuiltInRegistries.BLOCK.get(ModUtil.createBlockResourceKey(group + "_block")).get().value(), "Clot of " + groupName);
         addOptionalOre(group, groupName);
         addOptionalDeepslateOre(group, groupName);
         addOptionalNetherOre(group, groupName);
@@ -106,7 +106,7 @@ public class ModLanguageProvider extends LanguageProvider {
 
     protected void addOptionalDeepslateOre(String group, String groupName) {
         if (BuiltInRegistries.BLOCK.get(ModUtil.createBlockResourceKey("deepslate_" + group + "_ore")).isPresent()) {
-            add(ModUtil.getBlockFromKey("deepslate_" + group + "_ore"), "Deepslate " + groupName + " Ore");
+            add(ModUtil.getBlockFromKey("deepslate_" + group + "_ore"), "Deepethslate " + groupName + " Ore");
         }
     }
 
