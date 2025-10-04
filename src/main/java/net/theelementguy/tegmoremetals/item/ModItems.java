@@ -39,8 +39,6 @@ public class ModItems {
 
     public static final DeferredItem<Item> CUBIC_ZIRCONIA_BOOTS = ITEMS.register("cubic_zirconia_boots", () -> new Item((new Item.Properties()).fireResistant().humanoidArmor(ModArmorMaterials.CUBIC_ZIRCONIA, ArmorType.BOOTS).setId(ResourceKey.create(Registries.ITEM, ResourceLocation.fromNamespaceAndPath(MoreMetalsMod.MOD_ID, "cubic_zirconia_boots")))));
 
-    public static final DeferredItem<Item> TIN_SCRAPS = ITEMS.register("tin_scraps", () -> new Item((new Item.Properties().trimMaterial(ModTrimMaterials.TIN)).setId(ResourceKey.create(Registries.ITEM, ResourceLocation.fromNamespaceAndPath(MoreMetalsMod.MOD_ID, "tin_scraps")))));
-
     public static final DeferredItem<Item> RUBIDIUM = ITEMS.register("rubidium", () -> new Item((new Item.Properties()).trimMaterial(ModTrimMaterials.RUBIDIUM).setId(ResourceKey.create(Registries.ITEM, ResourceLocation.fromNamespaceAndPath(MoreMetalsMod.MOD_ID, "rubidium")))));
 
     public static final DeferredItem<Item> RUBIDIUM_SWORD = ITEMS.register("rubidium_sword", () -> new Item((new Item.Properties()).sword(ModToolMaterials.RUBIDIUM, 3.0F, -2.4F).setId(ResourceKey.create(Registries.ITEM, ResourceLocation.fromNamespaceAndPath(MoreMetalsMod.MOD_ID, "rubidium_sword")))));
@@ -80,26 +78,6 @@ public class ModItems {
     public static final DeferredItem<Item> STARSHARD_LEGGINGS = ITEMS.register("starshard_leggings", () -> new Item((new Item.Properties()).humanoidArmor(ModArmorMaterials.STARSHARD, ArmorType.LEGGINGS).setId(ResourceKey.create(Registries.ITEM, ResourceLocation.fromNamespaceAndPath(MoreMetalsMod.MOD_ID, "starshard_leggings")))));
 
     public static final DeferredItem<Item> STARSHARD_BOOTS = ITEMS.register("starshard_boots", () -> new Item((new Item.Properties()).humanoidArmor(ModArmorMaterials.STARSHARD, ArmorType.BOOTS).setId(ResourceKey.create(Registries.ITEM, ResourceLocation.fromNamespaceAndPath(MoreMetalsMod.MOD_ID, "starshard_boots")))));
-
-    public static final DeferredItem<Item> BRONZE_INGOT = ITEMS.register("bronze_ingot", () -> new Item(new Item.Properties().trimMaterial(ModTrimMaterials.BRONZE).setId(ModUtil.createItemResourceKey("bronze_ingot"))));
-
-    public static final DeferredItem<Item> BRONZE_SWORD = ITEMS.register("bronze_sword", () -> new Item((new Item.Properties()).sword(ModToolMaterials.BRONZE, 3.0F, -2.4F).setId(ResourceKey.create(Registries.ITEM, ResourceLocation.fromNamespaceAndPath(MoreMetalsMod.MOD_ID, "bronze_sword")))));
-
-    public static final DeferredItem<AxeItem> BRONZE_AXE = ITEMS.register("bronze_axe", () -> new AxeItem(ModToolMaterials.BRONZE, 6.0F, -3.1F, (new Item.Properties()).setId(ResourceKey.create(Registries.ITEM, ResourceLocation.fromNamespaceAndPath(MoreMetalsMod.MOD_ID, "bronze_axe")))));
-
-    public static final DeferredItem<Item> BRONZE_PICKAXE = ITEMS.register("bronze_pickaxe", () -> new Item((new Item.Properties()).pickaxe(ModToolMaterials.BRONZE, 1.0F, -2.8F).setId(ResourceKey.create(Registries.ITEM, ResourceLocation.fromNamespaceAndPath(MoreMetalsMod.MOD_ID, "bronze_pickaxe")))));
-
-    public static final DeferredItem<ShovelItem> BRONZE_SHOVEL = ITEMS.register("bronze_shovel", () -> new ShovelItem(ModToolMaterials.BRONZE, 1.5F, -3.0F, (new Item.Properties()).setId(ResourceKey.create(Registries.ITEM, ResourceLocation.fromNamespaceAndPath(MoreMetalsMod.MOD_ID, "bronze_shovel")))));
-
-    public static final DeferredItem<HoeItem> BRONZE_HOE = ITEMS.register("bronze_hoe", () -> new HoeItem(ModToolMaterials.BRONZE, -2.0F, -1.0F, (new Item.Properties()).setId(ResourceKey.create(Registries.ITEM, ResourceLocation.fromNamespaceAndPath(MoreMetalsMod.MOD_ID, "bronze_hoe")))));
-
-    public static final DeferredItem<Item> BRONZE_HELMET = ITEMS.register("bronze_helmet", () -> new Item((new Item.Properties()).humanoidArmor(ModArmorMaterials.BRONZE, ArmorType.HELMET).setId(ResourceKey.create(Registries.ITEM, ResourceLocation.fromNamespaceAndPath(MoreMetalsMod.MOD_ID, "bronze_helmet")))));
-
-    public static final DeferredItem<Item> BRONZE_CHESTPLATE = ITEMS.register("bronze_chestplate", () -> new Item((new Item.Properties()).humanoidArmor(ModArmorMaterials.BRONZE, ArmorType.CHESTPLATE).setId(ResourceKey.create(Registries.ITEM, ResourceLocation.fromNamespaceAndPath(MoreMetalsMod.MOD_ID, "bronze_chestplate")))));
-
-    public static final DeferredItem<Item> BRONZE_LEGGINGS = ITEMS.register("bronze_leggings", () -> new Item((new Item.Properties()).humanoidArmor(ModArmorMaterials.BRONZE, ArmorType.LEGGINGS).setId(ResourceKey.create(Registries.ITEM, ResourceLocation.fromNamespaceAndPath(MoreMetalsMod.MOD_ID, "bronze_leggings")))));
-
-    public static final DeferredItem<Item> BRONZE_BOOTS = ITEMS.register("bronze_boots", () -> new Item((new Item.Properties()).humanoidArmor(ModArmorMaterials.BRONZE, ArmorType.BOOTS).setId(ResourceKey.create(Registries.ITEM, ResourceLocation.fromNamespaceAndPath(MoreMetalsMod.MOD_ID, "bronze_boots")))));
 
     public static final DeferredItem<Item> BLOODSTONE = ITEMS.register("bloodstone", () -> new Item(new Item.Properties().trimMaterial(ModTrimMaterials.BLOODSTONE).setId(ModUtil.createItemResourceKey("bloodstone"))));
 

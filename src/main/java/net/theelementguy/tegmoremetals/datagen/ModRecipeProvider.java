@@ -47,8 +47,6 @@ public class ModRecipeProvider extends RecipeProvider {
 
         List<ItemLike> CELESTIAL_BRONZE_SMELTABLES = List.of();
 
-        List<ItemLike> TIN_SMELTABLES = List.of(ModBlocks.TIN_ORE, ModBlocks.DEEPSLATE_TIN_ORE);
-
         List<ItemLike> RUBIDIUM_SMELTABLES = List.of(ModBlocks.NETHER_RUBIDIUM_ORE);
 
         List<ItemLike> STARSHARD_SMELTABLES = List.of(ModBlocks.END_STARSHARD_ORE);
@@ -59,13 +57,9 @@ public class ModRecipeProvider extends RecipeProvider {
 
         blockRecipe(ModItems.RAW_CUBIC_ZIRCONIA.get(), ModBlocks.RAW_CUBIC_ZIRCONIA_BLOCK.asItem(), this.output);
 
-        blockRecipe(ModItems.TIN_SCRAPS.get(), ModBlocks.TIN_BLOCK.asItem(), this.output);
-
         blockRecipe(ModItems.RUBIDIUM.get(), ModBlocks.RUBIDIUM_BLOCK.asItem(), this.output);
 
         blockRecipe(ModItems.STARSHARD.get(), ModBlocks.STARSHARD_BLOCK.asItem(), this.output);
-
-        blockRecipe(ModItems.BRONZE_INGOT.get(), ModBlocks.BRONZE_BLOCK.asItem(), this.output);
 
         blockRecipe(ModItems.BLOODSTONE.get(), ModBlocks.BLOODSTONE_BLOCK.asItem(), this.output);
 
@@ -126,19 +120,9 @@ public class ModRecipeProvider extends RecipeProvider {
 
         bootsRecipe(ModItems.STARSHARD_BOOTS.get(), ModItems.STARSHARD.get(), "has_s", this.output);
 
-        allEquipmentRecipes(ModItems.BRONZE_SWORD.get(), ModItems.BRONZE_AXE.get(), ModItems.BRONZE_PICKAXE.get(), ModItems.BRONZE_SHOVEL.get(), ModItems.BRONZE_HOE.get(), ModItems.BRONZE_HELMET.get(), ModItems.BRONZE_CHESTPLATE.get(), ModItems.BRONZE_LEGGINGS.get(), ModItems.BRONZE_BOOTS.get(), ModItems.BRONZE_INGOT.get(), "has_b", this.output);
-
-        //this.shapeless(RecipeCategory.MISC, ModItems.CELESTIAL_BRONZE_INGOT).requires(Items.COPPER_INGOT, 4).requires(ModItems.TIN_SCRAPS).requires(Items.NETHER_STAR).unlockedBy("has_ns", has(Items.NETHER_STAR)).save(this.output, ResourceKey.create(Registries.RECIPE, ResourceLocation.fromNamespaceAndPath(MoreMetalsMod.MOD_ID, "celestial_bronze_forging")));
-
         allEquipmentRecipes(ModItems.BLOODSTONE_SWORD.get(), ModItems.BLOODSTONE_AXE.get(), ModItems.BLOODSTONE_PICKAXE.get(), ModItems.BLOODSTONE_SHOVEL.get(), ModItems.BLOODSTONE_HOE.get(), ModItems.BLOODSTONE_HELMET.get(), ModItems.BLOODSTONE_CHESTPLATE.get(), ModItems.BLOODSTONE_LEGGINGS.get(), ModItems.BLOODSTONE_BOOTS.get(), ModItems.BLOODSTONE.get(), "has_bl", this.output);
 
-        this.shapeless(RecipeCategory.MISC, ModItems.BRONZE_INGOT).requires(Items.COPPER_INGOT, 4).requires(ModItems.TIN_SCRAPS).unlockedBy("has_c", has(Items.COPPER_INGOT)).save(this.output, ModUtil.createRecipeResourceKey("bronze_forging"));
-
         allOreSmelting(ModItems.CUBIC_ZIRCONIA.get(), CUBIC_ZIRCONIA_SMELTABLES, 1.0f, "cz", this.output);
-
-        //allOreSmelting(ModItems.CELESTIAL_BRONZE_INGOT.get(), CELESTIAL_BRONZE_SMELTABLES, 1.0f, "cb", this.output);
-
-        allOreSmelting(ModItems.TIN_SCRAPS.get(), TIN_SMELTABLES, 0.7f, "t", this.output);
 
         allOreSmelting(ModItems.RUBIDIUM.get(), RUBIDIUM_SMELTABLES, 1.3f, "r", this.output);
 

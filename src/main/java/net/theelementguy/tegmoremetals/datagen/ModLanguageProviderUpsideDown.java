@@ -29,11 +29,6 @@ public class ModLanguageProviderUpsideDown extends LanguageProvider {
 
         add(ModItems.RAW_CUBIC_ZIRCONIA, ModUtil.toUpsideDown("Raw Cubic Zirconia"));
 
-        add(ModItems.TIN_SCRAPS, ModUtil.toUpsideDown("Tin Scraps"));
-
-        add(ModItems.BRONZE_INGOT, ModUtil.toUpsideDown("Bronze Ingot"));
-        addMaterialSet("bronze", ModUtil.toUpsideDown("Bronze"));
-
         add(ModItems.RUBIDIUM, ModUtil.toUpsideDown("Rubidium"));
         addMaterialSet("rubidium", ModUtil.toUpsideDown("Rubidium"));
 
@@ -44,14 +39,8 @@ public class ModLanguageProviderUpsideDown extends LanguageProvider {
         addMaterialSet("bloodstone", ModUtil.toUpsideDown("Bloodstone"));
 
         add(ModBlocks.RAW_CUBIC_ZIRCONIA_BLOCK, ModUtil.toUpsideDown("Block of Raw Cubic Zirconia"));
-        add(ModBlocks.TIN_BLOCK, ModUtil.toUpsideDown("Block of Tin"));
-
-        add(ModBlocks.TIN_ORE, ModUtil.toUpsideDown("Tin Ore"));
-        add(ModBlocks.DEEPSLATE_TIN_ORE, ModUtil.toUpsideDown("Deepslate Tin Ore"));
 
         addTrimMaterial(ModTrimMaterials.CUBIC_ZIRCONIA, ModUtil.toUpsideDown("Cubic Zirconia"));
-        addTrimMaterial(ModTrimMaterials.TIN, ModUtil.toUpsideDown("Tin"));
-        addTrimMaterial(ModTrimMaterials.BRONZE, ModUtil.toUpsideDown("Bronze"));
         addTrimMaterial(ModTrimMaterials.RUBIDIUM, ModUtil.toUpsideDown("Rubidium"));
         addTrimMaterial(ModTrimMaterials.STARSHARD, ModUtil.toUpsideDown("Starshard"));
         addTrimMaterial(ModTrimMaterials.BLOODSTONE, ModUtil.toUpsideDown("Bloodstone"));

@@ -27,11 +27,6 @@ public class ModLanguageProvider extends LanguageProvider {
         add(ModItems.CUBIC_ZIRCONIA, "Cubic Zirconia");
         addMaterialSet("cubic_zirconia", "Cubic Zirconia");
 
-        add(ModItems.TIN_SCRAPS, "Tin Scraps");
-
-        add(ModItems.BRONZE_INGOT, "Bronze Ingot");
-        addMaterialSet("bronze", "Bronze");
-
         add(ModItems.RUBIDIUM, "Rubidium");
         addMaterialSet("rubidium", "Rubidium");
 
@@ -42,14 +37,8 @@ public class ModLanguageProvider extends LanguageProvider {
         addMaterialSet("bloodstone", "Bloodstone");
 
         add(ModBlocks.RAW_CUBIC_ZIRCONIA_BLOCK, "Block of Raw Cubic Zirconia");
-        add(ModBlocks.TIN_BLOCK, "Block of Tin");
-
-        add(ModBlocks.TIN_ORE, "Tin Ore");
-        add(ModBlocks.DEEPSLATE_TIN_ORE, "Deepslate Tin Ore");
 
         addTrimMaterial(ModTrimMaterials.CUBIC_ZIRCONIA, "Cubic Zirconia");
-        addTrimMaterial(ModTrimMaterials.TIN, "Tin");
-        addTrimMaterial(ModTrimMaterials.BRONZE, "Bronze");
         addTrimMaterial(ModTrimMaterials.RUBIDIUM, "Rubidium");
         addTrimMaterial(ModTrimMaterials.STARSHARD, "Starshard");
         addTrimMaterial(ModTrimMaterials.BLOODSTONE, "Bloodstone");

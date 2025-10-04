@@ -34,19 +34,6 @@ public class ModLanguageProviderLol extends LanguageProvider {
         add(ModItems.CUBIC_ZIRCONIA_LEGGINGS, "tuff stuff PATNZ");
         add(ModItems.CUBIC_ZIRCONIA_BOOTS, "SUPA TUFF SAFTY BOOTZ");
 
-        add(ModItems.TIN_SCRAPS, "tin canz");
-
-        add(ModItems.BRONZE_INGOT, "Brozne bricky");
-        add(ModItems.BRONZE_SWORD, "Brozne surd");
-        add(ModItems.BRONZE_AXE, "Brozne aks");
-        add(ModItems.BRONZE_PICKAXE, "Broznzez pikkaxee");
-        add(ModItems.BRONZE_SHOVEL, "Brozzne shuvul");
-        add(ModItems.BRONZE_HOE, "Bronz hoe");
-        add(ModItems.BRONZE_HELMET, "Brozne hullmet");
-        add(ModItems.BRONZE_CHESTPLATE, "Brozne chessplate");
-        add(ModItems.BRONZE_LEGGINGS, "brozne Leggginggs");
-        add(ModItems.BRONZE_BOOTS, "Brozne buuts");
-
         add(ModItems.RUBIDIUM, "OUCHIE SO HOT");
         add(ModItems.RUBIDIUM_SWORD, "rudibidium surd");
         add(ModItems.RUBIDIUM_AXE, "rudibidium aks");
@@ -82,24 +69,18 @@ public class ModLanguageProviderLol extends LanguageProvider {
 
         add(ModBlocks.CUBIC_ZIRCONIA_BLOCK, "Blok of tuff stuff");
         add(ModBlocks.RAW_CUBIC_ZIRCONIA_BLOCK, "bLuk uv gross tuff stuff");
-        add(ModBlocks.TIN_BLOCK, "blok of cans");
-        add(ModBlocks.BRONZE_BLOCK, "Block of Brozne");
         add(ModBlocks.RUBIDIUM_BLOCK, "hot Blouk");
         add(ModBlocks.STARSHARD_BLOCK, "shiny shiny bluckc");
         add(ModBlocks.BLOODSTONE_BLOCK, "blok ov uh oh");
 
         add(ModBlocks.CUBIC_ZIRCONIA_ORE, "rokz wiht sum tuff stuff");
         add(ModBlocks.DEEPSLATE_CUBIC_ZIRCONIA_ORE, "dark STONY roks withh sommmmmmmmmme tuf stuff");
-        add(ModBlocks.TIN_ORE, "rokz with som cans");
-        add(ModBlocks.DEEPSLATE_TIN_ORE, "dark stony roks with som cans");
         add(ModBlocks.BLOODSTONE_ORE, "stony stony wiht...is that wut i thinks it izz???");
         add(ModBlocks.DEEPSLATE_BLOODSTONE_ORE, "dark stony roks wihth gorre");
         add(ModBlocks.NETHER_RUBIDIUM_ORE, "HHHHOT Nether ORe");
         add(ModBlocks.END_STARSHARD_ORE, "shyni wite rockkz");
 
         addTrimMaterial(ModTrimMaterials.CUBIC_ZIRCONIA, "tuff stuff");
-        addTrimMaterial(ModTrimMaterials.TIN, "cnaz on ur shirt");
-        addTrimMaterial(ModTrimMaterials.BRONZE, "zrobne");
         addTrimMaterial(ModTrimMaterials.RUBIDIUM, "burny clohtez");
         addTrimMaterial(ModTrimMaterials.STARSHARD, "oooh shiny");
 

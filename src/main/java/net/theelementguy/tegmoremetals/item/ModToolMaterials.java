@@ -11,8 +11,6 @@ public class ModToolMaterials {
 
     public static final ToolMaterial STARSHARD = new ToolMaterial(ModTags.Blocks.INCORRECT_FOR_STARSHARD_TOOL, 3001, 15.0f, 5.0f, 13, ModTags.Items.STARSHARD_REPAIRABLES);
 
-    public static final ToolMaterial BRONZE = new ToolMaterial(ModTags.Blocks.INCORRECT_FOR_BRONZE_TOOL, 180, 5.0f, 1.0f, 13, ModTags.Items.BRONZE_REPAIRABLES);
-
     public static final ToolMaterial BLOODSTONE = new ToolMaterial(ModTags.Blocks.INCORRECT_FOR_BLOODSTONE_TOOL, 1021, 7.0f, 4.0f, 19, ModTags.Items.BLOODSTONE_REPAIRABLES);
 
 }

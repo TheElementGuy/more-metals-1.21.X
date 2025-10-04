@@ -26,10 +26,6 @@ public class ModConfiguredFeatures {
 
     public static final ResourceKey<ConfiguredFeature<?, ?>> CUBIC_ZIRCONIA_SMALL_ORE_KEY = registerKey("small_cubic_zirconia");
 
-    public static final ResourceKey<ConfiguredFeature<?, ?>> TIN_SMALL_ORE_KEY = registerKey("small_tin");
-
-    public static final ResourceKey<ConfiguredFeature<?, ?>> TIN_LARGE_ORE_KEY = registerKey("large_tin");
-
     public static final ResourceKey<ConfiguredFeature<?, ?>> RUBIDIUM_LARGE_ORE_KEY = registerKey("large_rubidium");
 
     public static final ResourceKey<ConfiguredFeature<?, ?>> RUBIDIUM_SMALL_ORE_KEY = registerKey("small_rubidium");
@@ -51,8 +47,6 @@ public class ModConfiguredFeatures {
 
         List<OreConfiguration.TargetBlockState> cubicZirconiaOres = List.of(OreConfiguration.target(stoneReplaceabes, ModBlocks.CUBIC_ZIRCONIA_ORE.get().defaultBlockState()), OreConfiguration.target(deepslateReplaceabes, ModBlocks.DEEPSLATE_CUBIC_ZIRCONIA_ORE.get().defaultBlockState()));
 
-        List<OreConfiguration.TargetBlockState> tinOres = List.of(OreConfiguration.target(stoneReplaceabes, ModBlocks.TIN_ORE.get().defaultBlockState()), OreConfiguration.target(deepslateReplaceabes, ModBlocks.DEEPSLATE_TIN_ORE.get().defaultBlockState()));
-
         List<OreConfiguration.TargetBlockState> rubidiumOres = List.of(OreConfiguration.target(netherrackReplaceables, ModBlocks.NETHER_RUBIDIUM_ORE.get().defaultBlockState()));
 
         List<OreConfiguration.TargetBlockState> starshardOres = List.of(OreConfiguration.target(endStoneReplaceables, ModBlocks.END_STARSHARD_ORE.get().defaultBlockState()));
@@ -64,10 +58,6 @@ public class ModConfiguredFeatures {
         register(context, CUBIC_ZIRCONIA_MEDIUM_ORE_KEY, Feature.ORE, new OreConfiguration(cubicZirconiaOres, 9, 0.5f));
 
         register(context, CUBIC_ZIRCONIA_SMALL_ORE_KEY, Feature.ORE, new OreConfiguration(cubicZirconiaOres, 2, 0.5f));
-
-        register(context, TIN_SMALL_ORE_KEY, Feature.ORE, new OreConfiguration(tinOres, 2));
-
-        register(context, TIN_LARGE_ORE_KEY, Feature.ORE, new OreConfiguration(tinOres, 10));
 
         register(context, RUBIDIUM_LARGE_ORE_KEY, Feature.ORE, new OreConfiguration(rubidiumOres, 4));
 

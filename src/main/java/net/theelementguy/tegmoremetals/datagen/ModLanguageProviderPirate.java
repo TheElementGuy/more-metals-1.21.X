@@ -29,11 +29,6 @@ public class ModLanguageProviderPirate extends LanguageProvider {
 
         add(ModItems.RAW_CUBIC_ZIRCONIA, "Rough fake booty");
 
-        add(ModItems.TIN_SCRAPS, "Scraps o' tin");
-
-        add(ModItems.BRONZE_INGOT, "Bullion o' brass");
-        addMaterialSet("bronze", "brass");
-
         add(ModItems.RUBIDIUM, "Firestone");
         addMaterialSet("rubidium", "firestone");
 
@@ -44,14 +39,8 @@ public class ModLanguageProviderPirate extends LanguageProvider {
         addMaterialSet("bloodstone", "gorestone");
 
         add(ModBlocks.RAW_CUBIC_ZIRCONIA_BLOCK, "Chunk o' rough fake booty");
-        add(ModBlocks.TIN_BLOCK, "Chunk o' tin");
-
-        add(ModBlocks.TIN_ORE, "Orrre o' tin");
-        add(ModBlocks.DEEPSLATE_TIN_ORE, "Tough orre o' tin");
 
         addTrimMaterial(ModTrimMaterials.CUBIC_ZIRCONIA, "fake booty");
-        addTrimMaterial(ModTrimMaterials.TIN, "tin");
-        addTrimMaterial(ModTrimMaterials.BRONZE, "brass");
         addTrimMaterial(ModTrimMaterials.RUBIDIUM, "firestone");
         addTrimMaterial(ModTrimMaterials.STARSHARD, "shard o' sun");
         addTrimMaterial(ModTrimMaterials.BLOODSTONE, "gorestone");

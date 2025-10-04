@@ -15,13 +15,11 @@ public class ModEquipmentAssets {
     public static final ResourceKey<EquipmentAsset> CUBIC_ZIRCONIA = ModUtil.createEquipmentAssetResourceKey("cubic_zirconia");
     public static final ResourceKey<EquipmentAsset> RUBIDIUM = ModUtil.createEquipmentAssetResourceKey("rubidium");
     public static final ResourceKey<EquipmentAsset> STARSHARD = ModUtil.createEquipmentAssetResourceKey("starshard");
-    public static final ResourceKey<EquipmentAsset> BRONZE = ModUtil.createEquipmentAssetResourceKey("bronze");
     public static final ResourceKey<EquipmentAsset> BLOODSTONE = ModUtil.createEquipmentAssetResourceKey("bloodstone");
     public static void bootstrap(BiConsumer<ResourceKey<EquipmentAsset>, EquipmentClientInfo> consumer) {
         acceptEquipmentAsset(consumer, CUBIC_ZIRCONIA);
         acceptEquipmentAsset(consumer, RUBIDIUM);
         acceptEquipmentAsset(consumer, STARSHARD);
-        acceptEquipmentAsset(consumer, BRONZE);
         acceptEquipmentAsset(consumer, BLOODSTONE);
     }
 

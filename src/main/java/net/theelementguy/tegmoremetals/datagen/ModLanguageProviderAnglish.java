@@ -27,11 +27,6 @@ public class ModLanguageProviderAnglish extends LanguageProvider {
         add(ModItems.CUBIC_ZIRCONIA, "Sixfaced Gleamgem");
         addMaterialSet("cubic_zirconia", "Sixfaced Gleamgem");
 
-        add(ModItems.TIN_SCRAPS, "Tin Scraps");
-
-        add(ModItems.BRONZE_INGOT, "Brass Ingot");
-        addMaterialSet("bronze", "Brass");
-
         add(ModItems.RUBIDIUM, "Redsilver");
         addMaterialSet("rubidium", "Redsilver");
 
@@ -42,14 +37,8 @@ public class ModLanguageProviderAnglish extends LanguageProvider {
         addMaterialSet("bloodstone", "Bloodstone");
 
         add(ModBlocks.RAW_CUBIC_ZIRCONIA_BLOCK, "Clot of Raw Sixfaced Gleamgem");
-        add(ModBlocks.TIN_BLOCK, "Clot of Tin");
-
-        add(ModBlocks.TIN_ORE, "Tin Ore");
-        add(ModBlocks.DEEPSLATE_TIN_ORE, "Deepslate Tin Ore");
 
         addTrimMaterial(ModTrimMaterials.CUBIC_ZIRCONIA, "Sixfaced Gleamgem");
-        addTrimMaterial(ModTrimMaterials.TIN, "Tin");
-        addTrimMaterial(ModTrimMaterials.BRONZE, "Brass");
         addTrimMaterial(ModTrimMaterials.RUBIDIUM, "Redsilver");
         addTrimMaterial(ModTrimMaterials.STARSHARD, "Starshard");
         addTrimMaterial(ModTrimMaterials.BLOODSTONE, "Bloodstone");

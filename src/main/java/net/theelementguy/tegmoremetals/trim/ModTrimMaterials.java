@@ -16,19 +16,13 @@ public class ModTrimMaterials {
 
     public static final ResourceKey<TrimMaterial> CUBIC_ZIRCONIA = ResourceKey.create(Registries.TRIM_MATERIAL, ResourceLocation.fromNamespaceAndPath(MoreMetalsMod.MOD_ID, "cubic_zirconia"));
 
-    public static final ResourceKey<TrimMaterial> TIN = registerKey("tin");
-
     public static final ResourceKey<TrimMaterial> STARSHARD = registerKey("starshard");
 
     public static final ResourceKey<TrimMaterial> RUBIDIUM = registerKey("rubidium");
 
-    public static final ResourceKey<TrimMaterial> BRONZE = registerKey("bronze");
-
     public static final ResourceKey<TrimMaterial> BLOODSTONE = registerKey("bloodstone");
 
     public static final MaterialAssetGroup CUBIC_ZIRCONIA_ASSET_GROUP = MaterialAssetGroup.create("cubic_zirconia");
-
-    public static final MaterialAssetGroup TIN_ASSET_GROUP = MaterialAssetGroup.create("tin");
 
     public static final MaterialAssetGroup STARSHARD_ASSET_GROUP = MaterialAssetGroup.create("starshard");
 
@@ -41,11 +35,7 @@ public class ModTrimMaterials {
     public static void bootstrap(BootstrapContext<TrimMaterial> context) {
         register(context, CUBIC_ZIRCONIA, Style.EMPTY.withColor(TextColor.parseColor("#ebcacb").getOrThrow()));
 
-        register(context, TIN, Style.EMPTY.withColor(TextColor.parseColor("#e6e6ca").getOrThrow()));
-
         register(context, STARSHARD, Style.EMPTY.withColor(TextColor.parseColor("#7fe9f5").getOrThrow()));
-
-        register(context, BRONZE, Style.EMPTY.withColor(TextColor.parseColor("#ffa896").getOrThrow()));
 
         register(context, RUBIDIUM, Style.EMPTY.withColor(TextColor.parseColor("#fa89a2").getOrThrow()));
 
