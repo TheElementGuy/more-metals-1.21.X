@@ -7,6 +7,7 @@ import net.minecraft.world.item.*;
 import net.minecraft.world.item.equipment.ArmorMaterial;
 import net.minecraft.world.item.equipment.ArmorType;
 import net.neoforged.bus.api.IEventBus;
+import net.neoforged.fml.common.Mod;
 import net.neoforged.neoforge.registries.DeferredItem;
 import net.neoforged.neoforge.registries.DeferredRegister;
 import net.theelementguy.tegmoremetals.MoreMetalsMod;
@@ -98,6 +99,10 @@ public class ModItems {
     public static final DeferredItem<Item> BLOODSTONE_LEGGINGS = registerLeggings("bloodstone_leggings", ModArmorMaterials.BLOODSTONE);
 
     public static final DeferredItem<Item> BLOODSTONE_BOOTS = registerBoots("bloodstone_boots", ModArmorMaterials.BLOODSTONE);
+
+	public static final DeferredItem<Item> TENUMBRUM = ITEMS.register("tenumbrum", () -> new Item(new Item.Properties().trimMaterial(ModTrimMaterials.TENUMBRUM).setId(ModUtil.createItemResourceKey("tenumbrum"))));
+
+	public static final DeferredItem<Item> RAW_TENUMBRUM = ITEMS.registerSimpleItem("tenumbrum");
 
     public static void register(IEventBus bus) {
         ITEMS.register(bus);
