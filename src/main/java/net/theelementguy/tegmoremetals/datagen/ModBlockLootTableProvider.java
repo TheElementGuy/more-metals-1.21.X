@@ -20,6 +20,7 @@ import net.minecraft.world.level.storage.loot.providers.number.UniformGenerator;
 import net.theelementguy.tegmoremetals.MoreMetalsMod;
 import net.theelementguy.tegmoremetals.block.ModBlocks;
 import net.theelementguy.tegmoremetals.item.ModItems;
+import net.theelementguy.tegmoremetals.util.ModUtil;
 
 import java.util.Collections;
 import java.util.List;
@@ -56,6 +57,8 @@ public class ModBlockLootTableProvider extends BlockLootSubProvider {
         add(ModBlocks.BLOODSTONE_ORE.get(), block -> createOreDrop(ModBlocks.BLOODSTONE_ORE.get(), ModItems.BLOODSTONE.get()));
         add(ModBlocks.DEEPSLATE_BLOODSTONE_ORE.get(), block -> createOreDrop(ModBlocks.DEEPSLATE_BLOODSTONE_ORE.get(), ModItems.BLOODSTONE.get()));
 
+		add("tenumbrum", AutoGenTypes.IRON_TYPE);
+
     }
 
     @Override
@@ -67,4 +70,25 @@ public class ModBlockLootTableProvider extends BlockLootSubProvider {
         HolderLookup.RegistryLookup<Enchantment> registrylookup = this.registries.lookupOrThrow(Registries.ENCHANTMENT);
         return this.createSilkTouchDispatchTable(pBlock, this.applyExplosionDecay(pBlock, LootItem.lootTableItem(item).apply(SetItemCountFunction.setCount(UniformGenerator.between(minDrops, maxDrops))).apply(ApplyBonusCount.addOreBonusCount(registrylookup.getOrThrow(Enchantments.FORTUNE)))));
     }
+
+	//Add D, CZ, ND, NI, NCZ, ED, EI, ECZ
+	private void add(String name, AutoGenTypes type) {
+		dropSelf(ModUtil.getBlockFromKey(name + "_block"));
+		if (type == AutoGenTypes.CZ_TYPE || type == AutoGenTypes.DIAMOND_TYPE || type == AutoGenTypes.IRON_TYPE) {
+			Item drops = null;
+			switch (type) {
+				case IRON_TYPE -> {
+					drops = ModUtil.getItemFromKey(name + "_ingot");
+				}
+				case CZ_TYPE, DIAMOND_TYPE -> {
+					drops = ModUtil.getItemFromKey(name);
+				}
+			}
+
+			Item finalDrops = drops;
+			add(ModUtil.getBlockFromKey(name + "_ore"), block -> createOreDrop(ModUtil.getBlockFromKey(name + "_ore"), finalDrops));
+			add(ModUtil.getBlockFromKey("deepslate_" + name + "_ore"), block -> createOreDrop(ModUtil.getBlockFromKey("deepslate_" + name + "_ore"), finalDrops));
+			dropSelf(ModUtil.getBlockFromKey("raw_" + name + "_block"));
+		}
+	}
 }

@@ -38,12 +38,16 @@ public class ModLanguageProviderPirate extends LanguageProvider {
         add(ModItems.BLOODSTONE, "Gorestone");
         addMaterialSet("bloodstone", "gorestone");
 
+		add(ModItems.TENUMBRUM_INGOT, "");
+
         add(ModBlocks.RAW_CUBIC_ZIRCONIA_BLOCK, "Chunk o' rough fake booty");
+		add(ModBlocks.RAW_TENUMBRUM_BLOCK, "Chunk o' rough darkiron");
 
         addTrimMaterial(ModTrimMaterials.CUBIC_ZIRCONIA, "fake booty");
         addTrimMaterial(ModTrimMaterials.RUBIDIUM, "firestone");
         addTrimMaterial(ModTrimMaterials.STARSHARD, "shard o' sun");
         addTrimMaterial(ModTrimMaterials.BLOODSTONE, "gorestone");
+		addTrimMaterial(ModTrimMaterials.TENUMBRUM, "darkiron");
     }
 
     protected void add(DeferredItem<? extends Item> key, String name) {

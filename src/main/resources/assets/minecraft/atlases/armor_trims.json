@@ -24,7 +24,8 @@
         "starshard": "tegmoremetals:trims/color_palettes/starshard",
         "bronze": "tegmoremetals:trims/color_palettes/bronze",
         "tin": "tegmoremetals:trims/color_palettes/tin",
-        "bloodstone": "tegmoremetals:trims/color_palettes/bloodstone"
+        "bloodstone": "tegmoremetals:trims/color_palettes/bloodstone",
+        "tenumbrum": "tegmoremetals:trims/color_palettes/tenumbrum"
       },
       "textures": [
         "minecraft:trims/entity/humanoid/sentry",

@@ -67,11 +67,24 @@ public class ModLanguageProviderLol extends LanguageProvider {
         add(ModItems.BLOODSTONE_LEGGINGS, "gory panzzt");
         add(ModItems.BLOODSTONE_BOOTS, "bootz aund dey wer wallkinng thru teh pante but teh paaiint wuz red andn it got on teh boutz");
 
+		add(ModItems.TENUMBRUM_INGOT, "emo irun brick");
+		add(ModItems.TENUMBRUM_SWORD, "imo ssoWswed");
+		add(ModItems.TENUMBRUM_AXE, "axy axy AXy axy so saddd");
+		add(ModItems.TENUMBRUM_PICKAXE, "uset to bee happeee but nwo iron iz sad");
+		add(ModItems.TENUMBRUM_SHOVEL, "goth KIIID on NVNna vacation irrun usseles touol");
+		add(ModItems.TENUMBRUM_HOE, "eeeeeeeemo irson HOE");
+		add(ModItems.TENUMBRUM_HELMET, "tenumburumruntrum helmet");
+		add(ModItems.TENUMBRUM_CHESTPLATE, "tenummmm... black chestplate");
+		add(ModItems.TENUMBRUM_LEGGINGS, "N0T sweatz :(");
+		add(ModItems.TENUMBRUM_BOOTS, "sum constrictutition butz butt in blak verieatie");
+
         add(ModBlocks.CUBIC_ZIRCONIA_BLOCK, "Blok of tuff stuff");
         add(ModBlocks.RAW_CUBIC_ZIRCONIA_BLOCK, "bLuk uv gross tuff stuff");
         add(ModBlocks.RUBIDIUM_BLOCK, "hot Blouk");
         add(ModBlocks.STARSHARD_BLOCK, "shiny shiny bluckc");
         add(ModBlocks.BLOODSTONE_BLOCK, "blok ov uh oh");
+		add(ModBlocks.TENUMBRUM_BLOCK, "emo iRun ccheiar");
+		add(ModBlocks.RAW_TENUMBRUM_BLOCK, "icky ICKY ICKY emo Irusn sheciattrsaihhatoearsio ewww...");
 
         add(ModBlocks.CUBIC_ZIRCONIA_ORE, "rokz wiht sum tuff stuff");
         add(ModBlocks.DEEPSLATE_CUBIC_ZIRCONIA_ORE, "dark STONY roks withh sommmmmmmmmme tuf stuff");
@@ -79,10 +92,14 @@ public class ModLanguageProviderLol extends LanguageProvider {
         add(ModBlocks.DEEPSLATE_BLOODSTONE_ORE, "dark stony roks wihth gorre");
         add(ModBlocks.NETHER_RUBIDIUM_ORE, "HHHHOT Nether ORe");
         add(ModBlocks.END_STARSHARD_ORE, "shyni wite rockkz");
+		add(ModBlocks.TENUMBRUM_ORE, "rocky roky tuurning EMO");
+		add(ModBlocks.DEEPSLATE_TENUMBRUM_ORE, "scieeeeenftific iz dipslaet so smurt alzo wiht sEMO ruk");
 
         addTrimMaterial(ModTrimMaterials.CUBIC_ZIRCONIA, "tuff stuff");
         addTrimMaterial(ModTrimMaterials.RUBIDIUM, "burny clohtez");
         addTrimMaterial(ModTrimMaterials.STARSHARD, "oooh shiny");
+		addTrimMaterial(ModTrimMaterials.BLOODSTONE, "spiled blud on shurt");
+		addTrimMaterial(ModTrimMaterials.TENUMBRUM, "emo irron");
 
     }
     

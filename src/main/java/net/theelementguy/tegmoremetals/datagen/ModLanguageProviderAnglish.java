@@ -38,10 +38,15 @@ public class ModLanguageProviderAnglish extends LanguageProvider {
 
         add(ModBlocks.RAW_CUBIC_ZIRCONIA_BLOCK, "Clot of Raw Sixfaced Gleamgem");
 
+		add(ModItems.TENUMBRUM_INGOT, "Tenumbrum Ingot");
+		add(ModBlocks.RAW_TENUMBRUM_BLOCK, "Block of Raw Tenumbrum");
+		addMaterialSet("tenumbrum", "Tenumbrum");
+
         addTrimMaterial(ModTrimMaterials.CUBIC_ZIRCONIA, "Sixfaced Gleamgem");
         addTrimMaterial(ModTrimMaterials.RUBIDIUM, "Redsilver");
         addTrimMaterial(ModTrimMaterials.STARSHARD, "Starshard");
         addTrimMaterial(ModTrimMaterials.BLOODSTONE, "Bloodstone");
+		addTrimMaterial(ModTrimMaterials.TENUMBRUM, "Tenumbrum");
     }
 
     protected void add(DeferredItem<? extends Item> key, String name) {

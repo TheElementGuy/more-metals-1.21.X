@@ -9,11 +9,14 @@ import net.minecraft.tags.ItemTags;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
 import net.neoforged.neoforge.common.Tags;
+import net.neoforged.neoforge.registries.DeferredHolder;
 import net.theelementguy.tegmoremetals.item.ModItems;
 import net.theelementguy.tegmoremetals.util.ModTags;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.concurrent.CompletableFuture;
+import java.util.function.Consumer;
+import java.util.function.Predicate;
 
 public class ModItemTagProvider extends IntrinsicHolderTagsProvider<Item> {
 
@@ -25,27 +28,82 @@ public class ModItemTagProvider extends IntrinsicHolderTagsProvider<Item> {
     @Override
     protected void addTags(HolderLookup.@NotNull Provider provider) {
 
-        tag(ItemTags.SWORDS).add(ModItems.CUBIC_ZIRCONIA_SWORD.get()).add(ModItems.RUBIDIUM_SWORD.get()).add(ModItems.STARSHARD_SWORD.get()).replace(false);
-        tag(ItemTags.AXES).add(ModItems.CUBIC_ZIRCONIA_AXE.get()).add(ModItems.RUBIDIUM_AXE.get()).add(ModItems.STARSHARD_AXE.get()).add(ModItems.BLOODSTONE_AXE.get()).replace(false);
-        tag(ItemTags.PICKAXES).add(ModItems.CUBIC_ZIRCONIA_PICKAXE.get()).add(ModItems.RUBIDIUM_PICKAXE.get()).add(ModItems.STARSHARD_PICKAXE.get()).replace(false);
-        tag(ItemTags.SHOVELS).add(ModItems.CUBIC_ZIRCONIA_SHOVEL.get()).add(ModItems.RUBIDIUM_SHOVEL.get()).add(ModItems.STARSHARD_SHOVEL.get()).replace(false);
-        tag(ItemTags.HOES).add(ModItems.CUBIC_ZIRCONIA_HOE.get()).add(ModItems.RUBIDIUM_HOE.get()).add(ModItems.STARSHARD_HOE.get()).replace(false);
+        tag(ItemTags.SWORDS).addAll(ModItems.ITEMS.getEntries().stream().filter(new Predicate<DeferredHolder<Item, ? extends Item>>() {
+			@Override
+			public boolean test(DeferredHolder<Item, ? extends Item> itemDeferredHolder) {
+				return itemDeferredHolder.get().getDescriptionId().contains("sword");
+			}
+		}).map(DeferredHolder::get)).replace(false);
+		tag(ItemTags.AXES).addAll(ModItems.ITEMS.getEntries().stream().filter(new Predicate<DeferredHolder<Item, ? extends Item>>() {
+			@Override
+			public boolean test(DeferredHolder<Item, ? extends Item> itemDeferredHolder) {
+				return itemDeferredHolder.get().getDescriptionId().contains("axe");
+			}
+		}).map(DeferredHolder::get)).replace(false);
+		tag(ItemTags.PICKAXES).addAll(ModItems.ITEMS.getEntries().stream().filter(new Predicate<DeferredHolder<Item, ? extends Item>>() {
+			@Override
+			public boolean test(DeferredHolder<Item, ? extends Item> itemDeferredHolder) {
+				return itemDeferredHolder.get().getDescriptionId().contains("pickaxe");
+			}
+		}).map(DeferredHolder::get)).replace(false);
+		tag(ItemTags.SHOVELS).addAll(ModItems.ITEMS.getEntries().stream().filter(new Predicate<DeferredHolder<Item, ? extends Item>>() {
+			@Override
+			public boolean test(DeferredHolder<Item, ? extends Item> itemDeferredHolder) {
+				return itemDeferredHolder.get().getDescriptionId().contains("shovel");
+			}
+		}).map(DeferredHolder::get)).replace(false);
+		tag(ItemTags.HOES).addAll(ModItems.ITEMS.getEntries().stream().filter(new Predicate<DeferredHolder<Item, ? extends Item>>() {
+			@Override
+			public boolean test(DeferredHolder<Item, ? extends Item> itemDeferredHolder) {
+				return itemDeferredHolder.get().getDescriptionId().contains("hoe");
+			}
+		}).map(DeferredHolder::get)).replace(false);
         tag(ModTags.Items.CUBIC_ZIRCONIA_REPAIRABLES).add(ModItems.CUBIC_ZIRCONIA.get()).replace(false);
         tag(ModTags.Items.RUBIDIUM_REPAIRABLES).add(ModItems.RUBIDIUM.get()).replace(false);
         tag(ModTags.Items.STARSHARD_REPAIRABLES).add(ModItems.STARSHARD.get()).replace(false);
         tag(ModTags.Items.BLOODSTONE_REPAIRABLES).add(ModItems.BLOODSTONE.get()).replace(false);
-        tag(ItemTags.TRIM_MATERIALS).add(ModItems.CUBIC_ZIRCONIA.get()).add(ModItems.RUBIDIUM.get()).add(ModItems.STARSHARD.get()).add(ModItems.BLOODSTONE.get()).replace(false);
+        tag(ItemTags.TRIM_MATERIALS).add(ModItems.CUBIC_ZIRCONIA.get()).add(ModItems.RUBIDIUM.get()).add(ModItems.STARSHARD.get()).add(ModItems.BLOODSTONE.get()).add(ModItems.TENUMBRUM_INGOT.get()).replace(false);
 
-        tag(ItemTags.HEAD_ARMOR).add(ModItems.CUBIC_ZIRCONIA_HELMET.get()).add(ModItems.RUBIDIUM_HELMET.get()).add(ModItems.STARSHARD_HELMET.get()).add(ModItems.BLOODSTONE_HELMET.get());
-        tag(ItemTags.CHEST_ARMOR).add(ModItems.CUBIC_ZIRCONIA_CHESTPLATE.get()).add(ModItems.RUBIDIUM_CHESTPLATE.get()).add(ModItems.STARSHARD_CHESTPLATE.get()).add(ModItems.BLOODSTONE_CHESTPLATE.get());
-        tag(ItemTags.LEG_ARMOR).add(ModItems.CUBIC_ZIRCONIA_LEGGINGS.get()).add(ModItems.RUBIDIUM_LEGGINGS.get()).add(ModItems.STARSHARD_LEGGINGS.get()).add(ModItems.BLOODSTONE_LEGGINGS.get());
-        tag(ItemTags.FOOT_ARMOR).add(ModItems.CUBIC_ZIRCONIA_BOOTS.get()).add(ModItems.RUBIDIUM_BOOTS.get()).add(ModItems.STARSHARD_BOOTS.get()).add(ModItems.BLOODSTONE_BOOTS.get());
+		tag(ItemTags.HEAD_ARMOR).addAll(ModItems.ITEMS.getEntries().stream().filter(new Predicate<DeferredHolder<Item, ? extends Item>>() {
+			@Override
+			public boolean test(DeferredHolder<Item, ? extends Item> itemDeferredHolder) {
+				return itemDeferredHolder.get().getDescriptionId().contains("helmet");
+			}
+		}).map(DeferredHolder::get)).replace(false);
+		tag(ItemTags.CHEST_ARMOR).addAll(ModItems.ITEMS.getEntries().stream().filter(new Predicate<DeferredHolder<Item, ? extends Item>>() {
+			@Override
+			public boolean test(DeferredHolder<Item, ? extends Item> itemDeferredHolder) {
+				return itemDeferredHolder.get().getDescriptionId().contains("chestplate");
+			}
+		}).map(DeferredHolder::get)).replace(false);
+		tag(ItemTags.LEG_ARMOR).addAll(ModItems.ITEMS.getEntries().stream().filter(new Predicate<DeferredHolder<Item, ? extends Item>>() {
+			@Override
+			public boolean test(DeferredHolder<Item, ? extends Item> itemDeferredHolder) {
+				return itemDeferredHolder.get().getDescriptionId().contains("leggings");
+			}
+		}).map(DeferredHolder::get)).replace(false);
+		tag(ItemTags.FOOT_ARMOR).addAll(ModItems.ITEMS.getEntries().stream().filter(new Predicate<DeferredHolder<Item, ? extends Item>>() {
+			@Override
+			public boolean test(DeferredHolder<Item, ? extends Item> itemDeferredHolder) {
+				return itemDeferredHolder.get().getDescriptionId().contains("boots");
+			}
+		}).map(DeferredHolder::get)).replace(false);
 
         //Neoforge tags
         tag(Tags.Items.GEMS).add(ModItems.CUBIC_ZIRCONIA.get()).add(ModItems.RUBIDIUM.get()).add(ModItems.STARSHARD.get()).add(ModItems.BLOODSTONE.get()).replace(false);
         //tag(Tags.Items.INGOTS);
         tag(Tags.Items.RAW_MATERIALS).add(ModItems.RAW_CUBIC_ZIRCONIA.get()).replace(false);
-        tag(Tags.Items.MELEE_WEAPON_TOOLS).add(ModItems.CUBIC_ZIRCONIA_SWORD.get()).add(ModItems.RUBIDIUM_SWORD.get()).add(ModItems.STARSHARD_SWORD.get()).add(ModItems.BLOODSTONE_SWORD.get()).add(ModItems.CUBIC_ZIRCONIA_AXE.get()).add(ModItems.RUBIDIUM_AXE.get()).add(ModItems.STARSHARD_AXE.get()).add(ModItems.BLOODSTONE_AXE.get()).replace(false);
-        tag(Tags.Items.MINING_TOOL_TOOLS).add(ModItems.CUBIC_ZIRCONIA_PICKAXE.get()).add(ModItems.RUBIDIUM_PICKAXE.get()).add(ModItems.STARSHARD_PICKAXE.get()).replace(false);
+		tag(Tags.Items.MELEE_WEAPON_TOOLS).addAll(ModItems.ITEMS.getEntries().stream().filter(new Predicate<DeferredHolder<Item, ? extends Item>>() {
+			@Override
+			public boolean test(DeferredHolder<Item, ? extends Item> itemDeferredHolder) {
+				return itemDeferredHolder.get().getDescriptionId().contains("sword") || itemDeferredHolder.get().getDescriptionId().contains("axe");
+			}
+		}).map(DeferredHolder::get)).replace(false);
+		tag(Tags.Items.MINING_TOOL_TOOLS).addAll(ModItems.ITEMS.getEntries().stream().filter(new Predicate<DeferredHolder<Item, ? extends Item>>() {
+			@Override
+			public boolean test(DeferredHolder<Item, ? extends Item> itemDeferredHolder) {
+				return itemDeferredHolder.get().getDescriptionId().contains("pickaxe");
+			}
+		}).map(DeferredHolder::get)).replace(false);
     }
 }

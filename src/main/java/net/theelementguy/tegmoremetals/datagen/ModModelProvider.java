@@ -9,6 +9,7 @@ import net.minecraft.client.data.models.model.*;
 import net.minecraft.client.renderer.item.ItemModel;
 import net.minecraft.client.renderer.item.SelectItemModel;
 import net.minecraft.client.renderer.item.properties.select.TrimMaterialProperty;
+import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.data.PackOutput;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
@@ -19,11 +20,13 @@ import net.minecraft.world.item.equipment.EquipmentAssets;
 import net.minecraft.world.item.equipment.trim.MaterialAssetGroup;
 import net.minecraft.world.item.equipment.trim.TrimMaterial;
 import net.minecraft.world.item.equipment.trim.TrimMaterials;
+import net.neoforged.neoforge.registries.NeoForgeRegistries;
 import net.theelementguy.tegmoremetals.MoreMetalsMod;
 import net.theelementguy.tegmoremetals.block.ModBlocks;
 import net.theelementguy.tegmoremetals.item.ModEquipmentAssets;
 import net.theelementguy.tegmoremetals.item.ModItems;
 import net.theelementguy.tegmoremetals.trim.ModTrimMaterials;
+import net.theelementguy.tegmoremetals.util.ModUtil;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -50,7 +53,8 @@ public class ModModelProvider extends ModelProvider {
             new ItemModelGenerators.TrimMaterialData(ModTrimMaterials.CUBIC_ZIRCONIA_ASSET_GROUP, ModTrimMaterials.CUBIC_ZIRCONIA),
             new ItemModelGenerators.TrimMaterialData(ModTrimMaterials.STARSHARD_ASSET_GROUP, ModTrimMaterials.STARSHARD),
             new ItemModelGenerators.TrimMaterialData(ModTrimMaterials.RUBIDIUM_ASSET_GROUP, ModTrimMaterials.RUBIDIUM),
-            new ItemModelGenerators.TrimMaterialData(ModTrimMaterials.BLOODSTONE_ASSET_GROUP, ModTrimMaterials.BLOODSTONE)
+            new ItemModelGenerators.TrimMaterialData(ModTrimMaterials.BLOODSTONE_ASSET_GROUP, ModTrimMaterials.BLOODSTONE),
+			new ItemModelGenerators.TrimMaterialData(ModTrimMaterials.TENUMBRUM_ASSET_GROUP, ModTrimMaterials.TENUMBRUM)
     );
 
     @Override
@@ -144,6 +148,13 @@ public class ModModelProvider extends ModelProvider {
         generateTrimmableItemWithModdedMaterials(itemModels, Items.NETHERITE_BOOTS, EquipmentAssets.NETHERITE, false);
 
         generateTrimmableItemWithModdedMaterials(itemModels, Items.TURTLE_HELMET, EquipmentAssets.TURTLE_SCUTE, false);
+
+		generateTrimmableItemWithModdedMaterials(itemModels, Items.COPPER_HELMET, EquipmentAssets.COPPER, false);
+		generateTrimmableItemWithModdedMaterials(itemModels, Items.COPPER_CHESTPLATE, EquipmentAssets.COPPER, false);
+		generateTrimmableItemWithModdedMaterials(itemModels, Items.COPPER_LEGGINGS, EquipmentAssets.COPPER, false);
+		generateTrimmableItemWithModdedMaterials(itemModels, Items.COPPER_BOOTS, EquipmentAssets.COPPER, false);
+
+		set(itemModels, "tenumbrum", AutoGenTypes.IRON_TYPE, blockModels);
     }
 
     public void generateTrimmableItemWithModdedMaterials(ItemModelGenerators itemModels, Item item, ResourceKey<EquipmentAsset> equipmentAsset, boolean usesSecondLayer) {
@@ -190,4 +201,40 @@ public class ModModelProvider extends ModelProvider {
     public void normal(Item item, ItemModelGenerators itemModelGenerators) {
         itemModelGenerators.generateFlatItem(item, ModelTemplates.FLAT_ITEM);
     }
+
+	public void set(ItemModelGenerators geners, String groupName, AutoGenTypes type, BlockModelGenerators bGeners) {
+		geners.generateFlatItem(ModUtil.getItemFromKey(groupName + "_sword"), ModelTemplates.FLAT_HANDHELD_ITEM);
+		geners.generateFlatItem(ModUtil.getItemFromKey(groupName + "_axe"), ModelTemplates.FLAT_HANDHELD_ITEM);
+		geners.generateFlatItem(ModUtil.getItemFromKey(groupName + "_pickaxe"), ModelTemplates.FLAT_HANDHELD_ITEM);
+		geners.generateFlatItem(ModUtil.getItemFromKey(groupName + "_shovel"), ModelTemplates.FLAT_HANDHELD_ITEM);
+		geners.generateFlatItem(ModUtil.getItemFromKey(groupName + "_hoe"), ModelTemplates.FLAT_HANDHELD_ITEM);
+		bGeners.createTrivialCube(ModUtil.getBlockFromKey(groupName + "_block"));
+		if (type == AutoGenTypes.DIAMOND_TYPE || type == AutoGenTypes.NETHER_DIAMOND_TYPE || type == AutoGenTypes.END_DIAMOND_TYPE) {
+			geners.generateFlatItem(ModUtil.getItemFromKey(groupName), ModelTemplates.FLAT_ITEM);
+		}
+		if (type == AutoGenTypes.IRON_TYPE || type == AutoGenTypes.NETHER_IRON_TYPE || type == AutoGenTypes.END_IRON_TYPE) {
+			geners.generateFlatItem(ModUtil.getItemFromKey(groupName + "_ingot"), ModelTemplates.FLAT_ITEM);
+			geners.generateFlatItem(ModUtil.getItemFromKey("raw_" + groupName), ModelTemplates.FLAT_ITEM);
+			bGeners.createTrivialCube(ModUtil.getBlockFromKey("raw_" + groupName + "_block"));
+		}
+		if (type == AutoGenTypes.CZ_TYPE) {
+			geners.generateFlatItem(ModUtil.getItemFromKey(groupName), ModelTemplates.FLAT_ITEM);
+			geners.generateFlatItem(ModUtil.getItemFromKey("raw_" + groupName), ModelTemplates.FLAT_ITEM);
+			bGeners.createTrivialCube(ModUtil.getBlockFromKey("raw_" + groupName + "_block"));
+		}
+		if (type == AutoGenTypes.DIAMOND_TYPE || type == AutoGenTypes.IRON_TYPE || type == AutoGenTypes.CZ_TYPE) {
+			bGeners.createTrivialCube(ModUtil.getBlockFromKey("deepslate_" + groupName + "_ore"));
+			bGeners.createTrivialCube(ModUtil.getBlockFromKey(groupName + "_ore"));
+		}
+		if (type == AutoGenTypes.NETHER_DIAMOND_TYPE || type == AutoGenTypes.NETHER_IRON_TYPE) {
+			bGeners.createTrivialCube(ModUtil.getBlockFromKey("nether_" + groupName + "_ore"));
+		}
+		if (type == AutoGenTypes.END_DIAMOND_TYPE || type == AutoGenTypes.END_IRON_TYPE) {
+			bGeners.createTrivialCube(ModUtil.getBlockFromKey("end_" + groupName + "_ore"));
+		}
+		generateTrimmableItemWithModdedMaterials(geners, ModUtil.getItemFromKey(groupName + "_helmet"), ModUtil.createEquipmentAssetResourceKey(groupName), false);
+		generateTrimmableItemWithModdedMaterials(geners, ModUtil.getItemFromKey(groupName + "_chestplate"), ModUtil.createEquipmentAssetResourceKey(groupName), false);
+		generateTrimmableItemWithModdedMaterials(geners, ModUtil.getItemFromKey(groupName + "_leggings"), ModUtil.createEquipmentAssetResourceKey(groupName), false);
+		generateTrimmableItemWithModdedMaterials(geners, ModUtil.getItemFromKey(groupName + "_boots"), ModUtil.createEquipmentAssetResourceKey(groupName), false);
+	}
 }

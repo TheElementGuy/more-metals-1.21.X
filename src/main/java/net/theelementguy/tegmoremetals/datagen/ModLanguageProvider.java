@@ -1,8 +1,11 @@
 package net.theelementguy.tegmoremetals.datagen;
 
+import net.minecraft.core.Registry;
 import net.minecraft.core.registries.BuiltInRegistries;
+import net.minecraft.core.registries.Registries;
 import net.minecraft.data.PackOutput;
 import net.minecraft.resources.ResourceKey;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.equipment.trim.TrimMaterial;
 import net.minecraft.world.level.block.Block;
@@ -25,6 +28,7 @@ public class ModLanguageProvider extends LanguageProvider {
     protected void addTranslations() {
 
         add(ModItems.CUBIC_ZIRCONIA, "Cubic Zirconia");
+		add(ModItems.RAW_CUBIC_ZIRCONIA, "Raw Cubic Zirconia");
         addMaterialSet("cubic_zirconia", "Cubic Zirconia");
 
         add(ModItems.RUBIDIUM, "Rubidium");
@@ -36,12 +40,12 @@ public class ModLanguageProvider extends LanguageProvider {
         add(ModItems.BLOODSTONE, "Bloodstone");
         addMaterialSet("bloodstone", "Bloodstone");
 
-        add(ModBlocks.RAW_CUBIC_ZIRCONIA_BLOCK, "Block of Raw Cubic Zirconia");
+		add(ModItems.TENUMBRUM_INGOT, "Tenumbrum Ingot");
+		add(ModItems.RAW_TENUMBRUM, "Raw Tenumbrum");
+		add(ModBlocks.RAW_TENUMBRUM_BLOCK, "Block of Raw Tenumbrum");
+		addMaterialSet("tenumbrum", "Tenumbrum");
 
-        addTrimMaterial(ModTrimMaterials.CUBIC_ZIRCONIA, "Cubic Zirconia");
-        addTrimMaterial(ModTrimMaterials.RUBIDIUM, "Rubidium");
-        addTrimMaterial(ModTrimMaterials.STARSHARD, "Starshard");
-        addTrimMaterial(ModTrimMaterials.BLOODSTONE, "Bloodstone");
+        add(ModBlocks.RAW_CUBIC_ZIRCONIA_BLOCK, "Block of Raw Cubic Zirconia");
     }
     
     protected void add(DeferredItem<? extends Item> key, String name) {
@@ -85,6 +89,7 @@ public class ModLanguageProvider extends LanguageProvider {
         addOptionalDeepslateOre(group, groupName);
         addOptionalNetherOre(group, groupName);
         addOptionalEndOre(group, groupName);
+		addTrimMaterial(ResourceKey.create(Registries.TRIM_MATERIAL, ResourceLocation.fromNamespaceAndPath(MoreMetalsMod.MOD_ID, group)), groupName);
     }
 
     protected void addOptionalOre(String group, String groupName) {

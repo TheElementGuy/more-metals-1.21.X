@@ -43,7 +43,7 @@ public class ModTrimMaterials {
 
         register(context, BLOODSTONE, Style.EMPTY.withColor(TextColor.parseColor("#590a0a").getOrThrow()));
 
-		register(context, TENUMBRUM, Style.EMPTY.withColor(TextColor.parseColor("1f1029").getOrThrow()));
+		register(context, TENUMBRUM, Style.EMPTY.withColor(TextColor.parseColor("#1f1029").getOrThrow()));
     }
 
     public static void register(BootstrapContext<TrimMaterial> context, ResourceKey<TrimMaterial> key, Style style) {

@@ -1,6 +1,7 @@
 package net.theelementguy.tegmoremetals;
 
 import net.minecraft.world.item.Items;
+import net.minecraft.world.level.block.Block;
 import net.theelementguy.tegmoremetals.block.ModBlocks;
 import net.theelementguy.tegmoremetals.item.ModItems;
 import org.slf4j.Logger;
@@ -66,15 +67,17 @@ public class MoreMetalsMod {
     private void addCreative(BuildCreativeModeTabContentsEvent event)
     {
         if(event.getTabKey() == CreativeModeTabs.INGREDIENTS) {
-            ModUtil.inventoryAddAfter(ModItems.CUBIC_ZIRCONIA.get(), Items.GOLD_INGOT, event);
+            ModUtil.inventoryAddAfter(ModItems.CUBIC_ZIRCONIA.get(), Items.GOLD_NUGGET, event);
             ModUtil.inventoryAddAfter(ModItems.RAW_CUBIC_ZIRCONIA.get(), Items.LAPIS_LAZULI, event);
-            ModUtil.inventoryAddAfter(ModItems.RUBIDIUM.get(), Items.DIAMOND, event);
+			ModUtil.inventoryAddAfter(ModItems.TENUMBRUM_INGOT.get(), Items.GOLD_INGOT, event);
+            ModUtil.inventoryAddAfter(ModItems.RUBIDIUM.get(), ModItems.TENUMBRUM_INGOT.get(), event);
             ModUtil.inventoryAddAfter(ModItems.STARSHARD.get(), ModItems.RUBIDIUM.get(), event);
-            ModUtil.inventoryAddAfter(ModItems.BLOODSTONE.get(), ModItems.CUBIC_ZIRCONIA.get(), event);
+            ModUtil.inventoryAddAfter(ModItems.BLOODSTONE.get(), ModItems.RAW_CUBIC_ZIRCONIA.get(), event);
         }
         if(event.getTabKey() == CreativeModeTabs.BUILDING_BLOCKS) {
             ModUtil.inventoryAddAfter(ModBlocks.CUBIC_ZIRCONIA_BLOCK.get(), Blocks.LAPIS_BLOCK, event);
-            ModUtil.inventoryAddAfter(ModBlocks.RUBIDIUM_BLOCK, Blocks.DIAMOND_BLOCK, event);
+            ModUtil.inventoryAddAfter(ModBlocks.TENUMBRUM_BLOCK, Blocks.DIAMOND_BLOCK, event);
+			ModUtil.inventoryAddAfter(ModBlocks.RUBIDIUM_BLOCK, ModBlocks.TENUMBRUM_BLOCK, event);
             ModUtil.inventoryAddAfter(ModBlocks.STARSHARD_BLOCK, Blocks.NETHERITE_BLOCK, event);
             ModUtil.inventoryAddAfter(ModBlocks.BLOODSTONE_BLOCK, ModBlocks.CUBIC_ZIRCONIA_BLOCK, event);
         }
@@ -86,42 +89,24 @@ public class MoreMetalsMod {
             ModUtil.inventoryAddAfter(ModBlocks.RAW_CUBIC_ZIRCONIA_BLOCK, Blocks.RAW_IRON_BLOCK, event);
             ModUtil.inventoryAddAfter(ModBlocks.BLOODSTONE_ORE, ModBlocks.DEEPSLATE_CUBIC_ZIRCONIA_ORE, event);
             ModUtil.inventoryAddAfter(ModBlocks.DEEPSLATE_BLOODSTONE_ORE, ModBlocks.BLOODSTONE_ORE, event);
+			ModUtil.inventoryAddAfter(ModBlocks.RAW_TENUMBRUM_BLOCK, Blocks.RAW_GOLD_BLOCK, event);
+			ModUtil.inventoryAddAfter(ModBlocks.TENUMBRUM_ORE, Blocks.DEEPSLATE_DIAMOND_ORE, event);
+			ModUtil.inventoryAddAfter(ModBlocks.DEEPSLATE_TENUMBRUM_ORE, ModBlocks.TENUMBRUM_ORE, event);
         }
         if (event.getTabKey() == CreativeModeTabs.COMBAT) {
-            ModUtil.inventoryAddAfter(ModItems.CUBIC_ZIRCONIA_SWORD, Items.IRON_SWORD, event);
-            ModUtil.inventoryAddAfter(ModItems.CUBIC_ZIRCONIA_AXE, Items.IRON_AXE, event);
-            ModUtil.inventoryAddAfter(ModItems.CUBIC_ZIRCONIA_HELMET, Items.IRON_BOOTS, event);
-            ModUtil.inventoryAddAfter(ModItems.CUBIC_ZIRCONIA_CHESTPLATE, ModItems.CUBIC_ZIRCONIA_HELMET, event);
-            ModUtil.inventoryAddAfter(ModItems.CUBIC_ZIRCONIA_LEGGINGS, ModItems.CUBIC_ZIRCONIA_CHESTPLATE, event);
-            ModUtil.inventoryAddAfter(ModItems.CUBIC_ZIRCONIA_BOOTS, ModItems.CUBIC_ZIRCONIA_LEGGINGS, event);
-            ModUtil.inventoryAddAfter(ModItems.RUBIDIUM_SWORD, Items.DIAMOND_SWORD, event);
-            ModUtil.inventoryAddAfter(ModItems.RUBIDIUM_AXE, Items.DIAMOND_AXE, event);
-            ModUtil.inventoryAddAfter(ModItems.RUBIDIUM_HELMET, Items.DIAMOND_BOOTS, event);
-            ModUtil.inventoryAddAfter(ModItems.RUBIDIUM_CHESTPLATE, ModItems.RUBIDIUM_HELMET, event);
-            ModUtil.inventoryAddAfter(ModItems.RUBIDIUM_LEGGINGS, ModItems.RUBIDIUM_CHESTPLATE, event);
-            ModUtil.inventoryAddAfter(ModItems.RUBIDIUM_BOOTS, ModItems.RUBIDIUM_LEGGINGS, event);
-            ModUtil.inventoryAddAfter(ModItems.STARSHARD_SWORD, Items.NETHERITE_SWORD, event);
-            ModUtil.inventoryAddAfter(ModItems.STARSHARD_AXE, Items.NETHERITE_AXE, event);
-            ModUtil.inventoryAddAfter(ModItems.STARSHARD_HELMET, Items.NETHERITE_BOOTS, event);
-            ModUtil.inventoryAddAfter(ModItems.STARSHARD_CHESTPLATE, ModItems.STARSHARD_HELMET, event);
-            ModUtil.inventoryAddAfter(ModItems.STARSHARD_LEGGINGS, ModItems.STARSHARD_CHESTPLATE, event);
-            ModUtil.inventoryAddAfter(ModItems.STARSHARD_BOOTS, ModItems.STARSHARD_LEGGINGS, event);
-            ModUtil.inventoryAddAfter(ModItems.BLOODSTONE_SWORD, ModItems.CUBIC_ZIRCONIA_SWORD, event);
-            ModUtil.inventoryAddAfter(ModItems.BLOODSTONE_AXE, ModItems.CUBIC_ZIRCONIA_AXE, event);
-            ModUtil.inventoryAddAfter(ModItems.BLOODSTONE_HELMET, ModItems.CUBIC_ZIRCONIA_BOOTS, event);
-            ModUtil.inventoryAddAfter(ModItems.BLOODSTONE_CHESTPLATE, ModItems.BLOODSTONE_HELMET, event);
-            ModUtil.inventoryAddAfter(ModItems.BLOODSTONE_LEGGINGS, ModItems.BLOODSTONE_CHESTPLATE, event);
-            ModUtil.inventoryAddAfter(ModItems.BLOODSTONE_BOOTS, ModItems.BLOODSTONE_LEGGINGS, event);
+            ModUtil.setAddAfter("cubic_zirconia", "iron", event);
+			ModUtil.setAddAfter("tenumbrum", "diamond", event);
+            ModUtil.setAddAfter("rubidium", "tenumbrum", event);
+            ModUtil.setAddAfter("starshard", "netherite", event);
+            ModUtil.setAddAfter("bloodstone", "cubic_zirconia", event);
         }
         if (event.getTabKey() == CreativeModeTabs.TOOLS_AND_UTILITIES) {
             ModUtil.inventoryAddAfter(ModItems.CUBIC_ZIRCONIA_AXE, Items.IRON_HOE, event);
             ModUtil.inventoryAddAfter(ModItems.CUBIC_ZIRCONIA_PICKAXE, ModItems.CUBIC_ZIRCONIA_AXE, event);
             ModUtil.inventoryAddAfter(ModItems.CUBIC_ZIRCONIA_SHOVEL, ModItems.CUBIC_ZIRCONIA_PICKAXE, event);
             ModUtil.inventoryAddAfter(ModItems.CUBIC_ZIRCONIA_HOE, ModItems.CUBIC_ZIRCONIA_SHOVEL, event);
-            ModUtil.inventoryAddAfter(ModItems.RUBIDIUM_AXE, Items.DIAMOND_HOE, event);
-            ModUtil.inventoryAddAfter(ModItems.RUBIDIUM_PICKAXE, ModItems.RUBIDIUM_AXE, event);
-            ModUtil.inventoryAddAfter(ModItems.RUBIDIUM_SHOVEL, ModItems.RUBIDIUM_PICKAXE, event);
-            ModUtil.inventoryAddAfter(ModItems.RUBIDIUM_HOE, ModItems.RUBIDIUM_SHOVEL, event);
+            ModUtil.toolsAddAfter("tenumbrum", "diamond", event);
+			ModUtil.toolsAddAfter("rubidium", "tenumbrum", event);
             ModUtil.inventoryAddAfter(ModItems.STARSHARD_AXE, Items.NETHERITE_HOE, event);
             ModUtil.inventoryAddAfter(ModItems.STARSHARD_PICKAXE, ModItems.STARSHARD_AXE, event);
             ModUtil.inventoryAddAfter(ModItems.STARSHARD_SHOVEL, ModItems.STARSHARD_PICKAXE, event);

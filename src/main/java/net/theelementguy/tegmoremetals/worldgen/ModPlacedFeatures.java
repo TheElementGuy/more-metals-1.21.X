@@ -34,7 +34,13 @@ public class ModPlacedFeatures {
 
     public static final ResourceKey<PlacedFeature> BLOODSTONE_SMALL_ORE_PLACED_KEY = registerKey("bloodstone_small_ore_placed");
 
-    public static void bootstrap(BootstrapContext<PlacedFeature> context) {
+	public static final ResourceKey<PlacedFeature> TENUMBRUM_LARGE_ORE_PLACED_KEY = registerKey("tenumbrum_large_ore_placed");
+
+	public static final ResourceKey<PlacedFeature> TENUMBRUM_SMALL_ORE_PLACED_KEY = registerKey("tenumbrum_small_ore_placed");
+
+	public static final ResourceKey<PlacedFeature> TENUMBRUM_EXTRA_ORE_PLACED_KEY = registerKey("tenumbrum_extra_ore_placed");
+
+	public static void bootstrap(BootstrapContext<PlacedFeature> context) {
         var configuredFeatures = context.lookup(Registries.CONFIGURED_FEATURE);
 
         register(context, CUBIC_ZIRCONIA_MEDIUM_ORE_PLACED_KEY, configuredFeatures.getOrThrow(ModConfiguredFeatures.CUBIC_ZIRCONIA_MEDIUM_ORE_KEY), ModOrePlacement.commonOrePlacement(2, HeightRangePlacement.triangle(VerticalAnchor.absolute(-16), VerticalAnchor.absolute(48))));
@@ -56,6 +62,12 @@ public class ModPlacedFeatures {
         register(context, BLOODSTONE_LARGE_ORE_PLACED_KEY, configuredFeatures.getOrThrow(ModConfiguredFeatures.BLOODSTONE_LARGE_ORE_KEY), ModOrePlacement.rareOrePlacement(2, HeightRangePlacement.triangle(VerticalAnchor.absolute(-48), VerticalAnchor.absolute(48))));
 
         register(context, BLOODSTONE_SMALL_ORE_PLACED_KEY, configuredFeatures.getOrThrow(ModConfiguredFeatures.BLOODSTONE_SMALL_ORE_KEY), ModOrePlacement.commonOrePlacement(10, HeightRangePlacement.triangle(VerticalAnchor.absolute(-60), VerticalAnchor.absolute(56))));
+
+		register(context, TENUMBRUM_LARGE_ORE_PLACED_KEY, configuredFeatures.getOrThrow(ModConfiguredFeatures.TENUMBRUM_LARGE_ORE_KEY), ModOrePlacement.rareOrePlacement(4, HeightRangePlacement.triangle(VerticalAnchor.absolute(-60), VerticalAnchor.absolute(-30))));
+
+		register(context, TENUMBRUM_SMALL_ORE_PLACED_KEY, configuredFeatures.getOrThrow(ModConfiguredFeatures.TENUMBRUM_SMALL_ORE_KEY), ModOrePlacement.commonOrePlacement(5, HeightRangePlacement.triangle(VerticalAnchor.absolute(-60), VerticalAnchor.absolute(10))));
+
+		register(context, TENUMBRUM_EXTRA_ORE_PLACED_KEY, configuredFeatures.getOrThrow(ModConfiguredFeatures.TENUMBRUM_EXTRA_ORE_KEY), ModOrePlacement.commonOrePlacement(4, HeightRangePlacement.uniform(VerticalAnchor.absolute(-60), VerticalAnchor.absolute(36))));
     }
 
     private static ResourceKey<PlacedFeature> registerKey(String name) {
