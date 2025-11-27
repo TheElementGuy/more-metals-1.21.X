@@ -43,6 +43,8 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
 
         List<ItemLike> STARSHARD_SMELTABLES = List.of(ModBlocks.END_STARSHARD_ORE);
 
+		List<ItemLike> TENUMBRUM_SMELTABLES = List.of(ModItems.RAW_TENUMBRUM, ModBlocks.TENUMBRUM_ORE, ModBlocks.DEEPSLATE_TENUMBRUM_ORE);
+
         blockRecipe(ModItems.CUBIC_ZIRCONIA.get(), ModBlocks.CUBIC_ZIRCONIA_BLOCK.asItem(), output);
 
         blockRecipe(ModItems.RAW_CUBIC_ZIRCONIA.get(), ModBlocks.RAW_CUBIC_ZIRCONIA_BLOCK.asItem(), output);
@@ -58,6 +60,8 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
         blockRecipe(ModItems.STARSHARD.get(), ModBlocks.STARSHARD_BLOCK.asItem(), output);
 
         blockRecipe(ModItems.BRONZE_INGOT.get(), ModBlocks.BRONZE_BLOCK.asItem(), output);
+
+		blockRecipe(ModItems.TENUMBRUM_INGOT.get(), ModBlocks.TENUMBRUM_BLOCK.asItem(), output);
 
         swordRecipe(ModItems.CUBIC_ZIRCONIA_SWORD.get(), ModItems.CUBIC_ZIRCONIA.get(), "has_cz", output);
 
@@ -117,6 +121,8 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
 
         allEquipmentRecipes(ModItems.BRONZE_SWORD.get(), ModItems.BRONZE_AXE.get(), ModItems.BRONZE_PICKAXE.get(), ModItems.BRONZE_SHOVEL.get(), ModItems.BRONZE_HOE.get(), ModItems.BRONZE_HELMET.get(), ModItems.BRONZE_CHESTPLATE.get(), ModItems.BRONZE_LEGGINGS.get(), ModItems.BRONZE_BOOTS.get(), ModItems.BRONZE_INGOT.get(), "has_b", output);
 
+		allEquipmentRecipes(ModItems.TENUMBRUM_SWORD.get(), ModItems.TENUMBRUM_AXE.get(), ModItems.TENUMBRUM_PICKAXE.get(), ModItems.TENUMBRUM_SHOVEL.get(), ModItems.TENUMBRUM_HOE.get(), ModItems.TENUMBRUM_HELMET.get(), ModItems.TENUMBRUM_CHESTPLATE.get(), ModItems.TENUMBRUM_LEGGINGS.get(), ModItems.TENUMBRUM_BOOTS.get(), ModItems.TENUMBRUM_INGOT.get(), "has_t", output);
+
         //shapeless(RecipeCategory.MISC, ModItems.CELESTIAL_BRONZE_INGOT).requires(Items.COPPER_INGOT, 4).requires(ModItems.TIN_SCRAPS).requires(Items.NETHER_STAR).unlockedBy("has_ns", has(Items.NETHER_STAR)).save(output, "celestial_bronze_forging");
 
         shapeless(RecipeCategory.MISC, ModItems.BRONZE_INGOT, 4).requires(Items.COPPER_INGOT, 4).requires(ModItems.TIN_SCRAPS).unlockedBy("has_c", has(Items.COPPER_INGOT)).save(output, ResourceLocation.fromNamespaceAndPath(MoreMetalsMod.MOD_ID, "bronze_forging"));
@@ -130,6 +136,8 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
         allOreSmelting(ModItems.RUBIDIUM.get(), RUBIDIUM_SMELTABLES, 1.3f, "r", output);
 
         allOreSmelting(ModItems.STARSHARD.get(), STARSHARD_SMELTABLES, 1.5f, "s", output);
+
+		allOreSmelting(ModItems.TENUMBRUM_INGOT.get(), TENUMBRUM_SMELTABLES, 1.0f, "t", output);
 
         allRecipes("bloodstone", 0.9f, output);
 

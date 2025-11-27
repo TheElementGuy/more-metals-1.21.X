@@ -12,7 +12,7 @@ import net.theelementguy.tegmoremetals.block.ModBlocks;
 import net.theelementguy.tegmoremetals.item.ModItems;
 
 public class ModLanguageProvider extends LanguageProvider {
-    
+
     public ModLanguageProvider(PackOutput output, String locale) {
         super(output, MoreMetalsMod.MOD_ID, locale);
     }
@@ -67,6 +67,18 @@ public class ModLanguageProvider extends LanguageProvider {
         add(ModItems.STARSHARD_LEGGINGS, "Starshard Leggings");
         add(ModItems.STARSHARD_BOOTS, "Starshard Boots");
 
+		add(ModItems.TENUMBRUM_INGOT, "Tenumbrum Ingot");
+		add(ModItems.RAW_TENUMBRUM, "Raw Tenumbrum");
+		add(ModItems.TENUMBRUM_SWORD, "Tenumbrum Sword");
+		add(ModItems.TENUMBRUM_AXE, "Tenumbrum Axe");
+		add(ModItems.TENUMBRUM_PICKAXE, "Tenumbrum Pickaxe");
+		add(ModItems.TENUMBRUM_SHOVEL, "Tenumbrum Shovel");
+		add(ModItems.TENUMBRUM_HOE, "Tenumbrum Hoe");
+		add(ModItems.TENUMBRUM_HELMET, "Tenumbrum Helmet");
+		add(ModItems.TENUMBRUM_CHESTPLATE, "Tenumbrum Chestplate");
+		add(ModItems.TENUMBRUM_LEGGINGS, "Tenumbrum Leggings");
+		add(ModItems.TENUMBRUM_BOOTS, "Tenumbrum Boots");
+
         add(ModItems.BLOODSTONE, "Bloodstone");
         addToolSet(ModItems.BLOODSTONE_SWORD, ModItems.BLOODSTONE_AXE, ModItems.BLOODSTONE_PICKAXE, ModItems.BLOODSTONE_SHOVEL, ModItems.BLOODSTONE_HOE, ModItems.BLOODSTONE_HELMET, ModItems.BLOODSTONE_CHESTPLATE, ModItems.BLOODSTONE_LEGGINGS, ModItems.BLOODSTONE_BOOTS, "Bloodstone");
 
@@ -86,8 +98,12 @@ public class ModLanguageProvider extends LanguageProvider {
         add(ModBlocks.DEEPSLATE_BLOODSTONE_ORE, "Deepslate Bloodstone Ore");
         add(ModBlocks.NETHER_RUBIDIUM_ORE, "Nether Rubidium Ore");
         add(ModBlocks.END_STARSHARD_ORE, "End Starshard Ore");
+		add(ModBlocks.RAW_TENUMBRUM_BLOCK, "Block of Raw Tenumbrum");
+		add(ModBlocks.TENUMBRUM_BLOCK, "Block of Tenumbrum");
+		add(ModBlocks.TENUMBRUM_ORE, "Tenumbrum Ore");
+		add(ModBlocks.DEEPSLATE_TENUMBRUM_ORE, "Tenumbrum Ore");
     }
-    
+
     protected void add(DeferredItem<? extends Item> key, String name) {
         add(key.get(), name);
     }

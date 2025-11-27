@@ -63,6 +63,14 @@ public class ModArmorMaterials {
         attribute.put(ArmorItem.Type.BODY, 4);
     }), 13, 0.0f, 0.0f, () -> ModItems.BLOODSTONE.get(), SoundEvents.ARMOR_EQUIP_GENERIC);
 
+	public static final Holder<ArmorMaterial> TENUMBRUM = register("tenumbrum", Util.make(new EnumMap<>(ArmorItem.Type.class), attribute -> {
+		attribute.put(ArmorItem.Type.HELMET, 3);
+		attribute.put(ArmorItem.Type.CHESTPLATE, 8);
+		attribute.put(ArmorItem.Type.LEGGINGS, 6);
+		attribute.put(ArmorItem.Type.BOOTS, 3);
+		attribute.put(ArmorItem.Type.BODY, 11);
+	}), 16, 2f, 0f, () -> ModItems.TENUMBRUM_INGOT.get(), SoundEvents.ARMOR_EQUIP_IRON);
+
     private static Holder<ArmorMaterial> register(String name, EnumMap<ArmorItem.Type, Integer> typeProtection, int enchantability, float toughness, float knockbackResistance, Supplier<Item> ingredientItem, Holder<SoundEvent> equipSound) {
         ResourceLocation location = ResourceLocation.fromNamespaceAndPath(MoreMetalsMod.MOD_ID, name);
         //Holder<SoundEvent> equipSound = SoundEvents.ARMOR_EQUIP_DIAMOND;

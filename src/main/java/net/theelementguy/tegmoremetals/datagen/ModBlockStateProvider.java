@@ -42,6 +42,11 @@ public class ModBlockStateProvider extends BlockStateProvider {
         blockWithItem(ModBlocks.BLOODSTONE_BLOCK);
         blockWithItem(ModBlocks.BLOODSTONE_ORE);
         blockWithItem(ModBlocks.DEEPSLATE_BLOODSTONE_ORE);
+
+		blockWithItem(ModBlocks.TENUMBRUM_BLOCK);
+		blockWithItem(ModBlocks.RAW_TENUMBRUM_BLOCK);
+		blockWithItem(ModBlocks.DEEPSLATE_TENUMBRUM_ORE);
+		blockWithItem(ModBlocks.TENUMBRUM_ORE);
     }
 
     private void blockWithItem(DeferredBlock<?> deferredBlock) {

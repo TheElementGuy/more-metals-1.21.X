@@ -14,6 +14,7 @@ import net.neoforged.neoforge.common.data.ExistingFileHelper;
 import net.neoforged.neoforge.registries.DeferredItem;
 import net.theelementguy.tegmoremetals.MoreMetalsMod;
 import net.theelementguy.tegmoremetals.item.ModItems;
+import net.theelementguy.tegmoremetals.item.ModToolTiers;
 
 import java.util.LinkedHashMap;
 
@@ -32,6 +33,8 @@ public class ModItemModelProvider  extends ItemModelProvider {
         basicItem(ModItems.STARSHARD.get());
         basicItem(ModItems.BRONZE_INGOT.get());
         basicItem(ModItems.BLOODSTONE.get());
+		basicItem(ModItems.RAW_TENUMBRUM.get());
+		basicItem(ModItems.TENUMBRUM_INGOT.get());
         handheldItem(ModItems.CUBIC_ZIRCONIA_SWORD.get());
         handheldItem(ModItems.CUBIC_ZIRCONIA_AXE.get());
         handheldItem(ModItems.CUBIC_ZIRCONIA_PICKAXE.get());
@@ -57,6 +60,11 @@ public class ModItemModelProvider  extends ItemModelProvider {
         handheldItem(ModItems.BLOODSTONE_PICKAXE.get());
         handheldItem(ModItems.BLOODSTONE_SHOVEL.get());
         handheldItem(ModItems.BLOODSTONE_HOE.get());
+		handheldItem(ModItems.TENUMBRUM_SWORD.get());
+		handheldItem(ModItems.TENUMBRUM_AXE.get());
+		handheldItem(ModItems.TENUMBRUM_PICKAXE.get());
+		handheldItem(ModItems.TENUMBRUM_SHOVEL.get());
+		handheldItem(ModItems.TENUMBRUM_HOE.get());
         trimmedArmorItem(ModItems.CUBIC_ZIRCONIA_HELMET);
         trimmedArmorItem(ModItems.CUBIC_ZIRCONIA_CHESTPLATE);
         trimmedArmorItem(ModItems.CUBIC_ZIRCONIA_LEGGINGS);
@@ -77,6 +85,10 @@ public class ModItemModelProvider  extends ItemModelProvider {
         trimmedArmorItem(ModItems.BLOODSTONE_CHESTPLATE);
         trimmedArmorItem(ModItems.BLOODSTONE_LEGGINGS);
         trimmedArmorItem(ModItems.BLOODSTONE_BOOTS);
+		trimmedArmorItem(ModItems.TENUMBRUM_HELMET);
+		trimmedArmorItem(ModItems.TENUMBRUM_CHESTPLATE);
+		trimmedArmorItem(ModItems.TENUMBRUM_LEGGINGS);
+		trimmedArmorItem(ModItems.TENUMBRUM_BOOTS);
     }
 
     private ItemModelBuilder handheldItem(DeferredItem<?> item) {

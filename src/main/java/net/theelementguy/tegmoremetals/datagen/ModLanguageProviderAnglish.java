@@ -104,6 +104,6 @@ public class ModLanguageProviderAnglish extends LanguageProvider {
     }
 
     protected void addOptionalEndOre(String group, String groupName) {
-        add(ModUtil.getBlockFromKey("end_" + group + "_ore"), "End " + groupName + " Ore");
+        //add(ModUtil.getBlockFromKey("end_" + group + "_ore"), "End " + groupName + " Ore");
     }
 }

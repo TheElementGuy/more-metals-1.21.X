@@ -17,4 +17,6 @@ public class ModToolTiers {
 
     public static final Tier BLOODSTONE = new SimpleTier(ModTags.Blocks.INCORRECT_FOR_BLOODSTONE_TOOL, 1021, 7.0f, 4.0f, 19, () -> Ingredient.of(ModItems.BLOODSTONE));
 
+	public static final Tier TENUMBRUM = new SimpleTier(ModTags.Blocks.INCORRECT_FOR_TENUMBRUM_TOOL, 1641, 8.5f, 3.0f, 16, () -> Ingredient.of(ModItems.TENUMBRUM_INGOT));
+
 }

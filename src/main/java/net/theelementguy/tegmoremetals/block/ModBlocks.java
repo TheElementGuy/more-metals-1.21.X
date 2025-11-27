@@ -54,7 +54,15 @@ public class ModBlocks {
 
     public static final DeferredBlock<Block> DEEPSLATE_BLOODSTONE_ORE = registerBlock("deepslate_bloodstone_ore", () -> new Block(BlockBehaviour.Properties.of().destroyTime(4.5f).explosionResistance(3f).mapColor(MapColor.DEEPSLATE).sound(SoundType.DEEPSLATE).requiresCorrectToolForDrops()));
 
-    public static <T extends Block> DeferredBlock<T> registerBlock(String name, Supplier<T> block) {
+	public static final DeferredBlock<Block> TENUMBRUM_BLOCK = registerBlock("tenumbrum_block", () -> new Block(BlockBehaviour.Properties.of().destroyTime(5f).explosionResistance(6f).mapColor(MapColor.TERRACOTTA_PURPLE).sound(SoundType.METAL).requiresCorrectToolForDrops()));
+
+	public static final DeferredBlock<Block> RAW_TENUMBRUM_BLOCK = registerBlock("raw_tenumbrum_block", () -> new Block(BlockBehaviour.Properties.of().destroyTime(3f).explosionResistance(6f).mapColor(MapColor.TERRACOTTA_PURPLE).sound(SoundType.METAL).requiresCorrectToolForDrops()));
+
+	public static final DeferredBlock<Block> TENUMBRUM_ORE = registerOre("tenumbrum_ore");
+
+	public static final DeferredBlock<Block> DEEPSLATE_TENUMBRUM_ORE = registerDeepslateOre("deepslate_tenumbrum_ore");
+
+	public static <T extends Block> DeferredBlock<T> registerBlock(String name, Supplier<T> block) {
         DeferredBlock<T> toReturn = BLOCKS.register(name, block);
         registerBlockItem(name, toReturn);
         return toReturn;
@@ -83,6 +91,14 @@ public class ModBlocks {
     private static <T extends Block> void registerRareBlockItem(String name, DeferredBlock<T> block) {
         ModItems.ITEMS.register(name, () -> new BlockItem(block.get(), new Item.Properties().rarity(Rarity.UNCOMMON)));
     }
+
+	public static DeferredBlock<Block> registerOre(String name) {
+		return registerBlock(name, () -> new Block(BlockBehaviour.Properties.of().destroyTime(3f).explosionResistance(3f).mapColor(MapColor.STONE).sound(SoundType.STONE).requiresCorrectToolForDrops()));
+	}
+
+	public static DeferredBlock<Block> registerDeepslateOre(String name) {
+		return registerBlock(name, () -> new Block(BlockBehaviour.Properties.of().destroyTime(4.5f).explosionResistance(3f).mapColor(MapColor.DEEPSLATE).sound(SoundType.DEEPSLATE).requiresCorrectToolForDrops()));
+	}
 
     public static void register(IEventBus eventBus) {
         BLOCKS.register(eventBus);

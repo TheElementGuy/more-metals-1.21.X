@@ -57,12 +57,32 @@ public class ModUtil {
     }
 
     public static Item getItemFromKey(String key) {
-        return BuiltInRegistries.ITEM.get(ModUtil.createItemResourceKey(key));
+		if (BuiltInRegistries.ITEM.containsKey(ModUtil.createItemResourceKey(key))) {
+			return BuiltInRegistries.ITEM.get(ModUtil.createItemResourceKey(key));
+		} else {
+			return BuiltInRegistries.ITEM.get(ResourceKey.create(Registries.ITEM, ResourceLocation.withDefaultNamespace(key)));
+		}
     }
 
     public static Block getBlockFromKey(String key) {
         return BuiltInRegistries.BLOCK.get(ModUtil.createBlockResourceKey(key));
     }
+
+	public static void setAddAfter(String set, String begin, BuildCreativeModeTabContentsEvent event) {
+		ModUtil.inventoryAddAfter(ModUtil.getItemFromKey(set + "_sword"), ModUtil.getItemFromKey(begin + "_sword"), event);
+		ModUtil.inventoryAddAfter(ModUtil.getItemFromKey(set + "_axe"), ModUtil.getItemFromKey(begin + "_axe"), event);
+		ModUtil.inventoryAddAfter(ModUtil.getItemFromKey(set + "_helmet"), ModUtil.getItemFromKey(begin + "_boots"), event);
+		ModUtil.inventoryAddAfter(ModUtil.getItemFromKey(set + "_chestplate"), ModUtil.getItemFromKey(set + "_helmet"), event);
+		ModUtil.inventoryAddAfter(ModUtil.getItemFromKey(set + "_leggings"), ModUtil.getItemFromKey(set + "_chestplate"), event);
+		ModUtil.inventoryAddAfter(ModUtil.getItemFromKey(set + "_boots"), ModUtil.getItemFromKey(set + "_leggings"), event);
+	}
+
+	public static void toolsAddAfter(String set, String begin, BuildCreativeModeTabContentsEvent event) {
+		ModUtil.inventoryAddAfter(ModUtil.getItemFromKey(set + "_axe"), ModUtil.getItemFromKey(begin + "_hoe"), event);
+		ModUtil.inventoryAddAfter(ModUtil.getItemFromKey(set + "_pickaxe"), ModUtil.getItemFromKey(set + "_axe"), event);
+		ModUtil.inventoryAddAfter(ModUtil.getItemFromKey(set + "_shovel"), ModUtil.getItemFromKey(set + "_pickaxe"), event);
+		ModUtil.inventoryAddAfter(ModUtil.getItemFromKey(set + "_hoe"), ModUtil.getItemFromKey(set + "_shovel"), event);
+	}
 
     public static String toUpsideDown(String given) {
 

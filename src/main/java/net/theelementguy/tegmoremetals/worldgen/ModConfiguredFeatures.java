@@ -42,6 +42,10 @@ public class ModConfiguredFeatures {
 
     public static final ResourceKey<ConfiguredFeature<?, ?>> BLOODSTONE_SMALL_ORE_KEY = registerKey("small_bloodstone");
 
+	public static final ResourceKey<ConfiguredFeature<?, ?>> TENUMBRUM_LARGE_ORE_KEY = registerKey("large_tenumbrum");
+
+	public static final ResourceKey<ConfiguredFeature<?, ?>> TENUMBRUM_SMALL_ORE_KEY = registerKey("small_tenumbrum");
+
     public static void bootstrap(BootstrapContext<ConfiguredFeature<?, ?>> context) {
 
         RuleTest stoneReplaceabes = new TagMatchTest(BlockTags.STONE_ORE_REPLACEABLES);
@@ -59,7 +63,9 @@ public class ModConfiguredFeatures {
 
         List<OreConfiguration.TargetBlockState> bloodstoneOres = List.of(OreConfiguration.target(stoneReplaceabes, ModBlocks.BLOODSTONE_ORE.get().defaultBlockState()), OreConfiguration.target(deepslateReplaceabes, ModBlocks.DEEPSLATE_BLOODSTONE_ORE.get().defaultBlockState()));
 
-        register(context, CUBIC_ZIRCONIA_LARGE_ORE_KEY, Feature.ORE, new OreConfiguration(cubicZirconiaOres, 16, 0.7f));
+		List<OreConfiguration.TargetBlockState> tenumbrumOres = List.of(OreConfiguration.target(stoneReplaceabes, ModBlocks.TENUMBRUM_ORE.get().defaultBlockState()), OreConfiguration.target(deepslateReplaceabes, ModBlocks.DEEPSLATE_TENUMBRUM_ORE.get().defaultBlockState()));
+
+		register(context, CUBIC_ZIRCONIA_LARGE_ORE_KEY, Feature.ORE, new OreConfiguration(cubicZirconiaOres, 16, 0.7f));
 
         register(context, CUBIC_ZIRCONIA_MEDIUM_ORE_KEY, Feature.ORE, new OreConfiguration(cubicZirconiaOres, 9, 0.5f));
 
@@ -80,6 +86,10 @@ public class ModConfiguredFeatures {
         register(context, BLOODSTONE_LARGE_ORE_KEY, Feature.ORE, new OreConfiguration(bloodstoneOres, 6));
 
         register(context, BLOODSTONE_SMALL_ORE_KEY, Feature.ORE, new OreConfiguration(bloodstoneOres, 2));
+
+		register(context, TENUMBRUM_LARGE_ORE_KEY, Feature.ORE, new OreConfiguration(tenumbrumOres, 6));
+
+		register(context, TENUMBRUM_SMALL_ORE_KEY, Feature.ORE, new OreConfiguration(tenumbrumOres, 1));
 
     }
 

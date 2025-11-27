@@ -9,6 +9,7 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.BiomeTags;
 import net.minecraft.tags.TagKey;
 import net.minecraft.world.level.biome.Biome;
+import net.minecraft.world.level.biome.Biomes;
 import net.minecraft.world.level.levelgen.GenerationStep;
 import net.minecraft.world.level.levelgen.placement.PlacedFeature;
 import net.neoforged.neoforge.common.Tags;
@@ -43,6 +44,10 @@ public class ModBiomeModifiers {
 
     public static final ResourceKey<BiomeModifier> ADD_BLOODSTONE_SMALL_ORE_KEY = registerKey("add_bloodstone_small_ore");
 
+	public static final ResourceKey<BiomeModifier> ADD_TENUMBRUM_LARGE_ORE_KEY = registerKey("add_tenumbrum_large_ore");
+
+	public static final ResourceKey<BiomeModifier> ADD_TENUMBRUM_SMALL_ORE_KEY = registerKey("add_tenumbrum_small_ore");
+
     public static void bootstrap(BootstrapContext<BiomeModifier> context) {
 
         var placedFeatures = context.lookup(Registries.PLACED_FEATURE);
@@ -72,7 +77,11 @@ public class ModBiomeModifiers {
 
         registerOre(context, ADD_BLOODSTONE_SMALL_ORE_KEY, ModPlacedFeatures.BLOODSTONE_SMALL_ORE_PLACED_KEY);
 
-    }
+		registerOre(context, ADD_TENUMBRUM_LARGE_ORE_KEY, ModPlacedFeatures.TENUMBRUM_LARGE_ORE_PLACED_KEY);
+
+		registerOre(context, ADD_TENUMBRUM_SMALL_ORE_KEY, ModPlacedFeatures.TENUMBRUM_SMALL_ORE_PLACED_KEY);
+
+	}
 
     private static ResourceKey<BiomeModifier> registerKey(String name) {
         return ResourceKey.create(NeoForgeRegistries.Keys.BIOME_MODIFIERS, ResourceLocation.fromNamespaceAndPath(MoreMetalsMod.MOD_ID, name));

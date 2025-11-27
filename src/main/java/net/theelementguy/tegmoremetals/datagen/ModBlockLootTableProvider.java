@@ -49,6 +49,8 @@ public class ModBlockLootTableProvider extends BlockLootSubProvider {
         dropSelf(ModBlocks.STARSHARD_BLOCK.get());
         dropSelf(ModBlocks.BRONZE_BLOCK.get());
         dropSelf(ModBlocks.BLOODSTONE_BLOCK.get());
+		dropSelf(ModBlocks.TENUMBRUM_BLOCK.get());
+		dropSelf(ModBlocks.RAW_TENUMBRUM_BLOCK.get());
 
         add(ModBlocks.CUBIC_ZIRCONIA_ORE.get(), block -> createOreDrop(ModBlocks.CUBIC_ZIRCONIA_ORE.get(), ModItems.RAW_CUBIC_ZIRCONIA.get()));
         add(ModBlocks.DEEPSLATE_CUBIC_ZIRCONIA_ORE.get(), block -> createOreDrop(ModBlocks.DEEPSLATE_CUBIC_ZIRCONIA_ORE.get(), ModItems.RAW_CUBIC_ZIRCONIA.get()));
@@ -63,6 +65,10 @@ public class ModBlockLootTableProvider extends BlockLootSubProvider {
         add(ModBlocks.BLOODSTONE_ORE.get(), block -> createOreDrop(ModBlocks.BLOODSTONE_ORE.get(), ModItems.BLOODSTONE.get()));
 
         add(ModBlocks.DEEPSLATE_BLOODSTONE_ORE.get(), block -> createOreDrop(ModBlocks.DEEPSLATE_BLOODSTONE_ORE.get(), ModItems.BLOODSTONE.get()));
+
+		add(ModBlocks.TENUMBRUM_ORE.get(), block -> createOreDrop(ModBlocks.TENUMBRUM_ORE.get(), ModItems.RAW_TENUMBRUM.get()));
+
+		add(ModBlocks.DEEPSLATE_TENUMBRUM_ORE.get(), block -> createOreDrop(ModBlocks.DEEPSLATE_TENUMBRUM_ORE.get(), ModItems.RAW_TENUMBRUM.get()));
 
     }
 
