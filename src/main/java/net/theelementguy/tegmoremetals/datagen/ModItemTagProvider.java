@@ -91,8 +91,8 @@ public class ModItemTagProvider extends IntrinsicHolderTagsProvider<Item> {
 
         //Neoforge tags
         tag(Tags.Items.GEMS).add(ModItems.CUBIC_ZIRCONIA.get()).add(ModItems.RUBIDIUM.get()).add(ModItems.STARSHARD.get()).add(ModItems.BLOODSTONE.get()).replace(false);
-        //tag(Tags.Items.INGOTS);
-        tag(Tags.Items.RAW_MATERIALS).add(ModItems.RAW_CUBIC_ZIRCONIA.get()).replace(false);
+        tag(Tags.Items.INGOTS).add(ModItems.TENUMBRUM_INGOT.get());
+        tag(Tags.Items.RAW_MATERIALS).add(ModItems.RAW_CUBIC_ZIRCONIA.get()).add(ModItems.RAW_TENUMBRUM.get()).replace(false);
 		tag(Tags.Items.MELEE_WEAPON_TOOLS).addAll(ModItems.ITEMS.getEntries().stream().filter(new Predicate<DeferredHolder<Item, ? extends Item>>() {
 			@Override
 			public boolean test(DeferredHolder<Item, ? extends Item> itemDeferredHolder) {

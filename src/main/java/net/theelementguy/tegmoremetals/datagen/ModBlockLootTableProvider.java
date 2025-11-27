@@ -75,13 +75,16 @@ public class ModBlockLootTableProvider extends BlockLootSubProvider {
 	private void add(String name, AutoGenTypes type) {
 		dropSelf(ModUtil.getBlockFromKey(name + "_block"));
 		if (type == AutoGenTypes.CZ_TYPE || type == AutoGenTypes.DIAMOND_TYPE || type == AutoGenTypes.IRON_TYPE) {
-			Item drops = null;
+			Item drops;
 			switch (type) {
-				case IRON_TYPE -> {
-					drops = ModUtil.getItemFromKey(name + "_ingot");
+				case IRON_TYPE, CZ_TYPE -> {
+					drops = ModUtil.getItemFromKey("raw_" + name);
 				}
-				case CZ_TYPE, DIAMOND_TYPE -> {
+				case DIAMOND_TYPE -> {
 					drops = ModUtil.getItemFromKey(name);
+				}
+				default -> {
+					throw new RuntimeException("Auto gen type not supported: " + type);
 				}
 			}
 
