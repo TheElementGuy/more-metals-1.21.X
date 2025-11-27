@@ -65,8 +65,6 @@ public class MoreMetalsMod {
         LOGGER.info("HELLO FROM COMMON SETUP");
     }
 
-    // Add the example block item to the building blocks tab
-	// Add the example block item to the building blocks tab
 	private void addCreative(BuildCreativeModeTabContentsEvent event) {
 		if(event.getTabKey() == CreativeModeTabs.INGREDIENTS) {
 			ModUtil.inventoryAddAfter(ModItems.CUBIC_ZIRCONIA.get(), Items.GOLD_NUGGET, event);
@@ -75,6 +73,7 @@ public class MoreMetalsMod {
 			ModUtil.inventoryAddAfter(ModItems.RUBIDIUM.get(), ModItems.TENUMBRUM_INGOT.get(), event);
 			ModUtil.inventoryAddAfter(ModItems.STARSHARD.get(), ModItems.RUBIDIUM.get(), event);
 			ModUtil.inventoryAddAfter(ModItems.BLOODSTONE.get(), ModItems.RAW_CUBIC_ZIRCONIA.get(), event);
+			ModUtil.inventoryAddAfter(ModItems.BRONZE_INGOT.get(), Items.COPPER_INGOT, event);
 		}
 		if(event.getTabKey() == CreativeModeTabs.BUILDING_BLOCKS) {
 			ModUtil.inventoryAddAfter(ModBlocks.CUBIC_ZIRCONIA_BLOCK.get(), Blocks.LAPIS_BLOCK, event);
@@ -82,6 +81,7 @@ public class MoreMetalsMod {
 			ModUtil.inventoryAddAfter(ModBlocks.RUBIDIUM_BLOCK, ModBlocks.TENUMBRUM_BLOCK, event);
 			ModUtil.inventoryAddAfter(ModBlocks.STARSHARD_BLOCK, Blocks.NETHERITE_BLOCK, event);
 			ModUtil.inventoryAddAfter(ModBlocks.BLOODSTONE_BLOCK, ModBlocks.CUBIC_ZIRCONIA_BLOCK, event);
+			ModUtil.inventoryAddAfter(ModBlocks.BRONZE_BLOCK, Blocks.OXIDIZED_COPPER, event);
 		}
 		if(event.getTabKey() == CreativeModeTabs.NATURAL_BLOCKS) {
 			ModUtil.inventoryAddAfter(ModBlocks.CUBIC_ZIRCONIA_ORE, Blocks.LAPIS_ORE, event);
@@ -101,6 +101,12 @@ public class MoreMetalsMod {
 			ModUtil.setAddAfter("rubidium", "tenumbrum", event);
 			ModUtil.setAddAfter("starshard", "netherite", event);
 			ModUtil.setAddAfter("bloodstone", "cubic_zirconia", event);
+			ModUtil.inventoryAddAfter(ModItems.BRONZE_SWORD, Items.STONE_SWORD, event);
+			ModUtil.inventoryAddAfter(ModItems.BRONZE_AXE, Items.STONE_AXE, event);
+			ModUtil.inventoryAddAfter(ModItems.BRONZE_HELMET, Items.CHAINMAIL_BOOTS, event);
+			ModUtil.inventoryAddAfter(ModItems.BRONZE_CHESTPLATE, ModItems.BRONZE_HELMET, event);
+			ModUtil.inventoryAddAfter(ModItems.BRONZE_LEGGINGS, ModItems.BRONZE_CHESTPLATE, event);
+			ModUtil.inventoryAddAfter(ModItems.BRONZE_BOOTS, ModItems.BRONZE_LEGGINGS, event);
 		}
 		if (event.getTabKey() == CreativeModeTabs.TOOLS_AND_UTILITIES) {
 			ModUtil.inventoryAddAfter(ModItems.CUBIC_ZIRCONIA_AXE, Items.IRON_HOE, event);
@@ -117,6 +123,7 @@ public class MoreMetalsMod {
 			ModUtil.inventoryAddAfter(ModItems.BLOODSTONE_PICKAXE, ModItems.BLOODSTONE_AXE, event);
 			ModUtil.inventoryAddAfter(ModItems.BLOODSTONE_SHOVEL, ModItems.BLOODSTONE_PICKAXE, event);
 			ModUtil.inventoryAddAfter(ModItems.BLOODSTONE_HOE, ModItems.BLOODSTONE_SHOVEL, event);
+			ModUtil.toolsAddAfter("bronze", "stone", event);
 		}
 	}
 

@@ -73,11 +73,11 @@ public class ModBlocks {
     }
 
 	public static DeferredBlock<Block> registerOre(String name) {
-		return registerBlockWithItem(name, () -> new Block(BlockBehaviour.Properties.of().destroyTime(3f).explosionResistance(3f).mapColor(MapColor.STONE).sound(SoundType.STONE).setId(ModUtil.createBlockResourceKey(name))), null);
+		return registerBlockWithItem(name, () -> new Block(BlockBehaviour.Properties.of().destroyTime(3f).explosionResistance(3f).mapColor(MapColor.STONE).requiresCorrectToolForDrops().sound(SoundType.STONE).setId(ModUtil.createBlockResourceKey(name))), null);
 	}
 
 	public static DeferredBlock<Block> registerDeepslateOre(String name) {
-		return registerBlockWithItem(name, () -> new Block(BlockBehaviour.Properties.of().destroyTime(4.5f).explosionResistance(3f).mapColor(MapColor.DEEPSLATE).sound(SoundType.DEEPSLATE).setId(ModUtil.createBlockResourceKey(name))), null);
+		return registerBlockWithItem(name, () -> new Block(BlockBehaviour.Properties.of().destroyTime(4.5f).explosionResistance(3f).mapColor(MapColor.DEEPSLATE).requiresCorrectToolForDrops().sound(SoundType.DEEPSLATE).setId(ModUtil.createBlockResourceKey(name))), null);
 	}
 
     public static void register(IEventBus bus) {

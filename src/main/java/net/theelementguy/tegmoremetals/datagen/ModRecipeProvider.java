@@ -232,6 +232,8 @@ public class ModRecipeProvider extends RecipeProvider {
 		if (genTypes == AutoGenTypes.IRON_TYPE) {
 			allEquipmentRecipes(ModUtil.getItemFromKey(name + "_sword"), ModUtil.getItemFromKey(name + "_axe"), ModUtil.getItemFromKey(name + "_pickaxe"), ModUtil.getItemFromKey(name + "_shovel"), ModUtil.getItemFromKey(name + "_hoe"), ModUtil.getItemFromKey(name + "_helmet"), ModUtil.getItemFromKey(name + "_chestplate"), ModUtil.getItemFromKey(name + "_leggings"), ModUtil.getItemFromKey(name + "_boots"), ModUtil.getItemFromKey(name + "_ingot"), "has_" + name, output);
 			allOreSmelting(ModUtil.getItemFromKey(name + "_ingot"), List.of(ModUtil.getBlockFromKey(name + "_ore"), ModUtil.getBlockFromKey("deepslate_" + name + "_ore"), ModUtil.getItemFromKey("raw_" + name)), semltExperience, name, output);
+			blockRecipe(ModUtil.getItemFromKey(name + "_ingot"), ModUtil.getBlockFromKey(name + "_block").asItem(), output);
+			blockRecipe(ModUtil.getItemFromKey("raw_" + name), ModUtil.getBlockFromKey("raw_" + name + "_block").asItem(), output);
 		} else if (genTypes == AutoGenTypes.DIAMOND_TYPE) {
 			allEquipmentRecipes(ModUtil.getItemFromKey(name + "_sword"), ModUtil.getItemFromKey(name + "_axe"), ModUtil.getItemFromKey(name + "_pickaxe"), ModUtil.getItemFromKey(name + "_shovel"), ModUtil.getItemFromKey(name + "_hoe"), ModUtil.getItemFromKey(name + "_helmet"), ModUtil.getItemFromKey(name + "_chestplate"), ModUtil.getItemFromKey(name + "_leggings"), ModUtil.getItemFromKey(name + "_boots"), ModUtil.getItemFromKey(name), "has_" + name, output);
 			allOreSmelting(ModUtil.getItemFromKey(name), List.of(ModUtil.getBlockFromKey(name + "_ore"), ModUtil.getBlockFromKey("deepslate_" + name + "_ore")), semltExperience, name, output);
