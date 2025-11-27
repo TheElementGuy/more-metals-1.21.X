@@ -20,9 +20,9 @@ public class ModBlockTagProvider extends BlockTagsProvider {
     @Override
     protected void addTags(HolderLookup.Provider provider) {
 
-        tag(BlockTags.MINEABLE_WITH_PICKAXE).add(ModBlocks.CUBIC_ZIRCONIA_BLOCK.get()).add(ModBlocks.RAW_CUBIC_ZIRCONIA_BLOCK.get()).add(ModBlocks.CUBIC_ZIRCONIA_ORE.get()).add(ModBlocks.DEEPSLATE_CUBIC_ZIRCONIA_ORE.get()).add(ModBlocks.TIN_BLOCK.get()).add(ModBlocks.TIN_ORE.get()).add(ModBlocks.DEEPSLATE_TIN_ORE.get()).add(ModBlocks.RUBIDIUM_BLOCK.get()).add(ModBlocks.STARSHARD_BLOCK.get()).add(ModBlocks.END_STARSHARD_ORE.get()).add(ModBlocks.BRONZE_BLOCK.get()).add(ModBlocks.BLOODSTONE_BLOCK.get()).add(ModBlocks.BLOODSTONE_ORE.get()).add(ModBlocks.DEEPSLATE_BLOODSTONE_ORE.get()).replace(false);
+        tag(BlockTags.MINEABLE_WITH_PICKAXE).add(ModBlocks.CUBIC_ZIRCONIA_BLOCK.get()).add(ModBlocks.RAW_CUBIC_ZIRCONIA_BLOCK.get()).add(ModBlocks.CUBIC_ZIRCONIA_ORE.get()).add(ModBlocks.DEEPSLATE_CUBIC_ZIRCONIA_ORE.get()).add(ModBlocks.TIN_BLOCK.get()).add(ModBlocks.TIN_ORE.get()).add(ModBlocks.DEEPSLATE_TIN_ORE.get()).add(ModBlocks.RUBIDIUM_BLOCK.get()).add(ModBlocks.STARSHARD_BLOCK.get()).add(ModBlocks.END_STARSHARD_ORE.get()).add(ModBlocks.BRONZE_BLOCK.get()).add(ModBlocks.BLOODSTONE_BLOCK.get()).add(ModBlocks.BLOODSTONE_ORE.get()).add(ModBlocks.DEEPSLATE_BLOODSTONE_ORE.get()).add(ModBlocks.TENUMBRUM_BLOCK.get()).add(ModBlocks.TENUMBRUM_ORE.get()).add(ModBlocks.DEEPSLATE_TENUMBRUM_ORE.get()).replace(false);
 
-        tag(BlockTags.NEEDS_IRON_TOOL).add(ModBlocks.CUBIC_ZIRCONIA_BLOCK.get()).add(ModBlocks.RAW_CUBIC_ZIRCONIA_BLOCK.get()).add(ModBlocks.CUBIC_ZIRCONIA_ORE.get()).add(ModBlocks.DEEPSLATE_CUBIC_ZIRCONIA_ORE.get()).add(ModBlocks.BLOODSTONE_BLOCK.get()).add(ModBlocks.BLOODSTONE_ORE.get()).add(ModBlocks.DEEPSLATE_BLOODSTONE_ORE.get()).replace(false);
+        tag(BlockTags.NEEDS_IRON_TOOL).add(ModBlocks.CUBIC_ZIRCONIA_BLOCK.get()).add(ModBlocks.RAW_CUBIC_ZIRCONIA_BLOCK.get()).add(ModBlocks.CUBIC_ZIRCONIA_ORE.get()).add(ModBlocks.DEEPSLATE_CUBIC_ZIRCONIA_ORE.get()).add(ModBlocks.BLOODSTONE_BLOCK.get()).add(ModBlocks.BLOODSTONE_ORE.get()).add(ModBlocks.DEEPSLATE_BLOODSTONE_ORE.get()).add(ModBlocks.TENUMBRUM_ORE.get()).add(ModBlocks.DEEPSLATE_TENUMBRUM_ORE.get()).replace(false);
 
         tag(BlockTags.NEEDS_STONE_TOOL).add(ModBlocks.TIN_ORE.get()).add(ModBlocks.DEEPSLATE_TIN_ORE.get()).replace(false);
 
@@ -50,20 +50,24 @@ public class ModBlockTagProvider extends BlockTagsProvider {
 
         tag(ModTags.Blocks.INCORRECT_FOR_BLOODSTONE_TOOL).addTag(BlockTags.INCORRECT_FOR_STONE_TOOL).replace(false);
 
+		tag(ModTags.Blocks.NEEDS_TENUMBRUM_TOOL).addTag(BlockTags.NEEDS_IRON_TOOL).replace(false);
+
+		tag(ModTags.Blocks.INCORRECT_FOR_TENUMBRUM_TOOL).addTag(BlockTags.INCORRECT_FOR_IRON_TOOL).replace(false);
+
         //Neoforge tags
         tag(Tags.Blocks.ORE_RATES_DENSE).add(ModBlocks.TIN_ORE.get()).add(ModBlocks.DEEPSLATE_TIN_ORE.get()).replace(false);
 
-        tag(Tags.Blocks.ORE_RATES_SINGULAR).add(ModBlocks.CUBIC_ZIRCONIA_ORE.get()).add(ModBlocks.DEEPSLATE_CUBIC_ZIRCONIA_ORE.get()).add(ModBlocks.NETHER_RUBIDIUM_ORE.get()).add(ModBlocks.END_STARSHARD_ORE.get()).add(ModBlocks.BLOODSTONE_ORE.get()).add(ModBlocks.DEEPSLATE_BLOODSTONE_ORE.get()).replace(false);
+        tag(Tags.Blocks.ORE_RATES_SINGULAR).add(ModBlocks.CUBIC_ZIRCONIA_ORE.get()).add(ModBlocks.DEEPSLATE_CUBIC_ZIRCONIA_ORE.get()).add(ModBlocks.NETHER_RUBIDIUM_ORE.get()).add(ModBlocks.END_STARSHARD_ORE.get()).add(ModBlocks.BLOODSTONE_ORE.get()).add(ModBlocks.DEEPSLATE_BLOODSTONE_ORE.get()).add(ModBlocks.TENUMBRUM_ORE.get()).add(ModBlocks.DEEPSLATE_TENUMBRUM_ORE.get()).replace(false);
 
-        tag(Tags.Blocks.ORES).add(ModBlocks.TIN_ORE.get()).add(ModBlocks.DEEPSLATE_TIN_ORE.get()).add(ModBlocks.CUBIC_ZIRCONIA_ORE.get()).add(ModBlocks.DEEPSLATE_CUBIC_ZIRCONIA_ORE.get()).add(ModBlocks.NETHER_RUBIDIUM_ORE.get()).add(ModBlocks.END_STARSHARD_ORE.get()).add(ModBlocks.BLOODSTONE_ORE.get()).add(ModBlocks.DEEPSLATE_BLOODSTONE_ORE.get()).replace(false);
+        tag(Tags.Blocks.ORES).add(ModBlocks.TIN_ORE.get()).add(ModBlocks.DEEPSLATE_TIN_ORE.get()).add(ModBlocks.CUBIC_ZIRCONIA_ORE.get()).add(ModBlocks.DEEPSLATE_CUBIC_ZIRCONIA_ORE.get()).add(ModBlocks.NETHER_RUBIDIUM_ORE.get()).add(ModBlocks.END_STARSHARD_ORE.get()).add(ModBlocks.BLOODSTONE_ORE.get()).add(ModBlocks.DEEPSLATE_BLOODSTONE_ORE.get()).add(ModBlocks.TENUMBRUM_ORE.get()).add(ModBlocks.DEEPSLATE_TENUMBRUM_ORE.get()).replace(false);
 
-        tag(Tags.Blocks.ORES_IN_GROUND_STONE).add(ModBlocks.TIN_ORE.get()).add(ModBlocks.CUBIC_ZIRCONIA_ORE.get()).add(ModBlocks.BLOODSTONE_ORE.get()).replace(false);
+        tag(Tags.Blocks.ORES_IN_GROUND_STONE).add(ModBlocks.TIN_ORE.get()).add(ModBlocks.CUBIC_ZIRCONIA_ORE.get()).add(ModBlocks.BLOODSTONE_ORE.get()).add(ModBlocks.TENUMBRUM_ORE.get()).add(ModBlocks.DEEPSLATE_TENUMBRUM_ORE.get()).replace(false);
 
-        tag(Tags.Blocks.ORES_IN_GROUND_DEEPSLATE).add(ModBlocks.DEEPSLATE_TIN_ORE.get()).add(ModBlocks.DEEPSLATE_CUBIC_ZIRCONIA_ORE.get()).add(ModBlocks.DEEPSLATE_BLOODSTONE_ORE.get()).replace(false);
+        tag(Tags.Blocks.ORES_IN_GROUND_DEEPSLATE).add(ModBlocks.DEEPSLATE_TIN_ORE.get()).add(ModBlocks.DEEPSLATE_CUBIC_ZIRCONIA_ORE.get()).add(ModBlocks.DEEPSLATE_BLOODSTONE_ORE.get()).add(ModBlocks.DEEPSLATE_TENUMBRUM_ORE.get()).replace(false);
 
         tag(Tags.Blocks.ORES_IN_GROUND_NETHERRACK).add(ModBlocks.NETHER_RUBIDIUM_ORE.get()).replace(false);
 
-        tag(Tags.Blocks.STORAGE_BLOCKS).add(ModBlocks.TIN_BLOCK.get()).add(ModBlocks.CUBIC_ZIRCONIA_BLOCK.get()).add(ModBlocks.RUBIDIUM_BLOCK.get()).add(ModBlocks.STARSHARD_BLOCK.get()).add(ModBlocks.BLOODSTONE_BLOCK.get()).replace(false);
+        tag(Tags.Blocks.STORAGE_BLOCKS).add(ModBlocks.TIN_BLOCK.get()).add(ModBlocks.CUBIC_ZIRCONIA_BLOCK.get()).add(ModBlocks.RUBIDIUM_BLOCK.get()).add(ModBlocks.STARSHARD_BLOCK.get()).add(ModBlocks.BLOODSTONE_BLOCK.get()).add(ModBlocks.TENUMBRUM_BLOCK.get()).replace(false);
 
     }
 }

@@ -15,4 +15,6 @@ public class ModToolMaterials {
 
     public static final ToolMaterial BLOODSTONE = new ToolMaterial(ModTags.Blocks.INCORRECT_FOR_BLOODSTONE_TOOL, 1021, 7.0f, 4.0f, 19, ModTags.Items.BLOODSTONE_REPAIRABLES);
 
+	public static final ToolMaterial TENUMBRUM = new ToolMaterial(ModTags.Blocks.INCORRECT_FOR_TENUMBRUM_TOOL, 1641, 8.5f, 3.0f, 16, ModTags.Items.TENUMBRUM_REPAIRABLES);
+
 }

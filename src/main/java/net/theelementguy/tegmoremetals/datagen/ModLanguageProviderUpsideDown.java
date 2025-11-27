@@ -43,6 +43,10 @@ public class ModLanguageProviderUpsideDown extends LanguageProvider {
         add(ModItems.BLOODSTONE, ModUtil.toUpsideDown("Bloodstone"));
         addMaterialSet("bloodstone", ModUtil.toUpsideDown("Bloodstone"));
 
+		add(ModItems.TENUMBRUM_INGOT, ModUtil.toUpsideDown("Tenumbrum Ingot"));
+		add(ModItems.RAW_TENUMBRUM, ModUtil.toUpsideDown("Raw Tenumbrum"));
+		addMaterialSet("tenumbrum", ModUtil.toUpsideDown("Tenumbrum"));
+
         add(ModBlocks.RAW_CUBIC_ZIRCONIA_BLOCK, ModUtil.toUpsideDown("Block of Raw Cubic Zirconia"));
         add(ModBlocks.TIN_BLOCK, ModUtil.toUpsideDown("Block of Tin"));
 
@@ -55,6 +59,7 @@ public class ModLanguageProviderUpsideDown extends LanguageProvider {
         addTrimMaterial(ModTrimMaterials.RUBIDIUM, ModUtil.toUpsideDown("Rubidium"));
         addTrimMaterial(ModTrimMaterials.STARSHARD, ModUtil.toUpsideDown("Starshard"));
         addTrimMaterial(ModTrimMaterials.BLOODSTONE, ModUtil.toUpsideDown("Bloodstone"));
+		addTrimMaterial(ModTrimMaterials.TENUMBRUM, ModUtil.toUpsideDown("Tenumbrum"));
     }
 
     protected void add(DeferredItem<? extends Item> key, String name) {

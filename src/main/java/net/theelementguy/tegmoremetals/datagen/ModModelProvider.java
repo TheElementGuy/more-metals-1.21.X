@@ -57,7 +57,8 @@ public class ModModelProvider extends ModelProvider {
             new ItemModelGenerators.TrimMaterialData("tin", ModTrimMaterials.TIN, Map.of()),
             new ItemModelGenerators.TrimMaterialData("rubidium", ModTrimMaterials.RUBIDIUM, Map.of()),
             new ItemModelGenerators.TrimMaterialData("bronze", ModTrimMaterials.BRONZE, Map.of()),
-            new ItemModelGenerators.TrimMaterialData("bloodstone", ModTrimMaterials.BLOODSTONE, Map.of())
+            new ItemModelGenerators.TrimMaterialData("bloodstone", ModTrimMaterials.BLOODSTONE, Map.of()),
+			new ItemModelGenerators.TrimMaterialData("tenumbrum", ModTrimMaterials.TENUMBRUM, Map.of())
             );
 
     @Override
@@ -169,18 +170,7 @@ public class ModModelProvider extends ModelProvider {
         blockModels.createTrivialCube(ModBlocks.BLOODSTONE_ORE.get());
         blockModels.createTrivialCube(ModBlocks.DEEPSLATE_BLOODSTONE_ORE.get());
 
-        /*this.standardBlock(blockModels, ModBlocks.CUBIC_ZIRCONIA_BLOCK.get());
-        this.standardBlock(blockModels, ModBlocks.RAW_CUBIC_ZIRCONIA_BLOCK.get());
-        this.standardBlock(blockModels, ModBlocks.CUBIC_ZIRCONIA_ORE.get());
-        this.standardBlock(blockModels, ModBlocks.DEEPSLATE_CUBIC_ZIRCONIA_ORE.get());
-        this.standardBlock(blockModels, ModBlocks.CELESTIAL_BRONZE_BLOCK.get());
-        this.standardBlock(blockModels, ModBlocks.RAW_CELESTIAL_BRONZE_BLOCK.get());
-        this.standardBlock(blockModels, ModBlocks.TIN_BLOCK.get());
-        this.standardBlock(blockModels, ModBlocks.TIN_ORE.get());
-        this.standardBlock(blockModels, ModBlocks.RUBIDIUM_BLOCK.get());
-        this.standardBlock(blockModels, ModBlocks.NETHER_RUBIDIUM_ORE.get());
-        this.rotatableBlock(blockModels, ModBlocks.STARSHARD_BLOCK.get());
-        this.standardBlock(blockModels, ModBlocks.END_STARSHARD_ORE.get());*/
+		set(itemModels, "tenumbrum", AutoGenTypes.IRON_TYPE, blockModels);
 
 
     }
@@ -259,4 +249,40 @@ public class ModModelProvider extends ModelProvider {
     public void normal(Item item, ItemModelGenerators itemModelGenerators) {
         itemModelGenerators.generateFlatItem(item, ModelTemplates.FLAT_ITEM);
     }
+
+	public void set(ItemModelGenerators geners, String groupName, AutoGenTypes type, BlockModelGenerators bGeners) {
+		geners.generateFlatItem(ModUtil.getItemFromKey(groupName + "_sword"), ModelTemplates.FLAT_HANDHELD_ITEM);
+		geners.generateFlatItem(ModUtil.getItemFromKey(groupName + "_axe"), ModelTemplates.FLAT_HANDHELD_ITEM);
+		geners.generateFlatItem(ModUtil.getItemFromKey(groupName + "_pickaxe"), ModelTemplates.FLAT_HANDHELD_ITEM);
+		geners.generateFlatItem(ModUtil.getItemFromKey(groupName + "_shovel"), ModelTemplates.FLAT_HANDHELD_ITEM);
+		geners.generateFlatItem(ModUtil.getItemFromKey(groupName + "_hoe"), ModelTemplates.FLAT_HANDHELD_ITEM);
+		bGeners.createTrivialCube(ModUtil.getBlockFromKey(groupName + "_block"));
+		if (type == AutoGenTypes.DIAMOND_TYPE || type == AutoGenTypes.NETHER_DIAMOND_TYPE || type == AutoGenTypes.END_DIAMOND_TYPE) {
+			geners.generateFlatItem(ModUtil.getItemFromKey(groupName), ModelTemplates.FLAT_ITEM);
+		}
+		if (type == AutoGenTypes.IRON_TYPE || type == AutoGenTypes.NETHER_IRON_TYPE || type == AutoGenTypes.END_IRON_TYPE) {
+			geners.generateFlatItem(ModUtil.getItemFromKey(groupName + "_ingot"), ModelTemplates.FLAT_ITEM);
+			geners.generateFlatItem(ModUtil.getItemFromKey("raw_" + groupName), ModelTemplates.FLAT_ITEM);
+			bGeners.createTrivialCube(ModUtil.getBlockFromKey("raw_" + groupName + "_block"));
+		}
+		if (type == AutoGenTypes.CZ_TYPE) {
+			geners.generateFlatItem(ModUtil.getItemFromKey(groupName), ModelTemplates.FLAT_ITEM);
+			geners.generateFlatItem(ModUtil.getItemFromKey("raw_" + groupName), ModelTemplates.FLAT_ITEM);
+			bGeners.createTrivialCube(ModUtil.getBlockFromKey("raw_" + groupName + "_block"));
+		}
+		if (type == AutoGenTypes.DIAMOND_TYPE || type == AutoGenTypes.IRON_TYPE || type == AutoGenTypes.CZ_TYPE) {
+			bGeners.createTrivialCube(ModUtil.getBlockFromKey("deepslate_" + groupName + "_ore"));
+			bGeners.createTrivialCube(ModUtil.getBlockFromKey(groupName + "_ore"));
+		}
+		if (type == AutoGenTypes.NETHER_DIAMOND_TYPE || type == AutoGenTypes.NETHER_IRON_TYPE) {
+			bGeners.createTrivialCube(ModUtil.getBlockFromKey("nether_" + groupName + "_ore"));
+		}
+		if (type == AutoGenTypes.END_DIAMOND_TYPE || type == AutoGenTypes.END_IRON_TYPE) {
+			bGeners.createTrivialCube(ModUtil.getBlockFromKey("end_" + groupName + "_ore"));
+		}
+		generateTrimmableItemWithModded(ModUtil.getItemFromKey(groupName + "_helmet"), ModUtil.createEquipmentAssetResourceKey(groupName), "helmet", false, geners);
+		generateTrimmableItemWithModded(ModUtil.getItemFromKey(groupName + "_chestplate"), ModUtil.createEquipmentAssetResourceKey(groupName), "chestplate", false, geners);
+		generateTrimmableItemWithModded(ModUtil.getItemFromKey(groupName + "_leggings"), ModUtil.createEquipmentAssetResourceKey(groupName), "leggings", false, geners);
+		generateTrimmableItemWithModded(ModUtil.getItemFromKey(groupName + "_boots"), ModUtil.createEquipmentAssetResourceKey(groupName), "boots", false, geners);
+	}
 }

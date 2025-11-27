@@ -42,8 +42,8 @@ public class DataGenerators {
 
         generator.addProvider(true, new ModDatapackProvider(output, provider));
 
-        generator.addProvider(true, new ModLanguageProvider(output, "en_us"));
-        generator.addProvider(true, new ModLanguageProviderLol(output, "lol_us"));
+        generator.addProvider(true, new ModLanguageProvider(output));
+        generator.addProvider(true, new ModLanguageProviderLol(output));
         generator.addProvider(true, new ModLanguageProviderPirate(output));
         generator.addProvider(true, new ModLanguageProviderShakspeare(output));
         generator.addProvider(true, new ModLanguageProviderAnglish(output));

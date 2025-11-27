@@ -118,6 +118,28 @@ public class ModItems {
 
     public static final DeferredItem<ArmorItem> BLOODSTONE_LEGGINGS = registerLeggings("bloodstone_leggings", ModArmorMaterials.BLOODSTONE);
 
+	public static final DeferredItem<Item> TENUMBRUM_INGOT = ITEMS.register("tenumbrum_ingot", () -> new Item(new Item.Properties().setId(ModUtil.createItemResourceKey("tenumbrum_ingot"))));
+
+	public static final DeferredItem<Item> RAW_TENUMBRUM = ITEMS.registerSimpleItem("raw_tenumbrum");
+
+	public static final DeferredItem<SwordItem> TENUMBRUM_SWORD = registerSword("tenumbrum_sword", ModToolMaterials.TENUMBRUM);
+
+	public static final DeferredItem<AxeItem> TENUMBRUM_AXE = registerAxe("tenumbrum_axe", ModToolMaterials.TENUMBRUM);
+
+	public static final DeferredItem<PickaxeItem> TENUMBRUM_PICKAXE = registerPickaxe("tenumbrum_pickaxe", ModToolMaterials.TENUMBRUM);
+
+	public static final DeferredItem<ShovelItem> TENUMBRUM_SHOVEL = registerShovel("tenumbrum_shovel", ModToolMaterials.TENUMBRUM);
+
+	public static final DeferredItem<HoeItem> TENUMBRUM_HOE = registerHoe("tenumbrum_hoe", ModToolMaterials.TENUMBRUM);
+
+	public static final DeferredItem<ArmorItem> TENUMBRUM_HELMET = registerHelmet("tenumbrum_helmet", ModArmorMaterials.TENUMBRUM);
+
+	public static final DeferredItem<ArmorItem> TENUMBRUM_CHESTPLATE = registerChestplate("tenumbrum_chestplate", ModArmorMaterials.TENUMBRUM);
+
+	public static final DeferredItem<ArmorItem> TENUMBRUM_LEGGINGS = registerLeggings("tenumbrum_leggings", ModArmorMaterials.TENUMBRUM);
+
+	public static final DeferredItem<ArmorItem> TENUMBRUM_BOOTS = registerBoots("tenumbrum_boots", ModArmorMaterials.TENUMBRUM);
+
     public static final DeferredItem<ArmorItem> BLOODSTONE_BOOTS = registerBoots("bloodstone_boots", ModArmorMaterials.BLOODSTONE);
 
     public static DeferredItem<SwordItem> registerSword(String name, ToolMaterial material) {

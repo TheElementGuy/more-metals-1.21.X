@@ -1,7 +1,11 @@
 package net.theelementguy.tegmoremetals.datagen;
 
+import net.minecraft.core.Registry;
+import net.minecraft.core.registries.BuiltInRegistries;
+import net.minecraft.core.registries.Registries;
 import net.minecraft.data.PackOutput;
 import net.minecraft.resources.ResourceKey;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.equipment.trim.TrimMaterial;
 import net.minecraft.world.level.block.Block;
@@ -12,113 +16,103 @@ import net.theelementguy.tegmoremetals.MoreMetalsMod;
 import net.theelementguy.tegmoremetals.block.ModBlocks;
 import net.theelementguy.tegmoremetals.item.ModItems;
 import net.theelementguy.tegmoremetals.trim.ModTrimMaterials;
+import net.theelementguy.tegmoremetals.util.ModUtil;
 
 public class ModLanguageProvider extends LanguageProvider {
-    
-    public ModLanguageProvider(PackOutput output, String locale) {
-        super(output, MoreMetalsMod.MOD_ID, locale);
-    }
 
-    @Override
-    protected void addTranslations() {
+	public ModLanguageProvider(PackOutput output) {
+		super(output, MoreMetalsMod.MOD_ID, "en_us");
+	}
 
-        add(ModItems.CUBIC_ZIRCONIA, "Cubic Zirconia");
-        add(ModItems.RAW_CUBIC_ZIRCONIA, "Raw Cubic Zirconia");
-        add(ModItems.CUBIC_ZIRCONIA_SWORD, "Cubic Zirconia Sword");
-        add(ModItems.CUBIC_ZIRCONIA_AXE, "Cubic Zirconia Axe");
-        add(ModItems.CUBIC_ZIRCONIA_PICKAXE, "Cubic Zirconia Pickaxe");
-        add(ModItems.CUBIC_ZIRCONIA_SHOVEL, "Cubic Zirconia Shovel");
-        add(ModItems.CUBIC_ZIRCONIA_HOE, "Cubic Zirconia Hoe");
-        add(ModItems.CUBIC_ZIRCONIA_HELMET, "Cubic Zirconia Helmet");
-        add(ModItems.CUBIC_ZIRCONIA_CHESTPLATE, "Cubic Zirconia Chestplate");
-        add(ModItems.CUBIC_ZIRCONIA_LEGGINGS, "Cubic Zirconia Leggings");
-        add(ModItems.CUBIC_ZIRCONIA_BOOTS, "Cubic Zirconia Boots");
+	@Override
+	protected void addTranslations() {
 
-        add(ModItems.TIN_SCRAPS, "Tin Scraps");
+		add(ModItems.CUBIC_ZIRCONIA, "Cubic Zirconia");
+		add(ModItems.RAW_CUBIC_ZIRCONIA, "Raw Cubic Zirconia");
+		addMaterialSet("cubic_zirconia", "Cubic Zirconia");
 
-        add(ModItems.BRONZE_INGOT, "Bronze Ingot");
-        add(ModItems.BRONZE_SWORD, "Bronze Sword");
-        add(ModItems.BRONZE_AXE, "Bronze Axe");
-        add(ModItems.BRONZE_PICKAXE, "Bronze Pickaxe");
-        add(ModItems.BRONZE_SHOVEL, "Bronze Shovel");
-        add(ModItems.BRONZE_HOE, "Bronze Hoe");
-        add(ModItems.BRONZE_HELMET, "Bronze Helmet");
-        add(ModItems.BRONZE_CHESTPLATE, "Bronze Chestplate");
-        add(ModItems.BRONZE_LEGGINGS, "Bronze Leggings");
-        add(ModItems.BRONZE_BOOTS, "Bronze Boots");
+		add(ModItems.RUBIDIUM, "Rubidium");
+		addMaterialSet("rubidium", "Rubidium");
 
-        add(ModItems.RUBIDIUM, "Rubidium");
-        add(ModItems.RUBIDIUM_SWORD, "Rubidium Sword");
-        add(ModItems.RUBIDIUM_AXE, "Rubidium Axe");
-        add(ModItems.RUBIDIUM_PICKAXE, "Rubidium Pickaxe");
-        add(ModItems.RUBIDIUM_SHOVEL, "Rubidium Shovel");
-        add(ModItems.RUBIDIUM_HOE, "Rubidium Hoe");
-        add(ModItems.RUBIDIUM_HELMET, "Rubidium Helmet");
-        add(ModItems.RUBIDIUM_CHESTPLATE, "Rubidium Chestplate");
-        add(ModItems.RUBIDIUM_LEGGINGS, "Rubidium Leggings");
-        add(ModItems.RUBIDIUM_BOOTS, "Rubidium Boots");
+		add(ModItems.STARSHARD, "Starshard");
+		addMaterialSet("starshard", "Starshard");
 
-        add(ModItems.STARSHARD, "Starshard");
-        add(ModItems.STARSHARD_SWORD, "Starshard Sword");
-        add(ModItems.STARSHARD_AXE, "Starshard Axe");
-        add(ModItems.STARSHARD_PICKAXE, "Starshard Pickaxe");
-        add(ModItems.STARSHARD_SHOVEL, "Starshard Shovel");
-        add(ModItems.STARSHARD_HOE, "Starshard Hoe");
-        add(ModItems.STARSHARD_HELMET, "Starshard Helmet");
-        add(ModItems.STARSHARD_CHESTPLATE, "Starshard Chestplate");
-        add(ModItems.STARSHARD_LEGGINGS, "Starshard Leggings");
-        add(ModItems.STARSHARD_BOOTS, "Starshard Boots");
+		add(ModItems.BLOODSTONE, "Bloodstone");
+		addMaterialSet("bloodstone", "Bloodstone");
 
-        add(ModItems.BLOODSTONE, "Bloodstone");
-        addToolSet(ModItems.BLOODSTONE_SWORD, ModItems.BLOODSTONE_AXE, ModItems.BLOODSTONE_PICKAXE, ModItems.BLOODSTONE_SHOVEL, ModItems.BLOODSTONE_HOE, ModItems.BLOODSTONE_HELMET, ModItems.BLOODSTONE_CHESTPLATE, ModItems.BLOODSTONE_LEGGINGS, ModItems.BLOODSTONE_BOOTS, "Bloodstone");
+		add(ModItems.TENUMBRUM_INGOT, "Tenumbrum Ingot");
+		add(ModItems.RAW_TENUMBRUM, "Raw Tenumbrum");
+		add(ModBlocks.RAW_TENUMBRUM_BLOCK, "Block of Raw Tenumbrum");
+		addMaterialSet("tenumbrum", "Tenumbrum");
 
-        add(ModBlocks.CUBIC_ZIRCONIA_BLOCK, "Block of Cubic Zirconia");
-        add(ModBlocks.RAW_CUBIC_ZIRCONIA_BLOCK, "Block of Raw Cubic Zirconia");
-        add(ModBlocks.TIN_BLOCK, "Block of Tin");
-        add(ModBlocks.BRONZE_BLOCK, "Block of Bronze");
-        add(ModBlocks.RUBIDIUM_BLOCK, "Block of Rubidium");
-        add(ModBlocks.STARSHARD_BLOCK, "Block of Starshard");
-        add(ModBlocks.BLOODSTONE_BLOCK, "Block of Bloodstone");
+		add(ModBlocks.RAW_CUBIC_ZIRCONIA_BLOCK, "Block of Raw Cubic Zirconia");
+	}
 
-        add(ModBlocks.CUBIC_ZIRCONIA_ORE, "Cubic Zirconia Ore");
-        add(ModBlocks.DEEPSLATE_CUBIC_ZIRCONIA_ORE, "Deepslate Cubic Zirconia Ore");
-        add(ModBlocks.TIN_ORE, "Tin Ore");
-        add(ModBlocks.DEEPSLATE_TIN_ORE, "Deepslate Tin Ore");
-        add(ModBlocks.BLOODSTONE_ORE, "Bloodstone Ore");
-        add(ModBlocks.DEEPSLATE_BLOODSTONE_ORE, "Deepslate Bloodstone Ore");
-        add(ModBlocks.NETHER_RUBIDIUM_ORE, "Nether Rubidium Ore");
-        add(ModBlocks.END_STARSHARD_ORE, "End Starshard Ore");
+	protected void add(DeferredItem<? extends Item> key, String name) {
+		add(key.get(), name);
+	}
 
-        addTrimMaterial(ModTrimMaterials.CUBIC_ZIRCONIA, "Cubic Zirconia");
-        addTrimMaterial(ModTrimMaterials.TIN, "Tin");
-        addTrimMaterial(ModTrimMaterials.BRONZE, "Bronze");
-        addTrimMaterial(ModTrimMaterials.RUBIDIUM, "Rubidium");
-        addTrimMaterial(ModTrimMaterials.STARSHARD, "Starshard");
-        addTrimMaterial(ModTrimMaterials.BLOODSTONE, "Bloodstone");
+	protected void add(DeferredBlock<? extends Block> key, String name) {
+		add(key.get(), name);
+	}
 
-    }
-    
-    protected void add(DeferredItem<? extends Item> key, String name) {
-        add(key.get(), name);
-    }
+	protected void addToolSet(DeferredItem<? extends Item> sword, DeferredItem<? extends Item> axe, DeferredItem<? extends Item> pickaxe, DeferredItem<? extends Item> shovel, DeferredItem<? extends Item> hoe, DeferredItem<? extends Item> helmet, DeferredItem<? extends Item> chestplate, DeferredItem<? extends Item> leggings, DeferredItem<? extends Item> boots, String groupName) {
+		addToolSet(sword.get(), axe.get(), pickaxe.get(), shovel.get(), hoe.get(), helmet.get(), chestplate.get(), leggings.get(), boots.get(), groupName);
+	}
 
-    protected void add(DeferredBlock<? extends Block> key, String name) {
-        add(key.get(), name);
-    }
+	protected void addTrimMaterial(ResourceKey<TrimMaterial> key, String name) {
+		add("trim_material." + MoreMetalsMod.MOD_ID + "." + key.location().getPath(), name);
+	}
 
-    protected void addTrimMaterial(ResourceKey<TrimMaterial> key, String name) {
-        add("trim_material." + MoreMetalsMod.MOD_ID + "." + key.location().getPath(), name);
-    }
+	protected void addToolSet(Item sword, Item axe, Item pickaxe, Item shovel, Item hoe, Item helmet, Item chestplate, Item leggings, Item boots, String groupName) {
+		System.out.println("Adding tool set");
+		add(sword, groupName + " Sword");
+		add(axe, groupName + " Axe");
+		add(pickaxe, groupName + " Pickaxe");
+		add(shovel, groupName + " Shovel");
+		add(hoe, groupName + " Hoe");
+		add(helmet, groupName + " Helmet");
+		add(chestplate, groupName + " Chestplate");
+		add(leggings, groupName + " Leggings");
+		add(boots, groupName + " Boots");
+	}
 
-    protected void addToolSet(DeferredItem<? extends Item> sword, DeferredItem<? extends Item> axe, DeferredItem<? extends Item> pickaxe, DeferredItem<? extends Item> shovel, DeferredItem<? extends Item> hoe, DeferredItem<? extends Item> helmet, DeferredItem<? extends Item> chestplate, DeferredItem<? extends Item> leggings, DeferredItem<? extends Item> boots, String groupName) {
-        add(sword, groupName + " Sword");
-        add(axe, groupName + " Axe");
-        add(pickaxe, groupName + " Pickaxe");
-        add(shovel, groupName + " Shovel");
-        add(hoe, groupName + " Hoe");
-        add(helmet, groupName + " Helmet");
-        add(chestplate, groupName + " Chestplate");
-        add(leggings, groupName + " Leggings");
-        add(boots, groupName + " Boots");
-    }
+	protected void addToolSet(String group, String groupName) {
+		System.out.println(ModUtil.getItemFromKey(group + "_boots") + " lol");
+		addToolSet(ModUtil.getItemFromKey(group + "_sword"), ModUtil.getItemFromKey(group + "_axe"), ModUtil.getItemFromKey(group + "_pickaxe"), ModUtil.getItemFromKey(group + "_shovel"), ModUtil.getItemFromKey(group + "_hoe"), ModUtil.getItemFromKey(group + "_helmet"), ModUtil.getItemFromKey(group + "_chestplate"), ModUtil.getItemFromKey(group + "_leggings"), ModUtil.getItemFromKey(group + "_boots"), groupName);
+	}
+
+	protected void addMaterialSet(String group, String groupName) {
+		addToolSet(group, groupName);
+		add(BuiltInRegistries.BLOCK.get(ModUtil.createBlockResourceKey(group + "_block")).get().value(), "Block of " + groupName);
+		addOptionalOre(group, groupName);
+		addOptionalDeepslateOre(group, groupName);
+		addOptionalNetherOre(group, groupName);
+		addOptionalEndOre(group, groupName);
+		addTrimMaterial(ResourceKey.create(Registries.TRIM_MATERIAL, ResourceLocation.fromNamespaceAndPath(MoreMetalsMod.MOD_ID, group)), groupName);
+	}
+
+	protected void addOptionalOre(String group, String groupName) {
+		if (BuiltInRegistries.BLOCK.get(ModUtil.createBlockResourceKey(group + "_ore")).isPresent()) {
+			add(ModUtil.getBlockFromKey(group + "_ore"), groupName + " Ore");
+		}
+	}
+
+	protected void addOptionalDeepslateOre(String group, String groupName) {
+		if (BuiltInRegistries.BLOCK.get(ModUtil.createBlockResourceKey("deepslate_" + group + "_ore")).isPresent()) {
+			add(ModUtil.getBlockFromKey("deepslate_" + group + "_ore"), "Deepslate " + groupName + " Ore");
+		}
+	}
+
+	protected void addOptionalNetherOre(String group, String groupName) {
+		if (BuiltInRegistries.BLOCK.get(ModUtil.createBlockResourceKey("nether_" + group + "_ore")).isPresent()) {
+			add(ModUtil.getBlockFromKey("nether_" + group + "_ore"), "Nether " + groupName + " Ore");
+		}
+	}
+
+	protected void addOptionalEndOre(String group, String groupName) {
+		if (BuiltInRegistries.BLOCK.get(ModUtil.createBlockResourceKey("end_" + group + "_ore")).isPresent()) {
+			add(ModUtil.getBlockFromKey("end_" + group + "_ore"), "End " + groupName + " Ore");
+		}
+	}
 }

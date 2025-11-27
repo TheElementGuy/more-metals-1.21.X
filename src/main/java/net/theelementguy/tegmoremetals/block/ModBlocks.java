@@ -55,6 +55,14 @@ public class ModBlocks {
 
     public static final DeferredBlock<Block> DEEPSLATE_BLOODSTONE_ORE = registerBlockWithItem("deepslate_bloodstone_ore", () -> new Block(BlockBehaviour.Properties.of().destroyTime(4.5f).explosionResistance(3f).mapColor(MapColor.DEEPSLATE).sound(SoundType.DEEPSLATE).requiresCorrectToolForDrops().setId(ModUtil.createBlockResourceKey("deepslate_bloodstone_ore"))), null);
 
+	public static final DeferredBlock<Block> TENUMBRUM_BLOCK = registerBlockWithItem("tenumbrum_block", () -> new Block(BlockBehaviour.Properties.of().destroyTime(5f).explosionResistance(6f).mapColor(MapColor.TERRACOTTA_PURPLE).sound(SoundType.METAL).requiresCorrectToolForDrops().setId(ModUtil.createBlockResourceKey("tenumbrum_block"))), null);
+
+	public static final DeferredBlock<Block> RAW_TENUMBRUM_BLOCK = registerBlockWithItem("raw_tenumbrum_block", () -> new Block(BlockBehaviour.Properties.of().destroyTime(3f).explosionResistance(6f).mapColor(MapColor.TERRACOTTA_PURPLE).sound(SoundType.METAL).requiresCorrectToolForDrops().setId(ModUtil.createBlockResourceKey("raw_tenumbrum_block"))), null);
+
+	public static final DeferredBlock<Block> TENUMBRUM_ORE = registerOre("tenumbrum_ore");
+
+	public static final DeferredBlock<Block> DEEPSLATE_TENUMBRUM_ORE = registerDeepslateOre("deepslate_tenumbrum_ore");
+
     public static <T extends Block> DeferredBlock<T> registerBlockWithItem(String name, Supplier<T> block, @Nullable Item.Properties properties) {
         if(properties ==  null) {
             properties = new Item.Properties().setId(ModUtil.createItemResourceKey(name));
@@ -63,6 +71,14 @@ public class ModBlocks {
         ModItems.ITEMS.registerSimpleBlockItem(name, toReturn, properties);
         return toReturn;
     }
+
+	public static DeferredBlock<Block> registerOre(String name) {
+		return registerBlockWithItem(name, () -> new Block(BlockBehaviour.Properties.of().destroyTime(3f).explosionResistance(3f).mapColor(MapColor.STONE).sound(SoundType.STONE).setId(ModUtil.createBlockResourceKey(name))), null);
+	}
+
+	public static DeferredBlock<Block> registerDeepslateOre(String name) {
+		return registerBlockWithItem(name, () -> new Block(BlockBehaviour.Properties.of().destroyTime(4.5f).explosionResistance(3f).mapColor(MapColor.DEEPSLATE).sound(SoundType.DEEPSLATE).setId(ModUtil.createBlockResourceKey(name))), null);
+	}
 
     public static void register(IEventBus bus) {
         BLOCKS.register(bus);

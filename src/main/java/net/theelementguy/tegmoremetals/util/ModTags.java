@@ -35,6 +35,10 @@ public class ModTags {
 
         public static final TagKey<Block> INCORRECT_FOR_BLOODSTONE_TOOL = createTag("incorrect_for_bloodstone_tool");
 
+		public static final TagKey<Block> NEEDS_TENUMBRUM_TOOL = createTag("needs_tenumbrum");
+
+		public static final TagKey<Block> INCORRECT_FOR_TENUMBRUM_TOOL = createTag("incorrect_for_tenumbrum_tool");
+
         private static TagKey<Block> createTag(String name) {
             return BlockTags.create(ResourceLocation.fromNamespaceAndPath(MoreMetalsMod.MOD_ID, name));
         }
@@ -49,6 +53,8 @@ public class ModTags {
         public static final TagKey<Item> BRONZE_REPAIRABLES = createTag("bronze_repairables");
 
         public static final TagKey<Item> BLOODSTONE_REPAIRABLES = createTag("bloodstone_repairables");
+
+		public static final TagKey<Item> TENUMBRUM_REPAIRABLES = createTag("tenumbrum_repairables");
 
         private static TagKey<Item> createTag(String name) {
             return ItemTags.create(ResourceLocation.fromNamespaceAndPath(MoreMetalsMod.MOD_ID, name));

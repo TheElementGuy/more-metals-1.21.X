@@ -131,8 +131,6 @@ public class ModRecipeProvider extends RecipeProvider {
 
         allEquipmentRecipes(ModItems.BRONZE_SWORD.get(), ModItems.BRONZE_AXE.get(), ModItems.BRONZE_PICKAXE.get(), ModItems.BRONZE_SHOVEL.get(), ModItems.BRONZE_HOE.get(), ModItems.BRONZE_HELMET.get(), ModItems.BRONZE_CHESTPLATE.get(), ModItems.BRONZE_LEGGINGS.get(), ModItems.BRONZE_BOOTS.get(), ModItems.BRONZE_INGOT.get(), "has_b", this.output);
 
-        //this.shapeless(RecipeCategory.MISC, ModItems.CELESTIAL_BRONZE_INGOT).requires(Items.COPPER_INGOT, 4).requires(ModItems.TIN_SCRAPS).requires(Items.NETHER_STAR).unlockedBy("has_ns", has(Items.NETHER_STAR)).save(this.output, ResourceKey.create(Registries.RECIPE, ResourceLocation.fromNamespaceAndPath(MoreMetalsMod.MOD_ID, "celestial_bronze_forging")));
-
         allEquipmentRecipes(ModItems.BLOODSTONE_SWORD.get(), ModItems.BLOODSTONE_AXE.get(), ModItems.BLOODSTONE_PICKAXE.get(), ModItems.BLOODSTONE_SHOVEL.get(), ModItems.BLOODSTONE_HOE.get(), ModItems.BLOODSTONE_HELMET.get(), ModItems.BLOODSTONE_CHESTPLATE.get(), ModItems.BLOODSTONE_LEGGINGS.get(), ModItems.BLOODSTONE_BOOTS.get(), ModItems.BLOODSTONE.get(), "has_bl", this.output);
 
         this.shapeless(RecipeCategory.MISC, ModItems.BRONZE_INGOT).requires(Items.COPPER_INGOT, 4).requires(ModItems.TIN_SCRAPS).unlockedBy("has_c", has(Items.COPPER_INGOT)).save(this.output, ModUtil.createRecipeResourceKey("bronze_forging"));
@@ -148,6 +146,8 @@ public class ModRecipeProvider extends RecipeProvider {
         allOreSmelting(ModItems.STARSHARD.get(), STARSHARD_SMELTABLES, 1.5f, "s", this.output);
 
         allOreSmelting(ModItems.BLOODSTONE.get(), BLOODSTONE_SMELTABLES, 0.9f, "bl", this.output);
+
+		allEquipmentRecipes("tenumbrum", 1.0f, output, AutoGenTypes.IRON_TYPE);
 
     }
 
@@ -226,4 +226,18 @@ public class ModRecipeProvider extends RecipeProvider {
         leggingsRecipe(leggings, material, advancementNames, output);
         bootsRecipe(boots, material, advancementNames, output);
     }
+
+	//Must add NI, NCZ, ND, ECZ, ED, EI
+	protected void allEquipmentRecipes(String name, float semltExperience, RecipeOutput output, AutoGenTypes genTypes) {
+		if (genTypes == AutoGenTypes.IRON_TYPE) {
+			allEquipmentRecipes(ModUtil.getItemFromKey(name + "_sword"), ModUtil.getItemFromKey(name + "_axe"), ModUtil.getItemFromKey(name + "_pickaxe"), ModUtil.getItemFromKey(name + "_shovel"), ModUtil.getItemFromKey(name + "_hoe"), ModUtil.getItemFromKey(name + "_helmet"), ModUtil.getItemFromKey(name + "_chestplate"), ModUtil.getItemFromKey(name + "_leggings"), ModUtil.getItemFromKey(name + "_boots"), ModUtil.getItemFromKey(name + "_ingot"), "has_" + name, output);
+			allOreSmelting(ModUtil.getItemFromKey(name + "_ingot"), List.of(ModUtil.getBlockFromKey(name + "_ore"), ModUtil.getBlockFromKey("deepslate_" + name + "_ore"), ModUtil.getItemFromKey("raw_" + name)), semltExperience, name, output);
+		} else if (genTypes == AutoGenTypes.DIAMOND_TYPE) {
+			allEquipmentRecipes(ModUtil.getItemFromKey(name + "_sword"), ModUtil.getItemFromKey(name + "_axe"), ModUtil.getItemFromKey(name + "_pickaxe"), ModUtil.getItemFromKey(name + "_shovel"), ModUtil.getItemFromKey(name + "_hoe"), ModUtil.getItemFromKey(name + "_helmet"), ModUtil.getItemFromKey(name + "_chestplate"), ModUtil.getItemFromKey(name + "_leggings"), ModUtil.getItemFromKey(name + "_boots"), ModUtil.getItemFromKey(name), "has_" + name, output);
+			allOreSmelting(ModUtil.getItemFromKey(name), List.of(ModUtil.getBlockFromKey(name + "_ore"), ModUtil.getBlockFromKey("deepslate_" + name + "_ore")), semltExperience, name, output);
+		} else if (genTypes == AutoGenTypes.CZ_TYPE) {
+			allEquipmentRecipes(ModUtil.getItemFromKey(name + "_sword"), ModUtil.getItemFromKey(name + "_axe"), ModUtil.getItemFromKey(name + "_pickaxe"), ModUtil.getItemFromKey(name + "_shovel"), ModUtil.getItemFromKey(name + "_hoe"), ModUtil.getItemFromKey(name + "_helmet"), ModUtil.getItemFromKey(name + "_chestplate"), ModUtil.getItemFromKey(name + "_leggings"), ModUtil.getItemFromKey(name + "_boots"), ModUtil.getItemFromKey(name), "has_" + name, output);
+			allOreSmelting(ModUtil.getItemFromKey(name), List.of(ModUtil.getBlockFromKey(name + "_ore"), ModUtil.getBlockFromKey("deepslate_" + name + "_ore"), ModUtil.getItemFromKey("raw_" + name)), semltExperience, name, output);
+		}
+	}
 }

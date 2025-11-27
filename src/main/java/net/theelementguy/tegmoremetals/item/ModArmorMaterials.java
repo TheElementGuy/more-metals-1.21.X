@@ -46,4 +46,11 @@ public class ModArmorMaterials {
         attribute.put(ArmorType.BOOTS, 2);
         attribute.put(ArmorType.BODY, 3);
     }), 21, SoundEvents.ARMOR_EQUIP_GENERIC, 0.0F, 0.0F, ModTags.Items.BRONZE_REPAIRABLES, ModEquipmentAssets.BLOODSTONE);
+	public static final ArmorMaterial TENUMBRUM = new ArmorMaterial(34, Util.make(new EnumMap<ArmorType, Integer>(ArmorType.class), (attribute) -> {
+		attribute.put(ArmorType.HELMET, 3);
+		attribute.put(ArmorType.CHESTPLATE, 8);
+		attribute.put(ArmorType.LEGGINGS, 6);
+		attribute.put(ArmorType.BOOTS, 3);
+		attribute.put(ArmorType.BODY, 11);
+	}), 16, SoundEvents.ARMOR_EQUIP_IRON, 2.0f, 0f, ModTags.Items.TENUMBRUM_REPAIRABLES, ModEquipmentAssets.TENUMBRUM);
 }

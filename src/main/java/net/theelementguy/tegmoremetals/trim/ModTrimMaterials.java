@@ -29,6 +29,8 @@ public class ModTrimMaterials {
 
     public static final ResourceKey<TrimMaterial> BLOODSTONE = registerKey("bloodstone");
 
+	public static final ResourceKey<TrimMaterial> TENUMBRUM = registerKey("tenumbrum");
+
     public static void bootstrap(BootstrapContext<TrimMaterial> context) {
         register(context, CUBIC_ZIRCONIA, Style.EMPTY.withColor(TextColor.parseColor("#ebcacb").getOrThrow()), ModItems.CUBIC_ZIRCONIA.get());
 
@@ -41,6 +43,8 @@ public class ModTrimMaterials {
         register(context, RUBIDIUM, Style.EMPTY.withColor(TextColor.parseColor("#fa89a2").getOrThrow()), ModItems.RUBIDIUM.get());
 
         register(context, BLOODSTONE, Style.EMPTY.withColor(TextColor.parseColor("#590a0a").getOrThrow()), ModItems.BLOODSTONE.get());
+
+		register(context, TENUMBRUM, Style.EMPTY.withColor(TextColor.parseColor("#1f1029").getOrThrow()), ModItems.TENUMBRUM_INGOT.get());
     }
 
     public static void register(BootstrapContext<TrimMaterial> context, ResourceKey<TrimMaterial> key, Style style, Item iem) {

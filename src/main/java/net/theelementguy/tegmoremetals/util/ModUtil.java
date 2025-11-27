@@ -1,5 +1,6 @@
 package net.theelementguy.tegmoremetals.util;
 
+import net.minecraft.core.Registry;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.ResourceKey;
@@ -9,6 +10,7 @@ import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.crafting.Recipe;
 import net.minecraft.world.item.equipment.EquipmentAsset;
+import net.minecraft.world.item.equipment.EquipmentAssets;
 import net.minecraft.world.level.block.Block;
 import net.neoforged.neoforge.event.BuildCreativeModeTabContentsEvent;
 import net.neoforged.neoforge.registries.DeferredBlock;
@@ -61,27 +63,6 @@ public class ModUtil {
 
     public static void inventoryAddAfter(DeferredBlock<? extends Block> item, DeferredBlock<? extends Block> referenceItem, BuildCreativeModeTabContentsEvent event) {
         event.insertAfter(new ItemStack(referenceItem, 1), new ItemStack(item, 1), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
-    }
-
-    public static Item getItemFromKey(String key) {
-
-        ArrayList<DeferredHolder<Item, ? extends Item>> matches = new ArrayList<>();
-
-        //System.out.println(ModItems.ITEMS.getEntries().toString());
-
-        ModItems.ITEMS.getEntries().forEach((item) -> {
-            //System.out.println("Hey: " + item.getKey().location().getPath());
-            //System.out.println("Is dating: " + key);
-            //System.out.println("Match? " + item.getKey().location().getPath().equals(key));
-            if (item.getKey().location().getPath().equals(key)) {
-                matches.add(item);
-                //System.out.println("Added: " + item);
-            }
-        });
-
-        System.out.println(matches.getFirst().get());
-
-        return matches.getFirst().get();
     }
 
     public static Block getBlockFromKey(String key) {
@@ -138,5 +119,37 @@ public class ModUtil {
         return toReturn;
 
     }
+
+	public static void setAddAfter(String set, String begin, BuildCreativeModeTabContentsEvent event) {
+		ModUtil.inventoryAddAfter(ModUtil.getItemFromKey(set + "_sword"), ModUtil.getItemFromKey(begin + "_sword"), event);
+		ModUtil.inventoryAddAfter(ModUtil.getItemFromKey(set + "_axe"), ModUtil.getItemFromKey(begin + "_axe"), event);
+		ModUtil.inventoryAddAfter(ModUtil.getItemFromKey(set + "_helmet"), ModUtil.getItemFromKey(begin + "_boots"), event);
+		ModUtil.inventoryAddAfter(ModUtil.getItemFromKey(set + "_chestplate"), ModUtil.getItemFromKey(set + "_helmet"), event);
+		ModUtil.inventoryAddAfter(ModUtil.getItemFromKey(set + "_leggings"), ModUtil.getItemFromKey(set + "_chestplate"), event);
+		ModUtil.inventoryAddAfter(ModUtil.getItemFromKey(set + "_boots"), ModUtil.getItemFromKey(set + "_leggings"), event);
+	}
+
+	public static void toolsAddAfter(String set, String begin, BuildCreativeModeTabContentsEvent event) {
+		ModUtil.inventoryAddAfter(ModUtil.getItemFromKey(set + "_axe"), ModUtil.getItemFromKey(begin + "_hoe"), event);
+		ModUtil.inventoryAddAfter(ModUtil.getItemFromKey(set + "_pickaxe"), ModUtil.getItemFromKey(set + "_axe"), event);
+		ModUtil.inventoryAddAfter(ModUtil.getItemFromKey(set + "_shovel"), ModUtil.getItemFromKey(set + "_pickaxe"), event);
+		ModUtil.inventoryAddAfter(ModUtil.getItemFromKey(set + "_hoe"), ModUtil.getItemFromKey(set + "_shovel"), event);
+	}
+
+	public static Item getItemFromKey(String key) {
+		if (BuiltInRegistries.ITEM.get(ModUtil.createItemResourceKey(key)).isEmpty()) {
+			return getItemFromKeyMinecraft(key);
+		}
+		return BuiltInRegistries.ITEM.get(ModUtil.createItemResourceKey(key)).get().value();
+	}
+
+	public static Item getItemFromKeyMinecraft(String key) {
+		return BuiltInRegistries.ITEM.get(ResourceKey.create(Registries.ITEM, ResourceLocation.withDefaultNamespace(key))).get().value();
+	}
+
+	public static EquipmentAsset getMaterialAssetGroupFromKey(String key) {
+		Registry<EquipmentAsset> registry = (Registry<EquipmentAsset>) BuiltInRegistries.REGISTRY.get(EquipmentAssets.ROOT_ID.registry()).get().value();
+		return registry.get(ModUtil.createEquipmentAssetResourceKey(key)).get().value();
+	}
 
 }
