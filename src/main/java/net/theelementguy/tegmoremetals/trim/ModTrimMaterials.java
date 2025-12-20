@@ -1,20 +1,20 @@
 package net.theelementguy.tegmoremetals.trim;
 
-import net.minecraft.Util;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.data.worldgen.BootstrapContext;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.Style;
 import net.minecraft.network.chat.TextColor;
 import net.minecraft.resources.ResourceKey;
-import net.minecraft.resources.ResourceLocation;
+import net.minecraft.resources.Identifier;
+import net.minecraft.util.Util;
 import net.minecraft.world.item.equipment.trim.MaterialAssetGroup;
 import net.minecraft.world.item.equipment.trim.TrimMaterial;
 import net.theelementguy.tegmoremetals.MoreMetalsMod;
 
 public class ModTrimMaterials {
 
-    public static final ResourceKey<TrimMaterial> CUBIC_ZIRCONIA = ResourceKey.create(Registries.TRIM_MATERIAL, ResourceLocation.fromNamespaceAndPath(MoreMetalsMod.MOD_ID, "cubic_zirconia"));
+    public static final ResourceKey<TrimMaterial> CUBIC_ZIRCONIA = ResourceKey.create(Registries.TRIM_MATERIAL, Identifier.fromNamespaceAndPath(MoreMetalsMod.MOD_ID, "cubic_zirconia"));
 
     public static final ResourceKey<TrimMaterial> STARSHARD = registerKey("starshard");
 
@@ -47,21 +47,21 @@ public class ModTrimMaterials {
     }
 
     public static void register(BootstrapContext<TrimMaterial> context, ResourceKey<TrimMaterial> key, Style style) {
-        register(context, key, key.location().getPath(), style);
+        register(context, key, key.identifier().getPath(), style);
     }
 
     public static void register(BootstrapContext<TrimMaterial> context, ResourceKey<TrimMaterial> resourceKey, String name, Style style) {
 
-        TrimMaterial trimMaterial = new TrimMaterial(MaterialAssetGroup.create(name), Component.translatable(Util.makeDescriptionId("trim_material", resourceKey.location())).withStyle(style));
+        TrimMaterial trimMaterial = new TrimMaterial(MaterialAssetGroup.create(name), Component.translatable(Util.makeDescriptionId("trim_material", resourceKey.identifier())).withStyle(style));
 
-        System.out.println(resourceKey.location().getPath());
+        System.out.println(resourceKey.identifier().getPath());
 
         context.register(resourceKey, trimMaterial);
 
     }
 
     public static ResourceKey<TrimMaterial> registerKey(String name) {
-        return ResourceKey.create(Registries.TRIM_MATERIAL, ResourceLocation.fromNamespaceAndPath(MoreMetalsMod.MOD_ID, name));
+        return ResourceKey.create(Registries.TRIM_MATERIAL, Identifier.fromNamespaceAndPath(MoreMetalsMod.MOD_ID, name));
     }
 
 }

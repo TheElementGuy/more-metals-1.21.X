@@ -2,7 +2,7 @@ package net.theelementguy.tegmoremetals.item;
 
 import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.ResourceKey;
-import net.minecraft.resources.ResourceLocation;
+import net.minecraft.resources.Identifier;
 import net.minecraft.world.item.*;
 import net.minecraft.world.item.equipment.ArmorMaterial;
 import net.minecraft.world.item.equipment.ArmorType;
@@ -13,72 +13,79 @@ import net.neoforged.neoforge.registries.DeferredRegister;
 import net.theelementguy.tegmoremetals.MoreMetalsMod;
 import net.theelementguy.tegmoremetals.trim.ModTrimMaterials;
 import net.theelementguy.tegmoremetals.util.ModUtil;
+import org.jetbrains.annotations.NotNull;
 
 public class ModItems {
 
     public static final DeferredRegister.Items ITEMS = DeferredRegister.createItems(MoreMetalsMod.MOD_ID);
 
-    public static final DeferredItem<Item> CUBIC_ZIRCONIA = ITEMS.registerSimpleItem("cubic_zirconia", new Item.Properties().fireResistant().trimMaterial(ModTrimMaterials.CUBIC_ZIRCONIA));
+    public static final DeferredItem<Item> CUBIC_ZIRCONIA = ITEMS.registerSimpleItem("cubic_zirconia", () -> new Item.Properties().fireResistant().trimMaterial(ModTrimMaterials.CUBIC_ZIRCONIA));
 
-    public static final DeferredItem<Item> RAW_CUBIC_ZIRCONIA = ITEMS.registerSimpleItem("raw_cubic_zirconia", new Item.Properties());
+    public static final DeferredItem<Item> RAW_CUBIC_ZIRCONIA = ITEMS.registerSimpleItem("raw_cubic_zirconia", Item.Properties::new);
 
-    public static final DeferredItem<Item> CUBIC_ZIRCONIA_SWORD = ITEMS.register("cubic_zirconia_sword", () -> new Item((new Item.Properties()).fireResistant().sword(ModToolMaterials.CUBIC_ZIRCONIA, 3.0F, -2.4F).setId(ResourceKey.create(Registries.ITEM, ResourceLocation.fromNamespaceAndPath(MoreMetalsMod.MOD_ID, "cubic_zirconia_sword")))));
+    public static final DeferredItem<Item> CUBIC_ZIRCONIA_SWORD = ITEMS.register("cubic_zirconia_sword", () -> new Item((new Item.Properties()).fireResistant().sword(ModToolMaterials.CUBIC_ZIRCONIA, 3.0F, -2.4F).setId(ResourceKey.create(Registries.ITEM, Identifier.fromNamespaceAndPath(MoreMetalsMod.MOD_ID, "cubic_zirconia_sword")))));
 
-    public static final DeferredItem<AxeItem> CUBIC_ZIRCONIA_AXE = ITEMS.register("cubic_zirconia_axe", () -> new AxeItem(ModToolMaterials.CUBIC_ZIRCONIA, 6.0F, -3.1F, (new Item.Properties()).fireResistant().setId(ResourceKey.create(Registries.ITEM, ResourceLocation.fromNamespaceAndPath(MoreMetalsMod.MOD_ID, "cubic_zirconia_axe")))));
+    public static final DeferredItem<Item> CUBIC_ZIRCONIA_AXE = ITEMS.register("cubic_zirconia_axe", () -> new AxeItem(ModToolMaterials.CUBIC_ZIRCONIA, 6.0F, -3.1F, (new Item.Properties()).fireResistant().setId(ResourceKey.create(Registries.ITEM, Identifier.fromNamespaceAndPath(MoreMetalsMod.MOD_ID, "cubic_zirconia_axe")))));
 
-    public static final DeferredItem<Item> CUBIC_ZIRCONIA_PICKAXE = ITEMS.register("cubic_zirconia_pickaxe", () -> new Item((new Item.Properties()).fireResistant().pickaxe(ModToolMaterials.CUBIC_ZIRCONIA, 1.0F, -2.8F).setId(ResourceKey.create(Registries.ITEM, ResourceLocation.fromNamespaceAndPath(MoreMetalsMod.MOD_ID, "cubic_zirconia_pickaxe")))));
+    public static final DeferredItem<Item> CUBIC_ZIRCONIA_PICKAXE = ITEMS.register("cubic_zirconia_pickaxe", () -> new Item((new Item.Properties()).fireResistant().pickaxe(ModToolMaterials.CUBIC_ZIRCONIA, 1.0F, -2.8F).setId(ResourceKey.create(Registries.ITEM, Identifier.fromNamespaceAndPath(MoreMetalsMod.MOD_ID, "cubic_zirconia_pickaxe")))));
 
-    public static final DeferredItem<ShovelItem> CUBIC_ZIRCONIA_SHOVEL = ITEMS.register("cubic_zirconia_shovel", () -> new ShovelItem(ModToolMaterials.CUBIC_ZIRCONIA, 1.5F, -3.0F, (new Item.Properties()).fireResistant().setId(ResourceKey.create(Registries.ITEM, ResourceLocation.fromNamespaceAndPath(MoreMetalsMod.MOD_ID, "cubic_zirconia_shovel")))));
+    public static final DeferredItem<Item> CUBIC_ZIRCONIA_SHOVEL = ITEMS.register("cubic_zirconia_shovel", () -> new ShovelItem(ModToolMaterials.CUBIC_ZIRCONIA, 1.5F, -3.0F, (new Item.Properties()).fireResistant().setId(ResourceKey.create(Registries.ITEM, Identifier.fromNamespaceAndPath(MoreMetalsMod.MOD_ID, "cubic_zirconia_shovel")))));
 
-    public static final DeferredItem<HoeItem> CUBIC_ZIRCONIA_HOE = ITEMS.register("cubic_zirconia_hoe", () -> new HoeItem(ModToolMaterials.CUBIC_ZIRCONIA, -2.0F, -1.0F, (new Item.Properties()).fireResistant().setId(ResourceKey.create(Registries.ITEM, ResourceLocation.fromNamespaceAndPath(MoreMetalsMod.MOD_ID, "cubic_zirconia_hoe")))));
+    public static final DeferredItem<Item> CUBIC_ZIRCONIA_HOE = ITEMS.register("cubic_zirconia_hoe", () -> new HoeItem(ModToolMaterials.CUBIC_ZIRCONIA, -2.0F, -1.0F, (new Item.Properties()).fireResistant().setId(ResourceKey.create(Registries.ITEM, Identifier.fromNamespaceAndPath(MoreMetalsMod.MOD_ID, "cubic_zirconia_hoe")))));
 
-    public static final DeferredItem<Item> CUBIC_ZIRCONIA_HELMET = ITEMS.register("cubic_zirconia_helmet", () -> new Item(new Item.Properties().fireResistant().humanoidArmor(ModArmorMaterials.CUBIC_ZIRCONIA, ArmorType.HELMET).setId(ResourceKey.create(Registries.ITEM, ResourceLocation.fromNamespaceAndPath(MoreMetalsMod.MOD_ID, "cubic_zirconia_helmet")))));
+	public static final DeferredItem<Item> CUBIC_ZIRCONIA_SPEAR = ITEMS.register("cubic_zirconia_spear", () -> new Item(new Item.Properties().fireResistant().spear(ModToolMaterials.CUBIC_ZIRCONIA, 0.95F, 0.95F, 0.6F, 2.5F, 8.0F, 6.75F, 5.1F, 11.25F, 4.6F).setId(ModUtil.createItemResourceKey("cubic_zirconia_spear"))));
 
-    public static final DeferredItem<Item> CUBIC_ZIRCONIA_CHESTPLATE = ITEMS.register("cubic_zirconia_chestplate", () -> new Item((new Item.Properties()).fireResistant().humanoidArmor(ModArmorMaterials.CUBIC_ZIRCONIA, ArmorType.CHESTPLATE).setId(ResourceKey.create(Registries.ITEM, ResourceLocation.fromNamespaceAndPath(MoreMetalsMod.MOD_ID, "cubic_zirconia_chestplate")))));
+    public static final DeferredItem<Item> CUBIC_ZIRCONIA_HELMET = ITEMS.register("cubic_zirconia_helmet", () -> new Item(new Item.Properties().fireResistant().humanoidArmor(ModArmorMaterials.CUBIC_ZIRCONIA, ArmorType.HELMET).setId(ResourceKey.create(Registries.ITEM, Identifier.fromNamespaceAndPath(MoreMetalsMod.MOD_ID, "cubic_zirconia_helmet")))));
 
-    public static final DeferredItem<Item> CUBIC_ZIRCONIA_LEGGINGS = ITEMS.register("cubic_zirconia_leggings", () -> new Item((new Item.Properties()).fireResistant().humanoidArmor(ModArmorMaterials.CUBIC_ZIRCONIA, ArmorType.LEGGINGS).setId(ResourceKey.create(Registries.ITEM, ResourceLocation.fromNamespaceAndPath(MoreMetalsMod.MOD_ID, "cubic_zirconia_leggings")))));
+    public static final DeferredItem<Item> CUBIC_ZIRCONIA_CHESTPLATE = ITEMS.register("cubic_zirconia_chestplate", () -> new Item((new Item.Properties()).fireResistant().humanoidArmor(ModArmorMaterials.CUBIC_ZIRCONIA, ArmorType.CHESTPLATE).setId(ResourceKey.create(Registries.ITEM, Identifier.fromNamespaceAndPath(MoreMetalsMod.MOD_ID, "cubic_zirconia_chestplate")))));
 
-    public static final DeferredItem<Item> CUBIC_ZIRCONIA_BOOTS = ITEMS.register("cubic_zirconia_boots", () -> new Item((new Item.Properties()).fireResistant().humanoidArmor(ModArmorMaterials.CUBIC_ZIRCONIA, ArmorType.BOOTS).setId(ResourceKey.create(Registries.ITEM, ResourceLocation.fromNamespaceAndPath(MoreMetalsMod.MOD_ID, "cubic_zirconia_boots")))));
+    public static final DeferredItem<Item> CUBIC_ZIRCONIA_LEGGINGS = ITEMS.register("cubic_zirconia_leggings", () -> new Item((new Item.Properties()).fireResistant().humanoidArmor(ModArmorMaterials.CUBIC_ZIRCONIA, ArmorType.LEGGINGS).setId(ResourceKey.create(Registries.ITEM, Identifier.fromNamespaceAndPath(MoreMetalsMod.MOD_ID, "cubic_zirconia_leggings")))));
 
-    public static final DeferredItem<Item> RUBIDIUM = ITEMS.register("rubidium", () -> new Item((new Item.Properties()).trimMaterial(ModTrimMaterials.RUBIDIUM).setId(ResourceKey.create(Registries.ITEM, ResourceLocation.fromNamespaceAndPath(MoreMetalsMod.MOD_ID, "rubidium")))));
+    public static final DeferredItem<Item> CUBIC_ZIRCONIA_BOOTS = ITEMS.register("cubic_zirconia_boots", () -> new Item((new Item.Properties()).fireResistant().humanoidArmor(ModArmorMaterials.CUBIC_ZIRCONIA, ArmorType.BOOTS).setId(ResourceKey.create(Registries.ITEM, Identifier.fromNamespaceAndPath(MoreMetalsMod.MOD_ID, "cubic_zirconia_boots")))));
 
-    public static final DeferredItem<Item> RUBIDIUM_SWORD = ITEMS.register("rubidium_sword", () -> new Item((new Item.Properties()).sword(ModToolMaterials.RUBIDIUM, 3.0F, -2.4F).setId(ResourceKey.create(Registries.ITEM, ResourceLocation.fromNamespaceAndPath(MoreMetalsMod.MOD_ID, "rubidium_sword")))));
+    public static final DeferredItem<Item> RUBIDIUM = ITEMS.register("rubidium", () -> new Item((new Item.Properties()).trimMaterial(ModTrimMaterials.RUBIDIUM).setId(ResourceKey.create(Registries.ITEM, Identifier.fromNamespaceAndPath(MoreMetalsMod.MOD_ID, "rubidium")))));
 
-    public static final DeferredItem<AxeItem> RUBIDIUM_AXE = ITEMS.register("rubidium_axe", () -> new AxeItem(ModToolMaterials.RUBIDIUM, 6.0F, -3.1F, (new Item.Properties()).setId(ResourceKey.create(Registries.ITEM, ResourceLocation.fromNamespaceAndPath(MoreMetalsMod.MOD_ID, "rubidium_axe")))));
+    public static final DeferredItem<Item> RUBIDIUM_SWORD = ITEMS.register("rubidium_sword", () -> new Item((new Item.Properties()).sword(ModToolMaterials.RUBIDIUM, 3.0F, -2.4F).setId(ResourceKey.create(Registries.ITEM, Identifier.fromNamespaceAndPath(MoreMetalsMod.MOD_ID, "rubidium_sword")))));
 
-    public static final DeferredItem<Item> RUBIDIUM_PICKAXE = ITEMS.register("rubidium_pickaxe", () -> new Item((new Item.Properties()).pickaxe(ModToolMaterials.RUBIDIUM, 1.0F, -2.8F).setId(ResourceKey.create(Registries.ITEM, ResourceLocation.fromNamespaceAndPath(MoreMetalsMod.MOD_ID, "rubidium_pickaxe")))));
+    public static final DeferredItem<AxeItem> RUBIDIUM_AXE = ITEMS.register("rubidium_axe", () -> new AxeItem(ModToolMaterials.RUBIDIUM, 6.0F, -3.1F, (new Item.Properties()).setId(ResourceKey.create(Registries.ITEM, Identifier.fromNamespaceAndPath(MoreMetalsMod.MOD_ID, "rubidium_axe")))));
 
-    public static final DeferredItem<ShovelItem> RUBIDIUM_SHOVEL = ITEMS.register("rubidium_shovel", () -> new ShovelItem(ModToolMaterials.RUBIDIUM, 1.5F, -3.0F, (new Item.Properties()).setId(ResourceKey.create(Registries.ITEM, ResourceLocation.fromNamespaceAndPath(MoreMetalsMod.MOD_ID, "rubidium_shovel")))));
+    public static final DeferredItem<Item> RUBIDIUM_PICKAXE = ITEMS.register("rubidium_pickaxe", () -> new Item((new Item.Properties()).pickaxe(ModToolMaterials.RUBIDIUM, 1.0F, -2.8F).setId(ResourceKey.create(Registries.ITEM, Identifier.fromNamespaceAndPath(MoreMetalsMod.MOD_ID, "rubidium_pickaxe")))));
 
-    public static final DeferredItem<HoeItem> RUBIDIUM_HOE = ITEMS.register("rubidium_hoe", () -> new HoeItem(ModToolMaterials.RUBIDIUM, -2.0F, -1.0F, (new Item.Properties()).setId(ResourceKey.create(Registries.ITEM, ResourceLocation.fromNamespaceAndPath(MoreMetalsMod.MOD_ID, "rubidium_hoe")))));
+    public static final DeferredItem<ShovelItem> RUBIDIUM_SHOVEL = ITEMS.register("rubidium_shovel", () -> new ShovelItem(ModToolMaterials.RUBIDIUM, 1.5F, -3.0F, (new Item.Properties()).setId(ResourceKey.create(Registries.ITEM, Identifier.fromNamespaceAndPath(MoreMetalsMod.MOD_ID, "rubidium_shovel")))));
 
-    public static final DeferredItem<Item> RUBIDIUM_HELMET = ITEMS.register("rubidium_helmet", () -> new Item((new Item.Properties()).humanoidArmor(ModArmorMaterials.RUBIDIUM, ArmorType.HELMET).setId(ResourceKey.create(Registries.ITEM, ResourceLocation.fromNamespaceAndPath(MoreMetalsMod.MOD_ID, "rubidium_helmet")))));
+    public static final DeferredItem<HoeItem> RUBIDIUM_HOE = ITEMS.register("rubidium_hoe", () -> new HoeItem(ModToolMaterials.RUBIDIUM, -2.0F, -1.0F, (new Item.Properties()).setId(ResourceKey.create(Registries.ITEM, Identifier.fromNamespaceAndPath(MoreMetalsMod.MOD_ID, "rubidium_hoe")))));
 
-    public static final DeferredItem<Item> RUBIDIUM_CHESTPLATE = ITEMS.register("rubidium_chestplate", () -> new Item((new Item.Properties()).humanoidArmor(ModArmorMaterials.RUBIDIUM, ArmorType.CHESTPLATE).setId(ResourceKey.create(Registries.ITEM, ResourceLocation.fromNamespaceAndPath(MoreMetalsMod.MOD_ID, "rubidium_chestplate")))));
+	public static final DeferredItem<Item> RUBIDIUM_SPEAR = ITEMS.register("rubidium_spear", () -> new Item(new Item.Properties().spear(ModToolMaterials.RUBIDIUM, 1.15F, 1.15F, 0.3F, 2.5F, 7.5F, 5.5F, 5.1F, 8.75F, 4.6F).setId(ModUtil.createItemResourceKey("rubidium_spear"))));
 
-    public static final DeferredItem<Item> RUBIDIUM_LEGGINGS = ITEMS.register("rubidium_leggings", () -> new Item((new Item.Properties()).humanoidArmor(ModArmorMaterials.RUBIDIUM, ArmorType.LEGGINGS).setId(ResourceKey.create(Registries.ITEM, ResourceLocation.fromNamespaceAndPath(MoreMetalsMod.MOD_ID, "rubidium_leggings")))));
+    public static final DeferredItem<Item> RUBIDIUM_HELMET = ITEMS.register("rubidium_helmet", () -> new Item((new Item.Properties()).humanoidArmor(ModArmorMaterials.RUBIDIUM, ArmorType.HELMET).setId(ResourceKey.create(Registries.ITEM, Identifier.fromNamespaceAndPath(MoreMetalsMod.MOD_ID, "rubidium_helmet")))));
 
-    public static final DeferredItem<Item> RUBIDIUM_BOOTS = ITEMS.register("rubidium_boots", () -> new Item((new Item.Properties()).humanoidArmor(ModArmorMaterials.RUBIDIUM, ArmorType.BOOTS).setId(ResourceKey.create(Registries.ITEM, ResourceLocation.fromNamespaceAndPath(MoreMetalsMod.MOD_ID, "rubidium_boots")))));
+    public static final DeferredItem<Item> RUBIDIUM_CHESTPLATE = ITEMS.register("rubidium_chestplate", () -> new Item((new Item.Properties()).humanoidArmor(ModArmorMaterials.RUBIDIUM, ArmorType.CHESTPLATE).setId(ResourceKey.create(Registries.ITEM, Identifier.fromNamespaceAndPath(MoreMetalsMod.MOD_ID, "rubidium_chestplate")))));
 
-    public static final DeferredItem<Item> STARSHARD = ITEMS.register("starshard", () -> new Item((new Item.Properties()).rarity(Rarity.UNCOMMON).trimMaterial(ModTrimMaterials.STARSHARD).setId(ResourceKey.create(Registries.ITEM, ResourceLocation.fromNamespaceAndPath(MoreMetalsMod.MOD_ID, "starshard")))));
+    public static final DeferredItem<Item> RUBIDIUM_LEGGINGS = ITEMS.register("rubidium_leggings", () -> new Item((new Item.Properties()).humanoidArmor(ModArmorMaterials.RUBIDIUM, ArmorType.LEGGINGS).setId(ResourceKey.create(Registries.ITEM, Identifier.fromNamespaceAndPath(MoreMetalsMod.MOD_ID, "rubidium_leggings")))));
 
-    public static final DeferredItem<Item> STARSHARD_SWORD = ITEMS.register("starshard_sword", () -> new Item((new Item.Properties()).sword(ModToolMaterials.STARSHARD, 3.0F, -2.4F).setId(ResourceKey.create(Registries.ITEM, ResourceLocation.fromNamespaceAndPath(MoreMetalsMod.MOD_ID, "starshard_sword")))));
+    public static final DeferredItem<Item> RUBIDIUM_BOOTS = ITEMS.register("rubidium_boots", () -> new Item((new Item.Properties()).humanoidArmor(ModArmorMaterials.RUBIDIUM, ArmorType.BOOTS).setId(ResourceKey.create(Registries.ITEM, Identifier.fromNamespaceAndPath(MoreMetalsMod.MOD_ID, "rubidium_boots")))));
 
-    public static final DeferredItem<AxeItem> STARSHARD_AXE = ITEMS.register("starshard_axe", () -> new AxeItem(ModToolMaterials.STARSHARD, 6.0F, -3.1F, (new Item.Properties()).setId(ResourceKey.create(Registries.ITEM, ResourceLocation.fromNamespaceAndPath(MoreMetalsMod.MOD_ID, "starshard_axe")))));
+    public static final DeferredItem<Item> STARSHARD = ITEMS.register("starshard", () -> new Item((new Item.Properties()).rarity(Rarity.UNCOMMON).trimMaterial(ModTrimMaterials.STARSHARD).setId(ResourceKey.create(Registries.ITEM, Identifier.fromNamespaceAndPath(MoreMetalsMod.MOD_ID, "starshard")))));
 
-    public static final DeferredItem<Item> STARSHARD_PICKAXE = ITEMS.register("starshard_pickaxe", () -> new Item((new Item.Properties()).pickaxe(ModToolMaterials.STARSHARD, 1.0F, -2.8F).setId(ResourceKey.create(Registries.ITEM, ResourceLocation.fromNamespaceAndPath(MoreMetalsMod.MOD_ID, "starshard_pickaxe")))));
+    public static final DeferredItem<Item> STARSHARD_SWORD = ITEMS.register("starshard_sword", () -> new Item((new Item.Properties()).sword(ModToolMaterials.STARSHARD, 3.0F, -2.4F).setId(ResourceKey.create(Registries.ITEM, Identifier.fromNamespaceAndPath(MoreMetalsMod.MOD_ID, "starshard_sword")))));
 
-    public static final DeferredItem<ShovelItem> STARSHARD_SHOVEL = ITEMS.register("starshard_shovel", () -> new ShovelItem(ModToolMaterials.STARSHARD, 1.5F, -3.0F, (new Item.Properties()).setId(ResourceKey.create(Registries.ITEM, ResourceLocation.fromNamespaceAndPath(MoreMetalsMod.MOD_ID, "starshard_shovel")))));
+    public static final DeferredItem<AxeItem> STARSHARD_AXE = ITEMS.register("starshard_axe", () -> new AxeItem(ModToolMaterials.STARSHARD, 6.0F, -3.1F, (new Item.Properties()).setId(ResourceKey.create(Registries.ITEM, Identifier.fromNamespaceAndPath(MoreMetalsMod.MOD_ID, "starshard_axe")))));
 
-    public static final DeferredItem<HoeItem> STARSHARD_HOE = ITEMS.register("starshard_hoe", () -> new HoeItem(ModToolMaterials.STARSHARD, -2.0F, -1.0F, (new Item.Properties()).setId(ResourceKey.create(Registries.ITEM, ResourceLocation.fromNamespaceAndPath(MoreMetalsMod.MOD_ID, "starshard_hoe")))));
+    public static final DeferredItem<Item> STARSHARD_PICKAXE = ITEMS.register("starshard_pickaxe", () -> new Item((new Item.Properties()).pickaxe(ModToolMaterials.STARSHARD, 1.0F, -2.8F).setId(ResourceKey.create(Registries.ITEM, Identifier.fromNamespaceAndPath(MoreMetalsMod.MOD_ID, "starshard_pickaxe")))));
 
-    public static final DeferredItem<Item> STARSHARD_HELMET = ITEMS.register("starshard_helmet", () -> new Item((new Item.Properties()).humanoidArmor(ModArmorMaterials.STARSHARD, ArmorType.HELMET).setId(ResourceKey.create(Registries.ITEM, ResourceLocation.fromNamespaceAndPath(MoreMetalsMod.MOD_ID, "starshard_helmet")))));
+    public static final DeferredItem<ShovelItem> STARSHARD_SHOVEL = ITEMS.register("starshard_shovel", () -> new ShovelItem(ModToolMaterials.STARSHARD, 1.5F, -3.0F, (new Item.Properties()).setId(ResourceKey.create(Registries.ITEM, Identifier.fromNamespaceAndPath(MoreMetalsMod.MOD_ID, "starshard_shovel")))));
 
-    public static final DeferredItem<Item> STARSHARD_CHESTPLATE = ITEMS.register("starshard_chestplate", () -> new Item((new Item.Properties()).humanoidArmor(ModArmorMaterials.STARSHARD, ArmorType.CHESTPLATE).setId(ResourceKey.create(Registries.ITEM, ResourceLocation.fromNamespaceAndPath(MoreMetalsMod.MOD_ID, "starshard_chestplate")))));
+    public static final DeferredItem<HoeItem> STARSHARD_HOE = ITEMS.register("starshard_hoe", () -> new HoeItem(ModToolMaterials.STARSHARD, -2.0F, -1.0F, (new Item.Properties()).setId(ResourceKey.create(Registries.ITEM, Identifier.fromNamespaceAndPath(MoreMetalsMod.MOD_ID, "starshard_hoe")))));
 
-    public static final DeferredItem<Item> STARSHARD_LEGGINGS = ITEMS.register("starshard_leggings", () -> new Item((new Item.Properties()).humanoidArmor(ModArmorMaterials.STARSHARD, ArmorType.LEGGINGS).setId(ResourceKey.create(Registries.ITEM, ResourceLocation.fromNamespaceAndPath(MoreMetalsMod.MOD_ID, "starshard_leggings")))));
+	public static final DeferredItem<Item> STARSHARD_SPEAR = ITEMS.register("starshard_spear", () -> new Item(new Item.Properties().spear(ModToolMaterials.STARSHARD, 1.25F, 1.3F, 0.3F, 2.5F, 7.5F, 5.5F, 5.1F, 8.75F, 4.6F).setId(ModUtil.createItemResourceKey("starshard_spear"))));
 
-    public static final DeferredItem<Item> STARSHARD_BOOTS = ITEMS.register("starshard_boots", () -> new Item((new Item.Properties()).humanoidArmor(ModArmorMaterials.STARSHARD, ArmorType.BOOTS).setId(ResourceKey.create(Registries.ITEM, ResourceLocation.fromNamespaceAndPath(MoreMetalsMod.MOD_ID, "starshard_boots")))));
+    public static final DeferredItem<Item> STARSHARD_HELMET = ITEMS.register("starshard_helmet", () -> new Item((new Item.Properties()).humanoidArmor(ModArmorMaterials.STARSHARD, ArmorType.HELMET).setId(ResourceKey.create(Registries.ITEM, Identifier.fromNamespaceAndPath(MoreMetalsMod.MOD_ID, "starshard_helmet")))));
+
+    public static final DeferredItem<Item> STARSHARD_CHESTPLATE = ITEMS.register("starshard_chestplate", () -> new Item((new Item.Properties()).humanoidArmor(ModArmorMaterials.STARSHARD, ArmorType.CHESTPLATE).setId(ResourceKey.create(Registries.ITEM, Identifier.fromNamespaceAndPath(MoreMetalsMod.MOD_ID, "starshard_chestplate")))));
+
+    public static final DeferredItem<Item> STARSHARD_LEGGINGS = ITEMS.register("starshard_leggings", () -> new Item((new Item.Properties()).humanoidArmor(ModArmorMaterials.STARSHARD, ArmorType.LEGGINGS).setId(ResourceKey.create(Registries.ITEM, Identifier.fromNamespaceAndPath(MoreMetalsMod.MOD_ID, "starshard_leggings")))));
+
+    public static final DeferredItem<Item> STARSHARD_BOOTS = ITEMS.register("starshard_boots", () -> new Item((new Item.Properties()).humanoidArmor(ModArmorMaterials.STARSHARD, ArmorType.BOOTS).setId(ResourceKey.create(Registries.ITEM, Identifier.fromNamespaceAndPath(MoreMetalsMod.MOD_ID, "starshard_boots")))));
 
     public static final DeferredItem<Item> BLOODSTONE = ITEMS.register("bloodstone", () -> new Item(new Item.Properties().trimMaterial(ModTrimMaterials.BLOODSTONE).setId(ModUtil.createItemResourceKey("bloodstone"))));
 
@@ -93,6 +100,8 @@ public class ModItems {
     public static final DeferredItem<HoeItem> BLOODSTONE_HOE = registerHoe("bloodstone_hoe", ModToolMaterials.BLOODSTONE);
 
     public static final DeferredItem<Item> BLOODSTONE_HELMET = registerHelmet("bloodstone_helmet", ModArmorMaterials.BLOODSTONE);
+
+	public static final DeferredItem<Item> BLOODSTONE_SPEAR = ITEMS.register("bloodstone_spear", () -> new Item(new Item.Properties().spear(ModToolMaterials.BLOODSTONE, 0.75F, 0.82F, 0.7F, 4.5F, 10.0F, 9.0F, 5.1F, 13.75F, 4.6F).setId(ModUtil.createItemResourceKey("bloodstone_spear"))));
 
     public static final DeferredItem<Item> BLOODSTONE_CHESTPLATE = registerChestplate("bloodstone_chestplate", ModArmorMaterials.BLOODSTONE);
 
@@ -113,6 +122,8 @@ public class ModItems {
 	public static final DeferredItem<ShovelItem> TENUMBRUM_SHOVEL = registerShovel("tenumbrum_shovel", ModToolMaterials.TENUMBRUM);
 
 	public static final DeferredItem<HoeItem> TENUMBRUM_HOE = registerHoe("tenumbrum_hoe", ModToolMaterials.TENUMBRUM);
+
+	public static final DeferredItem<Item> TENUMBRUM_SPEAR = ITEMS.register("tenumbrum_spear", () -> new Item(new Item.Properties().spear(ModToolMaterials.TENUMBRUM, 0.95F, 0.95F, 0.6F, 2.5F, 8.0F, 6.75F, 5.1F, 11.25F, 4.6F).setId(ModUtil.createItemResourceKey("tenumbrum_spear"))));
 
 	public static final DeferredItem<Item> TENUMBRUM_HELMET = registerHelmet("tenumbrum_helmet", ModArmorMaterials.TENUMBRUM);
 

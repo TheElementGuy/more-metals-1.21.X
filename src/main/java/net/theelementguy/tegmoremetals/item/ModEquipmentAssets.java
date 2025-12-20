@@ -2,7 +2,7 @@ package net.theelementguy.tegmoremetals.item;
 
 import net.minecraft.client.resources.model.EquipmentClientInfo;
 import net.minecraft.resources.ResourceKey;
-import net.minecraft.resources.ResourceLocation;
+import net.minecraft.resources.Identifier;
 import net.minecraft.world.item.equipment.EquipmentAsset;
 import net.theelementguy.tegmoremetals.util.ModUtil;
 
@@ -26,6 +26,6 @@ public class ModEquipmentAssets {
     }
 
     private static void acceptEquipmentAsset(BiConsumer<ResourceKey<EquipmentAsset>, EquipmentClientInfo> resourceKeyEquipmentClientInfoBiConsumer, ResourceKey<EquipmentAsset> key) {
-        resourceKeyEquipmentClientInfoBiConsumer.accept(key, EquipmentClientInfo.builder().addHumanoidLayers(ResourceLocation.fromNamespaceAndPath(MOD_ID, key.location().getPath())).build());
+        resourceKeyEquipmentClientInfoBiConsumer.accept(key, EquipmentClientInfo.builder().addHumanoidLayers(Identifier.fromNamespaceAndPath(MOD_ID, key.identifier().getPath())).build());
     }
 }

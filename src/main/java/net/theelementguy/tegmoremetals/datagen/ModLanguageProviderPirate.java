@@ -59,7 +59,7 @@ public class ModLanguageProviderPirate extends LanguageProvider {
     }
 
     protected void addTrimMaterial(ResourceKey<TrimMaterial> key, String name) {
-        add("trim_material." + MoreMetalsMod.MOD_ID + "." + key.location().getPath(), "Material o' " + name);
+        add("trim_material." + MoreMetalsMod.MOD_ID + "." + key.identifier().getPath(), "Material o' " + name);
     }
 
     protected void addToolSet(DeferredItem<? extends Item> sword, DeferredItem<? extends Item> axe, DeferredItem<? extends Item> pickaxe, DeferredItem<? extends Item> shovel, DeferredItem<? extends Item> hoe, DeferredItem<? extends Item> helmet, DeferredItem<? extends Item> chestplate, DeferredItem<? extends Item> leggings, DeferredItem<? extends Item> boots, String groupName) {

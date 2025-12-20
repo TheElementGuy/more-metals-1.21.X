@@ -114,6 +114,6 @@ public class ModLanguageProviderLol extends LanguageProvider {
     }
 
     protected void addTrimMaterial(ResourceKey<TrimMaterial> key, String name) {
-        add("trim_material." + MoreMetalsMod.MOD_ID + "." + key.location().getPath(), name);
+        add("trim_material." + MoreMetalsMod.MOD_ID + "." + key.identifier().getPath(), name);
     }
 }

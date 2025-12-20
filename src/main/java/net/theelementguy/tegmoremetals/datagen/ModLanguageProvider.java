@@ -5,7 +5,7 @@ import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.data.PackOutput;
 import net.minecraft.resources.ResourceKey;
-import net.minecraft.resources.ResourceLocation;
+import net.minecraft.resources.Identifier;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.equipment.trim.TrimMaterial;
 import net.minecraft.world.level.block.Block;
@@ -61,7 +61,7 @@ public class ModLanguageProvider extends LanguageProvider {
     }
 
     protected void addTrimMaterial(ResourceKey<TrimMaterial> key, String name) {
-        add("trim_material." + MoreMetalsMod.MOD_ID + "." + key.location().getPath(), name);
+        add("trim_material." + MoreMetalsMod.MOD_ID + "." + key.identifier().getPath(), name);
     }
 
     protected void addToolSet(Item sword, Item axe, Item pickaxe, Item shovel, Item hoe, Item helmet, Item chestplate, Item leggings, Item boots, String groupName) {
@@ -89,7 +89,7 @@ public class ModLanguageProvider extends LanguageProvider {
         addOptionalDeepslateOre(group, groupName);
         addOptionalNetherOre(group, groupName);
         addOptionalEndOre(group, groupName);
-		addTrimMaterial(ResourceKey.create(Registries.TRIM_MATERIAL, ResourceLocation.fromNamespaceAndPath(MoreMetalsMod.MOD_ID, group)), groupName);
+		addTrimMaterial(ResourceKey.create(Registries.TRIM_MATERIAL, Identifier.fromNamespaceAndPath(MoreMetalsMod.MOD_ID, group)), groupName);
     }
 
     protected void addOptionalOre(String group, String groupName) {

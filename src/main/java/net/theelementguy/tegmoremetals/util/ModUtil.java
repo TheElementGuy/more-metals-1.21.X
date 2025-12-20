@@ -4,7 +4,7 @@ import net.minecraft.core.Registry;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.ResourceKey;
-import net.minecraft.resources.ResourceLocation;
+import net.minecraft.resources.Identifier;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
@@ -28,19 +28,19 @@ public class ModUtil {
     private static HashMap<Character, Character> upsideDown = new HashMap<>(mapOf('a', 'ɐ', 'b', 'q', 'c', 'ɔ', 'd', 'p', 'e', 'ǝ', 'f', 'ɟ', 'g', 'ᵷ', 'h', 'ɥ', 'i', 'ᴉ', 'k', 'ʞ', 'C', 'Ɔ', 'u', 'n', 'n', 'u', ' ', ' ', 'z', 'z', 'Z', 'Z', 'q', 'b', 'p', 'd', 'r', 'ɹ', 'o', 'o', 'l', 'l', 's', 's', 'R', 'ᴚ', 'S', 'S', 'B', 'ᗺ', 'A', 'Ɐ', 'w', 'ʍ', 'W', 'M', 'x', 'x', 'P', 'Ԁ', 'T', '⟘', 'H', 'H', 'v', 'ʌ', 'D', 'ᗡ', 'N', 'N', 'E', 'Ǝ', 'O', 'O', 'm', 'ɯ', 't', 'ʇ', 'L', 'Ꞁ', 'I', 'I'));
 
     public static ResourceKey<Item> createItemResourceKey(String name) {
-        return ResourceKey.create(Registries.ITEM, ResourceLocation.fromNamespaceAndPath(MoreMetalsMod.MOD_ID, name));
+        return ResourceKey.create(Registries.ITEM, Identifier.fromNamespaceAndPath(MoreMetalsMod.MOD_ID, name));
     }
 
     public static ResourceKey<Block> createBlockResourceKey(String name) {
-        return ResourceKey.create(Registries.BLOCK, ResourceLocation.fromNamespaceAndPath(MoreMetalsMod.MOD_ID, name));
+        return ResourceKey.create(Registries.BLOCK, Identifier.fromNamespaceAndPath(MoreMetalsMod.MOD_ID, name));
     }
 
     public static ResourceKey<Recipe<?>> createRecipeResourceKey(String name) {
-        return ResourceKey.create(Registries.RECIPE, ResourceLocation.fromNamespaceAndPath(MoreMetalsMod.MOD_ID, name));
+        return ResourceKey.create(Registries.RECIPE, Identifier.fromNamespaceAndPath(MoreMetalsMod.MOD_ID, name));
     }
 
     public static ResourceKey<EquipmentAsset> createEquipmentAssetResourceKey(String name) {
-        return ResourceKey.create(ResourceKey.createRegistryKey(ResourceLocation.fromNamespaceAndPath("minecraft", "equipment_asset")), ResourceLocation.fromNamespaceAndPath(MoreMetalsMod.MOD_ID, name));
+        return ResourceKey.create(ResourceKey.createRegistryKey(Identifier.fromNamespaceAndPath("minecraft", "equipment_asset")), Identifier.fromNamespaceAndPath(MoreMetalsMod.MOD_ID, name));
     }
 
     public static void inventoryAddAfter(Item item, Item referenceItem, BuildCreativeModeTabContentsEvent event) {
@@ -94,7 +94,7 @@ public class ModUtil {
     }
 
 	public static Item getItemFromKeyMinecraft(String key) {
-		return BuiltInRegistries.ITEM.get(ResourceKey.create(Registries.ITEM, ResourceLocation.withDefaultNamespace(key))).get().value();
+		return BuiltInRegistries.ITEM.get(ResourceKey.create(Registries.ITEM, Identifier.withDefaultNamespace(key))).get().value();
 	}
 
     public static Block getBlockFromKey(String key) {

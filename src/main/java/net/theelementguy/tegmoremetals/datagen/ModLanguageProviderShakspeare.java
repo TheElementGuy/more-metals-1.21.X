@@ -57,7 +57,7 @@ public class ModLanguageProviderShakspeare extends LanguageProvider {
     }
 
     protected void addTrimMaterial(ResourceKey<TrimMaterial> key, String name) {
-        add("trim_material." + MoreMetalsMod.MOD_ID + "." + key.location().getPath(), name);
+        add("trim_material." + MoreMetalsMod.MOD_ID + "." + key.identifier().getPath(), name);
     }
 
     protected void addToolSet(Item sword, Item axe, Item pickaxe, Item shovel, Item hoe, Item helmet, Item chestplate, Item leggings, Item boots, String groupName) {
