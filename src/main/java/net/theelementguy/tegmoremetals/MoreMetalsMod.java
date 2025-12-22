@@ -36,6 +36,8 @@ public class MoreMetalsMod {
     // Directly reference a slf4j logger
     private static final Logger LOGGER = LogUtils.getLogger();
 
+	public static final MoreMetalsMaterials MATERIAL_PROVIDER = new MoreMetalsMaterials();
+
 
     // Creates a creative tab with the id "examplemod:example_tab" for the example item, that is placed after the combat tab
     //public static final DeferredHolder<CreativeModeTab, CreativeModeTab> EXAMPLE_TAB = CREATIVE_MODE_TABS.register("example_tab", () -> CreativeModeTab.builder().title(Component.translatable("itemGroup.examplemod")) //The language key for the title of your CreativeModeTab.withTabsBefore(CreativeModeTabs.COMBAT).icon(() -> EXAMPLE_ITEM.get().getDefaultInstance()).displayItems((parameters, output) -> {output.accept(EXAMPLE_ITEM.get()); // Add the example item to the tab. For your own tabs, this method is preferred over the event}).build());
@@ -49,13 +51,13 @@ public class MoreMetalsMod {
         // Register ourselves for server and other game events we are interested in.
         // Note that this is necessary if and only if we want *this* class (ExampleMod) to respond directly to events.
 
-		MoreMetalsMaterials provider = new MoreMetalsMaterials();
-
-		TEGMatLibItemProvider itemProvider = new TEGMatLibItemProvider(MoreMetalsMod.MOD_ID, provider::getMaterials);
+		TEGMatLibItemProvider itemProvider = new TEGMatLibItemProvider(MoreMetalsMod.MOD_ID, MATERIAL_PROVIDER);
         itemProvider.registerItems(ModRegisters.ITEMS);
 
-		TEGMatLibBlockProvider blockProvider = new TEGMatLibBlockProvider(MOD_ID, provider::getMaterials);
+		TEGMatLibBlockProvider blockProvider = new TEGMatLibBlockProvider(MOD_ID, MATERIAL_PROVIDER);
 		blockProvider.registerBlocks(ModRegisters.BLOCKS, () -> ModRegisters.ITEMS);
+
+		ModRegisters.register(modEventBus);
 
         // Do not add this line if there are no @SubscribeEvent-annotated functions in this class, like onServerStarting() below.
         NeoForge.EVENT_BUS.register(this);
