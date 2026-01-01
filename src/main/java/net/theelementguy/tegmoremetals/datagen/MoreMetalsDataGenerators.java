@@ -15,7 +15,6 @@ import net.theelementguy.tegmatlib.worldgen.TEGMatLibBiomeModifierProvider;
 import net.theelementguy.tegmatlib.worldgen.TEGMatLibConfiguredFeatureProvider;
 import net.theelementguy.tegmatlib.worldgen.TEGMatLibPlacedFeatureProvider;
 import net.theelementguy.tegmoremetals.MoreMetalsMod;
-import net.theelementguy.tegmoremetals.matlib.MoreMetalsMaterials;
 
 import java.util.Collections;
 import java.util.List;
@@ -24,7 +23,7 @@ import java.util.concurrent.CompletableFuture;
 import static net.theelementguy.tegmoremetals.MoreMetalsMod.MATERIAL_PROVIDER;
 
 @EventBusSubscriber(modid = MoreMetalsMod.MOD_ID)
-public class DataGenerators {
+public class MoreMetalsDataGenerators {
 
     @SubscribeEvent
     public static void gatherData(GatherDataEvent.Client event) {
@@ -45,7 +44,7 @@ public class DataGenerators {
         BlockTagsProvider blockTagsProvider = new TEGMatLibBlockTagProvider(output, provider, MoreMetalsMod.MOD_ID, MATERIAL_PROVIDER::getMaterials);
         generator.addProvider(true, blockTagsProvider);
         generator.addProvider(true, new TEGMatLibItemTagProvider(output, provider, MoreMetalsMod.MOD_ID, MATERIAL_PROVIDER::getMaterials));
-        generator.addProvider(true, new ModBiomeTagProvider(output, provider));
+        generator.addProvider(true, new MoreMetalsBiomeTagsProvider(output, provider));
 
 		TEGMatLibConfiguredFeatureProvider configuredFeatures = new TEGMatLibConfiguredFeatureProvider(MoreMetalsMod.MOD_ID, MATERIAL_PROVIDER::getMaterials);
 		TEGMatLibPlacedFeatureProvider placedFeatures = new TEGMatLibPlacedFeatureProvider(MoreMetalsMod.MOD_ID, MATERIAL_PROVIDER::getMaterials);
