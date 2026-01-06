@@ -9,11 +9,11 @@ import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.common.EventBusSubscriber;
 import net.neoforged.neoforge.common.data.BlockTagsProvider;
 import net.neoforged.neoforge.data.event.GatherDataEvent;
-import net.theelementguy.tegmatlib.data.*;
-import net.theelementguy.tegmatlib.trim.TEGMatLibTrimMaterialProvider;
-import net.theelementguy.tegmatlib.worldgen.TEGMatLibBiomeModifierProvider;
-import net.theelementguy.tegmatlib.worldgen.TEGMatLibConfiguredFeatureProvider;
-import net.theelementguy.tegmatlib.worldgen.TEGMatLibPlacedFeatureProvider;
+import com.github.theelementguy.tegmatlib.data.*;
+import com.github.theelementguy.tegmatlib.trim.TEGMatLibTrimMaterialProvider;
+import com.github.theelementguy.tegmatlib.worldgen.TEGMatLibBiomeModifierProvider;
+import com.github.theelementguy.tegmatlib.worldgen.TEGMatLibConfiguredFeatureProvider;
+import com.github.theelementguy.tegmatlib.worldgen.TEGMatLibPlacedFeatureProvider;
 import net.theelementguy.tegmoremetals.MoreMetalsMod;
 
 import java.util.Collections;
@@ -27,31 +27,31 @@ public class MoreMetalsDataGenerators {
 
     @SubscribeEvent
     public static void gatherData(GatherDataEvent.Client event) {
+
         DataGenerator generator = event.getGenerator();
         PackOutput output = generator.getPackOutput();
         CompletableFuture<HolderLookup.Provider> provider = event.getLookupProvider();
 
-        generator.addProvider(true, new TEGMatLibModelProvider(output, MoreMetalsMod.MOD_ID, MATERIAL_PROVIDER::getMaterials));
+        generator.addProvider(true, new TEGMatLibModelProvider(event, MATERIAL_PROVIDER));
 
-        generator.addProvider(true, new TEGMatLibEquipmentAssetProvider(output, output.createPathProvider(PackOutput.Target.DATA_PACK, "equipment"), MATERIAL_PROVIDER::getMaterials));
+        generator.addProvider(true, new TEGMatLibEquipmentAssetProvider(event, MATERIAL_PROVIDER));
 
-        generator.addProvider(true, new TEGMatLibLanguageProvider(output, MoreMetalsMod.MOD_ID, MATERIAL_PROVIDER::getMaterials));
+        generator.addProvider(true, new TEGMatLibLanguageProvider(event, MATERIAL_PROVIDER));
 
-        generator.addProvider(true, TEGMatLibBlockLootTableProvider.create(output, provider, MATERIAL_PROVIDER::getMaterials));
-        new LootTableProvider(output, Collections.emptySet(), List.of(new LootTableProvider.SubProviderEntry(prov -> new TEGMatLibBlockLootTableProvider(prov, MATERIAL_PROVIDER::getMaterials), LootContextParamSets.BLOCK)), provider);
-        generator.addProvider(true, new TEGMatLibRecipeProvider.Runner(output, provider, "More Metals", MATERIAL_PROVIDER::getMaterials, MoreMetalsMod.MOD_ID));
+        generator.addProvider(true, TEGMatLibBlockLootTableProvider.create(event, MATERIAL_PROVIDER));
+        generator.addProvider(true, new TEGMatLibRecipeProvider.Runner(event, "More Metals", MATERIAL_PROVIDER));
 
-        BlockTagsProvider blockTagsProvider = new TEGMatLibBlockTagProvider(output, provider, MoreMetalsMod.MOD_ID, MATERIAL_PROVIDER::getMaterials);
+        BlockTagsProvider blockTagsProvider = new TEGMatLibBlockTagProvider(event, MATERIAL_PROVIDER);
         generator.addProvider(true, blockTagsProvider);
-        generator.addProvider(true, new TEGMatLibItemTagProvider(output, provider, MoreMetalsMod.MOD_ID, MATERIAL_PROVIDER::getMaterials));
+        generator.addProvider(true, new TEGMatLibItemTagProvider(event, MATERIAL_PROVIDER));
         generator.addProvider(true, new MoreMetalsBiomeTagsProvider(output, provider));
 
-		TEGMatLibConfiguredFeatureProvider configuredFeatures = new TEGMatLibConfiguredFeatureProvider(MoreMetalsMod.MOD_ID, MATERIAL_PROVIDER::getMaterials);
-		TEGMatLibPlacedFeatureProvider placedFeatures = new TEGMatLibPlacedFeatureProvider(MoreMetalsMod.MOD_ID, MATERIAL_PROVIDER::getMaterials);
-		TEGMatLibBiomeModifierProvider biomeModifiers = new TEGMatLibBiomeModifierProvider(MATERIAL_PROVIDER::getMaterials);
-		TEGMatLibTrimMaterialProvider trims = new TEGMatLibTrimMaterialProvider(MoreMetalsMod.MOD_ID, MATERIAL_PROVIDER::getMaterials);
+		TEGMatLibConfiguredFeatureProvider configuredFeatures = new TEGMatLibConfiguredFeatureProvider(MATERIAL_PROVIDER);
+		TEGMatLibPlacedFeatureProvider placedFeatures = new TEGMatLibPlacedFeatureProvider(MATERIAL_PROVIDER);
+		TEGMatLibBiomeModifierProvider biomeModifiers = new TEGMatLibBiomeModifierProvider(MATERIAL_PROVIDER);
+		TEGMatLibTrimMaterialProvider trims = new TEGMatLibTrimMaterialProvider(MATERIAL_PROVIDER);
 
-        generator.addProvider(true, new TEGMatLibDatapackProvider(output, provider, MoreMetalsMod.MOD_ID, configuredFeatures, placedFeatures, biomeModifiers, trims));
+        generator.addProvider(true, new TEGMatLibDatapackProvider(event, MoreMetalsMod.MOD_ID, configuredFeatures, placedFeatures, biomeModifiers, trims));
     }
 
     @SubscribeEvent

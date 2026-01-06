@@ -1,8 +1,8 @@
 package net.theelementguy.tegmoremetals;
 
-import net.theelementguy.tegmatlib.block.TEGMatLibBlockProvider;
-import net.theelementguy.tegmatlib.item.TEGMatLibItemProvider;
-import net.theelementguy.tegmatlib.util.TEGMatLibCreativeModeTabFiller;
+import com.github.theelementguy.tegmatlib.block.TEGMatLibBlockProvider;
+import com.github.theelementguy.tegmatlib.item.TEGMatLibItemProvider;
+import com.github.theelementguy.tegmatlib.util.TEGMatLibCreativeModeTabFiller;
 import net.theelementguy.tegmoremetals.matlib.MoreMetalsMaterials;
 import org.slf4j.Logger;
 
@@ -44,10 +44,10 @@ public class MoreMetalsMod {
         // Register ourselves for server and other game events we are interested in.
         // Note that this is necessary if and only if we want *this* class (ExampleMod) to respond directly to events.
 
-		TEGMatLibItemProvider itemProvider = new TEGMatLibItemProvider(MoreMetalsMod.MOD_ID, MATERIAL_PROVIDER);
+		TEGMatLibItemProvider itemProvider = new TEGMatLibItemProvider(MATERIAL_PROVIDER);
         itemProvider.registerItems(MoreMetalsRegisters.ITEMS);
 
-		TEGMatLibBlockProvider blockProvider = new TEGMatLibBlockProvider(MOD_ID, MATERIAL_PROVIDER);
+		TEGMatLibBlockProvider blockProvider = new TEGMatLibBlockProvider(MATERIAL_PROVIDER);
 		blockProvider.registerBlocks(MoreMetalsRegisters.BLOCKS, () -> MoreMetalsRegisters.ITEMS);
 
 		MoreMetalsRegisters.register(modEventBus);
@@ -65,7 +65,7 @@ public class MoreMetalsMod {
 
     // Add the example block item to the building blocks tab
     private void addCreative(BuildCreativeModeTabContentsEvent event) {
-		TEGMatLibCreativeModeTabFiller.build(MATERIAL_PROVIDER.getMaterials(), event, MOD_ID);
+		TEGMatLibCreativeModeTabFiller.build(MATERIAL_PROVIDER, event);
     }
 
     // You can use SubscribeEvent and let the Event Bus discover methods to call
