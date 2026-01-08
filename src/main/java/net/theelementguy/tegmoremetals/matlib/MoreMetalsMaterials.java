@@ -1,5 +1,6 @@
 package net.theelementguy.tegmoremetals.matlib;
 
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.tags.BiomeTags;
 import net.minecraft.world.item.Item;
@@ -15,6 +16,7 @@ import com.github.theelementguy.tegmatlib.core.*;
 import com.github.theelementguy.tegmatlib.core.tiers.MineabilityTier;
 import com.github.theelementguy.tegmatlib.core.tiers.MiningTier;
 import com.github.theelementguy.tegmatlib.worldgen.config.*;
+import net.theelementguy.tegmoremetals.MoreMetalsMod;
 
 import java.util.List;
 import java.util.function.Supplier;
@@ -29,7 +31,9 @@ public class MoreMetalsMaterials implements FullyConfiguredMaterialHolder {
 
 	private Supplier<MaterialConfiguration> RUBIDIUM = () -> new NetherDiamondTypeMaterialConfiguration.Builder().armorMaterial(35, 3, 8, 6, 3, 10, 15, () -> SoundEvents.ARMOR_EQUIP_DIAMOND, 1f, 0f).baseName("rubidium").toolMaterial(1831, 12.0f, 3.0f, 17).smeltingExperience(1.1f).dropsPerOre(1).inGameName("Rubidium").blockProperties(() -> MapColor.COLOR_RED, () -> SoundType.METAL).oreConfigSimple(OreGenConfig.smallAllBiomes(56, 20, OreDistribution.UNIFORM, 1, 4, Dimension.NETHER), OreGenConfig.rareLargeAllBiomes(46, 30, OreDistribution.UNIFORM, 4, 1, Dimension.NETHER)).modId("tegmoremetals").trimMaterialDescriptionColor("#fa89a2").tier(MiningTier.NETHERITE).setBefore("netherite", "netherite", Items.EMERALD, Blocks.EMERALD_BLOCK, "quartz").build();
 
-	public List<Supplier<MaterialConfiguration>> MATERIALS = List.of(TENUMBRUM, BLOODSTONE, CUBIC_ZIRCONIA, RUBIDIUM);
+	private Supplier<MaterialConfiguration> STARSHARD = () -> new EndDiamondTypeMaterialConfiguration.Builder().armorMaterial(41, 4, 8, 6, 4, 12, 13, () -> SoundEvents.ARMOR_EQUIP_DIAMOND, 1f, 0f).toolMaterial(3001, 15f, 5f, 13).baseName("starshard").inGameName("Starshard").dropsPerOre(1).smeltingExperience(1.3f).modId("tegmoremetals").tier(MiningTier.BEYOND_NETHERITE).blockProperties(() -> MapColor.COLOR_GREEN, () -> SoundType.AMETHYST).setBefore("rubidium", "rubidium", ResourceLocation.fromNamespaceAndPath(MoreMetalsMod.MOD_ID, "rubidium"), ResourceLocation.fromNamespaceAndPath(MoreMetalsMod.MOD_ID, "rubidium_block"), "ancient_debris").oreConfigSimple(OreGenConfig.smallAllBiomes(80, -64, OreDistribution.UNIFORM, 1, 20, Dimension.END), OreGenConfig.largeAllBiomes(80, -64, OreDistribution.UNIFORM, 3, 5, Dimension.END)).trimMaterialDescriptionColor("#7fe9f5").build();
+
+	public List<Supplier<MaterialConfiguration>> MATERIALS = List.of(TENUMBRUM, BLOODSTONE, CUBIC_ZIRCONIA, RUBIDIUM, STARSHARD);
 
 	@Override
 	public void setMaterialConfiguration(List<Supplier<MaterialConfiguration>> material) {
