@@ -1,0 +1,20 @@
+What to test:
+Items/blocks/trim named
+Tools are functional
+Proper mining level
+Ore blocks at proper mining level
+All blocks have proper drops
+Inventory is filled
+Ore generates
+ - Proper y-level/biome
+ - Try to find all sizes
+Trims work
+ - Modded on modded
+ - Modded on vanilla
+ - Vanilla on modded
+ - Trim materials
+Recipes
+ - Equipment
+ - Blocks (raw & base)
+ - Smelting
+ - Nuggets
