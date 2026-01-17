@@ -2,6 +2,7 @@ package net.theelementguy.tegmoremetals;
 
 import com.github.theelementguy.tegmatlib.block.TEGMatLibBlockProvider;
 import com.github.theelementguy.tegmatlib.item.TEGMatLibItemProvider;
+import com.github.theelementguy.tegmatlib.loot.TEGMatLibLootModifiers;
 import com.github.theelementguy.tegmatlib.util.TEGMatLibCreativeModeTabFiller;
 import net.theelementguy.tegmoremetals.matlib.MoreMetalsMaterials;
 import org.slf4j.Logger;
@@ -49,6 +50,9 @@ public class MoreMetalsMod {
 
 		TEGMatLibBlockProvider blockProvider = new TEGMatLibBlockProvider(MATERIAL_PROVIDER);
 		blockProvider.registerBlocks(MoreMetalsRegisters.BLOCKS, () -> MoreMetalsRegisters.ITEMS);
+
+		TEGMatLibLootModifiers lootModifiers = new TEGMatLibLootModifiers(MATERIAL_PROVIDER);
+		lootModifiers.registerModifiers(MoreMetalsRegisters.LOOT_MODIFIERS);
 
 		MoreMetalsRegisters.register(modEventBus);
 

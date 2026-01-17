@@ -52,6 +52,7 @@ public class MoreMetalsDataGenerators {
 		TEGMatLibTrimMaterialProvider trims = new TEGMatLibTrimMaterialProvider(MATERIAL_PROVIDER);
 
         generator.addProvider(true, new TEGMatLibDatapackProvider(event, MoreMetalsMod.MOD_ID, configuredFeatures, placedFeatures, biomeModifiers, trims));
+		generator.addProvider(true, new TEGMatLibGlobalLootModifierProvider(event, MATERIAL_PROVIDER));
     }
 
     @SubscribeEvent
