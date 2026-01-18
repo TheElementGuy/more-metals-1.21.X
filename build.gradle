@@ -211,5 +211,5 @@ idea {
 }
 
 tasks.named("jar") {
-    archiveFileName = "[NeoForge ${minecraft_version}] ${mod_name_short} ${mod_version}.jar"
+    archiveFileName = "[NeoForge] ${mod_name_short} ${mod_version}.jar"
 }
