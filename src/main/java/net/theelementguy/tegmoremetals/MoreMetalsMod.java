@@ -13,7 +13,6 @@ import net.minecraft.client.Minecraft;
 import net.neoforged.api.distmarker.Dist;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.bus.api.SubscribeEvent;
-import net.neoforged.fml.ModContainer;
 import net.neoforged.fml.common.EventBusSubscriber;
 import net.neoforged.fml.common.Mod;
 import net.neoforged.fml.event.lifecycle.FMLClientSetupEvent;
@@ -38,7 +37,7 @@ public class MoreMetalsMod {
 
     // The constructor for the mod class is the first code that is run when your mod is loaded.
     // FML will recognize some parameter types like IEventBus or ModContainer and pass them in automatically.
-    public MoreMetalsMod(IEventBus modEventBus, ModContainer modContainer) {
+    public MoreMetalsMod(IEventBus modEventBus) {
         // Register the commonSetup method for modloading
         modEventBus.addListener(this::commonSetup);
 

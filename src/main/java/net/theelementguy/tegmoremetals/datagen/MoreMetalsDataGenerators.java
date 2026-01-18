@@ -3,8 +3,6 @@ package net.theelementguy.tegmoremetals.datagen;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.data.PackOutput;
-import net.minecraft.data.loot.LootTableProvider;
-import net.minecraft.world.level.storage.loot.parameters.LootContextParamSets;
 import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.common.EventBusSubscriber;
 import net.neoforged.neoforge.common.data.BlockTagsProvider;
@@ -15,9 +13,6 @@ import com.github.theelementguy.tegmatlib.worldgen.TEGMatLibBiomeModifierProvide
 import com.github.theelementguy.tegmatlib.worldgen.TEGMatLibConfiguredFeatureProvider;
 import com.github.theelementguy.tegmatlib.worldgen.TEGMatLibPlacedFeatureProvider;
 import net.theelementguy.tegmoremetals.MoreMetalsMod;
-
-import java.util.Collections;
-import java.util.List;
 import java.util.concurrent.CompletableFuture;
 
 import static net.theelementguy.tegmoremetals.MoreMetalsMod.MATERIAL_PROVIDER;
@@ -53,10 +48,6 @@ public class MoreMetalsDataGenerators {
 
         generator.addProvider(true, new TEGMatLibDatapackProvider(event, MoreMetalsMod.MOD_ID, configuredFeatures, placedFeatures, biomeModifiers, trims));
 		generator.addProvider(true, new TEGMatLibGlobalLootModifierProvider(event, MATERIAL_PROVIDER));
-    }
-
-    @SubscribeEvent
-    public static void gatherData(GatherDataEvent.Server event) {
     }
 
 }
