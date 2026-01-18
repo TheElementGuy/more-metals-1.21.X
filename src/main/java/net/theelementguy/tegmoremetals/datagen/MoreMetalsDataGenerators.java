@@ -43,7 +43,7 @@ public class MoreMetalsDataGenerators {
 
         BlockTagsProvider blockTagsProvider = new TEGMatLibBlockTagProvider(event, MATERIAL_PROVIDER);
         generator.addProvider(true, blockTagsProvider);
-        generator.addProvider(true, new TEGMatLibItemTagProvider(event, MATERIAL_PROVIDER));
+        generator.addProvider(true, new TEGMatLibItemTagProvider(event, blockTagsProvider, MATERIAL_PROVIDER));
         generator.addProvider(true, new MoreMetalsBiomeTagsProvider(output, provider));
 
 		TEGMatLibConfiguredFeatureProvider configuredFeatures = new TEGMatLibConfiguredFeatureProvider(MATERIAL_PROVIDER);
