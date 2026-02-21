@@ -86,6 +86,7 @@ public class MoreMetalsMod {
 			ModUtil.inventoryAddAfter(ModBlocks.STARSHARD_BLOCK, Blocks.NETHERITE_BLOCK, event);
 			ModUtil.inventoryAddAfter(ModBlocks.BLOODSTONE_BLOCK, ModBlocks.CUBIC_ZIRCONIA_BLOCK, event);
 			ModUtil.inventoryAddAfter(ModBlocks.BRONZE_BLOCK, Blocks.OXIDIZED_COPPER, event);
+			ModUtil.inventoryAddAfter(ModItems.TIN_SCRAPS, Items.RAW_COPPER, event);
 		}
 		if(event.getTabKey() == CreativeModeTabs.NATURAL_BLOCKS) {
 			ModUtil.inventoryAddAfter(ModBlocks.CUBIC_ZIRCONIA_ORE, Blocks.LAPIS_ORE, event);
