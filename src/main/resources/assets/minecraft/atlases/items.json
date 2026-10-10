@@ -32,7 +32,8 @@
         "tin": "tegmoremetals:trims/color_palettes/tin",
         "bloodstone": "tegmoremetals:trims/color_palettes/bloodstone",
         "tenumbrum": "tegmoremetals:trims/color_palettes/tenumbrum",
-        "aquamarine": "tegmoremetals:trims/color_palettes/aquamarine"
+        "aquamarine": "tegmoremetals:trims/color_palettes/aquamarine",
+        "jade": "tegmoremetals:trims/color_palettes/jade"
       },
       "textures": [
         "minecraft:trims/items/helmet_trim",
