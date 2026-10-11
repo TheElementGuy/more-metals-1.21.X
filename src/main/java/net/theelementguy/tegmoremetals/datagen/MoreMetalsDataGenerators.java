@@ -41,6 +41,8 @@ public class MoreMetalsDataGenerators {
         generator.addProvider(true, new MoreMetalsBiomeTagsProvider(output, provider));
 
 		generator.addProvider(true, new TEGMatLibGlobalLootModifierProvider(event, MATERIAL_PROVIDER));
+
+		generator.addProvider(true, new TEGMatLibAtlasProvider(event, MATERIAL_PROVIDER));
     }
 
 }
